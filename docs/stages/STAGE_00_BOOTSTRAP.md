@@ -1,6 +1,6 @@
 # STAGE 00 — Bootstrap
 
-- Status: PARTIAL (Docker daemon недоступен; WSL и виртуализация требуют настройки)
+- Status: COMPLETE (gate этапа 00: PASS)
 - Started / Finished (UTC): 2026-11-02; точное время не записано.
 - Source SHA: d709bad01dc0ceacb20012a3afdf528eddfd061f; branch rustwave-dev, базовый HEAD тот же.
 - Environment: Windows, Git 2.45.1.windows.1, rustc 1.98.1, cargo 1.98.1; БД не проверены.
@@ -27,7 +27,15 @@ Production не изменён. Секреты не записаны.
 CI не запускался; ссылка отсутствует.
 
 ## Остаточные проблемы, риски, BLOCKER
-Docker daemon не отвечает: `docker info` exit 1, com.docker.service был остановлен, Windows сообщает VirtualizationFirmwareEnabled=False. `docker desktop start --timeout 40` exit 1, запуск не завершился в срок. Нужны проверка первого запуска Docker Desktop и, при необходимости, настройка виртуализации пользователем и повторные проверки. Глобальная Git identity не настроена. Совместимость и CI не проверены.
+Обязательных блокеров этапа 00 нет. Ранее daemon не отвечал и запуск завершался по тайм-ауту; последующая проверка ниже подтвердила доступность. Глобальная Git identity не настроена. Совместимость и CI не проверены: это задачи будущих этапов.
+
+## Завершающая проверка
+
+- Перед изменениями `git status --short --branch` показал чистую `rustwave-dev`; HEAD и `refs/heads/rustwave-dev` origin совпали на `4bd576c96d56d061628ab4634f84ffe82b94a547`.
+- `docker version` exit 0: клиент и Engine 29.9.2, сервер Docker Desktop 4.97.0, linux/amd64; `docker info --format 'ServerVersion={{.ServerVersion}} OS={{.OperatingSystem}} CPUs={{.NCPU}} Containers={{.Containers}}'` exit 0: ServerVersion=29.9.2, OS=Docker Desktop, CPUs=4, Containers=0. `docker compose version` exit 0: v5.6.1.
+- Пользователь сообщил об успешном `docker run --rm hello-world`, включая скачивание и запуск контейнера. Самостоятельно этот smoke test в завершающей сессии не повторялся; exit code и вывод не наблюдались.
+- `git --version`, `gh --version`, `go version`, `bun --version`, `rustc --version`, `cargo --version`, `gh auth status` — exit 0; версии соответствуют записи ниже. `gh auth status` подтверждает активный аккаунт test-alexsun.
+- SSH preflight выполнен ранее и зафиксирован ниже. В завершающей сессии VPS не изменялся и не проверялся повторно. API parity tests не запускались по указанию пользователя; CI не запускался.
 
 ## Повторная проверка 2026-11-02
 
@@ -39,4 +47,4 @@ Docker daemon не отвечает: `docker info` exit 1, com.docker.service б
 - Проверены все Markdown в codex/stage: неверные `codex/stages/` заменены на `codex/stage/`, `docs/stages/` сохранён. `rg -n 'codex/stages/' codex/stage` exit 1 (совпадений нет). `git diff --check` exit 0. API compatibility tests не запускались по заданию; CI не запускался.
 
 ## Следующий этап
-Завершить этап 00 согласно [handoff](../HANDOFF.md); этап 01 самостоятельно не запускать.
+Этап 01 — только после отдельного запуска пользователем; см. [handoff](../HANDOFF.md).
