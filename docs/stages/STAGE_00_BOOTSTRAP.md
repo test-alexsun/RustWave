@@ -1,6 +1,6 @@
 # STAGE 00 — Bootstrap
 
-- Status: PARTIAL (публикация рабочей ветки в процессе)
+- Status: PARTIAL (gh недоступен; проверки через gh не выполнены)
 - Started / Finished (UTC): 2026-11-02; точное время не записано.
 - Source SHA: d709bad01dc0ceacb20012a3afdf528eddfd061f; branch rustwave-dev, базовый HEAD тот же.
 - Environment: Windows, Git 2.45.1.windows.1, rustc 1.98.1, cargo 1.98.1; БД не проверены.
@@ -27,7 +27,7 @@ Production не изменён. Секреты не записаны.
 CI не запускался; ссылка отсутствует.
 
 ## Остаточные проблемы, риски, BLOCKER
-Git identity не настроена; попытка commit с email из подключённого профиля отклонена автоматической проверкой из-за публичного раскрытия адреса. Требуется выбор или подтверждение автора. Commit и push rustwave-dev не выполнены; файлы подготовлены в index. Go, Bun и Docker локально отсутствуют. Совместимость и CI не проверены.
+Bootstrap commit 5ef1552 опубликован в rustwave-dev с GitHub noreply; глобальная Git identity не настроена. gh, Go, Bun и Docker локально отсутствуют. Совместимость и CI не проверены.
 
 ## Следующий этап
 Завершить этап 00 согласно [handoff](../HANDOFF.md); этап 01 самостоятельно не запускать.
