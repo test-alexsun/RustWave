@@ -1,3 +1,18 @@
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+*.dump
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+target/
+node_modules/
+docs/benchmarks/raw/
 # macOS
 .DS_Store
 .AppleDouble
@@ -54,3 +69,4 @@ node-ts/
 node-go/
 openapi.json
 !backend-go/internal/contracts/openapi.json
+
