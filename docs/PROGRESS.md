@@ -2,7 +2,7 @@
 
 | Этап | Статус | Результат |
 |---|---|---|
-| 00 Bootstrap | PARTIAL | Upstream, VPS и push проверены; gh отсутствует. [Отчёт](stages/STAGE_00_BOOTSTRAP.md) |
+| 00 Bootstrap | PARTIAL | GitHub и VPS проверены; инструменты установлены, Docker daemon не работает, WSL/виртуализация требуют завершения настройки. [Отчёт](stages/STAGE_00_BOOTSTRAP.md) |
 | 01–15 | NOT_TESTED | Не начаты |
 
 Проверяемый инвентарь ещё не составлен; процент совместимости неизвестен. Stable release не готов.

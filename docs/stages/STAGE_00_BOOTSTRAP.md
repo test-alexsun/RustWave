@@ -1,6 +1,6 @@
 # STAGE 00 — Bootstrap
 
-- Status: PARTIAL (gh недоступен; проверки через gh не выполнены)
+- Status: PARTIAL (Docker daemon недоступен; WSL и виртуализация требуют настройки)
 - Started / Finished (UTC): 2026-11-02; точное время не записано.
 - Source SHA: d709bad01dc0ceacb20012a3afdf528eddfd061f; branch rustwave-dev, базовый HEAD тот же.
 - Environment: Windows, Git 2.45.1.windows.1, rustc 1.98.1, cargo 1.98.1; БД не проверены.
@@ -27,7 +27,16 @@ Production не изменён. Секреты не записаны.
 CI не запускался; ссылка отсутствует.
 
 ## Остаточные проблемы, риски, BLOCKER
-Bootstrap commit 5ef1552 опубликован в rustwave-dev с GitHub noreply; глобальная Git identity не настроена. gh, Go, Bun и Docker локально отсутствуют. Совместимость и CI не проверены.
+Docker daemon не отвечает: `docker info` exit 1, com.docker.service был остановлен, Windows сообщает VirtualizationFirmwareEnabled=False. `docker desktop start --timeout 40` exit 1, запуск не завершился в срок. Нужны проверка первого запуска Docker Desktop и, при необходимости, настройка виртуализации пользователем и повторные проверки. Глобальная Git identity не настроена. Совместимость и CI не проверены.
+
+## Повторная проверка 2026-11-02
+
+- Windows 10 Pro 22H2, 10.0.19045 x64. `git --version`: 2.45.1.windows.1; `rustc --version`: 1.98.1; `cargo --version`: 1.98.1; `ssh -V`: OpenSSH_for_Windows_9.5p1. Все exit 0.
+- Установлены в пользовательской области через winget с проверкой хеша `gh` 2.103.3 и Bun 1.4.2; пользовательский Go 1.27.3 из официального ZIP проверен по SHA-256 и добавлен в пользовательский PATH. Проверка команд в обновлённом PATH exit 0.
+- С разрешения пользователя установлен Docker Desktop 4.97.0 через winget с проверкой хеша. `docker --version` 29.9.2 и `docker compose version` v5.6.1 exit 0; клиент доступен, daemon не проверен успешно. `wsl --update --web-download` exit 0, `wsl --version` показывает WSL 3.0.3 и ядро 6.18.54.1-1.
+- `gh auth status` и `gh repo view test-alexsun/RustWave` exit 0: test-alexsun, публичный репозиторий, default main. `git status`, `git remote -v`, `git branch --show-current`, `git ls-remote origin HEAD refs/heads/rustwave-dev`, `git ls-remote upstream HEAD`, `git push --dry-run origin rustwave-dev` успешны. Проверенный remote rustwave-dev: c80a418ac81ab5530d870672fdf923d847ebd652; upstream HEAD изменился до 4a4bdb9a5f2d2a356fc16e55174e6c508cfa0d55, закреплённый d709bad остаётся эталоном. Upstream push отключён.
+- SSH preflight из промпта exit 0; Debian 13.7, 1 vCPU AMD EPYC 7642, 967 MiB RAM, диск 9.8 GiB, свободно 8.1 GiB. На VPS ничего не устанавливалось, сервисы не менялись.
+- Проверены все Markdown в codex/stage: неверные `codex/stages/` заменены на `codex/stage/`, `docs/stages/` сохранён. `rg -n 'codex/stages/' codex/stage` exit 1 (совпадений нет). `git diff --check` exit 0. API compatibility tests не запускались по заданию; CI не запускался.
 
 ## Следующий этап
 Завершить этап 00 согласно [handoff](../HANDOFF.md); этап 01 самостоятельно не запускать.

@@ -8,7 +8,7 @@
 
 ## Подготовка
 
-1. Распакуй ZIP и скопируй все `.md` из `RustWave_Codex_Stages/` в **`codex/stages/`** локальной рабочей копии RustWave; не удаляй существующие файлы проекта. Коммитить сами промпты допустимо, но секреты из окружения — нет.
+1. Распакуй ZIP и скопируй все `.md` из `RustWave_Codex_Stages/` в **`codex/stage/`** локальной рабочей копии RustWave; не удаляй существующие файлы проекта. Коммитить сами промпты допустимо, но секреты из окружения — нет.
 2. В интерфейсе Codex вручную выбери указанную модель и Thinking Effort. Сам текст команды не меняет модель.
 3. Вставляй в Codex **ровно один** блок ниже. Codex должен прочитать исходный подробный промпт по указанному пути, а не полагаться на краткое описание.
 4. После этапа проверяй `docs/stages/`, `docs/PROGRESS.md`, `docs/HANDOFF.md`, commits и CI; не переходи дальше при PARTIAL/BLOCKED/FAIL.
@@ -24,7 +24,7 @@
 
 ```text
 Выполни только этап 00 проекта RustWave по полному промпту:
-codex/stages/STAGE_00_BOOTSTRAP.md
+codex/stage/STAGE_00_BOOTSTRAP.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -34,7 +34,7 @@ codex/stages/STAGE_00_BOOTSTRAP.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: read-only SSH preflight, upstream lock, AGENTS/GATE_POLICY.
@@ -58,7 +58,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 01 проекта RustWave по полному промпту:
-codex/stages/STAGE_01_AUDIT.md
+codex/stage/STAGE_01_AUDIT.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -68,7 +68,7 @@ codex/stages/STAGE_01_AUDIT.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: полная функциональная матрица, baseline, без догадок.
@@ -92,7 +92,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 02 проекта RustWave по полному промпту:
-codex/stages/STAGE_02_API_CONTRACT.md
+codex/stage/STAGE_02_API_CONTRACT.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -102,7 +102,7 @@ codex/stages/STAGE_02_API_CONTRACT.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: frontend callsites, JSON shape, Go fixtures, determinism.
@@ -126,7 +126,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 03 проекта RustWave по полному промпту:
-codex/stages/STAGE_03_DATABASE_DESIGN.md
+codex/stage/STAGE_03_DATABASE_DESIGN.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -136,7 +136,7 @@ codex/stages/STAGE_03_DATABASE_DESIGN.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: сохранение миграций, UUID, транзакций, обе БД.
@@ -160,7 +160,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 04 проекта RustWave по полному промпту:
-codex/stages/STAGE_04_RUST_CORE.md
+codex/stage/STAGE_04_RUST_CORE.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -170,7 +170,7 @@ codex/stages/STAGE_04_RUST_CORE.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: рабочая компиляция, tests, без фиктивных endpoints.
@@ -194,7 +194,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 05 проекта RustWave по полному промпту:
-codex/stages/STAGE_05_SQLITE.md
+codex/stage/STAGE_05_SQLITE.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -204,7 +204,7 @@ codex/stages/STAGE_05_SQLITE.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: WAL, migrations, backup, корректность.
@@ -228,7 +228,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 06 проекта RustWave по полному промпту:
-codex/stages/STAGE_06_POSTGRES.md
+codex/stage/STAGE_06_POSTGRES.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -238,7 +238,7 @@ codex/stages/STAGE_06_POSTGRES.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: транзакции, схемы, стабильная интерпретация полей.
@@ -262,7 +262,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 07 проекта RustWave по полному промпту:
-codex/stages/STAGE_07_AUTH.md
+codex/stage/STAGE_07_AUTH.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -272,7 +272,7 @@ codex/stages/STAGE_07_AUTH.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: JWT/cookies/OAuth/permissions, безопасность.
@@ -296,7 +296,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 08 проекта RustWave по полному промпту:
-codex/stages/STAGE_08_DOMAIN_API.md
+codex/stage/STAGE_08_DOMAIN_API.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -306,7 +306,7 @@ codex/stages/STAGE_08_DOMAIN_API.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: реальные UI и Go↔Rust E2E, обе БД.
@@ -330,7 +330,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 09 проекта RustWave по полному промпту:
-codex/stages/STAGE_09_NODES.md
+codex/stage/STAGE_09_NODES.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -340,7 +340,7 @@ codex/stages/STAGE_09_NODES.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: outbox, recovery, безопасность тестовых нод.
@@ -364,7 +364,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 10 проекта RustWave по полному промпту:
-codex/stages/STAGE_10_SUBSCRIPTIONS.md
+codex/stage/STAGE_10_SUBSCRIPTIONS.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -374,7 +374,7 @@ codex/stages/STAGE_10_SUBSCRIPTIONS.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: byte parity, golden fixtures, deterministic vectors.
@@ -398,7 +398,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 11 проекта RustWave по полному промпту:
-codex/stages/STAGE_11_REMAINING_FEATURES.md
+codex/stage/STAGE_11_REMAINING_FEATURES.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -408,7 +408,7 @@ codex/stages/STAGE_11_REMAINING_FEATURES.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: SPA, gzip/WASM, Prometheus family/schema/auth.
@@ -432,7 +432,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 12 проекта RustWave по полному промпту:
-codex/stages/STAGE_12_INSTALLER.md
+codex/stage/STAGE_12_INSTALLER.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -442,7 +442,7 @@ codex/stages/STAGE_12_INSTALLER.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: SQLite/PostgreSQL, native/Docker, rollback.
@@ -466,7 +466,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 13 проекта RustWave по полному промпту:
-codex/stages/STAGE_13_CI_E2E.md
+codex/stage/STAGE_13_CI_E2E.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -476,7 +476,7 @@ codex/stages/STAGE_13_CI_E2E.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: expected vs executed IDs, no skipped, frontend/static/metrics.
@@ -500,7 +500,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 14 проекта RustWave по полному промпту:
-codex/stages/STAGE_14_DEBIAN_BENCH.md
+codex/stage/STAGE_14_DEBIAN_BENCH.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -510,7 +510,7 @@ codex/stages/STAGE_14_DEBIAN_BENCH.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: Go/Rust × SQLite/PG, реальные измерения.
@@ -534,7 +534,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 
 ```text
 Выполни только этап 15 проекта RustWave по полному промпту:
-codex/stages/STAGE_15_RELEASE.md
+codex/stage/STAGE_15_RELEASE.md
 
 Контекст:
 - GitHub: https://github.com/test-alexsun/RustWave
@@ -544,7 +544,7 @@ codex/stages/STAGE_15_RELEASE.md
 До начала прочитай AGENTS.md, docs/GATE_POLICY.md,
 docs/UPSTREAM_LOCK.md, docs/PROGRESS.md, docs/HANDOFF.md,
 релевантные отчёты завершённых этапов и
-codex/stages/GLOBAL_PARITY_GATES.md.
+codex/stage/GLOBAL_PARITY_GATES.md.
 Если эти файлы ещё не созданы на этапе 00 — создай по указанию STAGE_00.
 
 Ключевой фокус: все обязательные gates и безопасная публикация.
@@ -569,7 +569,7 @@ commit SHA, CI URL и блокеры; безопасно commit и push
 AGENTS.md, docs/GATE_POLICY.md, docs/PROGRESS.md,
 docs/HANDOFF.md, docs/UPSTREAM_LOCK.md,
 последний docs/stages/STAGE_*.md и
-codex/stages/RESUME_STAGE.md.
+codex/stage/RESUME_STAGE.md.
 Проверь git status/branch, последний commit, CI, тесты,
 открытые блокеры; не повторяй уже завершённую работу.
 Соблюдай GLOBAL_PARITY_GATES.md, требования SQLite/PG
