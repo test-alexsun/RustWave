@@ -1,7 +1,11 @@
 FROM oven/bun:1.4.2@sha256:9114c058aeae42162ee16dd5084b95fe9473970bb6bcb5b232ab1630f0546895 AS bun
 FROM golang:1.27.3-bookworm@sha256:d9b6a1beb9474adc2a1ce842573639b44b2a0dd49b6669f51d3821baf9ec37c9
 COPY --from=bun /usr/local/bin/bun /usr/local/bin/bun
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    chromium=156.0.8078.73-1~deb12u1 chromium-common=156.0.8078.73-1~deb12u1 \
-    && rm -rf /var/lib/apt/lists/*
+# Exact archived packages: current apt indexes can drop the approved version.
+RUN curl -fL --retry 2 https://snapshot.debian.org/file/dd5d1a047ffaea0771470fc1202dc99d307363b9 -o /tmp/chromium.deb \
+    && curl -fL --retry 2 https://snapshot.debian.org/file/b4f1349c1383fe52f1411ccc0b75d14f67e60e4c -o /tmp/chromium-common.deb \
+    && echo '2e1f8aca83f64e243a9bfde6f4bcfa8f25c3c00ee12ca26bf48c565279cd4f13  /tmp/chromium.deb' | sha256sum --check \
+    && echo 'e37369e358978ed73da9465f15e89b56ac296351d08e2aa7e6cb66a4802cd02f  /tmp/chromium-common.deb' | sha256sum --check \
+    && apt-get update && apt-get install -y --no-install-recommends /tmp/chromium.deb /tmp/chromium-common.deb \
+    && rm -rf /var/lib/apt/lists/* /tmp/chromium.deb /tmp/chromium-common.deb
 ENV TZ=UTC LC_ALL=C.UTF-8 CHROMIUM_BIN=/usr/bin/chromium

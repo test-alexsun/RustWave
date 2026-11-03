@@ -31,3 +31,7 @@ Workflow [browser-v1.yml](../../.github/workflows/browser-v1.yml) запуска
 `ORIGINAL_BROWSER = HISTORICAL_FLAKY`; исходный ID `GOWAVE-BROWSER-ORIGINAL-d709bad01dc0ceacb20012a3afdf528eddfd061f` сохраняется отдельно. `PATCHED_BROWSER_V1 = NEW_MANDATORY_TEST`. Исходный 20-секундный timeout остаётся необъяснённым историческим FAIL; найденные races не объявлены его доказанной причиной. Все исходные FAIL/FLAKY/SKIPPED/NOT_RUN и ошибки инструментов остаются в прежних секциях ledger и [диагностике](BROWSER_DIAGNOSTICS.md).
 
 Это утверждённая владельцем замена версии теста, а не исключение из no-skips/no-flaky для новой версии. Прежний flaky тест не переименован в PASS. Go↔Rust parity остаётся NOT_TESTED, Rust backend отсутствует. STAGE_02 автоматически не начинается.
+
+## CI provisioning history
+
+Первый run [41658971199](https://github.com/test-alexsun/RustWave/actions/runs/41658971199), commit `5ec1e6a0ef282cd178b436eb2ef0742a34224d38`: FAIL на сборке окружения (apt exit 100: закреплённая версия отсутствует в текущем индексе). Browser: 4 NOT_RUN, 0 assertions. Upload также FAIL, поскольку evidence directory ещё не создан; полный build log доступен в job. Исправление provisioning: официальные архивные .deb той же версии, SHA256 закреплены, SHA1 сверены с Debian Snapshot. Build log теперь сохраняется независимо от browser evidence. Тест, patch, runner и timeout не менялись.

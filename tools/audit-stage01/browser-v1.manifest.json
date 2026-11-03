@@ -16,7 +16,7 @@
     "tools/audit-stage01/browser-smoke-v1.identity.json": "1cb722c72b7ad849e9d79bb5d6b41846aba765fe49904681b461ecf73f1d0137",
     "tools/audit-stage01/patched_browser_runner.mjs": "513ceeb9cc15ff497ce4b4bab71eeddd2000d971050aeaa88c2b951230561122",
     "tools/audit-stage01/approved_assertions.cjs": "46c6ac45bc8d59bf36c868d43f92e5975cdf5cf1d051f8a167296b2ebdcb0f5f",
-    "tools/audit-stage01/Dockerfile.browser-v1": "9952a0f0669ccba5d0aa0d17ea40ab806991dbef37d2971620ed60517b2471a8",
+    "tools/audit-stage01/Dockerfile.browser-v1": "e1c886fa16270e41034f80dd5ff5ed9626a1263c34df7d27e2ccb915e47c28e2",
     "tools/audit-stage01/approved_browser_gate.py": "f614008d613e8ca239e821cf18f16e69ae0f6b5b86572564e9c49f65fb6b822b",
     "tools/audit-stage01/run_approved_browser_ci.py": "ad18e03a07a6dd7ab205bc911b6f44a5de24be60778d52bc704fc335235858cb"
   },

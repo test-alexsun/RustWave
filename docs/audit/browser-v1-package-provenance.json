@@ -1,0 +1,18 @@
+[
+  {
+    "name": "chromium",
+    "url": "https://security.debian.org/debian-security/pool/updates/main/c/chromium/chromium_156.0.8078.73-1~deb12u1_amd64.deb",
+    "snapshot_url": "https://snapshot.debian.org/file/dd5d1a047ffaea0771470fc1202dc99d307363b9",
+    "sha1": "dd5d1a047ffaea0771470fc1202dc99d307363b9",
+    "sha256": "2e1f8aca83f64e243a9bfde6f4bcfa8f25c3c00ee12ca26bf48c565279cd4f13",
+    "bytes": 81139060
+  },
+  {
+    "name": "chromium-common",
+    "url": "https://security.debian.org/debian-security/pool/updates/main/c/chromium/chromium-common_156.0.8078.73-1~deb12u1_amd64.deb",
+    "snapshot_url": "https://snapshot.debian.org/file/b4f1349c1383fe52f1411ccc0b75d14f67e60e4c",
+    "sha1": "b4f1349c1383fe52f1411ccc0b75d14f67e60e4c",
+    "sha256": "e37369e358978ed73da9465f15e89b56ac296351d08e2aa7e6cb66a4802cd02f",
+    "bytes": 31612464
+  }
+]

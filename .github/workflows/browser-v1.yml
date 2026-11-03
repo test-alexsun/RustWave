@@ -17,7 +17,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Build version-pinned isolated browser environment
-        run: docker build --progress=plain -f tools/audit-stage01/Dockerfile.browser-v1 -t rustwave-browser-v1:ci tools/audit-stage01
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker build --progress=plain -f tools/audit-stage01/Dockerfile.browser-v1 -t rustwave-browser-v1:ci tools/audit-stage01 2>&1 | tee "$RUNNER_TEMP/browser-v1-build.log"
       - name: Integrity, negative gate tests, assertions and real browser matrix
         run: python3 tools/audit-stage01/run_approved_browser_ci.py --directory "${{ runner.temp }}/browser-v1"
       - name: Retain diagnostics on success and failure
@@ -26,6 +29,7 @@ jobs:
         with:
           name: browser-v1-evidence
           path: |
+            ${{ runner.temp }}/browser-v1-build.log
             ${{ runner.temp }}/browser-v1/*.json
             ${{ runner.temp }}/browser-v1/*.stdout
             ${{ runner.temp }}/browser-v1/*.stderr
