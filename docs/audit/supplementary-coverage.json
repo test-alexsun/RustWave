@@ -1,0 +1,4241 @@
+[
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestAppHostDefaultsToLoopback",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestIsLoopbackHost",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestDBMaxConnections",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestMetricsEnabled",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestPanelBasePath",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestLoadPanelBasePath",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/config/TestTelegramPlaceholderChatsAreUnset",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestRegisterConcurrentCreatesOneAdmin",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestRegisterRechecksAfterReadingBody",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestRegisterRejectsOversizedBody",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPublicPasskeyBypassRejected",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestFailedLoginEventOmitsPassword",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestChallengeExpiryAndConsumption",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasskeyRegistrationAndSignedLogin",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestPasarGuardEnvValue",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestDetectPasarGuardSourcePrefersEnvOverLeftoverSQLite",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestDetectPasarGuardSourceFallsBackToSQLiteFile",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestSQLiteReadOnlyURIOpensUnusualPaths",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestIsMigrationCommand",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestDetectMigrationPaths",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestDetectPostgresTargetDSNRequiresPassword",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestRedactDSN",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestMigrateSQLiteToPostgres_Integration",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestCheckSQLiteForeignKeysNamesOrphans",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestDockerComposeTemplateMatchesRepository",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParseToDockerArgs",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestResolveSourceSQLite",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestBuildDockerEnvKeepsSecretsAndRendersLiterally",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/configprofiles/TestPatchHostCorrectsStoredModeAndRollsBackInvalidRelations",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/contracts/TestLookupReturnsAllMostSpecificMatches",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cron/TestScheduledJobRetentionPreservesActiveAndRecentJobs",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cron/TestCalendarResetsAreBaselinedCaughtUpAndIdempotent",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cron/TestRollingResetReplaysEveryMissedDay",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cron/TestReviewUsersExpiresLimitsAndNotifies",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestFreshSchema",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestExportSchema",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\schema-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/httpx/TestColorsMatchUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/httpx/TestClientIP",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/jobs/TestQueueRollbackRetryAndLease",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/jobs/TestPerNodeSerialization",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/jobs/TestPermanentErrorFailsWithoutRetry",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/metrics/TestTextMatchesPromClient",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/middleware/TestAuthorizationAndOtt",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestCheckHealthExplainsForeignCertificate",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestOriginalNodeHashedSetCompatibility",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestMetricsSnapshotsAreIsolated",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestSummarizeXrayError",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestConfigErrorSurvivesHealthChecksUntilStartSucceeds",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestDisablingNodeClearsConfigError",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestGetNodesBatchesInboundsLikeSingleNode",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestRepeatedHealthChecksDeduplicateStartJobs",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestTrafficPeriodStart",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestUpdateNodeTrafficTrackingStart",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestGetTrafficSummary",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestMultiplyConsumptionMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestRecordUserUsageBillsHistoryAndFirstConnection",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStoreTorrentReportsPersistsAndNotifies",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodessh/TestBrowserVaultCompatibility",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/notify/TestPrettyBytesMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/notify/TestWebhookDeliverySignsPayloadAndHonoursEventConfig",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/notify/TestTelegramTemplatesEscapeValues",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/notify/TestUnknownEventInConfigIsRejected",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/notify/TestTorrentReportLinksIntoDashboard",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/notify/TestTelegramRejectionsAreNotRetried",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/prometheus/TestMissingInterfaceRemovesOnlyNetworkMetrics",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/prometheus/TestExporterAndServer",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersRejectInvalidShapes",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestNormalizePreservesRuleData",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestNormalizeUnchangedAndInvalidDocuments",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestDashboardMount",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestDashboardPrecompressedAssets",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestDashboardPrefixPreservesAPI",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestContractMutationProbe",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestActionsEnqueueNotifications",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestContractRouteCoverage",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestContractResponseProbe",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestResponseRuleHeadersSettingsAndDebugger",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestResponseRuleHeadersInvalidUpdateIsAtomic",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestMissingComputedProfileReturnsNotFound",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/serviceunit/TestInstallerMigratesExistingUnitAndKeepsBoundary",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/squads/TestExternalSquadRemovalPreservesOtherMemberships",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHistoryWriterBatchesTrimsAndDrains",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestRawProtectedAnnounceOnlyForDeviceLimit",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestSocketDropThroughContractStatus",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestResponseRuleHeaderFormats",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestResponseRulesFollowUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestBaseSubscriptionHeadersAndBody",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHiddenHostsReachXrayJSONInjector",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHwidLimitIsAtomic",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestEncryptedResponse",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestBrowserAndInfo",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestKeyDerivationMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestSeededTemplatesMatchUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/js/TestMatchesNode",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/ojson/TestMatchesLodashAndJSONStringify",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/ojson/TestSpreadKeepsExistingPosition",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestDumpYAMLMatchesJsYaml",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestSettingsDiscardRemovedOAuthProvider",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestRestoreRepairsSequencesWithMixedPrimaryKeys",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestExtractTarGzKeepsEntriesInside",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestReleaseChecksums",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestRootOnlyWritableRejectsServiceAccountFiles",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\native\\native-sqlite.jsonl"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestApplyUpdateRequestsRootHelper",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\native\\native-sqlite.jsonl"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestReadRequestedChannelRejectsUntrustedRequests",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestInstallerCommandPassesChannelToScript",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestGetStatsCountsUsersByStatus",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestReadProcMeminfo",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestDockerUpdateCommandUsesComposeDir",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/system/TestGetStatsConcurrentRequestsShareResult",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestLifecycleRevokeAndTransactionalOutbox",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestUpdateLoadsOnceAndKeepsPreviousCredential",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestGetStreamTelegramIdFilter",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestActiveInternalSquads",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestBulkExtendExpirationDate",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestHandlersIntegration",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/users/TestBulkHandlersApply",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_v1_absolute",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_v0_absolute",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_extra_slash",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_relative",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/postgres_via_pgbouncer",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/asyncpg_ssl_option",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/plain_postgres",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/mysql",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/not_a_url",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings/authorize",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings/callback",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/missing_enabled_preserves_true",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/missing_enabled_preserves_false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/explicit_false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/explicit_true",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/invalid_JSON",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting/sqlite",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting/postgres",
+    "kind": "nested",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles/sqlite",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles/postgres",
+    "kind": "nested",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-sqlite.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade/sqlite",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade/postgres",
+    "kind": "nested",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "lf-go-test-postgres.stdout (same PostgreSQL child ID; cross-context)"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/httpx/TestClientIP/subscription_page_real_ip",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/httpx/TestClientIP/invalid_real_ip_header_falls_through",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/httpx/TestClientIP/reverse_proxy",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/httpx/TestClientIP/socket_address",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected/invalid_config,_previous_Xray_running",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected/transient_error,_previous_Xray_running",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected/invalid_config,_Xray_stopped",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/config_expansion",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/user_population",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/integration_lookup",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/integration_decoding",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/plugin_generation",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/plugin_rejection",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=keep",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=zero",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=period",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/object",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/legacy",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/duplicates",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/empty_object",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/empty_legacy",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/null_compatibility",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestDashboardMount//",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/server/TestDashboardMount//private/panel/",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/base64-default",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/no-user-agent",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/unknown-user",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/browser",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/browser-unknown-user",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/mihomo-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/mihomo-extended",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/stash-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/singbox-or",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/clash-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_BASE64/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-json",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_JSON/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/SINGBOX/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-v2ray-json-extended",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/MIHOMO/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/STASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-singbox",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/STASH/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/CLASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/CLASH/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-mihomo",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/STASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/CLASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/limited/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/limited/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/disabled-no-remarks/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/STASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/CLASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/hwid-max/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/hwid-max/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/respond-with/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/external-squad/XRAY_BASE64/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-stash",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/external-squad/XRAY_JSON/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/exclude-tags/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/injector/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-clash",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-uppercase-blocked",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/host-template/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/host-template/XRAY_JSON/false/true",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-disabled",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-happ",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-curl",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-v2rayng",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-ignored",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-modifications",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-headers-to-end",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-template-missing-falls-back",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-respond-with-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-status-codes",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-451",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-block-no-match",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/randomized",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/expired-user",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/limited-no-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/expire-2099",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/month-rolling",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad-template",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad-template-mihomo",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad-hwid-and-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-not-supported",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-not-supported-no-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-max-reached",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-known-device",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-new-device",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-bad-header",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-user-limit-zero",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-user-limit",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-disabled-by-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/no-custom-headers",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/encrypted",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "sqlite",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/encrypted-bad-key",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestAppHostDefaultsToLoopback",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestIsLoopbackHost",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestDBMaxConnections",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestMetricsEnabled",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestPanelBasePath",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestLoadPanelBasePath",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/config/TestTelegramPlaceholderChatsAreUnset",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestRegisterConcurrentCreatesOneAdmin",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestRegisterRechecksAfterReadingBody",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestRegisterRejectsOversizedBody",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPublicPasskeyBypassRejected",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestFailedLoginEventOmitsPassword",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestChallengeExpiryAndConsumption",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasskeyRegistrationAndSignedLogin",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestPasarGuardEnvValue",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestDetectPasarGuardSourcePrefersEnvOverLeftoverSQLite",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestDetectPasarGuardSourceFallsBackToSQLiteFile",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestSQLiteReadOnlyURIOpensUnusualPaths",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestIsMigrationCommand",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestDetectMigrationPaths",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestDetectPostgresTargetDSNRequiresPassword",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestRedactDSN",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestMigrateSQLiteToPostgres_Integration",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestCheckSQLiteForeignKeysNamesOrphans",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestDockerComposeTemplateMatchesRepository",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParseToDockerArgs",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestResolveSourceSQLite",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestBuildDockerEnvKeepsSecretsAndRendersLiterally",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/configprofiles/TestPatchHostCorrectsStoredModeAndRollsBackInvalidRelations",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/contracts/TestLookupReturnsAllMostSpecificMatches",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cron/TestScheduledJobRetentionPreservesActiveAndRecentJobs",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cron/TestCalendarResetsAreBaselinedCaughtUpAndIdempotent",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cron/TestRollingResetReplaysEveryMissedDay",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cron/TestReviewUsersExpiresLimitsAndNotifies",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestFreshSchema",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestExportSchema",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\schema-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/httpx/TestColorsMatchUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/httpx/TestClientIP",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/jobs/TestQueueRollbackRetryAndLease",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/jobs/TestPerNodeSerialization",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/jobs/TestPermanentErrorFailsWithoutRetry",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/metrics/TestTextMatchesPromClient",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/middleware/TestAuthorizationAndOtt",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestCheckHealthExplainsForeignCertificate",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestOriginalNodeHashedSetCompatibility",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestMetricsSnapshotsAreIsolated",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestSummarizeXrayError",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestConfigErrorSurvivesHealthChecksUntilStartSucceeds",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestDisablingNodeClearsConfigError",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestGetNodesBatchesInboundsLikeSingleNode",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestRepeatedHealthChecksDeduplicateStartJobs",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestTrafficPeriodStart",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestUpdateNodeTrafficTrackingStart",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestGetTrafficSummary",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestMultiplyConsumptionMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestRecordUserUsageBillsHistoryAndFirstConnection",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStoreTorrentReportsPersistsAndNotifies",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodessh/TestBrowserVaultCompatibility",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/notify/TestPrettyBytesMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/notify/TestWebhookDeliverySignsPayloadAndHonoursEventConfig",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/notify/TestTelegramTemplatesEscapeValues",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/notify/TestUnknownEventInConfigIsRejected",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/notify/TestTorrentReportLinksIntoDashboard",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/notify/TestTelegramRejectionsAreNotRetried",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/prometheus/TestMissingInterfaceRemovesOnlyNetworkMetrics",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/prometheus/TestExporterAndServer",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersRejectInvalidShapes",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestNormalizePreservesRuleData",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestNormalizeUnchangedAndInvalidDocuments",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestDashboardMount",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestDashboardPrecompressedAssets",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestDashboardPrefixPreservesAPI",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestContractMutationProbe",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestActionsEnqueueNotifications",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestContractRouteCoverage",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestContractResponseProbe",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestResponseRuleHeadersSettingsAndDebugger",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestResponseRuleHeadersInvalidUpdateIsAtomic",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestMissingComputedProfileReturnsNotFound",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/serviceunit/TestInstallerMigratesExistingUnitAndKeepsBoundary",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/squads/TestExternalSquadRemovalPreservesOtherMemberships",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHistoryWriterBatchesTrimsAndDrains",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestRawProtectedAnnounceOnlyForDeviceLimit",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestSocketDropThroughContractStatus",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestResponseRuleHeaderFormats",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestResponseRulesFollowUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestBaseSubscriptionHeadersAndBody",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHiddenHostsReachXrayJSONInjector",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHwidLimitIsAtomic",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestEncryptedResponse",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestBrowserAndInfo",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestKeyDerivationMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestSeededTemplatesMatchUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/js/TestMatchesNode",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/ojson/TestMatchesLodashAndJSONStringify",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/ojson/TestSpreadKeepsExistingPosition",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestDumpYAMLMatchesJsYaml",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestSettingsDiscardRemovedOAuthProvider",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestRestoreRepairsSequencesWithMixedPrimaryKeys",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestExtractTarGzKeepsEntriesInside",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestReleaseChecksums",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestRootOnlyWritableRejectsServiceAccountFiles",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\native\\native-postgres.jsonl"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestApplyUpdateRequestsRootHelper",
+    "kind": "top",
+    "full_suite": "SKIPPED",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\native\\native-postgres.jsonl"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestReadRequestedChannelRejectsUntrustedRequests",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestInstallerCommandPassesChannelToScript",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestGetStatsCountsUsersByStatus",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestReadProcMeminfo",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestDockerUpdateCommandUsesComposeDir",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/system/TestGetStatsConcurrentRequestsShareResult",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestLifecycleRevokeAndTransactionalOutbox",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestUpdateLoadsOnceAndKeepsPreviousCredential",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestGetStreamTelegramIdFilter",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestActiveInternalSquads",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestBulkExtendExpirationDate",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestHandlersIntegration",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/users/TestBulkHandlersApply",
+    "kind": "top",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings/authorize",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings/callback",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_v1_absolute",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_v0_absolute",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_extra_slash",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/sqlite_relative",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/postgres_via_pgbouncer",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/asyncpg_ssl_option",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/plain_postgres",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/mysql",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL/not_a_url",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/missing_enabled_preserves_true",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/missing_enabled_preserves_false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/explicit_false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/explicit_true",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy/invalid_JSON",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting/sqlite",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting/postgres",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/httpx/TestClientIP/subscription_page_real_ip",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/httpx/TestClientIP/invalid_real_ip_header_falls_through",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/httpx/TestClientIP/reverse_proxy",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/httpx/TestClientIP/socket_address",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles/sqlite",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles/postgres",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": {
+      "result": "PASS",
+      "evidence": "gaps01\\migration-postgres.stdout"
+    },
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade/sqlite",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade/postgres",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected/invalid_config,_previous_Xray_running",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected/transient_error,_previous_Xray_running",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected/invalid_config,_Xray_stopped",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/config_expansion",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/user_population",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/integration_lookup",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/integration_decoding",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/plugin_generation",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure/plugin_rejection",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=keep",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=zero",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/nodes/TestApplyTrackingStart/mode=period",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/object",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/legacy",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/duplicates",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/empty_object",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/empty_legacy",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy/null_compatibility",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestDashboardMount//",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/server/TestDashboardMount//private/panel/",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/base64-default",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_BASE64/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/XRAY_JSON/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/SINGBOX/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/MIHOMO/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/STASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/STASH/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/CLASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/matrix/CLASH/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/STASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/expired/CLASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/limited/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/limited/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/disabled-no-remarks/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/MIHOMO/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/STASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/empty-hosts/CLASH/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/hwid-max/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/hwid-max/SINGBOX/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/respond-with/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/external-squad/XRAY_BASE64/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/external-squad/XRAY_JSON/true/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/exclude-tags/XRAY_BASE64/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/no-user-agent",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/injector/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/host-template/XRAY_JSON/false/false",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream/host-template/XRAY_JSON/false/true",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/unknown-user",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/browser",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/browser-unknown-user",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/mihomo-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/mihomo-extended",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/stash-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/singbox-or",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/clash-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-json",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-v2ray-json-extended",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-singbox",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-mihomo",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-stash",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-clash",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-uppercase-blocked",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/path-disabled",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-happ",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-curl",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-v2rayng",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/serve-json-ignored",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-modifications",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-headers-to-end",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-template-missing-falls-back",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-respond-with-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-status-codes",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-451",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/srr-block-no-match",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/randomized",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/expired-user",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/limited-no-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/expire-2099",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/month-rolling",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad-template",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad-template-mihomo",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/squad-hwid-and-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-not-supported",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-not-supported-no-remarks",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-max-reached",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-known-device",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-new-device",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-bad-header",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-user-limit-zero",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-user-limit",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/hwid-disabled-by-rule",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/no-custom-headers",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/encrypted",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  },
+  {
+    "mode": "postgres",
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream/encrypted-bad-key",
+    "kind": "nested",
+    "full_suite": "PASS",
+    "supplementary": null,
+    "effective": "PASS"
+  }
+]

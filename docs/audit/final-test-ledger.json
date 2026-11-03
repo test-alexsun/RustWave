@@ -9,7 +9,8 @@
       "failed": 0,
       "skipped": 4,
       "not_run": 0,
-      "blocked": 4
+      "blocked": 4,
+      "flaky": 0
     },
     {
       "id": "GO-postgres",
@@ -19,7 +20,8 @@
       "failed": 0,
       "skipped": 3,
       "not_run": 0,
-      "blocked": 3
+      "blocked": 3,
+      "flaky": 0
     },
     {
       "id": "BUN-unit",
@@ -29,7 +31,8 @@
       "failed": 0,
       "skipped": 0,
       "not_run": 0,
-      "blocked": 0
+      "blocked": 0,
+      "flaky": 0
     },
     {
       "id": "GO-nonroot-supplement",
@@ -39,7 +42,8 @@
       "failed": 0,
       "skipped": 0,
       "not_run": 0,
-      "blocked": 0
+      "blocked": 0,
+      "flaky": 0
     },
     {
       "id": "BROWSER-LF-attempts",
@@ -49,7 +53,8 @@
       "failed": 1,
       "skipped": 0,
       "not_run": 0,
-      "blocked": 1
+      "blocked": 1,
+      "flaky": 1
     },
     {
       "id": "BUILDX-history-logs-optional",
@@ -59,7 +64,8 @@
       "failed": 0,
       "skipped": 0,
       "not_run": 1,
-      "blocked": 0
+      "blocked": 0,
+      "flaky": 0
     },
     {
       "id": "COMMAND-checks",
@@ -69,7 +75,8 @@
       "failed": 0,
       "skipped": 0,
       "not_run": 0,
-      "blocked": 0
+      "blocked": 0,
+      "flaky": 0
     },
     {
       "id": "BASELINE-trials",
@@ -79,7 +86,8 @@
       "failed": 0,
       "skipped": 0,
       "not_run": 0,
-      "blocked": 0
+      "blocked": 0,
+      "flaky": 0
     }
   ],
   "browser_attempts": [
@@ -94,5 +102,87 @@
       "seconds": 79.697
     }
   ],
-  "stage": "PARTIAL"
+  "stage": "PARTIAL",
+  "supplementary": {
+    "native_run": "https://github.com/test-alexsun/RustWave/actions/runs/41566960948",
+    "coverage": "supplementary-coverage.json",
+    "top_ids_expected": 256,
+    "top_ids_pass_evidence": 256,
+    "observed_child_ids": 266,
+    "remaining_go_execution_gaps": 0,
+    "browser": {
+      "browser-gaps01": {
+        "PASS": 3,
+        "FAIL": 6
+      },
+      "browser-gaps02": {
+        "PASS": 7,
+        "FAIL": 2
+      },
+      "browser-gaps03": {
+        "PASS": 6
+      }
+    },
+    "flaky": [
+      "BROWSER"
+    ],
+    "blocked": [
+      "Historical timeout cause unresolved; readiness-sensitive browser failures"
+    ],
+    "stage": "PARTIAL"
+  },
+  "supplementary_rows": [
+    {
+      "id": "GO-supplementary-top",
+      "expected": 12,
+      "executed": 12,
+      "passed": 12,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 0,
+      "flaky": 0
+    },
+    {
+      "id": "browser-gaps01",
+      "expected": 9,
+      "executed": 9,
+      "passed": 3,
+      "failed": 6,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 1,
+      "flaky": 1
+    },
+    {
+      "id": "browser-gaps02",
+      "expected": 9,
+      "executed": 9,
+      "passed": 7,
+      "failed": 2,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 1,
+      "flaky": 1
+    },
+    {
+      "id": "browser-gaps03",
+      "expected": 6,
+      "executed": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 0,
+      "flaky": 0
+    }
+  ],
+  "status_vocabulary": [
+    "PASS",
+    "FAIL",
+    "SKIPPED",
+    "NOT_RUN",
+    "BLOCKED",
+    "FLAKY"
+  ]
 }

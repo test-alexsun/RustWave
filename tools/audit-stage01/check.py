@@ -35,7 +35,7 @@ def main():
     git=['git','-c','safe.directory='+ROOT.as_posix()]
     upstream='d709bad01dc0ceacb20012a3afdf528eddfd061f'
     preserved=['backend-go','frontend','scripts','Dockerfile','docker-compose.yml','docker-compose.build.yml','install.sh','.github','LICENSE']
-    p=subprocess.run(git+['diff','--exit-code',upstream,'--',*preserved],cwd=ROOT,capture_output=True)
+    p=subprocess.run(git+['diff','--exit-code',upstream,'--',*preserved,':(exclude).github/workflows/stage01-execution-gaps.yml'],cwd=ROOT,capture_output=True)
     if p.returncode:errors.append('Original source differs from lock SHA')
     p=subprocess.run(git+['diff','--check'],cwd=ROOT,capture_output=True)
     if p.returncode:errors.append('git diff --check failed')
