@@ -184,5 +184,33 @@
     "NOT_RUN",
     "BLOCKED",
     "FLAKY"
-  ]
+  ],
+  "readiness_investigation": {
+    "original": {
+      "expected": 3,
+      "executed": 3,
+      "pass": 3,
+      "fail": 0,
+      "skipped": 0,
+      "not_run": 0
+    },
+    "external_distinct_test": {
+      "expected": 12,
+      "executed": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "not_run": 0
+    },
+    "daemon_unavailable": {
+      "expected": 15,
+      "executed": 0,
+      "not_run": 15,
+      "blocked": 15
+    },
+    "historical_flaky": "FAIL",
+    "browser_gate": "BLOCKED",
+    "stage": "PARTIAL",
+    "evidence": "browser-readiness.json"
+  }
 }

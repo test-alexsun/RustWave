@@ -1,6 +1,6 @@
 # Передача — STAGE_01_AUDIT
 
-**Current continuation:** Go execution gaps covered by supplementary evidence (128/128 top-level IDs per DB); original skips retained. Browser FLAKY/BLOCKED remains; STAGE_01 PARTIAL. The original delivery sections below are historical; current results are in “Execution gaps continuation”.
+**Current continuation:** Original smoke 3/3 PASS in the latest bounded control run; separate readiness/controlled-clock test 12/12 PASS. Historical browser FLAKY remains FAIL for gate; exact original timeout cause unresolved. STAGE_01 PARTIAL. Latest details: “Readiness and controlled-clock investigation”.
 
 Продолжать **этап 01, PARTIAL**; не запускать этап 02 автоматически. Ветка rustwave-dev. Upstream d709bad01dc0ceacb20012a3afdf528eddfd061f. Базовый подтверждённый commit bc5694f61fd407417f1d9a0d3bc57d2d0a8d9123; итоговые отчёты принадлежат commit, содержащему этот файл. Узнать точный SHA: git log -1 --format=%H и git ls-remote origin refs/heads/rustwave-dev. Никаких merge/force push не требуется.
 
@@ -57,3 +57,20 @@ STAGE_01 remains **PARTIAL**, Stage02 **NOT READY**. Go execution gaps are cover
 Reproduce diagnostics only into a new evidence directory: python tools/audit-stage01/browser_experiment.py <new-name>. Supplement runner refuses existing evidence. Native workflow and JSON artifact evidence retained under ignored raw/gaps01/native. Do not rerun baseline or inventory.
 
 Schema exporter output differs from the initial migration baseline; its test validates generation, not fixture equality. [Hashes and source-only diff](audit/SCHEMA_EXPORT_EVIDENCE.md). Pinned fixtures remain unchanged.
+
+
+## Readiness and controlled-clock investigation
+
+| Identity | Expected trials | Executed | PASS | FAIL | SKIPPED | NOT_RUN |
+| --- | --- | --- | --- | --- | --- | --- |
+| Original unchanged | 3 | 3 | 3 | 0 | 0 | 0 |
+| External changed-semantics | 12 | 12 | 12 | 0 | 0 | 0 |
+| Initial daemon-unavailable attempt | 15 | 0 | 0 | 0 | 0 | 15 |
+
+The first readiness01 attempt failed before starting any container: Docker Desktop Linux Engine named pipe absent. Seven Docker invocations failed to launch the planned 3 original + 12 external trials; classify all 15 trials NOT_RUN/environment BLOCKED, not failed assertions. Installed Docker Desktop was started; successful docker info preceded readiness02. No production/VPS use. Historical results, baseline and Go tests were not rerun.
+
+Original smoke runs execute unmodified `bun run test:browser` and pinned tests/run-browser.mjs. Exercised environment: Linux amd64 Docker tool image, Bun1.4.2, Chromium156.0.8078.73, UTC/C.UTF-8, 2CPU/2000MiB, network none. Upstream documents Bun and local Chromium, not a minimum CPU/RAM SLA; these limits are the documented audit environment, not an invented upstream support guarantee. Three successes cannot erase historical flakiness or establish all-environment stability.
+
+External matrix: normal2CPU/2000MiB, CPU-only1CPU/2000MiB, RAM-only2CPU/1400MiB, contention1CPU/1400MiB plus one CPU-loop process. Three fresh profiles each, same pinned source/dependencies/fixtures. Per-profile bundle builds once; reported trial duration excludes build. The original runner builds every invocation, so command durations are not directly comparable. Source remains read-only and 1772 blobs are reverified. No old evidence is overwritten.
+
+Modal100ms and clock60ms waits are upstream smoke readiness races. A separate DOM/controlled-clock harness preserves assertions but changes wait semantics; it is not replacement evidence for the original smoke. Historical20s timeout root cause remains unresolved. STAGE_01 PARTIAL, browser gate BLOCKED, Stage02 NOT READY. Full analysis and limits: [browser diagnostics](audit/BROWSER_DIAGNOSTICS.md). Reproduce only into a new evidence directory with tools/audit-stage01/readiness_run.py; do not rerun baseline/Go/native/inventory. Starting delivery commit d694945c8bfde9d44b720c0ee0c807ea1db91ead.

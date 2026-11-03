@@ -63,3 +63,42 @@ Historical first LF browser FAIL and retry PASS remain unchanged. **FLAKY / BLOC
 V2 control and constrained profiles each passed 3/3. V2 contention returned dataset.result=failed twice on session clock advances without render-time reads, and passed once. Source browser-smoke.tsx:350–356 relies on a real-time 60-ms wait. This is a reproduced readiness/timer failure under controlled CPU contention; it is distinct from the historical 20-s timeout.
 
 Counters and per-assertion progress: [browser-experiments.json](browser-experiments.json).
+
+
+## Readiness and controlled-clock investigation
+
+| Identity | Expected trials | Executed | PASS | FAIL | SKIPPED | NOT_RUN |
+| --- | --- | --- | --- | --- | --- | --- |
+| Original unchanged | 3 | 3 | 3 | 0 | 0 | 0 |
+| External changed-semantics | 12 | 12 | 12 | 0 | 0 | 0 |
+| Initial daemon-unavailable attempt | 15 | 0 | 0 | 0 | 0 | 15 |
+
+The first readiness01 attempt failed before starting any container: Docker Desktop Linux Engine named pipe absent. Seven Docker invocations failed to launch the planned 3 original + 12 external trials; classify all 15 trials NOT_RUN/environment BLOCKED, not failed assertions. Installed Docker Desktop was started; successful docker info preceded readiness02. No production/VPS use. Historical results, baseline and Go tests were not rerun.
+
+Original smoke runs execute unmodified `bun run test:browser` and pinned tests/run-browser.mjs. Exercised environment: Linux amd64 Docker tool image, Bun1.4.2, Chromium156.0.8078.73, UTC/C.UTF-8, 2CPU/2000MiB, network none. Upstream documents Bun and local Chromium, not a minimum CPU/RAM SLA; these limits are the documented audit environment, not an invented upstream support guarantee. Three successes cannot erase historical flakiness or establish all-environment stability.
+
+External matrix: normal2CPU/2000MiB, CPU-only1CPU/2000MiB, RAM-only2CPU/1400MiB, contention1CPU/1400MiB plus one CPU-loop process. Three fresh profiles each, same pinned source/dependencies/fixtures. Per-profile bundle builds once; reported trial duration excludes build. The original runner builds every invocation, so command durations are not directly comparable. Source remains read-only and 1772 blobs are reverified. No old evidence is overwritten.
+
+### Root cause and evidence boundaries
+
+1. **Upstream smoke synchronization defect: modal readiness.** browser-smoke.tsx:180–184 flushes a click, sleeps100ms, then requires `.jer-editor-container`. InboundCheckboxCard opens a Mantine modal. Locked Mantine Transition/use-transition schedules state changes through requestAnimationFrame (including a second frame) and timers; Transition returns null in exited state. A timer expiring is not proof these frame callbacks/React commits completed. Previous control run returned `dataset.result=failed` / “Inbound JSON viewer is missing” before the first assertion. The exact failing condition is DOM absence at the query. Which individual frame/commit was delayed in that historical run was not recorded; the state-machine race is established, not its precise scheduler trace. No evidence of a production JSON-viewer functional defect.
+
+2. **Upstream smoke synchronization defect: clock readiness.** ClockFixture calls useTime(20). The hook registers setInterval in useEffect, then calls setNow(Date.now()); React must commit that update before the span changes. The smoke sleeps60ms and compares span text to firstTime. In two previous CPU-contention runs that comparison was false. Cgroup throttled periods increased59/59 and50/50 over their sample windows. The precise failed condition is no visible clock advance at assertion time; whether interval delivery, effect registration or commit was late cannot be distinguished from old assertion-only traces. Real-time scheduling is not a correctness barrier, and CPU quotas amplify this race. This supports an upstream **test harness** defect, not an established useTime production defect.
+
+3. **External tool defects.** Prior V1 used a premature2-second CDP call timeout and produced five tool failures; retained separately. Later harness uses a single20-second deadline. New diagnostic runner attaches Runtime/Network/Page before navigation, logs each assert and resource counters. It changes navigation/observation timing and cannot be treated as an exact original-run replay. Browser missing CDP completion has several possible causes; the original20-second timeout remains **unresolved**, not attributed to the modal or clock without evidence.
+
+4. **Environment.** CPU contention/throttling changes rendering/timer scheduling; previous corrected15 trials had no OOM or Network.loadingFailed. The unavailable Docker daemon was a separate startup blocker, corrected by starting Desktop. No browser or application test executed during that failed launch attempt.
+
+### Separate external harness and semantic changes
+
+browser_deterministic.mjs uses an in-memory Vite transform only on browser-smoke.tsx. Original files and production build behavior are unchanged. All original assertions remain intact and each successful run must record exactly59 PASS assertions. Modal wait is replaced with MutationObserver + requestAnimationFrame predicate readiness for the viewer and string-value element. The outer20-second smoke deadline remains; readiness failure remains a failure, not a skip.
+
+Clock test temporarily fixes Date.now at100000, captures the20ms interval in an isolated browser context, waits for registration, and drives three20ms ticks through the real registered callback inside flushSync. It requires exactly one matching interval; ambiguous timer identity fails. It waits for committed DOM time advance, executes the unchanged assertion, then restores global clock/timer APIs. The registration/advance code fails on missing or ambiguous interval registration. Debug console probes are stripped by the pinned production build; no AUDIT_CLOCK console events were observed. Assertion progress is retained independently in window.__auditProgress and CDP snapshots. This observability limit is explicit; no clock console evidence is invented. This tests state propagation under controlled test time; **it does not test real timer delivery under contention**, and its PASS is not an original-smoke PASS. Other original waits/animations remain real-time; whole-suite mathematical determinism is not claimed.
+
+Scope of resolution: two known readiness hazards are removed in this separate harness, subject to the observed matrix results. Scheduling, rendering and other legacy fixed waits can still vary. Bounded repeat success is evidence of observed reproducibility, not proof that all possible flakes are eliminated. No production CSPRNG, Go source, React source, fixtures, GATE_POLICY or20-second timeout was changed.
+
+### Gate decision
+
+**STAGE_01 PARTIAL; browser gate BLOCKED; historical FLAKY=FAIL.** New external results cannot close the original mandatory gate. Closing it without an exception requires an authorized upstream test-harness correction and original-gate revalidation; that changes the pinned test reference and is outside this audit-only change. The exact historical timeout cause remains unresolved. Stop at Stage01; no Stage02 work.
+
+[CDP events, progress and counters](browser-readiness.json).

@@ -1,0 +1,8 @@
+{
+  "tool_image": "sha256:29642d96c0925e8cc86d66cc09b74f77c5174f64968334fe40418ee40ef8643e",
+  "bun": "1.4.2",
+  "chromium": "156.0.8078.73 Debian12",
+  "docker": "29.9.2",
+  "TZ": "UTC",
+  "LC_ALL": "C.UTF-8"
+}
