@@ -1,0 +1,770 @@
+[
+  {
+    "id": "gowave/config/TestAppHostDefaultsToLoopback",
+    "package": "gowave/config",
+    "name": "TestAppHostDefaultsToLoopback",
+    "source": "backend-go/config/config_test.go:8"
+  },
+  {
+    "id": "gowave/config/TestIsLoopbackHost",
+    "package": "gowave/config",
+    "name": "TestIsLoopbackHost",
+    "source": "backend-go/config/config_test.go:15"
+  },
+  {
+    "id": "gowave/config/TestDBMaxConnections",
+    "package": "gowave/config",
+    "name": "TestDBMaxConnections",
+    "source": "backend-go/config/config_test.go:31"
+  },
+  {
+    "id": "gowave/config/TestMetricsEnabled",
+    "package": "gowave/config",
+    "name": "TestMetricsEnabled",
+    "source": "backend-go/config/config_test.go:45"
+  },
+  {
+    "id": "gowave/config/TestPanelBasePath",
+    "package": "gowave/config",
+    "name": "TestPanelBasePath",
+    "source": "backend-go/config/panel_path_test.go:5"
+  },
+  {
+    "id": "gowave/config/TestLoadPanelBasePath",
+    "package": "gowave/config",
+    "name": "TestLoadPanelBasePath",
+    "source": "backend-go/config/panel_path_test.go:19"
+  },
+  {
+    "id": "gowave/config/TestTelegramPlaceholderChatsAreUnset",
+    "package": "gowave/config",
+    "name": "TestTelegramPlaceholderChatsAreUnset",
+    "source": "backend-go/config/panel_path_test.go:31"
+  },
+  {
+    "id": "gowave/internal/auth/TestRemovedYandexCannotBeEnabledBySavedSettings",
+    "package": "gowave/internal/auth",
+    "name": "TestRemovedYandexCannotBeEnabledBySavedSettings",
+    "source": "backend-go/internal/auth/oauth_removed_test.go:13"
+  },
+  {
+    "id": "gowave/internal/auth/TestRegisterConcurrentCreatesOneAdmin",
+    "package": "gowave/internal/auth",
+    "name": "TestRegisterConcurrentCreatesOneAdmin",
+    "source": "backend-go/internal/auth/register_test.go:28"
+  },
+  {
+    "id": "gowave/internal/auth/TestRegisterRechecksAfterReadingBody",
+    "package": "gowave/internal/auth",
+    "name": "TestRegisterRechecksAfterReadingBody",
+    "source": "backend-go/internal/auth/register_test.go:74"
+  },
+  {
+    "id": "gowave/internal/auth/TestRegisterRejectsOversizedBody",
+    "package": "gowave/internal/auth",
+    "name": "TestRegisterRejectsOversizedBody",
+    "source": "backend-go/internal/auth/register_test.go:87"
+  },
+  {
+    "id": "gowave/internal/auth/TestPublicPasskeyBypassRejected",
+    "package": "gowave/internal/auth",
+    "name": "TestPublicPasskeyBypassRejected",
+    "source": "backend-go/internal/auth/security_test.go:43"
+  },
+  {
+    "id": "gowave/internal/auth/TestPasswordAuthenticationPolicy",
+    "package": "gowave/internal/auth",
+    "name": "TestPasswordAuthenticationPolicy",
+    "source": "backend-go/internal/auth/security_test.go:55"
+  },
+  {
+    "id": "gowave/internal/auth/TestFailedLoginEventOmitsPassword",
+    "package": "gowave/internal/auth",
+    "name": "TestFailedLoginEventOmitsPassword",
+    "source": "backend-go/internal/auth/security_test.go:81"
+  },
+  {
+    "id": "gowave/internal/auth/TestChallengeExpiryAndConsumption",
+    "package": "gowave/internal/auth",
+    "name": "TestChallengeExpiryAndConsumption",
+    "source": "backend-go/internal/auth/security_test.go:118"
+  },
+  {
+    "id": "gowave/internal/auth/TestPasskeyRegistrationAndSignedLogin",
+    "package": "gowave/internal/auth",
+    "name": "TestPasskeyRegistrationAndSignedLogin",
+    "source": "backend-go/internal/auth/security_test.go:139"
+  },
+  {
+    "id": "gowave/internal/cli/TestParsePasarGuardDatabaseURL",
+    "package": "gowave/internal/cli",
+    "name": "TestParsePasarGuardDatabaseURL",
+    "source": "backend-go/internal/cli/import_pasarguard_test.go:15"
+  },
+  {
+    "id": "gowave/internal/cli/TestPasarGuardEnvValue",
+    "package": "gowave/internal/cli",
+    "name": "TestPasarGuardEnvValue",
+    "source": "backend-go/internal/cli/import_pasarguard_test.go:49"
+  },
+  {
+    "id": "gowave/internal/cli/TestDetectPasarGuardSourcePrefersEnvOverLeftoverSQLite",
+    "package": "gowave/internal/cli",
+    "name": "TestDetectPasarGuardSourcePrefersEnvOverLeftoverSQLite",
+    "source": "backend-go/internal/cli/import_pasarguard_test.go:68"
+  },
+  {
+    "id": "gowave/internal/cli/TestDetectPasarGuardSourceFallsBackToSQLiteFile",
+    "package": "gowave/internal/cli",
+    "name": "TestDetectPasarGuardSourceFallsBackToSQLiteFile",
+    "source": "backend-go/internal/cli/import_pasarguard_test.go:89"
+  },
+  {
+    "id": "gowave/internal/cli/TestSQLiteReadOnlyURIOpensUnusualPaths",
+    "package": "gowave/internal/cli",
+    "name": "TestSQLiteReadOnlyURIOpensUnusualPaths",
+    "source": "backend-go/internal/cli/import_pasarguard_test.go:115"
+  },
+  {
+    "id": "gowave/internal/cli/TestIsMigrationCommand",
+    "package": "gowave/internal/cli",
+    "name": "TestIsMigrationCommand",
+    "source": "backend-go/internal/cli/migrate_sqlite_to_pg_test.go:20"
+  },
+  {
+    "id": "gowave/internal/cli/TestDetectMigrationPaths",
+    "package": "gowave/internal/cli",
+    "name": "TestDetectMigrationPaths",
+    "source": "backend-go/internal/cli/migrate_sqlite_to_pg_test.go:46"
+  },
+  {
+    "id": "gowave/internal/cli/TestDetectPostgresTargetDSNRequiresPassword",
+    "package": "gowave/internal/cli",
+    "name": "TestDetectPostgresTargetDSNRequiresPassword",
+    "source": "backend-go/internal/cli/migrate_sqlite_to_pg_test.go:76"
+  },
+  {
+    "id": "gowave/internal/cli/TestRedactDSN",
+    "package": "gowave/internal/cli",
+    "name": "TestRedactDSN",
+    "source": "backend-go/internal/cli/migrate_sqlite_to_pg_test.go:98"
+  },
+  {
+    "id": "gowave/internal/cli/TestMigrateSQLiteToPostgres_Integration",
+    "package": "gowave/internal/cli",
+    "name": "TestMigrateSQLiteToPostgres_Integration",
+    "source": "backend-go/internal/cli/migrate_sqlite_to_pg_test.go:114"
+  },
+  {
+    "id": "gowave/internal/cli/TestCheckSQLiteForeignKeysNamesOrphans",
+    "package": "gowave/internal/cli",
+    "name": "TestCheckSQLiteForeignKeysNamesOrphans",
+    "source": "backend-go/internal/cli/migrate_sqlite_to_pg_test.go:313"
+  },
+  {
+    "id": "gowave/internal/cli/TestDockerComposeTemplateMatchesRepository",
+    "package": "gowave/internal/cli",
+    "name": "TestDockerComposeTemplateMatchesRepository",
+    "source": "backend-go/internal/cli/migrate_to_docker_test.go:12"
+  },
+  {
+    "id": "gowave/internal/cli/TestParseToDockerArgs",
+    "package": "gowave/internal/cli",
+    "name": "TestParseToDockerArgs",
+    "source": "backend-go/internal/cli/migrate_to_docker_test.go:22"
+  },
+  {
+    "id": "gowave/internal/cli/TestResolveSourceSQLite",
+    "package": "gowave/internal/cli",
+    "name": "TestResolveSourceSQLite",
+    "source": "backend-go/internal/cli/migrate_to_docker_test.go:41"
+  },
+  {
+    "id": "gowave/internal/cli/TestBuildDockerEnvKeepsSecretsAndRendersLiterally",
+    "package": "gowave/internal/cli",
+    "name": "TestBuildDockerEnvKeepsSecretsAndRendersLiterally",
+    "source": "backend-go/internal/cli/migrate_to_docker_test.go:59"
+  },
+  {
+    "id": "gowave/internal/configprofiles/TestPatchHostCorrectsStoredModeAndRollsBackInvalidRelations",
+    "package": "gowave/internal/configprofiles",
+    "name": "TestPatchHostCorrectsStoredModeAndRollsBackInvalidRelations",
+    "source": "backend-go/internal/configprofiles/service_test.go:11"
+  },
+  {
+    "id": "gowave/internal/contracts/TestLookupReturnsAllMostSpecificMatches",
+    "package": "gowave/internal/contracts",
+    "name": "TestLookupReturnsAllMostSpecificMatches",
+    "source": "backend-go/internal/contracts/registry_test.go:5"
+  },
+  {
+    "id": "gowave/internal/cron/TestScheduledJobRetentionPreservesActiveAndRecentJobs",
+    "package": "gowave/internal/cron",
+    "name": "TestScheduledJobRetentionPreservesActiveAndRecentJobs",
+    "source": "backend-go/internal/cron/scheduler_test.go:19"
+  },
+  {
+    "id": "gowave/internal/cron/TestCalendarResetsAreBaselinedCaughtUpAndIdempotent",
+    "package": "gowave/internal/cron",
+    "name": "TestCalendarResetsAreBaselinedCaughtUpAndIdempotent",
+    "source": "backend-go/internal/cron/scheduler_test.go:69"
+  },
+  {
+    "id": "gowave/internal/cron/TestRollingResetReplaysEveryMissedDay",
+    "package": "gowave/internal/cron",
+    "name": "TestRollingResetReplaysEveryMissedDay",
+    "source": "backend-go/internal/cron/scheduler_test.go:100"
+  },
+  {
+    "id": "gowave/internal/cron/TestReviewUsersExpiresLimitsAndNotifies",
+    "package": "gowave/internal/cron",
+    "name": "TestReviewUsersExpiresLimitsAndNotifies",
+    "source": "backend-go/internal/cron/scheduler_test.go:117"
+  },
+  {
+    "id": "gowave/internal/database/TestMigrationsFreshAndExisting",
+    "package": "gowave/internal/database",
+    "name": "TestMigrationsFreshAndExisting",
+    "source": "backend-go/internal/database/migrations_test.go:9"
+  },
+  {
+    "id": "gowave/internal/database/TestFreshSchema",
+    "package": "gowave/internal/database",
+    "name": "TestFreshSchema",
+    "source": "backend-go/internal/database/migrations_test.go:74"
+  },
+  {
+    "id": "gowave/internal/database/TestBrandingMigrationPreservesCustomTitles",
+    "package": "gowave/internal/database",
+    "name": "TestBrandingMigrationPreservesCustomTitles",
+    "source": "backend-go/internal/database/migrations_test.go:89"
+  },
+  {
+    "id": "gowave/internal/database/TestResponseRuleHeadersUpgrade",
+    "package": "gowave/internal/database",
+    "name": "TestResponseRuleHeadersUpgrade",
+    "source": "backend-go/internal/database/response_rule_headers_test.go:12"
+  },
+  {
+    "id": "gowave/internal/database/TestExportSchema",
+    "package": "gowave/internal/database",
+    "name": "TestExportSchema",
+    "source": "backend-go/internal/database/schema_export_test.go:28"
+  },
+  {
+    "id": "gowave/internal/httpx/TestColorsMatchUpstream",
+    "package": "gowave/internal/httpx",
+    "name": "TestColorsMatchUpstream",
+    "source": "backend-go/internal/httpx/color_test.go:6"
+  },
+  {
+    "id": "gowave/internal/httpx/TestClientIP",
+    "package": "gowave/internal/httpx",
+    "name": "TestClientIP",
+    "source": "backend-go/internal/httpx/httpx_test.go:8"
+  },
+  {
+    "id": "gowave/internal/jobs/TestQueueRollbackRetryAndLease",
+    "package": "gowave/internal/jobs",
+    "name": "TestQueueRollbackRetryAndLease",
+    "source": "backend-go/internal/jobs/queue_test.go:12"
+  },
+  {
+    "id": "gowave/internal/jobs/TestPerNodeSerialization",
+    "package": "gowave/internal/jobs",
+    "name": "TestPerNodeSerialization",
+    "source": "backend-go/internal/jobs/queue_test.go:64"
+  },
+  {
+    "id": "gowave/internal/jobs/TestPermanentErrorFailsWithoutRetry",
+    "package": "gowave/internal/jobs",
+    "name": "TestPermanentErrorFailsWithoutRetry",
+    "source": "backend-go/internal/jobs/queue_test.go:92"
+  },
+  {
+    "id": "gowave/internal/metrics/TestTextMatchesPromClient",
+    "package": "gowave/internal/metrics",
+    "name": "TestTextMatchesPromClient",
+    "source": "backend-go/internal/metrics/registry_test.go:12"
+  },
+  {
+    "id": "gowave/internal/middleware/TestAuthorizationAndOtt",
+    "package": "gowave/internal/middleware",
+    "name": "TestAuthorizationAndOtt",
+    "source": "backend-go/internal/middleware/auth_test.go:16"
+  },
+  {
+    "id": "gowave/internal/nodes/TestCheckHealthExplainsForeignCertificate",
+    "package": "gowave/internal/nodes",
+    "name": "TestCheckHealthExplainsForeignCertificate",
+    "source": "backend-go/internal/nodes/client_test.go:24"
+  },
+  {
+    "id": "gowave/internal/nodes/TestOriginalNodeHashedSetCompatibility",
+    "package": "gowave/internal/nodes",
+    "name": "TestOriginalNodeHashedSetCompatibility",
+    "source": "backend-go/internal/nodes/compatibility_test.go:9"
+  },
+  {
+    "id": "gowave/internal/nodes/TestMetricsSnapshotsAreIsolated",
+    "package": "gowave/internal/nodes",
+    "name": "TestMetricsSnapshotsAreIsolated",
+    "source": "backend-go/internal/nodes/compatibility_test.go:19"
+  },
+  {
+    "id": "gowave/internal/nodes/TestSummarizeXrayError",
+    "package": "gowave/internal/nodes",
+    "name": "TestSummarizeXrayError",
+    "source": "backend-go/internal/nodes/config_rejection_test.go:21"
+  },
+  {
+    "id": "gowave/internal/nodes/TestStartNodeKeepsServingNodeWhenNewConfigIsRejected",
+    "package": "gowave/internal/nodes",
+    "name": "TestStartNodeKeepsServingNodeWhenNewConfigIsRejected",
+    "source": "backend-go/internal/nodes/config_rejection_test.go:62"
+  },
+  {
+    "id": "gowave/internal/nodes/TestConfigErrorSurvivesHealthChecksUntilStartSucceeds",
+    "package": "gowave/internal/nodes",
+    "name": "TestConfigErrorSurvivesHealthChecksUntilStartSucceeds",
+    "source": "backend-go/internal/nodes/config_rejection_test.go:108"
+  },
+  {
+    "id": "gowave/internal/nodes/TestDisablingNodeClearsConfigError",
+    "package": "gowave/internal/nodes",
+    "name": "TestDisablingNodeClearsConfigError",
+    "source": "backend-go/internal/nodes/config_rejection_test.go:134"
+  },
+  {
+    "id": "gowave/internal/nodes/TestGetNodesBatchesInboundsLikeSingleNode",
+    "package": "gowave/internal/nodes",
+    "name": "TestGetNodesBatchesInboundsLikeSingleNode",
+    "source": "backend-go/internal/nodes/handler_test.go:17"
+  },
+  {
+    "id": "gowave/internal/nodes/TestStartNodeClearsConnectingOnPreparationFailure",
+    "package": "gowave/internal/nodes",
+    "name": "TestStartNodeClearsConnectingOnPreparationFailure",
+    "source": "backend-go/internal/nodes/start_test.go:20"
+  },
+  {
+    "id": "gowave/internal/nodes/TestRepeatedHealthChecksDeduplicateStartJobs",
+    "package": "gowave/internal/nodes",
+    "name": "TestRepeatedHealthChecksDeduplicateStartJobs",
+    "source": "backend-go/internal/nodes/start_test.go:79"
+  },
+  {
+    "id": "gowave/internal/nodes/TestTrafficPeriodStart",
+    "package": "gowave/internal/nodes",
+    "name": "TestTrafficPeriodStart",
+    "source": "backend-go/internal/nodes/traffic_tracking_test.go:17"
+  },
+  {
+    "id": "gowave/internal/nodes/TestApplyTrackingStart",
+    "package": "gowave/internal/nodes",
+    "name": "TestApplyTrackingStart",
+    "source": "backend-go/internal/nodes/traffic_tracking_test.go:47"
+  },
+  {
+    "id": "gowave/internal/nodes/TestUpdateNodeTrafficTrackingStart",
+    "package": "gowave/internal/nodes",
+    "name": "TestUpdateNodeTrafficTrackingStart",
+    "source": "backend-go/internal/nodes/traffic_tracking_test.go:82"
+  },
+  {
+    "id": "gowave/internal/nodes/TestGetTrafficSummary",
+    "package": "gowave/internal/nodes",
+    "name": "TestGetTrafficSummary",
+    "source": "backend-go/internal/nodes/traffic_tracking_test.go:161"
+  },
+  {
+    "id": "gowave/internal/nodes/TestMultiplyConsumptionMatchesUpstream",
+    "package": "gowave/internal/nodes",
+    "name": "TestMultiplyConsumptionMatchesUpstream",
+    "source": "backend-go/internal/nodes/usage_test.go:22"
+  },
+  {
+    "id": "gowave/internal/nodes/TestRecordUserUsageBillsHistoryAndFirstConnection",
+    "package": "gowave/internal/nodes",
+    "name": "TestRecordUserUsageBillsHistoryAndFirstConnection",
+    "source": "backend-go/internal/nodes/usage_test.go:32"
+  },
+  {
+    "id": "gowave/internal/nodes/TestStoreTorrentReportsPersistsAndNotifies",
+    "package": "gowave/internal/nodes",
+    "name": "TestStoreTorrentReportsPersistsAndNotifies",
+    "source": "backend-go/internal/nodes/usage_test.go:87"
+  },
+  {
+    "id": "gowave/internal/nodessh/TestBrowserVaultCompatibility",
+    "package": "gowave/internal/nodessh",
+    "name": "TestBrowserVaultCompatibility",
+    "source": "backend-go/internal/nodessh/vault_test.go:12"
+  },
+  {
+    "id": "gowave/internal/notify/TestPrettyBytesMatchesUpstream",
+    "package": "gowave/internal/notify",
+    "name": "TestPrettyBytesMatchesUpstream",
+    "source": "backend-go/internal/notify/notify_test.go:27"
+  },
+  {
+    "id": "gowave/internal/notify/TestWebhookDeliverySignsPayloadAndHonoursEventConfig",
+    "package": "gowave/internal/notify",
+    "name": "TestWebhookDeliverySignsPayloadAndHonoursEventConfig",
+    "source": "backend-go/internal/notify/notify_test.go:46"
+  },
+  {
+    "id": "gowave/internal/notify/TestTelegramTemplatesEscapeValues",
+    "package": "gowave/internal/notify",
+    "name": "TestTelegramTemplatesEscapeValues",
+    "source": "backend-go/internal/notify/notify_test.go:103"
+  },
+  {
+    "id": "gowave/internal/notify/TestUnknownEventInConfigIsRejected",
+    "package": "gowave/internal/notify",
+    "name": "TestUnknownEventInConfigIsRejected",
+    "source": "backend-go/internal/notify/notify_test.go:128"
+  },
+  {
+    "id": "gowave/internal/notify/TestTorrentReportLinksIntoDashboard",
+    "package": "gowave/internal/notify",
+    "name": "TestTorrentReportLinksIntoDashboard",
+    "source": "backend-go/internal/notify/notify_test.go:137"
+  },
+  {
+    "id": "gowave/internal/notify/TestTelegramRejectionsAreNotRetried",
+    "package": "gowave/internal/notify",
+    "name": "TestTelegramRejectionsAreNotRetried",
+    "source": "backend-go/internal/notify/notify_test.go:160"
+  },
+  {
+    "id": "gowave/internal/prometheus/TestMissingInterfaceRemovesOnlyNetworkMetrics",
+    "package": "gowave/internal/prometheus",
+    "name": "TestMissingInterfaceRemovesOnlyNetworkMetrics",
+    "source": "backend-go/internal/prometheus/prometheus_test.go:21"
+  },
+  {
+    "id": "gowave/internal/prometheus/TestExporterAndServer",
+    "package": "gowave/internal/prometheus",
+    "name": "TestExporterAndServer",
+    "source": "backend-go/internal/prometheus/prometheus_test.go:53"
+  },
+  {
+    "id": "gowave/internal/responserules/TestHeadersCanonicalAndLegacy",
+    "package": "gowave/internal/responserules",
+    "name": "TestHeadersCanonicalAndLegacy",
+    "source": "backend-go/internal/responserules/headers_test.go:9"
+  },
+  {
+    "id": "gowave/internal/responserules/TestHeadersRejectInvalidShapes",
+    "package": "gowave/internal/responserules",
+    "name": "TestHeadersRejectInvalidShapes",
+    "source": "backend-go/internal/responserules/headers_test.go:33"
+  },
+  {
+    "id": "gowave/internal/responserules/TestNormalizePreservesRuleData",
+    "package": "gowave/internal/responserules",
+    "name": "TestNormalizePreservesRuleData",
+    "source": "backend-go/internal/responserules/headers_test.go:42"
+  },
+  {
+    "id": "gowave/internal/responserules/TestNormalizeUnchangedAndInvalidDocuments",
+    "package": "gowave/internal/responserules",
+    "name": "TestNormalizeUnchangedAndInvalidDocuments",
+    "source": "backend-go/internal/responserules/headers_test.go:72"
+  },
+  {
+    "id": "gowave/internal/server/TestDashboardMount",
+    "package": "gowave/internal/server",
+    "name": "TestDashboardMount",
+    "source": "backend-go/internal/server/dashboard_test.go:37"
+  },
+  {
+    "id": "gowave/internal/server/TestDashboardPrecompressedAssets",
+    "package": "gowave/internal/server",
+    "name": "TestDashboardPrecompressedAssets",
+    "source": "backend-go/internal/server/dashboard_test.go:107"
+  },
+  {
+    "id": "gowave/internal/server/TestDashboardPrefixPreservesAPI",
+    "package": "gowave/internal/server",
+    "name": "TestDashboardPrefixPreservesAPI",
+    "source": "backend-go/internal/server/dashboard_test.go:177"
+  },
+  {
+    "id": "gowave/internal/server/TestContractMutationProbe",
+    "package": "gowave/internal/server",
+    "name": "TestContractMutationProbe",
+    "source": "backend-go/internal/server/mutation_probe_test.go:76"
+  },
+  {
+    "id": "gowave/internal/server/TestActionsEnqueueNotifications",
+    "package": "gowave/internal/server",
+    "name": "TestActionsEnqueueNotifications",
+    "source": "backend-go/internal/server/notify_test.go:17"
+  },
+  {
+    "id": "gowave/internal/server/TestContractRouteCoverage",
+    "package": "gowave/internal/server",
+    "name": "TestContractRouteCoverage",
+    "source": "backend-go/internal/server/parity_test.go:63"
+  },
+  {
+    "id": "gowave/internal/server/TestContractResponseProbe",
+    "package": "gowave/internal/server",
+    "name": "TestContractResponseProbe",
+    "source": "backend-go/internal/server/probe_test.go:171"
+  },
+  {
+    "id": "gowave/internal/server/TestResponseRuleHeadersSettingsAndDebugger",
+    "package": "gowave/internal/server",
+    "name": "TestResponseRuleHeadersSettingsAndDebugger",
+    "source": "backend-go/internal/server/response_rule_headers_test.go:11"
+  },
+  {
+    "id": "gowave/internal/server/TestResponseRuleHeadersInvalidUpdateIsAtomic",
+    "package": "gowave/internal/server",
+    "name": "TestResponseRuleHeadersInvalidUpdateIsAtomic",
+    "source": "backend-go/internal/server/response_rule_headers_test.go:49"
+  },
+  {
+    "id": "gowave/internal/server/TestMissingComputedProfileReturnsNotFound",
+    "package": "gowave/internal/server",
+    "name": "TestMissingComputedProfileReturnsNotFound",
+    "source": "backend-go/internal/server/review_test.go:9"
+  },
+  {
+    "id": "gowave/internal/serviceunit/TestInstallerMigratesExistingUnitAndKeepsBoundary",
+    "package": "gowave/internal/serviceunit",
+    "name": "TestInstallerMigratesExistingUnitAndKeepsBoundary",
+    "source": "backend-go/internal/serviceunit/service_test.go:11"
+  },
+  {
+    "id": "gowave/internal/squads/TestExternalSquadRemovalPreservesOtherMemberships",
+    "package": "gowave/internal/squads",
+    "name": "TestExternalSquadRemovalPreservesOtherMemberships",
+    "source": "backend-go/internal/squads/handler_test.go:16"
+  },
+  {
+    "id": "gowave/internal/subscription/TestHTTPMatchesUpstream",
+    "package": "gowave/internal/subscription",
+    "name": "TestHTTPMatchesUpstream",
+    "source": "backend-go/internal/subscription/diff_test.go:233"
+  },
+  {
+    "id": "gowave/internal/subscription/TestHistoryWriterBatchesTrimsAndDrains",
+    "package": "gowave/internal/subscription",
+    "name": "TestHistoryWriterBatchesTrimsAndDrains",
+    "source": "backend-go/internal/subscription/history_test.go:11"
+  },
+  {
+    "id": "gowave/internal/subscription/TestRawProtectedAnnounceOnlyForDeviceLimit",
+    "package": "gowave/internal/subscription",
+    "name": "TestRawProtectedAnnounceOnlyForDeviceLimit",
+    "source": "backend-go/internal/subscription/review_test.go:15"
+  },
+  {
+    "id": "gowave/internal/subscription/TestSocketDropThroughContractStatus",
+    "package": "gowave/internal/subscription",
+    "name": "TestSocketDropThroughContractStatus",
+    "source": "backend-go/internal/subscription/review_test.go:45"
+  },
+  {
+    "id": "gowave/internal/subscription/TestResponseRuleHeaderFormats",
+    "package": "gowave/internal/subscription",
+    "name": "TestResponseRuleHeaderFormats",
+    "source": "backend-go/internal/subscription/subscription_test.go:83"
+  },
+  {
+    "id": "gowave/internal/subscription/TestResponseRulesFollowUpstream",
+    "package": "gowave/internal/subscription",
+    "name": "TestResponseRulesFollowUpstream",
+    "source": "backend-go/internal/subscription/subscription_test.go:110"
+  },
+  {
+    "id": "gowave/internal/subscription/TestBaseSubscriptionHeadersAndBody",
+    "package": "gowave/internal/subscription",
+    "name": "TestBaseSubscriptionHeadersAndBody",
+    "source": "backend-go/internal/subscription/subscription_test.go:145"
+  },
+  {
+    "id": "gowave/internal/subscription/TestHiddenHostsReachXrayJSONInjector",
+    "package": "gowave/internal/subscription",
+    "name": "TestHiddenHostsReachXrayJSONInjector",
+    "source": "backend-go/internal/subscription/subscription_test.go:195"
+  },
+  {
+    "id": "gowave/internal/subscription/TestHwidLimitIsAtomic",
+    "package": "gowave/internal/subscription",
+    "name": "TestHwidLimitIsAtomic",
+    "source": "backend-go/internal/subscription/subscription_test.go:213"
+  },
+  {
+    "id": "gowave/internal/subscription/TestEncryptedResponse",
+    "package": "gowave/internal/subscription",
+    "name": "TestEncryptedResponse",
+    "source": "backend-go/internal/subscription/subscription_test.go:262"
+  },
+  {
+    "id": "gowave/internal/subscription/TestBrowserAndInfo",
+    "package": "gowave/internal/subscription",
+    "name": "TestBrowserAndInfo",
+    "source": "backend-go/internal/subscription/subscription_test.go:286"
+  },
+  {
+    "id": "gowave/internal/subtpl/TestKeyDerivationMatchesUpstream",
+    "package": "gowave/internal/subtpl",
+    "name": "TestKeyDerivationMatchesUpstream",
+    "source": "backend-go/internal/subtpl/crypto_test.go:11"
+  },
+  {
+    "id": "gowave/internal/subtpl/TestSeededTemplatesMatchUpstream",
+    "package": "gowave/internal/subtpl",
+    "name": "TestSeededTemplatesMatchUpstream",
+    "source": "backend-go/internal/subtpl/defaults_test.go:15"
+  },
+  {
+    "id": "gowave/internal/subtpl/TestRenderMatchesUpstream",
+    "package": "gowave/internal/subtpl",
+    "name": "TestRenderMatchesUpstream",
+    "source": "backend-go/internal/subtpl/diff_test.go:147"
+  },
+  {
+    "id": "gowave/internal/subtpl/js/TestMatchesNode",
+    "package": "gowave/internal/subtpl/js",
+    "name": "TestMatchesNode",
+    "source": "backend-go/internal/subtpl/js/js_test.go:13"
+  },
+  {
+    "id": "gowave/internal/subtpl/ojson/TestMatchesLodashAndJSONStringify",
+    "package": "gowave/internal/subtpl/ojson",
+    "name": "TestMatchesLodashAndJSONStringify",
+    "source": "backend-go/internal/subtpl/ojson/ojson_test.go:11"
+  },
+  {
+    "id": "gowave/internal/subtpl/ojson/TestSpreadKeepsExistingPosition",
+    "package": "gowave/internal/subtpl/ojson",
+    "name": "TestSpreadKeepsExistingPosition",
+    "source": "backend-go/internal/subtpl/ojson/ojson_test.go:60"
+  },
+  {
+    "id": "gowave/internal/subtpl/TestDumpYAMLMatchesJsYaml",
+    "package": "gowave/internal/subtpl",
+    "name": "TestDumpYAMLMatchesJsYaml",
+    "source": "backend-go/internal/subtpl/yaml_dump_test.go:13"
+  },
+  {
+    "id": "gowave/internal/system/TestSettingsDiscardRemovedOAuthProvider",
+    "package": "gowave/internal/system",
+    "name": "TestSettingsDiscardRemovedOAuthProvider",
+    "source": "backend-go/internal/system/oauth_removed_test.go:13"
+  },
+  {
+    "id": "gowave/internal/system/TestRestoreRepairsSequencesWithMixedPrimaryKeys",
+    "package": "gowave/internal/system",
+    "name": "TestRestoreRepairsSequencesWithMixedPrimaryKeys",
+    "source": "backend-go/internal/system/restore_test.go:12"
+  },
+  {
+    "id": "gowave/internal/system/TestExtractTarGzKeepsEntriesInside",
+    "package": "gowave/internal/system",
+    "name": "TestExtractTarGzKeepsEntriesInside",
+    "source": "backend-go/internal/system/selfupdate_test.go:48"
+  },
+  {
+    "id": "gowave/internal/system/TestReleaseChecksums",
+    "package": "gowave/internal/system",
+    "name": "TestReleaseChecksums",
+    "source": "backend-go/internal/system/selfupdate_test.go:79"
+  },
+  {
+    "id": "gowave/internal/system/TestRootOnlyWritableRejectsServiceAccountFiles",
+    "package": "gowave/internal/system",
+    "name": "TestRootOnlyWritableRejectsServiceAccountFiles",
+    "source": "backend-go/internal/system/selfupdate_test.go:106"
+  },
+  {
+    "id": "gowave/internal/system/TestApplyUpdateRequestsRootHelper",
+    "package": "gowave/internal/system",
+    "name": "TestApplyUpdateRequestsRootHelper",
+    "source": "backend-go/internal/system/selfupdate_test.go:122"
+  },
+  {
+    "id": "gowave/internal/system/TestReadRequestedChannelRejectsUntrustedRequests",
+    "package": "gowave/internal/system",
+    "name": "TestReadRequestedChannelRejectsUntrustedRequests",
+    "source": "backend-go/internal/system/selfupdate_test.go:167"
+  },
+  {
+    "id": "gowave/internal/system/TestInstallerCommandPassesChannelToScript",
+    "package": "gowave/internal/system",
+    "name": "TestInstallerCommandPassesChannelToScript",
+    "source": "backend-go/internal/system/selfupdate_test.go:200"
+  },
+  {
+    "id": "gowave/internal/system/TestGetStatsCountsUsersByStatus",
+    "package": "gowave/internal/system",
+    "name": "TestGetStatsCountsUsersByStatus",
+    "source": "backend-go/internal/system/stats_test.go:18"
+  },
+  {
+    "id": "gowave/internal/system/TestReadProcMeminfo",
+    "package": "gowave/internal/system",
+    "name": "TestReadProcMeminfo",
+    "source": "backend-go/internal/system/stats_test.go:93"
+  },
+  {
+    "id": "gowave/internal/system/TestDockerUpdateCommandUsesComposeDir",
+    "package": "gowave/internal/system",
+    "name": "TestDockerUpdateCommandUsesComposeDir",
+    "source": "backend-go/internal/system/stats_test.go:108"
+  },
+  {
+    "id": "gowave/internal/system/TestGetStatsConcurrentRequestsShareResult",
+    "package": "gowave/internal/system",
+    "name": "TestGetStatsConcurrentRequestsShareResult",
+    "source": "backend-go/internal/system/stats_test.go:124"
+  },
+  {
+    "id": "gowave/internal/users/TestLifecycleRevokeAndTransactionalOutbox",
+    "package": "gowave/internal/users",
+    "name": "TestLifecycleRevokeAndTransactionalOutbox",
+    "source": "backend-go/internal/users/lifecycle_test.go:16"
+  },
+  {
+    "id": "gowave/internal/users/TestUpdateLoadsOnceAndKeepsPreviousCredential",
+    "package": "gowave/internal/users",
+    "name": "TestUpdateLoadsOnceAndKeepsPreviousCredential",
+    "source": "backend-go/internal/users/lifecycle_test.go:80"
+  },
+  {
+    "id": "gowave/internal/users/TestGetStreamTelegramIdFilter",
+    "package": "gowave/internal/users",
+    "name": "TestGetStreamTelegramIdFilter",
+    "source": "backend-go/internal/users/users_test.go:30"
+  },
+  {
+    "id": "gowave/internal/users/TestActiveInternalSquads",
+    "package": "gowave/internal/users",
+    "name": "TestActiveInternalSquads",
+    "source": "backend-go/internal/users/users_test.go:70"
+  },
+  {
+    "id": "gowave/internal/users/TestBulkExtendExpirationDate",
+    "package": "gowave/internal/users",
+    "name": "TestBulkExtendExpirationDate",
+    "source": "backend-go/internal/users/users_test.go:108"
+  },
+  {
+    "id": "gowave/internal/users/TestHandlersIntegration",
+    "package": "gowave/internal/users",
+    "name": "TestHandlersIntegration",
+    "source": "backend-go/internal/users/users_test.go:141"
+  },
+  {
+    "id": "gowave/internal/users/TestBulkHandlersApply",
+    "package": "gowave/internal/users",
+    "name": "TestBulkHandlersApply",
+    "source": "backend-go/internal/users/users_test.go:187"
+  }
+]

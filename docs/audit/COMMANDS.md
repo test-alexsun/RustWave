@@ -1,0 +1,174 @@
+# Stage 01 command evidence
+
+Local Docker execution, archived pinned source; `$ROOT` = repository absolute path. Arguments are shown for audit, not as a shell-escaped copy/paste command; run.py supplies argv directly. Network access is allowed only for dependency/build acquisition, test containers use the isolated internal network. Original upstream source is not edited.
+
+| ID | UTC start | Exit | Seconds | argv |
+| --- | --- | --- | --- | --- |
+| network | 2026-11-02T08:37:14.244564+00:00 | 0 | 0.378 | C:\Program Files\Docker\Docker\resources\bin\docker.exe network create --internal rustwave-audit01 |
+| pg-start | 2026-11-02T08:37:14.625768+00:00 | 0 | 2.297 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run -d --name rustwave-audit01-pg --network rustwave-audit01 --memory 512m --cpus 1 --tmpfs /var/lib/postgresql:rw,size=400m -e POSTGRES_HOST_AUTH_METHOD=trust -e POSTGRES_USER=audit -e POSTGRES_DB=audit postgres:18 |
+| go-version | 2026-11-02T08:37:16.924792+00:00 | 0 | 3.317 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go version |
+| go-download | 2026-11-02T08:37:20.242715+00:00 | 0 | 455.067 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go mod download |
+| go-list | 2026-11-02T08:44:55.311767+00:00 | 0 | 319.295 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --network rustwave-audit01 --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go test -list . ./... |
+| go-vet | 2026-11-02T08:50:14.607177+00:00 | 0 | 58.718 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --network rustwave-audit01 --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go vet ./... |
+| go-fmt | 2026-11-02T08:51:13.326508+00:00 | 0 | 4.312 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --network rustwave-audit01 --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm gofmt -l . |
+| go-test-sqlite | 2026-11-02T08:51:17.638785+00:00 | 1 | 303.92 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm -e GOWAVE_PROBE_OUT=/evidence/probe-sqlite.json --network rustwave-audit01 --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go test -json -count=1 -p=2 -race ./... |
+| go-test-postgres | 2026-11-02T08:56:21.563375+00:00 | 1 | 125.601 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm -e GOWAVE_PROBE_OUT=/evidence/probe-postgres.json -e GOWAVE_TEST_POSTGRES=postgres://audit@rustwave-audit01-pg:5432/audit?sslmode=disable --network rustwave-audit01 --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go test -json -count=1 -p=2 ./... |
+| go-build | 2026-11-02T08:58:27.164900+00:00 | 0 | 141.736 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --network rustwave-audit01 --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm sh -c CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /evidence/gowave ./cmd/server |
+| bun-install | 2026-11-02T09:00:48.904299+00:00 | 0 | 445.421 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 bun install --frozen-lockfile |
+| frontend-check | 2026-11-02T09:08:14.335280+00:00 | 1 | 110.858 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 bun run check |
+| frontend-typecheck | 2026-11-02T09:10:05.194895+00:00 | 1 | 10.602 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 bun run typecheck |
+| frontend-test | 2026-11-02T09:10:15.808247+00:00 | 0 | 7.584 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 bun run test |
+| frontend-build | 2026-11-02T09:10:23.393466+00:00 | 0 | 240.598 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 bun run build |
+| branding | 2026-11-02T09:14:23.993375+00:00 | 1 | 1.273 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bun scripts/check-branding.cjs |
+| installer | 2026-11-02T09:14:25.270686+00:00 | 2 | 1.896 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bash -n install.sh && bash scripts/tests/installer.sh |
+| response-headers | 2026-11-02T09:14:27.167864+00:00 | 0 | 9.587 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bun scripts/tests/response-rule-headers.cjs |
+| contract-export | 2026-11-02T09:14:36.757610+00:00 | 1 | 8.555 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bun scripts/export-contract.cjs > /evidence/commands.json.export && diff -u backend-go/internal/contracts/commands.json /evidence/commands.json.export && bun scripts/export-contract.cjs --openapi > /evidence/openapi.json.export && cmp backend-go/internal/contracts/openapi.json /evidence/openapi.json.export |
+| contract-probes | 2026-11-02T09:14:45.317830+00:00 | 0 | 27.535 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 sh -c cd /src && for f in /evidence/probe-sqlite.json /evidence/probe-sqlite-mutations.json /evidence/probe-postgres.json /evidence/probe-postgres-mutations.json; do bun scripts/validate-contract.cjs "$f" &#124;&#124; exit; done |
+| browser | 2026-11-02T09:15:12.854360+00:00 | 124 | 1800.17 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source:/src -v $ROOT\docs\benchmarks\raw:/evidence -w /src/frontend oven/bun:1.4.2 sh -c cd /src/frontend && bun run test:browser |
+| image-build | 2026-11-02T09:45:13.037997+00:00 | 0 | 499.557 | C:\Program Files\Docker\Docker\resources\bin\docker.exe build --progress=plain --build-arg COMMIT_SHA=d709bad01dc0ceacb20012a3afdf528eddfd061f -t rustwave-audit01:upstream $ROOT\docs\benchmarks\raw\source |
+| image-inspect | 2026-11-02T09:53:32.621898+00:00 | 0 | 1.311 | C:\Program Files\Docker\Docker\resources\bin\docker.exe image inspect rustwave-audit01:upstream --format {{json .}} |
+| pg-stop | 2026-11-02T09:53:34.166901+00:00 | 0 | 6.437 | C:\Program Files\Docker\Docker\resources\bin\docker.exe rm -f rustwave-audit01-pg |
+| network-remove | 2026-11-02T09:53:40.606006+00:00 | 0 | 1.966 | C:\Program Files\Docker\Docker\resources\bin\docker.exe network rm rustwave-audit01 |
+| lf-network | 2026-11-02T12:48:25.029973+00:00 | 0 | 0.361 | C:\Program Files\Docker\Docker\resources\bin\docker.exe network create --internal rustwave-audit01-lf |
+| lf-pg-start | 2026-11-02T12:48:25.392381+00:00 | 0 | 1.924 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-pg-start -d --network rustwave-audit01-lf --network-alias pg --memory 512m --cpus 1 --tmpfs /var/lib/postgresql:rw,size=400m -e POSTGRES_HOST_AUTH_METHOD=trust -e POSTGRES_USER=audit -e POSTGRES_DB=audit postgres:18 |
+| lf-go-fmt | 2026-11-02T12:48:27.317670+00:00 | 0 | 4.501 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-fmt --rm --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm gofmt -l . |
+| lf-go-fmt-gate | 2026-11-02T12:48:31.820193+00:00 | 0 | 2.845 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-fmt-gate --rm --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm sh -c files=$(gofmt -l .); test -z "$files" |
+| lf-go-fmt-diff | 2026-11-02T12:48:34.666648+00:00 | 0 | 2.011 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-fmt-diff --rm --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm gofmt -d . |
+| lf-go-vet | 2026-11-02T12:48:36.679222+00:00 | 0 | 78.985 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-vet --rm --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go vet ./... |
+| lf-go-test-sqlite | 2026-11-02T12:49:55.666066+00:00 | 0 | 304.697 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-test-sqlite --rm -e GOWAVE_PROBE_OUT=/evidence/lf-probe-sqlite.json --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go test -json -count=1 -p=2 -race ./... |
+| tools-build | 2026-11-02T12:51:09.668691+00:00 | 0 | 668.581 | C:\Program Files\Docker\Docker\resources\bin\docker.exe build -f $ROOT\tools\audit-stage01\Dockerfile.tools -t rustwave-audit01:tools $ROOT\tools\audit-stage01 |
+| lf-go-test-postgres | 2026-11-02T12:55:00.365686+00:00 | 0 | 279.154 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-test-postgres --rm -e GOWAVE_PROBE_OUT=/evidence/lf-probe-postgres.json -e GOWAVE_TEST_POSTGRES=postgres://audit@pg:5432/audit?sslmode=disable --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go test -json -count=1 -p=2 ./... |
+| lf-go-nonroot | 2026-11-02T12:59:39.521004+00:00 | 0 | 42.793 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-nonroot --rm --user 10001:10001 --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm go test -json -count=1 ./internal/system -run ^TestRootOnlyWritableRejectsServiceAccountFiles$ |
+| lf-go-build | 2026-11-02T13:00:22.315589+00:00 | 0 | 165.266 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-go-build --rm --network rustwave-audit01-lf --memory 2300m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -e TZ=UTC -e LC_ALL=C.UTF-8 -e GOMAXPROCS=2 -e GOCACHE=/evidence/go-cache -e GOMODCACHE=/evidence/go-mod -w /src/backend-go golang:1.27.3-bookworm sh -c CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /evidence/lf-gowave ./cmd/server |
+| browser-versions | 2026-11-02T13:02:18.256910+00:00 | 0 | 21.612 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-browser-versions --rm --memory 1400m --cpus 1 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src rustwave-audit01:tools sh -c bun --version && chromium --version && git --version |
+| lf-branding | 2026-11-02T13:02:39.871097+00:00 | 0 | 123.626 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-branding --rm --memory 1400m --cpus 1 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src rustwave-audit01:tools sh -c git init -q && git config --local core.autocrlf false && git add . && bun scripts/check-branding.cjs |
+| lf-frontend-check | 2026-11-02T13:03:07.589286+00:00 | 0 | 154.466 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-frontend-check --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 bun run check |
+| lf-browser | 2026-11-02T13:04:43.497610+00:00 | 1 | 111.077 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-browser --rm --memory 1400m --cpus 1 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src rustwave-audit01:tools sh -c cd frontend && bun run test:browser |
+| lf-frontend-typecheck | 2026-11-02T13:05:42.058725+00:00 | 0 | 332.763 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-frontend-typecheck --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 bun run typecheck |
+| lf-frontend-test | 2026-11-02T13:11:14.827667+00:00 | 0 | 3.481 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-frontend-test --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 bun run test |
+| lf-frontend-build | 2026-11-02T13:11:18.310853+00:00 | 0 | 188.769 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-frontend-build --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 bun run build |
+| lf-installer | 2026-11-02T13:14:27.083406+00:00 | 0 | 8.932 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-installer --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bash -n install.sh && bash scripts/tests/installer.sh |
+| lf-response-headers | 2026-11-02T13:14:36.017221+00:00 | 0 | 15.687 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-response-headers --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bun scripts/tests/response-rule-headers.cjs |
+| lf-contract-export | 2026-11-02T13:14:51.708683+00:00 | 0 | 17.814 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-contract-export --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 sh -c cd /src && bun scripts/export-contract.cjs > /evidence/lf-commands.json.export && diff -u backend-go/internal/contracts/commands.json /evidence/lf-commands.json.export && bun scripts/export-contract.cjs --openapi > /evidence/lf-openapi.json.export && cmp backend-go/internal/contracts/openapi.json /evidence/lf-openapi.json.export |
+| lf-contract-probes | 2026-11-02T13:15:09.524635+00:00 | 0 | 24.29 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-contract-probes --rm --memory 1500m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw:/evidence -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend oven/bun:1.4.2 sh -c cd /src && for f in /evidence/lf-probe-sqlite.json /evidence/lf-probe-sqlite-mutations.json /evidence/lf-probe-postgres.json /evidence/lf-probe-postgres-mutations.json; do bun scripts/validate-contract.cjs "$f" &#124;&#124; exit; done |
+| lf-image-build | 2026-11-02T13:15:33.816442+00:00 | 0 | 525.387 | C:\Program Files\Docker\Docker\resources\bin\docker.exe build --progress=plain --build-arg COMMIT_SHA=d709bad01dc0ceacb20012a3afdf528eddfd061f -t rustwave-audit01:upstream-lf $ROOT\docs\benchmarks\raw\source-lf |
+| lf-image-inspect | 2026-11-02T13:24:19.206174+00:00 | 0 | 0.316 | C:\Program Files\Docker\Docker\resources\bin\docker.exe image inspect rustwave-audit01:upstream-lf --format {{json .}} |
+| lf-pg-stop | 2026-11-02T13:24:19.524651+00:00 | 0 | 1.984 | C:\Program Files\Docker\Docker\resources\bin\docker.exe rm -f rustwave-audit01-lf-pg-start |
+| lf-network-remove | 2026-11-02T13:24:21.514135+00:00 | 0 | 0.528 | C:\Program Files\Docker\Docker\resources\bin\docker.exe network rm rustwave-audit01-lf |
+| lf-browser-idle | 2026-11-03T02:04:42.341580+00:00 | 0 | 79.697 | C:\Program Files\Docker\Docker\resources\bin\docker.exe run --name rustwave-audit01-lf-browser-idle --rm --network none --memory 2000m --cpus 2 -v $ROOT\docs\benchmarks\raw\source-lf:/src -v $ROOT\docs\benchmarks\raw\source\frontend\node_modules:/src/frontend/node_modules -w /src/frontend rustwave-audit01:tools bun run test:browser |
+
+## Raw evidence hashes
+
+| File | SHA-256 |
+| --- | --- |
+| branding.stderr | af3e90d4d4a7914251977af14dab59830c3856966818fbcd68dab03a90c009c1 |
+| branding.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| browser.stderr | 224b6cff260afa2be41844242962daf5d5bed9fdcb4a641b9d3d1224e08d1b8e |
+| browser.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| bun-install.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| bun-install.stdout | 4b35b31fd63a934a4258b3c12da050f99a85a8841e46a0894cee9e0ad2b1fb0f |
+| contract-export.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| contract-export.stdout | dda7d8eb2059cdbfcd01f3ec64b0240130b8a6e938ac1cc619afad72ba27e973 |
+| contract-probes.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| contract-probes.stdout | 86450ddd8490682235024465b5c1fe6b7a4c69b30a5191fead5034dd79ccfec5 |
+| extra/browser-versions.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| extra/browser-versions.stdout | 1fb8fb72834ab749298450ef040fca92afcefddbeab46a7fc04c87ef2efadf8b |
+| extra/lf-branding.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| extra/lf-branding.stdout | 3d05a5d6c9f2ccbb9caff862285842bf6aa1f655fae69d550813ada92ae18008 |
+| extra/lf-browser-idle.stderr | 224b6cff260afa2be41844242962daf5d5bed9fdcb4a641b9d3d1224e08d1b8e |
+| extra/lf-browser-idle.stdout | dca362014265b50a511c55c78013af45fdf72135fe9db7ec0fa36fda98789d03 |
+| extra/lf-browser.stderr | 77bb59d6288bb5099340da27301852fe86a1f88ebb3b70e0ae623115dd7de2c6 |
+| extra/lf-browser.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| extra/tools-build.stderr | a81d86d6a8555c471db6e2b25581d08161f60a2c9f9e238862dcfb8213396607 |
+| extra/tools-build.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| frontend-build.stderr | a7964a69669bb4bf9c844571c983769f22be8f903b2462da0aa606904959d334 |
+| frontend-build.stdout | 6324068a9023dfebdeee852ba4045946574531f19c231c01dbaee98a2fba481d |
+| frontend-check.stderr | 774c940308cda990cdb28bef3d7893903446972b7cd7a0197d587913e5a78f20 |
+| frontend-check.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| frontend-test.stderr | 20b5579a43498f082876ce14550a629c318a36f7fde1c2050c7921138d53e700 |
+| frontend-test.stdout | 6043908c8d26d62698476b88f737f39d5d3e91008d4155a81730902f5a37479c |
+| frontend-typecheck.stderr | 4ac88613601ca54bcb1f303a31fc2623d66cd95d7521205aba3da36bc1770acd |
+| frontend-typecheck.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-build.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-build.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-download.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-download.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-fmt.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-fmt.stdout | 6f3eda3a1570e5f7fb078752b8fce100d1a2d027bed5182f3e002976f7014da3 |
+| go-list.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-list.stdout | 5d0191a6fcd072b1769a1794507b54a450069b7bb98bf95cfe93755eedc86b2c |
+| go-test-postgres.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-test-postgres.stdout | b70bceb5f9e37aa664cf2e9057523bab352203cd00734cd1ece454ee2c92e7ed |
+| go-test-sqlite.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-test-sqlite.stdout | 8389871771e85fbc46e05acff00ea81ee768f87b87c1caf0ed26d9ef61f4f57a |
+| go-version.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-version.stdout | 5707bf75dd54b4fdd5ac209444d48c9c4179ebf8510f80e2f7293dfbedc1012b |
+| go-vet.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| go-vet.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| image-build.stderr | 407eee76a1cc71ad639baeebc2418bead41cd5943a8d872c64faf14dd2704de2 |
+| image-build.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| image-inspect.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| image-inspect.stdout | 6aeb63bfc0b3824f218b463ce1344ecfbdbc60d6ea8181166c59f17daf571648 |
+| installer.stderr | 3609c37bd01ffa683c5b727d9a348cd08693b726ee89ea82bd6a38201408bf4e |
+| installer.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-contract-export.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-contract-export.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-contract-probes.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-contract-probes.stdout | 86450ddd8490682235024465b5c1fe6b7a4c69b30a5191fead5034dd79ccfec5 |
+| lf-frontend-build.stderr | a2df14513827e4f62644b948e51ffe5d1eba3c3367a7a847139232245511496b |
+| lf-frontend-build.stdout | 6adca99163541e52afeff27867967a824dba8ea47d8bb46913fbf64307630685 |
+| lf-frontend-check.stderr | 08bb0e19d274f5c0e6a7bd251c977e92b6a43bb5030b60005ff81db1b14a77ac |
+| lf-frontend-check.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-frontend-test.stderr | e6f72f5f183c8648745bd9aa4fa72f23ddacc0a545a4fa73c0a06c12a6f254e8 |
+| lf-frontend-test.stdout | 6043908c8d26d62698476b88f737f39d5d3e91008d4155a81730902f5a37479c |
+| lf-frontend-typecheck.stderr | 306dab68ba6307a37d47023c4661c1f28eb35143c68251cb3758e41942d5f980 |
+| lf-frontend-typecheck.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-build.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-build.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-fmt-diff.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-fmt-diff.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-fmt-gate.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-fmt-gate.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-fmt.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-fmt.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-nonroot.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-nonroot.stdout | 1910b01b971ea4e26da65916a79bd85c1185f262df27654c457895ca39c3532b |
+| lf-go-test-postgres.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-test-postgres.stdout | 8b9fff76913403650f526df9e7095cd6b83614004e1aabd454ca4c797857bf4d |
+| lf-go-test-sqlite.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-test-sqlite.stdout | 9a0d6a7f947f5f377c2bdbda7da8bda3291518b85e4c32570891c74606f69907 |
+| lf-go-vet.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-go-vet.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-image-build.stderr | d49c45dde4f92fec324735e974ab3f92b28bd1f9b109c4f33f10c74b8f779ce8 |
+| lf-image-build.stdout | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-image-inspect.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-image-inspect.stdout | f683ba8e70819f406b18d5f5182ad65797e865d8f9d97cfb07e23b05d6f3f83f |
+| lf-installer.stderr | 7b7b0cc3eab9e848a8c6d11506083df1dad1c27a1787b34b8f1440d5f0a093e6 |
+| lf-installer.stdout | bd5bf182136066fa04fc5e61cd78d90f21a795b050bdca7735be2dd9a0faeedb |
+| lf-network-remove.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-network-remove.stdout | 10117dee1218a0dd168bb37a3548a7d133a2919327c759d6b16f4c4466d76584 |
+| lf-network.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-network.stdout | 446359c3861dab4f55aa50d0a87a6da8558fd890fbcd3ecfc218c443358ae01d |
+| lf-pg-start.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-pg-start.stdout | e084d6f4c5b9f0d20dbed06c922010c78c1664ee4eb25f9f679e9bfcdfb7cd2b |
+| lf-pg-stop.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-pg-stop.stdout | c760f140a8a7da3500ca67db0f429618402305e47c89056baf0f2190a094389f |
+| lf-response-headers.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| lf-response-headers.stdout | 63d949cf2afdb9cb5c95c1a63791b7d97396962465b6146f2b931f3d0c599f9a |
+| network-remove.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| network-remove.stdout | 946541dfdc99680ab78622b31998b02151f9b73370c49ccef47dee1f94db875d |
+| network.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| network.stdout | f754e1b717b8bc6fbfa969fa96101ab57c330eab77dc5a55b18cbc00d8eb235f |
+| pg-start.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| pg-start.stdout | a48ceac6af20cded26665851ba76c747d3ae4ba74b1229de336f9a43c748ac57 |
+| pg-stop.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| pg-stop.stdout | e5de57965a0e8bed2a9647252178652dc3e2348b2fbf78ed54e02612dbd9fcb5 |
+| response-headers.stderr | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| response-headers.stdout | 63d949cf2afdb9cb5c95c1a63791b7d97396962465b6146f2b931f3d0c599f9a |
+
+## Final continuation evidence
+
+
+Baseline command: `python tools/audit-stage01/benchmark.py`, final exit 0 after two exit-1 harness attempts; see stage report for exact errors. Final raw baseline SHA-256: `8a78feef5472678d6d8fce2f8c97d61fd8f44ec22c62de480c6fd833635ee657`. All six trial counters and UTC start are in [baseline measurements](baseline-measurements.json).
+
+Buildx history logs: NOT_RUN (previous auto-review/usage-limit rejection); no execution exit code exists. Saved build and image-inspect records above are independent executed evidence.

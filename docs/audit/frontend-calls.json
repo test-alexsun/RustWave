@@ -1,0 +1,3545 @@
+[
+  {
+    "id": "FE-001",
+    "source": "frontend/src/app/i18n/plugins.ts:41",
+    "hook": "localeBackend",
+    "expression": "fetch(`${path}?v=${encodeURIComponent(__BUILD_ID__)}`).then(\n            async (response) => {\n                if (!response.ok) {\n                    callback(\n                        new Error(`Locale request failed: ${response.status}`),\n                        response.status >= 500\n                    )\n                    return\n             ",
+    "command": "",
+    "method": "MANUAL",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/app/i18n/i18n.ts"
+    ]
+  },
+  {
+    "id": "FE-002",
+    "source": "frontend/src/entities/dashboard/updates-store/use-updates-store.ts:58",
+    "hook": "useUpdatesStore",
+    "expression": "axios.get<{\n                                totalStars: number\n                            }>('https://ungh.cc/stars/aaaSaZaN/gowave')",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": []
+  },
+  {
+    "id": "FE-003",
+    "source": "frontend/src/entities/dashboard/updates-store/use-updates-store.ts:62",
+    "hook": "useUpdatesStore",
+    "expression": "axios.get<{\n                                release: {\n                                    tag: string\n                                }\n                            }>('https://ungh.cc/repos/aaaSaZaN/gowave/releases/latest')",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": []
+  },
+  {
+    "id": "FE-004",
+    "source": "frontend/src/features/dashboard/config-profiles/monaco-setup/monaco-setup.feature.tsx:200",
+    "hook": "MonacoSetupFeature",
+    "expression": "axios.get(jsonSchemaUrl)\n            const schema = response.data",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/config-editor/config-editor.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-005",
+    "source": "frontend/src/features/dashboard/config-profiles/monaco-setup/monaco-setup.feature.tsx:296",
+    "hook": "MonacoSetupSnippetsFeature",
+    "expression": "axios.get(jsonSchemaUrl)\n            const schema = await response.data",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/snippets/create-snippet.modal.tsx",
+      "frontend/src/widgets/dashboard/config-profiles/snippets/edit-snippet.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-006",
+    "source": "frontend/src/features/dashboard/config-profiles/monaco-setup/monaco-setup.feature.tsx:625",
+    "hook": "MonacoSetupHostJsonFieldsFeature",
+    "expression": "axios.get<IXraySchema>(jsonSchemaUrl)\n            const { definitions = {} } = response.data",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/ui/forms/hosts/base-host-form/json-fields/host-json-fields.tsx"
+    ]
+  },
+  {
+    "id": "FE-007",
+    "source": "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx:84",
+    "hook": "CreateHostDrawer",
+    "expression": "instance.post('/api/hosts/preview', {\n                host: {\n                    remark: values.remark || 'PreviewHost',\n                    address: values.address || 'example.com',\n                    port: Number(values.port) || 443,\n                    path: values.path || '',\n                    sni: values.sni || values.address || 'example.c",
+    "command": "",
+    "method": "POST",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/hosts/index.ts",
+      "frontend/src/shared/_modals/modal-registry.ts"
+    ]
+  },
+  {
+    "id": "FE-008",
+    "source": "frontend/src/shared/_modals/nodes/node-logs-modal/node-logs.modal.tsx:50",
+    "hook": "NodeLogsModal",
+    "expression": "instance.get<{ response: { logs: string[] } }>(\n                `/api/nodes/${node.uuid}/logs`,\n                {\n                    params: {\n                        type: activeTab,\n                        lines: Number(linesCount) || 500\n                    }\n                }\n            )\n            return res.data.response.logs || []\n      ",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/nodes/index.ts"
+    ]
+  },
+  {
+    "id": "FE-009",
+    "source": "frontend/src/shared/_modals/nodes/node-ssh-terminal/session/ssh-connection.ts:56",
+    "hook": "ssh-connection",
+    "expression": "new WebSocket(this.options.url, [\n            SSH_TERMINAL_WS_PROTOCOL,\n            this.options.ticket,\n            this.options.token\n        ])\n        socket.binaryType = 'arraybuffer'\n        this.socket = socket",
+    "command": "",
+    "method": "MANUAL",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/entities/ssh-vault/ssh-private-key.ts",
+      "frontend/src/shared/_modals/nodes/node-ssh-terminal/session/connection-log.screen.tsx",
+      "frontend/src/shared/_modals/nodes/node-ssh-terminal/session/host-key.overlay.tsx",
+      "frontend/src/shared/_modals/nodes/node-ssh-terminal/session/ssh-session.tab.tsx"
+    ]
+  },
+  {
+    "id": "FE-010",
+    "source": "frontend/src/shared/_modals/nodes/update-node-modal/update-node.modal.tsx:148",
+    "hook": "UpdateNodeModal",
+    "expression": "instance.get<{ response: IUpdatesCheckResponse }>(\n                `/api/nodes/${node.uuid}/updates`,\n                { params: { repo: NODE_REPOSITORY } }\n            )\n            return res.data.response\n        },\n        enabled: activeTab === 'node',\n        refetchOnWindowFocus: false\n    })",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/nodes/index.ts"
+    ]
+  },
+  {
+    "id": "FE-011",
+    "source": "frontend/src/shared/_modals/nodes/update-node-modal/update-node.modal.tsx:161",
+    "hook": "UpdateNodeModal",
+    "expression": "instance.get<{ response: IUpdatesCheckResponse }>(\n                `/api/nodes/${node.uuid}/updates`,\n                { params: { repo: XRAY_REPOSITORY } }\n            )\n            return res.data.response\n        },\n        enabled: activeTab === 'core',\n        refetchOnWindowFocus: false\n    })",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/nodes/index.ts"
+    ]
+  },
+  {
+    "id": "FE-012",
+    "source": "frontend/src/shared/_modals/nodes/update-node-modal/update-node.modal.tsx:267",
+    "hook": "UpdateNodeModal",
+    "expression": "instance.post(`/api/nodes/${node.uuid}/updates/apply`, {\n                    type: 'node',\n                    repo: NODE_REPOSITORY,\n                    version: nodeTargetVersion\n                })\n                return res.data\n            }",
+    "command": "",
+    "method": "POST",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/nodes/index.ts"
+    ]
+  },
+  {
+    "id": "FE-013",
+    "source": "frontend/src/shared/_modals/nodes/update-node-modal/update-node.modal.tsx:280",
+    "hook": "UpdateNodeModal",
+    "expression": "instance.post(`/api/nodes/${node.uuid}/updates/apply`, {\n                    type: 'core',\n                    downloadUrl\n                })\n                return res.data\n            }",
+    "command": "",
+    "method": "POST",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/nodes/index.ts"
+    ]
+  },
+  {
+    "id": "FE-014",
+    "source": "frontend/src/shared/_modals/nodes/update-node-modal/update-node.modal.tsx:289",
+    "hook": "UpdateNodeModal",
+    "expression": "instance.post(`/api/nodes/${node.uuid}/updates/apply`, {\n                type: 'core',\n                repo: XRAY_REPOSITORY,\n                version: coreTargetVersion\n            })\n            return res.data\n        }\n    })",
+    "command": "",
+    "method": "POST",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/nodes/index.ts"
+    ]
+  },
+  {
+    "id": "FE-015",
+    "source": "frontend/src/shared/_modals/universal/help-drawer/help-drawer.shared.tsx:44",
+    "hook": "HelpDrawerShared",
+    "expression": "fetch(resolveDocsUrl(screen, i18n.language))\n            .then((res) => {\n                if (!res.ok) throw new Error(t('help-drawer.shared.failed-to-load-documentation'))\n                return res.text()\n            })\n            .then((text) => {\n                setContent(text)\n            })\n            .catch((err) => {\n                setE",
+    "command": "",
+    "method": "MANUAL",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/modal-registry.ts",
+      "frontend/src/shared/_modals/universal/index.ts"
+    ]
+  },
+  {
+    "id": "FE-016",
+    "source": "frontend/src/shared/api/hooks/api-tokens/api-tokens.mutation.hooks.ts:11",
+    "hook": "useCreateApiToken",
+    "expression": "CreateApiTokenCommand.TSQ_url",
+    "command": "CreateApiTokenCommand",
+    "method": "POST",
+    "path": "/api/tokens",
+    "schemas": [
+      "CreateApiTokenCommand.RequestBodySchema",
+      "CreateApiTokenCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/gowave-settings/api-tokens-card/modals/create-api-token-modal.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-017",
+    "source": "frontend/src/shared/api/hooks/api-tokens/api-tokens.mutation.hooks.ts:35",
+    "hook": "useDeleteApiToken",
+    "expression": "DeleteApiTokenCommand.TSQ_url",
+    "command": "DeleteApiTokenCommand",
+    "method": "DELETE",
+    "path": "/api/tokens/:uuid",
+    "schemas": [
+      "DeleteApiTokenCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/gowave-settings/api-tokens-card/api-token-item.tsx"
+    ]
+  },
+  {
+    "id": "FE-018",
+    "source": "frontend/src/shared/api/hooks/api-tokens/api-tokens.mutation.hooks.ts:58",
+    "hook": "useIssueOtt",
+    "expression": "GetOttCommand.TSQ_url",
+    "command": "GetOttCommand",
+    "method": "POST",
+    "path": "/api/tokens/ott",
+    "schemas": [
+      "GetOttCommand.ResponseSchema"
+    ],
+    "consumers": []
+  },
+  {
+    "id": "FE-019",
+    "source": "frontend/src/shared/api/hooks/api-tokens/api-tokens.query.hooks.ts:17",
+    "hook": "useGetApiTokens",
+    "expression": "GetApiTokensCommand.TSQ_url",
+    "command": "GetApiTokensCommand",
+    "method": "GET",
+    "path": "/api/tokens",
+    "schemas": [
+      "GetApiTokensCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/gowave-settings/connectors/gowave-settings.page.connector.tsx",
+      "frontend/src/widgets/gowave-settings/api-tokens-card/api-tokens-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-020",
+    "source": "frontend/src/shared/api/hooks/api-tokens/api-tokens.query.hooks.ts:28",
+    "hook": "useGetScopes",
+    "expression": "GetApiTokenScopesCommand.TSQ_url",
+    "command": "GetApiTokenScopesCommand",
+    "method": "GET",
+    "path": "/api/tokens/scopes",
+    "schemas": [
+      "GetApiTokenScopesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/gowave-settings/connectors/gowave-settings.page.connector.tsx",
+      "frontend/src/widgets/gowave-settings/api-tokens-card/modals/create-api-token-modal.widget.tsx",
+      "frontend/src/widgets/gowave-settings/api-tokens-card/modals/view-api-token-modal.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-021",
+    "source": "frontend/src/shared/api/hooks/auth/auth.hooks.ts:16",
+    "hook": "useLogin",
+    "expression": "LoginCommand.TSQ_url",
+    "command": "LoginCommand",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "schemas": [
+      "LoginCommand.RequestBodySchema",
+      "LoginCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/auth/login-form/login-form.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-022",
+    "source": "frontend/src/shared/api/hooks/auth/auth.hooks.ts:35",
+    "hook": "useRegister",
+    "expression": "RegisterCommand.TSQ_url",
+    "command": "RegisterCommand",
+    "method": "POST",
+    "path": "/api/auth/register",
+    "schemas": [
+      "RegisterCommand.RequestBodySchema",
+      "RegisterCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/auth/register-form/register-form.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-023",
+    "source": "frontend/src/shared/api/hooks/auth/auth.hooks.ts:59",
+    "hook": "useOauth2Callback",
+    "expression": "OAuth2CallbackCommand.TSQ_url",
+    "command": "OAuth2CallbackCommand",
+    "method": "POST",
+    "path": "/api/auth/oauth2/callback",
+    "schemas": [
+      "OAuth2CallbackCommand.RequestBodySchema",
+      "OAuth2CallbackCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/auth/oauth2-callback/oauth2-callback.page.tsx"
+    ]
+  },
+  {
+    "id": "FE-024",
+    "source": "frontend/src/shared/api/hooks/auth/auth.hooks.ts:71",
+    "hook": "useOAuth2Authorize",
+    "expression": "OAuth2AuthorizeCommand.TSQ_url",
+    "command": "OAuth2AuthorizeCommand",
+    "method": "POST",
+    "path": "/api/auth/oauth2/authorize",
+    "schemas": [
+      "OAuth2AuthorizeCommand.RequestBodySchema",
+      "OAuth2AuthorizeCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/auth/oauth2-login-button/oauth2-login-button.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-025",
+    "source": "frontend/src/shared/api/hooks/auth/auth.hooks.ts:87",
+    "hook": "usePasskeyAuthenticationVerify",
+    "expression": "VerifyPasskeyAuthenticationCommand.TSQ_url",
+    "command": "VerifyPasskeyAuthenticationCommand",
+    "method": "POST",
+    "path": "/api/auth/passkey/authentication/verify",
+    "schemas": [
+      "VerifyPasskeyAuthenticationCommand.RequestBodySchema",
+      "VerifyPasskeyAuthenticationCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/auth/passkey-login-button/passkey-login-button.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-026",
+    "source": "frontend/src/shared/api/hooks/auth/auth.query.hooks.ts:20",
+    "hook": "useGetAuthStatus",
+    "expression": "GetStatusCommand.TSQ_url",
+    "command": "GetStatusCommand",
+    "method": "GET",
+    "path": "/api/auth/status",
+    "schemas": [
+      "GetStatusCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/auth/login/login.page.tsx",
+      "frontend/src/shared/hocs/guards/auth-guard.tsx",
+      "frontend/src/shared/ui/page/page.tsx",
+      "frontend/src/shared/ui/sidebar/sidebar-logo.tsx",
+      "frontend/src/shared/ui/sidebar/sidebar-title.tsx"
+    ]
+  },
+  {
+    "id": "FE-027",
+    "source": "frontend/src/shared/api/hooks/auth/auth.query.hooks.ts:31",
+    "hook": "usePasskeyAuthenticationOptions",
+    "expression": "GetPasskeyAuthenticationOptionsCommand.TSQ_url",
+    "command": "GetPasskeyAuthenticationOptionsCommand",
+    "method": "GET",
+    "path": "/api/auth/passkey/authentication/options",
+    "schemas": [
+      "GetPasskeyAuthenticationOptionsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/auth/passkey-login-button/passkey-login-button.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-028",
+    "source": "frontend/src/shared/api/hooks/bandwidth-stats/bandwidth-stats.query.hooks.ts:49",
+    "hook": "useGetStatsNodesUsage",
+    "expression": "GetStatsNodesUsageCommand.TSQ_url",
+    "command": "GetStatsNodesUsageCommand",
+    "method": "GET",
+    "path": "/api/bandwidth-stats/nodes",
+    "schemas": [
+      "GetStatsNodesUsageCommand.ResponseSchema",
+      "GetStatsNodesUsageCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/statistic-nodes/components/statistic-nodes.component.tsx"
+    ]
+  },
+  {
+    "id": "FE-029",
+    "source": "frontend/src/shared/api/hooks/bandwidth-stats/bandwidth-stats.query.hooks.ts:63",
+    "hook": "useGetStatsUserUsage",
+    "expression": "GetStatsUserUsageCommand.TSQ_url",
+    "command": "GetStatsUserUsageCommand",
+    "method": "GET",
+    "path": "/api/bandwidth-stats/users/:userId",
+    "schemas": [
+      "GetStatsUserUsageCommand.ResponseSchema",
+      "GetStatsUserUsageCommand.RequestQuerySchema",
+      "GetStatsUserUsageCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-usage-modal/user-usage.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-030",
+    "source": "frontend/src/shared/api/hooks/bandwidth-stats/bandwidth-stats.query.hooks.ts:78",
+    "hook": "useGetStatsNodeUsersUsage",
+    "expression": "GetStatsNodeUsersUsageCommand.TSQ_url",
+    "command": "GetStatsNodeUsersUsageCommand",
+    "method": "GET",
+    "path": "/api/bandwidth-stats/nodes/:uuid/users",
+    "schemas": [
+      "GetStatsNodeUsersUsageCommand.ResponseSchema",
+      "GetStatsNodeUsersUsageCommand.RequestQuerySchema",
+      "GetStatsNodeUsersUsageCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-usage-stats/node-usage-stats.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-031",
+    "source": "frontend/src/shared/api/hooks/bandwidth-stats/bandwidth-stats.query.hooks.ts:93",
+    "hook": "useGetStatsNodesUsersUsage",
+    "expression": "GetStatsNodesUsersUsageCommand.TSQ_url",
+    "command": "GetStatsNodesUsersUsageCommand",
+    "method": "POST",
+    "path": "/api/bandwidth-stats/nodes/users",
+    "schemas": [
+      "GetStatsNodesUsersUsageCommand.ResponseSchema",
+      "GetStatsNodesUsersUsageCommand.RequestQuerySchema",
+      "GetStatsNodesUsersUsageCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/nodes-usage-stats/nodes-usage-stats.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-032",
+    "source": "frontend/src/shared/api/hooks/bandwidth-stats/bandwidth-stats.query.hooks.ts:109",
+    "hook": "useGetInternalSquadUsage",
+    "expression": "GetInternalSquadUsageCommand.TSQ_url",
+    "command": "GetInternalSquadUsageCommand",
+    "method": "GET",
+    "path": "/api/bandwidth-stats/internal-squads/:uuid/usage",
+    "schemas": [
+      "GetInternalSquadUsageCommand.ResponseSchema",
+      "GetInternalSquadUsageCommand.RequestQuerySchema",
+      "GetInternalSquadUsageCommand.RequestParamSchema"
+    ],
+    "consumers": []
+  },
+  {
+    "id": "FE-033",
+    "source": "frontend/src/shared/api/hooks/bandwidth-stats/bandwidth-stats.query.hooks.ts:124",
+    "hook": "useGetInternalSquadUsageInfinite",
+    "expression": "GetInternalSquadUsageCommand.TSQ_url",
+    "command": "GetInternalSquadUsageCommand",
+    "method": "GET",
+    "path": "/api/bandwidth-stats/internal-squads/:uuid/usage",
+    "schemas": [
+      "GetInternalSquadUsageCommand.ResponseSchema",
+      "GetInternalSquadUsageCommand.RequestQuerySchema",
+      "GetInternalSquadUsageCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/internal-squads/internal-squads-usage-drawer/internal-squads-usage.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-034",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.mutation.hooks.ts:13",
+    "hook": "useUpdateConfigProfile",
+    "expression": "UpdateConfigProfileCommand.TSQ_url",
+    "command": "UpdateConfigProfileCommand",
+    "method": "PATCH",
+    "path": "/api/config-profiles",
+    "schemas": [
+      "UpdateConfigProfileCommand.RequestBodySchema",
+      "UpdateConfigProfileCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/config-profiles/config-editor-actions/config-editor-actions.feature.tsx",
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-035",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.mutation.hooks.ts:37",
+    "hook": "useDeleteConfigProfile",
+    "expression": "DeleteConfigProfileCommand.TSQ_url",
+    "command": "DeleteConfigProfileCommand",
+    "method": "DELETE",
+    "path": "/api/config-profiles/:uuid",
+    "schemas": [
+      "DeleteConfigProfileCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/config-profiles-grid/config-profiles-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-036",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.mutation.hooks.ts:60",
+    "hook": "useCreateConfigProfile",
+    "expression": "CreateConfigProfileCommand.TSQ_url",
+    "command": "CreateConfigProfileCommand",
+    "method": "POST",
+    "path": "/api/config-profiles",
+    "schemas": [
+      "CreateConfigProfileCommand.ResponseSchema",
+      "CreateConfigProfileCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/create-modal/create-\u0441onfig-profile.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-037",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.mutation.hooks.ts:84",
+    "hook": "useReorderConfigProfiles",
+    "expression": "ReorderConfigProfileCommand.TSQ_url",
+    "command": "ReorderConfigProfileCommand",
+    "method": "POST",
+    "path": "/api/config-profiles/actions/reorder",
+    "schemas": [
+      "ReorderConfigProfileCommand.RequestBodySchema",
+      "ReorderConfigProfileCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/config-profiles-grid/config-profiles-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-038",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.mutation.hooks.ts:101",
+    "hook": "useSetConfigProfilesTags",
+    "expression": "SetConfigProfileTagsCommand.TSQ_url",
+    "command": "SetConfigProfileTagsCommand",
+    "method": "PATCH",
+    "path": "/api/config-profiles/tags",
+    "schemas": [
+      "SetConfigProfileTagsCommand.RequestBodySchema",
+      "SetConfigProfileTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-039",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.query.hooks.ts:33",
+    "hook": "useGetConfigProfiles",
+    "expression": "GetConfigProfilesCommand.TSQ_url",
+    "command": "GetConfigProfilesCommand",
+    "method": "GET",
+    "path": "/api/config-profiles",
+    "schemas": [
+      "GetConfigProfilesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/config-profiles/header-action-buttons/config-profiles-header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/config-profiles/connectors/config-profiles.page.connector.tsx",
+      "frontend/src/pages/dashboard/hosts/ui/connectors/hosts.page.connector.tsx",
+      "frontend/src/pages/dashboard/nodes/ui/connectors/nodes.page.connector.tsx",
+      "frontend/src/pages/dashboard/nodes-metrics/ui/connectors/nodes-metrics.page.connector.tsx",
+      "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx",
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.content.tsx",
+      "frontend/src/shared/_modals/hosts/edit-many-hosts-drawer/edit-many-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/hosts/hosts-config-profiles-drawer/hosts-config-profiles.drawer.widget.tsx",
+      "frontend/src/shared/_modals/internal-squads/internal-squads-inbounds-drawer/internal-squads-inbounds.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node-steps/create-node-step-2-config-profiles.tsx",
+      "frontend/src/shared/_modals/nodes/linked-hosts-drawer/linked-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/node-inbounds-hosts-drawer/node-inbounds-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/nodes-config-profiles-drawer/nodes-config-profiles.drawer.tsx",
+      "frontend/src/shared/ui/forms/nodes/base-node-form/node-config-profiles.card.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-datatable/nodes-datatable.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-040",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.query.hooks.ts:44",
+    "hook": "useGetConfigProfile",
+    "expression": "GetConfigProfileByUuidCommand.TSQ_url",
+    "command": "GetConfigProfileByUuidCommand",
+    "method": "GET",
+    "path": "/api/config-profiles/:uuid",
+    "schemas": [
+      "GetConfigProfileByUuidCommand.ResponseSchema",
+      "GetConfigProfileByUuidCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/config-profiles/connectors/config-profile-by-uuid.page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-041",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.query.hooks.ts:59",
+    "hook": "useGetConfigProfileInbounds",
+    "expression": "GetInboundsByProfileUuidCommand.TSQ_url",
+    "command": "GetInboundsByProfileUuidCommand",
+    "method": "GET",
+    "path": "/api/config-profiles/:uuid/inbounds",
+    "schemas": [
+      "GetInboundsByProfileUuidCommand.ResponseSchema",
+      "GetInboundsByProfileUuidCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/config-profiles/config-profile-inbounds-drawer/config-profile-inbounds.drawer.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-042",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.query.hooks.ts:74",
+    "hook": "useGetComputedConfigProfile",
+    "expression": "GetComputedConfigProfileByUuidCommand.TSQ_url",
+    "command": "GetComputedConfigProfileByUuidCommand",
+    "method": "GET",
+    "path": "/api/config-profiles/:uuid/computed-config",
+    "schemas": [
+      "GetComputedConfigProfileByUuidCommand.ResponseSchema",
+      "GetComputedConfigProfileByUuidCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/config-profile-card/config-profile-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-043",
+    "source": "frontend/src/shared/api/hooks/config-profiles/config-profiles.query.hooks.ts:88",
+    "hook": "useGetConfigProfilesTags",
+    "expression": "GetConfigProfilesTagsCommand.TSQ_url",
+    "command": "GetConfigProfilesTagsCommand",
+    "method": "GET",
+    "path": "/api/config-profiles/tags",
+    "schemas": [
+      "GetConfigProfilesTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-044",
+    "source": "frontend/src/shared/api/hooks/connections/connections.mutation.hooks.ts:12",
+    "hook": "useConnectionsByUser",
+    "expression": "ConnectionsByUserCommand.TSQ_url",
+    "command": "ConnectionsByUserCommand",
+    "method": "POST",
+    "path": "/api/connections/by-user/:userId",
+    "schemas": [
+      "ConnectionsByUserCommand.RequestParamSchema",
+      "ConnectionsByUserCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-active-sessions/use-user-active-sessions.ts"
+    ]
+  },
+  {
+    "id": "FE-045",
+    "source": "frontend/src/shared/api/hooks/connections/connections.mutation.hooks.ts:19",
+    "hook": "useConnectionsByNode",
+    "expression": "ConnectionsByNodeCommand.TSQ_url",
+    "command": "ConnectionsByNodeCommand",
+    "method": "POST",
+    "path": "/api/connections/by-node/:nodeUuid",
+    "schemas": [
+      "ConnectionsByNodeCommand.RequestParamSchema",
+      "ConnectionsByNodeCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-active-sessions-drawer/use-node-active-sessions.ts",
+      "frontend/src/widgets/dashboard/sessions-explorer/sessions-explorer-widget/use-sessions-explorer.ts"
+    ]
+  },
+  {
+    "id": "FE-046",
+    "source": "frontend/src/shared/api/hooks/connections/connections.mutation.hooks.ts:26",
+    "hook": "useConnectionsByNodeResultMutation",
+    "expression": "ConnectionsByNodeResultCommand.TSQ_url",
+    "command": "ConnectionsByNodeResultCommand",
+    "method": "GET",
+    "path": "/api/connections/by-node/:jobId",
+    "schemas": [
+      "ConnectionsByNodeResultCommand.ResponseSchema",
+      "ConnectionsByNodeResultCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/sessions-explorer/sessions-explorer-widget/use-sessions-explorer.ts"
+    ]
+  },
+  {
+    "id": "FE-047",
+    "source": "frontend/src/shared/api/hooks/connections/connections.mutation.hooks.ts:33",
+    "hook": "useGeocheckByNode",
+    "expression": "GeocheckByNodeCommand.TSQ_url",
+    "command": "GeocheckByNodeCommand",
+    "method": "POST",
+    "path": "/api/connections/geocheck/:nodeUuid",
+    "schemas": [
+      "GeocheckByNodeCommand.RequestParamSchema",
+      "GeocheckByNodeCommand.RequestBodySchema",
+      "GeocheckByNodeCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-geocheck-modal/use-node-geocheck.ts"
+    ]
+  },
+  {
+    "id": "FE-048",
+    "source": "frontend/src/shared/api/hooks/connections/connections.mutation.hooks.ts:41",
+    "hook": "useDropConnections",
+    "expression": "DropConnectionsCommand.TSQ_url",
+    "command": "DropConnectionsCommand",
+    "method": "POST",
+    "path": "/api/connections/drop",
+    "schemas": [
+      "DropConnectionsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-active-sessions/use-user-active-sessions.ts"
+    ]
+  },
+  {
+    "id": "FE-049",
+    "source": "frontend/src/shared/api/hooks/connections/connections.query.hooks.ts:25",
+    "hook": "useConnectionsByUserResult",
+    "expression": "ConnectionsByUserResultCommand.TSQ_url",
+    "command": "ConnectionsByUserResultCommand",
+    "method": "GET",
+    "path": "/api/connections/by-user/:jobId",
+    "schemas": [
+      "ConnectionsByUserResultCommand.ResponseSchema",
+      "ConnectionsByUserResultCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-active-sessions/use-user-active-sessions.ts"
+    ]
+  },
+  {
+    "id": "FE-050",
+    "source": "frontend/src/shared/api/hooks/connections/connections.query.hooks.ts:39",
+    "hook": "useConnectionsByNodeResult",
+    "expression": "ConnectionsByNodeResultCommand.TSQ_url",
+    "command": "ConnectionsByNodeResultCommand",
+    "method": "GET",
+    "path": "/api/connections/by-node/:jobId",
+    "schemas": [
+      "ConnectionsByNodeResultCommand.ResponseSchema",
+      "ConnectionsByNodeResultCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-active-sessions-drawer/use-node-active-sessions.ts"
+    ]
+  },
+  {
+    "id": "FE-051",
+    "source": "frontend/src/shared/api/hooks/connections/connections.query.hooks.ts:53",
+    "hook": "useGeocheckByNodeResult",
+    "expression": "GeocheckByNodeResultCommand.TSQ_url",
+    "command": "GeocheckByNodeResultCommand",
+    "method": "GET",
+    "path": "/api/connections/geocheck/:jobId",
+    "schemas": [
+      "GeocheckByNodeResultCommand.ResponseSchema",
+      "GeocheckByNodeResultCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-geocheck-modal/use-node-geocheck.ts"
+    ]
+  },
+  {
+    "id": "FE-052",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:15",
+    "hook": "useUpdateExternalSquad",
+    "expression": "UpdateExternalSquadCommand.TSQ_url",
+    "command": "UpdateExternalSquadCommand",
+    "method": "PATCH",
+    "path": "/api/external-squads",
+    "schemas": [
+      "UpdateExternalSquadCommand.RequestBodySchema",
+      "UpdateExternalSquadCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squad-overrides-tab.widget.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-custom-remarks.widget.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-hwid-settings.tab.widget.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-response-headers.widget.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-subpage-config.tab.widget.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-templates.tab.widget.tsx",
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx",
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-053",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:39",
+    "hook": "useDeleteExternalSquad",
+    "expression": "DeleteExternalSquadCommand.TSQ_url",
+    "command": "DeleteExternalSquadCommand",
+    "method": "DELETE",
+    "path": "/api/external-squads/:uuid",
+    "schemas": [
+      "DeleteExternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-054",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:62",
+    "hook": "useCreateExternalSquad",
+    "expression": "CreateExternalSquadCommand.TSQ_url",
+    "command": "CreateExternalSquadCommand",
+    "method": "POST",
+    "path": "/api/external-squads",
+    "schemas": [
+      "CreateExternalSquadCommand.ResponseSchema",
+      "CreateExternalSquadCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/create-modal/create-external-squad.content.tsx",
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-055",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:86",
+    "hook": "useAddUsersToExternalSquad",
+    "expression": "AddUsersToExternalSquadCommand.TSQ_url",
+    "command": "AddUsersToExternalSquadCommand",
+    "method": "POST",
+    "path": "/api/external-squads/:uuid/bulk-actions/add-users",
+    "schemas": [
+      "AddUsersToExternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-056",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:102",
+    "hook": "useDeleteUsersFromExternalSquad",
+    "expression": "DeleteUsersFromExternalSquadCommand.TSQ_url",
+    "command": "DeleteUsersFromExternalSquadCommand",
+    "method": "DELETE",
+    "path": "/api/external-squads/:uuid/bulk-actions/remove-users",
+    "schemas": [
+      "DeleteUsersFromExternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-057",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:118",
+    "hook": "useReorderExternalSquads",
+    "expression": "ReorderExternalSquadCommand.TSQ_url",
+    "command": "ReorderExternalSquadCommand",
+    "method": "POST",
+    "path": "/api/external-squads/actions/reorder",
+    "schemas": [
+      "ReorderExternalSquadCommand.RequestBodySchema",
+      "ReorderExternalSquadCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-058",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.mutation.hooks.ts:135",
+    "hook": "useSetExternalSquadsTags",
+    "expression": "SetExternalSquadTagsCommand.TSQ_url",
+    "command": "SetExternalSquadTagsCommand",
+    "method": "PATCH",
+    "path": "/api/external-squads/tags",
+    "schemas": [
+      "SetExternalSquadTagsCommand.RequestBodySchema",
+      "SetExternalSquadTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-059",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.query.hooks.ts:25",
+    "hook": "useGetExternalSquads",
+    "expression": "GetExternalSquadsCommand.TSQ_url",
+    "command": "GetExternalSquadsCommand",
+    "method": "GET",
+    "path": "/api/external-squads",
+    "schemas": [
+      "GetExternalSquadsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/external-squads/header-action-buttons/header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/external-squads/connectors/external-squads.page.connector.tsx",
+      "frontend/src/pages/dashboard/users/ui/connectors/users.page.connector.tsx",
+      "frontend/src/shared/_modals/users/bulk-all-users-update/bulk-all-users-update.modal.tsx",
+      "frontend/src/shared/_modals/users/bulk-many-users-update/bulk-many-users-update.modal.tsx",
+      "frontend/src/shared/_modals/users/create-user-modal/create-user.modal.tsx",
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.content.tsx",
+      "frontend/src/widgets/dashboard/external-squads/external-squads-grid/external-squads-grid.widget.tsx",
+      "frontend/src/widgets/dashboard/users/users-table/user-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-060",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.query.hooks.ts:38",
+    "hook": "useGetExternalSquad",
+    "expression": "GetExternalSquadByUuidCommand.TSQ_url",
+    "command": "GetExternalSquadByUuidCommand",
+    "method": "GET",
+    "path": "/api/external-squads/:uuid",
+    "schemas": [
+      "GetExternalSquadByUuidCommand.ResponseSchema",
+      "GetExternalSquadByUuidCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/external-squads.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-061",
+    "source": "frontend/src/shared/api/hooks/external-squads/external-squads.query.hooks.ts:53",
+    "hook": "useGetExternalSquadsTags",
+    "expression": "GetExternalSquadsTagsCommand.TSQ_url",
+    "command": "GetExternalSquadsTagsCommand",
+    "method": "GET",
+    "path": "/api/external-squads/tags",
+    "schemas": [
+      "GetExternalSquadsTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-062",
+    "source": "frontend/src/shared/api/hooks/gowave-settings/gowave-settings.mutation.hooks.ts:7",
+    "hook": "useUpdateGowaveSettings",
+    "expression": "UpdateRemnawaveSettingsCommand.TSQ_url",
+    "command": "UpdateRemnawaveSettingsCommand",
+    "method": "PATCH",
+    "path": "/api/remnawave-settings",
+    "schemas": [
+      "UpdateRemnawaveSettingsCommand.RequestBodySchema",
+      "UpdateRemnawaveSettingsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/gowave-settings/authentification-settings-card/authentification-settings-card.widget.tsx",
+      "frontend/src/widgets/gowave-settings/branding-settings-card/branding-settings-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-063",
+    "source": "frontend/src/shared/api/hooks/gowave-settings/gowave-settings.query.hooks.ts:15",
+    "hook": "useGetGowaveSettings",
+    "expression": "GetRemnawaveSettingsCommand.TSQ_url",
+    "command": "GetRemnawaveSettingsCommand",
+    "method": "GET",
+    "path": "/api/remnawave-settings",
+    "schemas": [
+      "GetRemnawaveSettingsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/gowave-settings/connectors/gowave-settings.page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-064",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:17",
+    "hook": "useCreateHost",
+    "expression": "CreateHostCommand.TSQ_url",
+    "command": "CreateHostCommand",
+    "method": "POST",
+    "path": "/api/hosts",
+    "schemas": [
+      "CreateHostCommand.RequestBodySchema",
+      "CreateHostCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-065",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:34",
+    "hook": "useCloneHost",
+    "expression": "CloneHostCommand.TSQ_url",
+    "command": "CloneHostCommand",
+    "method": "POST",
+    "path": "/api/hosts/actions/clone",
+    "schemas": [
+      "CloneHostCommand.RequestBodySchema",
+      "CloneHostCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/hosts/multi-select-hosts/multi-select-hosts.feature.tsx",
+      "frontend/src/features/ui/dashboard/hosts/clone-host/clone-host.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-066",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:51",
+    "hook": "useUpdateHost",
+    "expression": "UpdateHostCommand.TSQ_url",
+    "command": "UpdateHostCommand",
+    "method": "PATCH",
+    "path": "/api/hosts",
+    "schemas": [
+      "UpdateHostCommand.RequestBodySchema",
+      "UpdateHostCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-067",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:75",
+    "hook": "useDeleteHost",
+    "expression": "DeleteHostCommand.TSQ_url",
+    "command": "DeleteHostCommand",
+    "method": "DELETE",
+    "path": "/api/hosts/:uuid",
+    "schemas": [
+      "DeleteHostCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/hosts/delete-host/delete-host.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-068",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:98",
+    "hook": "useReorderHosts",
+    "expression": "ReorderHostsCommand.TSQ_url",
+    "command": "ReorderHostsCommand",
+    "method": "POST",
+    "path": "/api/hosts/actions/reorder",
+    "schemas": [
+      "ReorderHostsCommand.RequestBodySchema",
+      "ReorderHostsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/hosts/ui/components/hosts.page.component.tsx"
+    ]
+  },
+  {
+    "id": "FE-069",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:115",
+    "hook": "useBulkDeleteHosts",
+    "expression": "BulkDeleteHostsCommand.TSQ_url",
+    "command": "BulkDeleteHostsCommand",
+    "method": "POST",
+    "path": "/api/hosts/bulk/delete",
+    "schemas": [
+      "BulkDeleteHostsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/hosts/multi-select-hosts/multi-select-hosts.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-070",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:138",
+    "hook": "useBulkEnableHosts",
+    "expression": "BulkEnableHostsCommand.TSQ_url",
+    "command": "BulkEnableHostsCommand",
+    "method": "POST",
+    "path": "/api/hosts/bulk/enable",
+    "schemas": [
+      "BulkEnableHostsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/hosts/multi-select-hosts/multi-select-hosts.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-071",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:161",
+    "hook": "useBulkDisableHosts",
+    "expression": "BulkDisableHostsCommand.TSQ_url",
+    "command": "BulkDisableHostsCommand",
+    "method": "POST",
+    "path": "/api/hosts/bulk/disable",
+    "schemas": [
+      "BulkDisableHostsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/hosts/multi-select-hosts/multi-select-hosts.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-072",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.mutation.hooks.ts:184",
+    "hook": "useUpdateManyHosts",
+    "expression": "UpdateManyHostsCommand.TSQ_url",
+    "command": "UpdateManyHostsCommand",
+    "method": "PATCH",
+    "path": "/api/hosts/bulk/update",
+    "schemas": [
+      "UpdateManyHostsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/hosts/edit-many-hosts-drawer/edit-many-hosts.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-073",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.query.hooks.ts:21",
+    "hook": "useGetHosts",
+    "expression": "GetHostsCommand.TSQ_url",
+    "command": "GetHostsCommand",
+    "method": "GET",
+    "path": "/api/hosts",
+    "schemas": [
+      "GetHostsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/hosts/multi-select-hosts/multi-select-hosts.feature.tsx",
+      "frontend/src/features/ui/dashboard/hosts/header-action-buttons/header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/hosts/ui/connectors/hosts.page.connector.tsx",
+      "frontend/src/pages/dashboard/templates/ui/connectors/template-editor-page.connector.tsx",
+      "frontend/src/shared/_modals/nodes/linked-hosts-drawer/linked-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/node-inbounds-hosts-drawer/node-inbounds-hosts.drawer.tsx",
+      "frontend/src/widgets/dashboard/hosts/hosts-datatable/hosts-datatable.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-074",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.query.hooks.ts:31",
+    "hook": "useGetHostTags",
+    "expression": "GetHostsTagsCommand.TSQ_url",
+    "command": "GetHostsTagsCommand",
+    "method": "GET",
+    "path": "/api/hosts/tags",
+    "schemas": [
+      "GetHostsTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/hosts/ui/connectors/hosts.page.connector.tsx",
+      "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx",
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.content.tsx",
+      "frontend/src/shared/_modals/hosts/edit-many-hosts-drawer/edit-many-hosts.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-075",
+    "source": "frontend/src/shared/api/hooks/hosts/hosts.query.hooks.ts:44",
+    "hook": "useGetHost",
+    "expression": "GetHostCommand.TSQ_url",
+    "command": "GetHostCommand",
+    "method": "GET",
+    "path": "/api/hosts/:uuid",
+    "schemas": [
+      "GetHostCommand.ResponseSchema",
+      "GetHostCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/hosts/clone-host/clone-host.feature.tsx",
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-076",
+    "source": "frontend/src/shared/api/hooks/hwid-user-devices/hwid-user-devices.mutation.hooks.ts:10",
+    "hook": "useDeleteUserHwidDevice",
+    "expression": "DeleteUserHwidDeviceCommand.TSQ_url",
+    "command": "DeleteUserHwidDeviceCommand",
+    "method": "POST",
+    "path": "/api/hwid/devices/delete",
+    "schemas": [
+      "DeleteUserHwidDeviceCommand.RequestBodySchema",
+      "DeleteUserHwidDeviceCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-hwid-devices-modal/user-hwid-devices.content.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-077",
+    "source": "frontend/src/shared/api/hooks/hwid-user-devices/hwid-user-devices.mutation.hooks.ts:34",
+    "hook": "useDeleteAllUserHwidDevices",
+    "expression": "DeleteAllUserHwidDevicesCommand.TSQ_url",
+    "command": "DeleteAllUserHwidDevicesCommand",
+    "method": "POST",
+    "path": "/api/hwid/devices/delete-all",
+    "schemas": [
+      "DeleteAllUserHwidDevicesCommand.RequestBodySchema",
+      "DeleteAllUserHwidDevicesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-hwid-devices-modal/user-hwid-devices.content.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-078",
+    "source": "frontend/src/shared/api/hooks/hwid-user-devices/hwid-user-devices.query.hooks.ts:32",
+    "hook": "useGetUserHwidDevices",
+    "expression": "GetUserHwidDevicesCommand.TSQ_url",
+    "command": "GetUserHwidDevicesCommand",
+    "method": "GET",
+    "path": "/api/hwid/devices/:userId",
+    "schemas": [
+      "GetUserHwidDevicesCommand.ResponseSchema",
+      "GetUserHwidDevicesCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-hwid-devices-modal/user-hwid-devices.content.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-079",
+    "source": "frontend/src/shared/api/hooks/hwid-user-devices/hwid-user-devices.query.hooks.ts:46",
+    "hook": "useGetHwidDevices",
+    "expression": "GetHwidDevicesCommand.TSQ_url",
+    "command": "GetHwidDevicesCommand",
+    "method": "GET",
+    "path": "/api/hwid/devices",
+    "schemas": [
+      "GetHwidDevicesCommand.ResponseSchema",
+      "GetHwidDevicesCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/hwid-inspector/hwid-inspector-table/hwid-inspector-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-080",
+    "source": "frontend/src/shared/api/hooks/hwid-user-devices/hwid-user-devices.query.hooks.ts:63",
+    "hook": "useGetHwidDevicesStats",
+    "expression": "GetHwidDevicesStatsCommand.TSQ_url",
+    "command": "GetHwidDevicesStatsCommand",
+    "method": "GET",
+    "path": "/api/hwid/devices/stats",
+    "schemas": [
+      "GetHwidDevicesStatsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/hwid-inspector/hwid-inspector-metrics/hwid-inspector-metrics.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-081",
+    "source": "frontend/src/shared/api/hooks/hwid-user-devices/hwid-user-devices.query.hooks.ts:75",
+    "hook": "useGetTopUsersByHwidDevices",
+    "expression": "GetTopUsersByHwidDevicesCommand.TSQ_url",
+    "command": "GetTopUsersByHwidDevicesCommand",
+    "method": "GET",
+    "path": "/api/hwid/devices/top-users",
+    "schemas": [
+      "GetTopUsersByHwidDevicesCommand.ResponseSchema",
+      "GetTopUsersByHwidDevicesCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/hwid-inspector/hwid-inspector-leaderboard/hwid-inspector-leaderboard.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-082",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:16",
+    "hook": "useUpdateInfraProvider",
+    "expression": "UpdateInfraProviderCommand.TSQ_url",
+    "command": "UpdateInfraProviderCommand",
+    "method": "PATCH",
+    "path": "/api/infra-billing/providers",
+    "schemas": [
+      "UpdateInfraProviderCommand.RequestBodySchema",
+      "UpdateInfraProviderCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/infra-billing/view-infra-provider-modal/view-infra-provider.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-083",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:40",
+    "hook": "useDeleteInfraProvider",
+    "expression": "DeleteInfraProviderCommand.TSQ_url",
+    "command": "DeleteInfraProviderCommand",
+    "method": "DELETE",
+    "path": "/api/infra-billing/providers/:uuid",
+    "schemas": [
+      "DeleteInfraProviderCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/infra-billing/mobile/mobile-providers-list.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-084",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:63",
+    "hook": "useCreateInfraProvider",
+    "expression": "CreateInfraProviderCommand.TSQ_url",
+    "command": "CreateInfraProviderCommand",
+    "method": "POST",
+    "path": "/api/infra-billing/providers",
+    "schemas": [
+      "CreateInfraProviderCommand.ResponseSchema",
+      "CreateInfraProviderCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/infra-billing/create-infra-provider-modal/create-infra-provider.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-085",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:87",
+    "hook": "useDeleteInfraBillingHistoryRecord",
+    "expression": "DeleteInfraBillingRecordCommand.TSQ_url",
+    "command": "DeleteInfraBillingRecordCommand",
+    "method": "DELETE",
+    "path": "/api/infra-billing/history/:uuid",
+    "schemas": [
+      "DeleteInfraBillingRecordCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/infra-billing/mobile/use-delete-billing-record.ts"
+    ]
+  },
+  {
+    "id": "FE-086",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:110",
+    "hook": "useCreateInfraBillingHistoryRecord",
+    "expression": "CreateInfraBillingRecordCommand.TSQ_url",
+    "command": "CreateInfraBillingRecordCommand",
+    "method": "POST",
+    "path": "/api/infra-billing/history",
+    "schemas": [
+      "CreateInfraBillingRecordCommand.ResponseSchema",
+      "CreateInfraBillingRecordCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/infra-billing/create-infra-billing-record-modal/create-infra-billing-record.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-087",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:134",
+    "hook": "useCreateInfraBillingNode",
+    "expression": "CreateInfraBillingNodeCommand.TSQ_url",
+    "command": "CreateInfraBillingNodeCommand",
+    "method": "POST",
+    "path": "/api/infra-billing/nodes",
+    "schemas": [
+      "CreateInfraBillingNodeCommand.ResponseSchema",
+      "CreateInfraBillingNodeCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/infra-billing/create-infra-billing-node-modal/create-infra-billing-node.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-088",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:158",
+    "hook": "useDeleteInfraBillingNode",
+    "expression": "DeleteInfraBillingNodeCommand.TSQ_url",
+    "command": "DeleteInfraBillingNodeCommand",
+    "method": "DELETE",
+    "path": "/api/infra-billing/nodes/:uuid",
+    "schemas": [
+      "DeleteInfraBillingNodeCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/infra-billing/desktop-columns/desktop-columns-infra-billing.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-089",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.mutation.hooks.ts:181",
+    "hook": "useUpdateInfraBillingNode",
+    "expression": "UpdateInfraBillingNodeCommand.TSQ_url",
+    "command": "UpdateInfraBillingNodeCommand",
+    "method": "PATCH",
+    "path": "/api/infra-billing/nodes",
+    "schemas": [
+      "UpdateInfraBillingNodeCommand.RequestBodySchema",
+      "UpdateInfraBillingNodeCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/infra-billing/update-billing-date-modal/update-billing-date.modal.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/mobile/mobile-nodes-list.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-090",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.query.hooks.ts:31",
+    "hook": "useGetInfraProviders",
+    "expression": "GetInfraProvidersCommand.TSQ_url",
+    "command": "GetInfraProvidersCommand",
+    "method": "GET",
+    "path": "/api/infra-billing/providers",
+    "schemas": [
+      "GetInfraProvidersCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/ui/infra-billing/select-infra-provider/select-infra-provider.shared.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/desktop-columns/desktop-columns-infra-billing.widget.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/mobile/mobile-infra-billing.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-091",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.query.hooks.ts:42",
+    "hook": "useGetInfraProvider",
+    "expression": "GetInfraProviderCommand.TSQ_url",
+    "command": "GetInfraProviderCommand",
+    "method": "GET",
+    "path": "/api/infra-billing/providers/:uuid",
+    "schemas": [
+      "GetInfraProviderCommand.ResponseSchema",
+      "GetInfraProviderCommand.RequestParamSchema"
+    ],
+    "consumers": []
+  },
+  {
+    "id": "FE-092",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.query.hooks.ts:58",
+    "hook": "useGetInfraBillingHistoryRecords",
+    "expression": "GetInfraBillingRecordsCommand.TSQ_url",
+    "command": "GetInfraBillingRecordsCommand",
+    "method": "GET",
+    "path": "/api/infra-billing/history",
+    "schemas": [
+      "GetInfraBillingRecordsCommand.ResponseSchema",
+      "GetInfraBillingRecordsCommand.RequestQuerySchema"
+    ],
+    "consumers": []
+  },
+  {
+    "id": "FE-093",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.query.hooks.ts:87",
+    "hook": "useGetInfraBillingHistoryRecordsInfinite",
+    "expression": "instance.get(url)\n                const result = await GetInfraBillingRecordsCommand.ResponseSchema.safeParseAsync(\n                    response.data\n                )\n                if (!result.success) {\n                    throw result.error\n                }\n                return result.data.response\n            } catch (error) {\n            ",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/widgets/dashboard/infra-billing/desktop-columns/desktop-columns-infra-billing.widget.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/mobile/mobile-infra-billing.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-094",
+    "source": "frontend/src/shared/api/hooks/infra-billing/infra-billing.query.hooks.ts:109",
+    "hook": "useGetInfraBillingNodes",
+    "expression": "GetInfraBillingNodesCommand.TSQ_url",
+    "command": "GetInfraBillingNodesCommand",
+    "method": "GET",
+    "path": "/api/infra-billing/nodes",
+    "schemas": [
+      "GetInfraBillingNodesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/ui/infra-billing/select-billing-node/select-billing-node.shared.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/desktop-columns/desktop-columns-infra-billing.widget.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/mobile/mobile-infra-billing.widget.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/mobile/mobile-stats.widget.tsx",
+      "frontend/src/widgets/dashboard/infra-billing/stats-widget/stats.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-095",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:15",
+    "hook": "useUpdateInternalSquad",
+    "expression": "UpdateInternalSquadCommand.TSQ_url",
+    "command": "UpdateInternalSquadCommand",
+    "method": "PATCH",
+    "path": "/api/internal-squads",
+    "schemas": [
+      "UpdateInternalSquadCommand.RequestBodySchema",
+      "UpdateInternalSquadCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/internal-squads/internal-squads-inbounds-drawer/internal-squads-inbounds.drawer.tsx",
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-096",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:39",
+    "hook": "useDeleteInternalSquad",
+    "expression": "DeleteInternalSquadCommand.TSQ_url",
+    "command": "DeleteInternalSquadCommand",
+    "method": "DELETE",
+    "path": "/api/internal-squads/:uuid",
+    "schemas": [
+      "DeleteInternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/internal-squads/internal-squads-grid/internal-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-097",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:62",
+    "hook": "useCreateInternalSquad",
+    "expression": "CreateInternalSquadCommand.TSQ_url",
+    "command": "CreateInternalSquadCommand",
+    "method": "POST",
+    "path": "/api/internal-squads",
+    "schemas": [
+      "CreateInternalSquadCommand.ResponseSchema",
+      "CreateInternalSquadCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/create-modal/create-internal-squad.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-098",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:86",
+    "hook": "useAddUsersToInternalSquad",
+    "expression": "AddUsersToInternalSquadCommand.TSQ_url",
+    "command": "AddUsersToInternalSquadCommand",
+    "method": "POST",
+    "path": "/api/internal-squads/:uuid/bulk-actions/add-users",
+    "schemas": [
+      "AddUsersToInternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/internal-squads/internal-squads-grid/internal-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-099",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:102",
+    "hook": "useDeleteUsersFromInternalSquad",
+    "expression": "DeleteUsersFromInternalSquadCommand.TSQ_url",
+    "command": "DeleteUsersFromInternalSquadCommand",
+    "method": "DELETE",
+    "path": "/api/internal-squads/:uuid/bulk-actions/remove-users",
+    "schemas": [
+      "DeleteUsersFromInternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/internal-squads/internal-squads-grid/internal-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-100",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:118",
+    "hook": "useReorderInternalSquads",
+    "expression": "ReorderInternalSquadCommand.TSQ_url",
+    "command": "ReorderInternalSquadCommand",
+    "method": "POST",
+    "path": "/api/internal-squads/actions/reorder",
+    "schemas": [
+      "ReorderInternalSquadCommand.RequestBodySchema",
+      "ReorderInternalSquadCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/internal-squads/internal-squads-grid/internal-squads-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-101",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.mutation.hooks.ts:135",
+    "hook": "useSetInternalSquadsTags",
+    "expression": "SetInternalSquadTagsCommand.TSQ_url",
+    "command": "SetInternalSquadTagsCommand",
+    "method": "PATCH",
+    "path": "/api/internal-squads/tags",
+    "schemas": [
+      "SetInternalSquadTagsCommand.RequestBodySchema",
+      "SetInternalSquadTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-102",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.query.hooks.ts:31",
+    "hook": "useGetInternalSquads",
+    "expression": "GetInternalSquadsCommand.TSQ_url",
+    "command": "GetInternalSquadsCommand",
+    "method": "GET",
+    "path": "/api/internal-squads",
+    "schemas": [
+      "GetInternalSquadsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/internal-squads/header-action-buttons/header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/hosts/ui/connectors/hosts.page.connector.tsx",
+      "frontend/src/pages/dashboard/internal-squads/connectors/internal-squads.page.connector.tsx",
+      "frontend/src/pages/dashboard/users/ui/connectors/users.page.connector.tsx",
+      "frontend/src/shared/_modals/config-profiles/config-profile-inbounds-drawer/config-profile-inbounds.drawer.widget.tsx",
+      "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx",
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.content.tsx",
+      "frontend/src/shared/_modals/hosts/edit-many-hosts-drawer/edit-many-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/users/bulk-many-users-actions/bulk-many-users-actions.modal.tsx",
+      "frontend/src/shared/_modals/users/create-user-modal/create-user.modal.tsx",
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.content.tsx",
+      "frontend/src/widgets/dashboard/hosts/hosts-datatable/hosts-datatable.widget.tsx",
+      "frontend/src/widgets/dashboard/internal-squads/internal-squads-grid/internal-squads-grid.widget.tsx",
+      "frontend/src/widgets/dashboard/users/users-table/user-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-103",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.query.hooks.ts:44",
+    "hook": "useGetInternalSquad",
+    "expression": "GetInternalSquadCommand.TSQ_url",
+    "command": "GetInternalSquadCommand",
+    "method": "GET",
+    "path": "/api/internal-squads/:uuid",
+    "schemas": [
+      "GetInternalSquadCommand.ResponseSchema",
+      "GetInternalSquadCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/internal-squads/internal-squads-inbounds-drawer/internal-squads-inbounds.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-104",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.query.hooks.ts:59",
+    "hook": "useGetInternalSquadAccessibleNodes",
+    "expression": "GetInternalSquadAccessibleNodesCommand.TSQ_url",
+    "command": "GetInternalSquadAccessibleNodesCommand",
+    "method": "GET",
+    "path": "/api/internal-squads/:uuid/accessible-nodes",
+    "schemas": [
+      "GetInternalSquadAccessibleNodesCommand.ResponseSchema",
+      "GetInternalSquadAccessibleNodesCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/internal-squads/internal-squad-accessible-nodes-drawer/internal-squad-accessible-nodes.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-105",
+    "source": "frontend/src/shared/api/hooks/internal-squads/internal-squads.query.hooks.ts:73",
+    "hook": "useGetInternalSquadsTags",
+    "expression": "GetInternalSquadsTagsCommand.TSQ_url",
+    "command": "GetInternalSquadsTagsCommand",
+    "method": "GET",
+    "path": "/api/internal-squads/tags",
+    "schemas": [
+      "GetInternalSquadsTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-106",
+    "source": "frontend/src/shared/api/hooks/node-integrations/node-integrations.mutation.hooks.ts:11",
+    "hook": "useCreateNodeIntegration",
+    "expression": "CreateNodeIntegrationCommand.TSQ_url",
+    "command": "CreateNodeIntegrationCommand",
+    "method": "POST",
+    "path": "/api/node-integrations",
+    "schemas": [
+      "CreateNodeIntegrationCommand.RequestBodySchema",
+      "CreateNodeIntegrationCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/node-integrations/node-integration-editor-modal/node-integration-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-107",
+    "source": "frontend/src/shared/api/hooks/node-integrations/node-integrations.mutation.hooks.ts:35",
+    "hook": "useUpdateNodeIntegration",
+    "expression": "UpdateNodeIntegrationCommand.TSQ_url",
+    "command": "UpdateNodeIntegrationCommand",
+    "method": "PATCH",
+    "path": "/api/node-integrations",
+    "schemas": [
+      "UpdateNodeIntegrationCommand.RequestBodySchema",
+      "UpdateNodeIntegrationCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/node-integrations/node-integration-editor-modal/node-integration-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-108",
+    "source": "frontend/src/shared/api/hooks/node-integrations/node-integrations.mutation.hooks.ts:59",
+    "hook": "useDeleteNodeIntegration",
+    "expression": "DeleteNodeIntegrationCommand.TSQ_url",
+    "command": "DeleteNodeIntegrationCommand",
+    "method": "DELETE",
+    "path": "/api/node-integrations/:uuid",
+    "schemas": [
+      "DeleteNodeIntegrationCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/node-integrations/node-integrations-modal/use-node-integration-actions.ts"
+    ]
+  },
+  {
+    "id": "FE-109",
+    "source": "frontend/src/shared/api/hooks/node-integrations/node-integrations.query.hooks.ts:18",
+    "hook": "useGetNodeIntegration",
+    "expression": "GetNodeIntegrationCommand.TSQ_url",
+    "command": "GetNodeIntegrationCommand",
+    "method": "GET",
+    "path": "/api/node-integrations/:uuid",
+    "schemas": [
+      "GetNodeIntegrationCommand.RequestParamSchema",
+      "GetNodeIntegrationCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/node-integrations/node-integration-editor-modal/node-integration-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-110",
+    "source": "frontend/src/shared/api/hooks/node-integrations/node-integrations.query.hooks.ts:33",
+    "hook": "useGetNodeIntegrations",
+    "expression": "GetNodeIntegrationsCommand.TSQ_url",
+    "command": "GetNodeIntegrationsCommand",
+    "method": "GET",
+    "path": "/api/node-integrations",
+    "schemas": [
+      "GetNodeIntegrationsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/nodes/multi-select-nodes/bulk-update-nodes.modal.content.tsx",
+      "frontend/src/pages/dashboard/nodes/ui/connectors/nodes.page.connector.tsx",
+      "frontend/src/shared/_modals/node-integrations/node-integrations-modal/node-integrations.modal.tsx",
+      "frontend/src/shared/_modals/nodes/edit-node-modal/edit-node.modal.content.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-datatable/nodes-datatable.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-111",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:21",
+    "hook": "useUpdateNodePlugin",
+    "expression": "UpdateNodePluginCommand.TSQ_url",
+    "command": "UpdateNodePluginCommand",
+    "method": "PATCH",
+    "path": "/api/node-plugins",
+    "schemas": [
+      "UpdateNodePluginCommand.RequestBodySchema",
+      "UpdateNodePluginCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/node-plugins/node-plugins-editor-actions/node-plugins-editor-actions.feature.tsx",
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-112",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:45",
+    "hook": "useCreateNodePlugin",
+    "expression": "CreateNodePluginCommand.TSQ_url",
+    "command": "CreateNodePluginCommand",
+    "method": "POST",
+    "path": "/api/node-plugins",
+    "schemas": [
+      "CreateNodePluginCommand.RequestBodySchema",
+      "CreateNodePluginCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/create-modal/create-node-plugin.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-113",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:69",
+    "hook": "useDeleteNodePlugin",
+    "expression": "DeleteNodePluginCommand.TSQ_url",
+    "command": "DeleteNodePluginCommand",
+    "method": "DELETE",
+    "path": "/api/node-plugins/:uuid",
+    "schemas": [
+      "DeleteNodePluginCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/node-plugins/node-plugins-grid/node-plugins-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-114",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:92",
+    "hook": "useReorderNodePlugins",
+    "expression": "ReorderNodePluginCommand.TSQ_url",
+    "command": "ReorderNodePluginCommand",
+    "method": "POST",
+    "path": "/api/node-plugins/actions/reorder",
+    "schemas": [
+      "ReorderNodePluginCommand.RequestBodySchema",
+      "ReorderNodePluginCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/node-plugins/node-plugins-grid/node-plugins-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-115",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:109",
+    "hook": "useCloneNodePlugin",
+    "expression": "CloneNodePluginCommand.TSQ_url",
+    "command": "CloneNodePluginCommand",
+    "method": "POST",
+    "path": "/api/node-plugins/actions/clone",
+    "schemas": [
+      "CloneNodePluginCommand.RequestBodySchema",
+      "CloneNodePluginCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/node-plugins/node-plugins-grid/node-plugins-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-116",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:133",
+    "hook": "useNodePluginExecutor",
+    "expression": "PluginExecutorCommand.TSQ_url",
+    "command": "PluginExecutorCommand",
+    "method": "POST",
+    "path": "/api/node-plugins/executor",
+    "schemas": [
+      "PluginExecutorCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/node-plugins/node-plugin-executor/node-plugin-executor.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-117",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:156",
+    "hook": "useTruncateTorrentBlockerReports",
+    "expression": "TruncateTorrentBlockerReportsCommand.TSQ_url",
+    "command": "TruncateTorrentBlockerReportsCommand",
+    "method": "DELETE",
+    "path": "/api/node-plugins/torrent-blocker/truncate",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/widgets/dashboard/torrent-blocker-reports/torrent-blocker-reports-table/torrent-blocker-reports-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-118",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:178",
+    "hook": "useSyncNodePlugin",
+    "expression": "SyncNodePluginCommand.TSQ_url",
+    "command": "SyncNodePluginCommand",
+    "method": "POST",
+    "path": "/api/node-plugins/actions/sync",
+    "schemas": [
+      "SyncNodePluginCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/node-plugins/node-plugins-editor-actions/node-plugins-editor-actions.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-119",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:201",
+    "hook": "useCreateSharedList",
+    "expression": "CreateSharedListCommand.TSQ_url",
+    "command": "CreateSharedListCommand",
+    "method": "POST",
+    "path": "/api/node-plugins/shared-lists",
+    "schemas": [
+      "CreateSharedListCommand.RequestBodySchema",
+      "CreateSharedListCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/shared-lists/shared-list-editor-modal/shared-list-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-120",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:225",
+    "hook": "useUpdateSharedList",
+    "expression": "UpdateSharedListCommand.TSQ_url",
+    "command": "UpdateSharedListCommand",
+    "method": "PATCH",
+    "path": "/api/node-plugins/shared-lists",
+    "schemas": [
+      "UpdateSharedListCommand.RequestBodySchema",
+      "UpdateSharedListCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/shared-lists/shared-list-editor-modal/shared-list-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-121",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:249",
+    "hook": "useDeleteSharedList",
+    "expression": "DeleteSharedListCommand.TSQ_url",
+    "command": "DeleteSharedListCommand",
+    "method": "DELETE",
+    "path": "/api/node-plugins/shared-lists",
+    "schemas": [
+      "DeleteSharedListCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/shared-lists/shared-lists-modal/use-shared-list-actions.ts"
+    ]
+  },
+  {
+    "id": "FE-122",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:272",
+    "hook": "useSyncSharedList",
+    "expression": "SyncSharedListCommand.TSQ_url",
+    "command": "SyncSharedListCommand",
+    "method": "POST",
+    "path": "/api/node-plugins/shared-lists/actions/sync",
+    "schemas": [
+      "SyncSharedListCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/shared-lists/shared-list-editor-modal/shared-list-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-123",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.mutation.hooks.ts:295",
+    "hook": "useSetNodePluginsTags",
+    "expression": "SetNodePluginTagsCommand.TSQ_url",
+    "command": "SetNodePluginTagsCommand",
+    "method": "PATCH",
+    "path": "/api/node-plugins/tags",
+    "schemas": [
+      "SetNodePluginTagsCommand.RequestBodySchema",
+      "SetNodePluginTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-124",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:41",
+    "hook": "useGetNodePlugin",
+    "expression": "GetNodePluginCommand.TSQ_url",
+    "command": "GetNodePluginCommand",
+    "method": "GET",
+    "path": "/api/node-plugins/:uuid",
+    "schemas": [
+      "GetNodePluginCommand.RequestParamSchema",
+      "GetNodePluginCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/node-plugins/ui/connectors/node-plugin-editor-page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-125",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:56",
+    "hook": "useGetNodePlugins",
+    "expression": "GetNodePluginsCommand.TSQ_url",
+    "command": "GetNodePluginsCommand",
+    "method": "GET",
+    "path": "/api/node-plugins",
+    "schemas": [
+      "GetNodePluginsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/nodes/multi-select-nodes/bulk-update-nodes.modal.content.tsx",
+      "frontend/src/features/ui/dashboard/node-plugins/header-action-buttons/header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/node-plugins/ui/connectors/node-plugins-base-page.connector.tsx",
+      "frontend/src/pages/dashboard/nodes/ui/connectors/nodes.page.connector.tsx",
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node-steps/create-node-step-1-connection.tsx",
+      "frontend/src/shared/_modals/nodes/edit-node-modal/edit-node.modal.content.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-datatable/nodes-datatable.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-126",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:67",
+    "hook": "useGetTorrentBlockerReports",
+    "expression": "GetTorrentBlockerReportsCommand.TSQ_url",
+    "command": "GetTorrentBlockerReportsCommand",
+    "method": "GET",
+    "path": "/api/node-plugins/torrent-blocker",
+    "schemas": [
+      "GetTorrentBlockerReportsCommand.ResponseSchema",
+      "GetTorrentBlockerReportsCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-torrent-blocker-reports/user-torrent-blocker-reports.drawer.tsx",
+      "frontend/src/widgets/dashboard/torrent-blocker-reports/torrent-blocker-reports-table/torrent-blocker-reports-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-127",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:84",
+    "hook": "useGetTorrentBlockerStats",
+    "expression": "GetTorrentBlockerReportsStatsCommand.TSQ_url",
+    "command": "GetTorrentBlockerReportsStatsCommand",
+    "method": "GET",
+    "path": "/api/node-plugins/torrent-blocker/stats",
+    "schemas": [
+      "GetTorrentBlockerReportsStatsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/torrent-blocker-reports/torrent-blocker-reports-table/torrent-blocker-reports-table.widget.tsx",
+      "frontend/src/widgets/dashboard/torrent-blocker-reports/torrent-blocker-stats/torrent-blocker-stats.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-128",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:95",
+    "hook": "useGetSharedLists",
+    "expression": "GetSharedListsCommand.TSQ_url",
+    "command": "GetSharedListsCommand",
+    "method": "GET",
+    "path": "/api/node-plugins/shared-lists",
+    "schemas": [
+      "GetSharedListsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/shared-lists/shared-lists-modal/shared-lists.modal.tsx",
+      "frontend/src/widgets/dashboard/node-plugins/node-plugin-editor/node-plugin-editor-editor.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-129",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:106",
+    "hook": "useGetSharedList",
+    "expression": "GetSharedListCommand.TSQ_url",
+    "command": "GetSharedListCommand",
+    "method": "GET",
+    "path": "/api/node-plugins/shared-lists/by-name",
+    "schemas": [
+      "GetSharedListCommand.RequestQuerySchema",
+      "GetSharedListCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/shared-lists/shared-list-editor-modal/shared-list-editor.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-130",
+    "source": "frontend/src/shared/api/hooks/node-plugins/node-plugins.query.hooks.ts:121",
+    "hook": "useGetNodePluginsTags",
+    "expression": "GetNodePluginsTagsCommand.TSQ_url",
+    "command": "GetNodePluginsTagsCommand",
+    "method": "GET",
+    "path": "/api/node-plugins/tags",
+    "schemas": [
+      "GetNodePluginsTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-131",
+    "source": "frontend/src/shared/api/hooks/node-ssh/evaluate-vault.ts:6",
+    "hook": "evaluateVault",
+    "expression": "instance.post<unknown>(EvaluateVaultCommand.TSQ_url, { blinded })\n    const parsed = await EvaluateVaultCommand.ResponseSchema.safeParseAsync(response.data)",
+    "command": "EvaluateVaultCommand",
+    "method": "POST",
+    "path": "/api/node-ssh/vault/evaluate",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/entities/ssh-vault/use-ssh-vault-store.ts"
+    ]
+  },
+  {
+    "id": "FE-132",
+    "source": "frontend/src/shared/api/hooks/node-ssh/node-ssh.mutation.hooks.ts:6",
+    "hook": "useCreateSshTicket",
+    "expression": "CreateSshTicketCommand.TSQ_url",
+    "command": "CreateSshTicketCommand",
+    "method": "POST",
+    "path": "/api/node-ssh/:uuid/ticket",
+    "schemas": [
+      "CreateSshTicketCommand.ResponseSchema",
+      "CreateSshTicketCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-ssh-terminal/session/ssh-session.tab.tsx"
+    ]
+  },
+  {
+    "id": "FE-133",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:37",
+    "hook": "useCreateNode",
+    "expression": "CreateNodeCommand.TSQ_url",
+    "command": "CreateNodeCommand",
+    "method": "POST",
+    "path": "/api/nodes",
+    "schemas": [
+      "CreateNodeCommand.RequestBodySchema",
+      "CreateNodeCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-134",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:61",
+    "hook": "useUpdateNode",
+    "expression": "UpdateNodeCommand.TSQ_url",
+    "command": "UpdateNodeCommand",
+    "method": "PATCH",
+    "path": "/api/nodes",
+    "schemas": [
+      "UpdateNodeBodySchema",
+      "UpdateNodeResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/edit-node-modal/edit-node.modal.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-135",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:85",
+    "hook": "useDeleteNode",
+    "expression": "DeleteNodeCommand.TSQ_url",
+    "command": "DeleteNodeCommand",
+    "method": "DELETE",
+    "path": "/api/nodes/:uuid",
+    "schemas": [
+      "DeleteNodeCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/delete-node/delete-node.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-136",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:108",
+    "hook": "useEnableNode",
+    "expression": "EnableNodeCommand.TSQ_url",
+    "command": "EnableNodeCommand",
+    "method": "POST",
+    "path": "/api/nodes/:uuid/actions/enable",
+    "schemas": [
+      "EnableNodeCommand.ResponseSchema",
+      "EnableNodeCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/toggle-node-status-button/toggle-node-status-button.feature.tsx",
+      "frontend/src/widgets/dashboard/nodes/node-details-card/node-details-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-137",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:132",
+    "hook": "useDisableNode",
+    "expression": "DisableNodeCommand.TSQ_url",
+    "command": "DisableNodeCommand",
+    "method": "POST",
+    "path": "/api/nodes/:uuid/actions/disable",
+    "schemas": [
+      "DisableNodeCommand.ResponseSchema",
+      "DisableNodeCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/toggle-node-status-button/toggle-node-status-button.feature.tsx",
+      "frontend/src/widgets/dashboard/nodes/node-details-card/node-details-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-138",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:156",
+    "hook": "useRestartAllNodes",
+    "expression": "RestartAllNodesCommand.TSQ_url",
+    "command": "RestartAllNodesCommand",
+    "method": "POST",
+    "path": "/api/nodes/actions/restart-all",
+    "schemas": [
+      "RestartAllNodesCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/nodes-header-action-buttons/nodes-header-action-buttons.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-139",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:178",
+    "hook": "useReorderNodes",
+    "expression": "ReorderNodesCommand.TSQ_url",
+    "command": "ReorderNodesCommand",
+    "method": "POST",
+    "path": "/api/nodes/actions/reorder",
+    "schemas": [
+      "ReorderNodesCommand.RequestBodySchema",
+      "ReorderNodesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/nodes/ui/components/nodes.page.component.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-table/nodes-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-140",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:195",
+    "hook": "useRestartNode",
+    "expression": "RestartNodeCommand.TSQ_url",
+    "command": "RestartNodeCommand",
+    "method": "POST",
+    "path": "/api/nodes/:uuid/actions/restart",
+    "schemas": [
+      "RestartNodeCommand.RequestParamSchema",
+      "RestartNodeCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/restart-node-button/restart-node.modal-content.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-141",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:219",
+    "hook": "useResetNodeTraffic",
+    "expression": "ResetNodeTrafficCommand.TSQ_url",
+    "command": "ResetNodeTrafficCommand",
+    "method": "POST",
+    "path": "/api/nodes/:uuid/actions/reset-traffic",
+    "schemas": [
+      "ResetNodeTrafficCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/reset-node-traffic/reset-node-traffic.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-142",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:242",
+    "hook": "useBulkNodesProfileModification",
+    "expression": "BulkNodesProfileModificationCommand.TSQ_url",
+    "command": "BulkNodesProfileModificationCommand",
+    "method": "POST",
+    "path": "/api/nodes/bulk-actions/profile-modification",
+    "schemas": [
+      "BulkNodesProfileModificationCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/nodes/multi-select-nodes/multi-select-nodes.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-143",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:265",
+    "hook": "useBulkNodesActions",
+    "expression": "BulkNodesActionsCommand.TSQ_url",
+    "command": "BulkNodesActionsCommand",
+    "method": "POST",
+    "path": "/api/nodes/bulk-actions",
+    "schemas": [
+      "BulkNodesActionsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/nodes/multi-select-nodes/multi-select-modal.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-144",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.mutation.hooks.ts:288",
+    "hook": "useBulkNodesUpdate",
+    "expression": "BulkNodesUpdateCommand.TSQ_url",
+    "command": "BulkNodesUpdateCommand",
+    "method": "POST",
+    "path": "/api/nodes/bulk-actions/update",
+    "schemas": [
+      "BulkNodesUpdateCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/nodes/multi-select-nodes/bulk-update-nodes.modal.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-145",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.query.hooks.ts:38",
+    "hook": "useGetNodes",
+    "expression": "GetNodesCommand.TSQ_url",
+    "command": "GetNodesCommand",
+    "method": "GET",
+    "path": "/api/nodes",
+    "schemas": [
+      "GetNodesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/nodes/nodes-header-action-buttons/nodes-header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/hosts/ui/connectors/hosts.page.connector.tsx",
+      "frontend/src/pages/dashboard/node-plugins/ui/connectors/node-plugins-base-page.connector.tsx",
+      "frontend/src/pages/dashboard/nodes/ui/connectors/nodes.page.connector.tsx",
+      "frontend/src/pages/dashboard/sessions-explorer/ui/connectors/sessions-explorer.page.connector.tsx",
+      "frontend/src/pages/dashboard/torrent-blocker-reports/ui/connectors/torrent-blocker-reports.page.connector.tsx",
+      "frontend/src/pages/dashboard/users/ui/connectors/users.page.connector.tsx",
+      "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx",
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.content.tsx",
+      "frontend/src/shared/_modals/hosts/edit-many-hosts-drawer/edit-many-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/node-plugins/node-plugin-executor/node-plugin-executor.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/linked-hosts-drawer/linked-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/node-inbounds-hosts-drawer/node-inbounds-hosts.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/node-ssh-terminal/node-ssh-terminal.window.tsx",
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.content.tsx",
+      "frontend/src/widgets/dashboard/hosts/hosts-datatable/hosts-datatable.widget.tsx",
+      "frontend/src/widgets/dashboard/hosts/hosts-table/hosts-table.widget.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-datatable/nodes-datatable.widget.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-table/nodes-table.widget.tsx",
+      "frontend/src/widgets/dashboard/sessions-explorer/sessions-explorer-widget/sessions-explorer.widget.tsx",
+      "frontend/src/widgets/dashboard/torrent-blocker-reports/torrent-blocker-reports-table/torrent-blocker-reports-table.widget.tsx",
+      "frontend/src/widgets/dashboard/users/users-table/user-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-146",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.query.hooks.ts:56",
+    "hook": "useGetNode",
+    "expression": "GetNodeCommand.TSQ_url",
+    "command": "GetNodeCommand",
+    "method": "GET",
+    "path": "/api/nodes/:uuid",
+    "schemas": [
+      "GetNodeResponseSchema",
+      "GetNodeCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node-steps/create-node-step-3-status.tsx",
+      "frontend/src/shared/_modals/nodes/edit-node-modal/edit-node.modal.content.tsx",
+      "frontend/src/shared/_modals/nodes/edit-node-modal/edit-node.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-147",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.query.hooks.ts:69",
+    "hook": "useGetNodeSecretKey",
+    "expression": "GetNodeSecretKeyCommand.TSQ_url",
+    "command": "GetNodeSecretKeyCommand",
+    "method": "GET",
+    "path": "/api/keygen",
+    "schemas": [
+      "GetNodeSecretKeyCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/nodes/ui/connectors/nodes.page.connector.tsx",
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node-steps/copy-node-install-command.widget.tsx",
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node.modal.tsx",
+      "frontend/src/shared/_modals/nodes/edit-node-modal/edit-node.modal.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-148",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.query.hooks.ts:83",
+    "hook": "useGetNodesTags",
+    "expression": "GetNodesTagsCommand.TSQ_url",
+    "command": "GetNodesTagsCommand",
+    "method": "GET",
+    "path": "/api/nodes/tags",
+    "schemas": [
+      "GetNodesTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/nodes/multi-select-nodes/bulk-update-nodes.modal.content.tsx",
+      "frontend/src/pages/dashboard/nodes/ui/connectors/nodes.page.connector.tsx",
+      "frontend/src/shared/_modals/nodes/create-node-modal/create-node-steps/create-node-step-1-connection.tsx",
+      "frontend/src/shared/ui/forms/nodes/base-node-form/node-tracking-and-billing.card.tsx"
+    ]
+  },
+  {
+    "id": "FE-149",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.query.hooks.ts:93",
+    "hook": "useGetNodeMetadata",
+    "expression": "GetNodeMetadataCommand.TSQ_url",
+    "command": "GetNodeMetadataCommand",
+    "method": "GET",
+    "path": "/api/metadata/node/:uuid",
+    "schemas": [
+      "GetNodeMetadataCommand.ResponseSchema",
+      "GetNodeMetadataCommand.RequestParamsSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/nodes/node-details-card/node-details-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-150",
+    "source": "frontend/src/shared/api/hooks/nodes/nodes.query.hooks.ts:118",
+    "hook": "useGetNodesTrafficSummary",
+    "expression": "'/api/nodes/traffic-summary'",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [
+      "GetNodesTrafficSummaryResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/nodes/node-card/node-card.widget.tsx",
+      "frontend/src/widgets/dashboard/nodes/node-details-card/node-details-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-151",
+    "source": "frontend/src/shared/api/hooks/passkeys/passkeys.hooks.ts:11",
+    "hook": "usePasskeyRegistrationVerify",
+    "expression": "VerifyPasskeyRegistrationCommand.TSQ_url",
+    "command": "VerifyPasskeyRegistrationCommand",
+    "method": "POST",
+    "path": "/api/passkeys/registration/verify",
+    "schemas": [
+      "VerifyPasskeyRegistrationCommand.RequestBodySchema",
+      "VerifyPasskeyRegistrationCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/gowave-settings/passkeys-drawer/passkeys.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-152",
+    "source": "frontend/src/shared/api/hooks/passkeys/passkeys.hooks.ts:27",
+    "hook": "useDeletePasskey",
+    "expression": "DeletePasskeyCommand.TSQ_url",
+    "command": "DeletePasskeyCommand",
+    "method": "DELETE",
+    "path": "/api/passkeys",
+    "schemas": [
+      "DeletePasskeyCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/gowave-settings/passkeys-drawer/passkeys.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-153",
+    "source": "frontend/src/shared/api/hooks/passkeys/passkeys.hooks.ts:42",
+    "hook": "useUpdatePasskey",
+    "expression": "UpdatePasskeyCommand.TSQ_url",
+    "command": "UpdatePasskeyCommand",
+    "method": "PATCH",
+    "path": "/api/passkeys",
+    "schemas": [
+      "UpdatePasskeyCommand.RequestBodySchema",
+      "UpdatePasskeyCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-154",
+    "source": "frontend/src/shared/api/hooks/passkeys/passkeys.query.hooks.ts:20",
+    "hook": "usePasskeyRegistrationOptions",
+    "expression": "GetPasskeyRegistrationOptionsCommand.TSQ_url",
+    "command": "GetPasskeyRegistrationOptionsCommand",
+    "method": "GET",
+    "path": "/api/passkeys/registration/options",
+    "schemas": [
+      "GetPasskeyRegistrationOptionsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/gowave-settings/passkeys-drawer/passkeys.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-155",
+    "source": "frontend/src/shared/api/hooks/passkeys/passkeys.query.hooks.ts:30",
+    "hook": "useGetPasskeys",
+    "expression": "GetPasskeysCommand.TSQ_url",
+    "command": "GetPasskeysCommand",
+    "method": "GET",
+    "path": "/api/passkeys",
+    "schemas": [
+      "GetPasskeysCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/gowave-settings/passkeys-drawer/passkeys.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-156",
+    "source": "frontend/src/shared/api/hooks/snippets/snippets.mutation.hooks.ts:12",
+    "hook": "useUpdateSnippet",
+    "expression": "UpdateSnippetCommand.TSQ_url",
+    "command": "UpdateSnippetCommand",
+    "method": "PATCH",
+    "path": "/api/snippets",
+    "schemas": [
+      "UpdateSnippetCommand.RequestBodySchema",
+      "UpdateSnippetCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/snippets/edit-snippet.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-157",
+    "source": "frontend/src/shared/api/hooks/snippets/snippets.mutation.hooks.ts:36",
+    "hook": "useDeleteSnippet",
+    "expression": "DeleteSnippetCommand.TSQ_url",
+    "command": "DeleteSnippetCommand",
+    "method": "DELETE",
+    "path": "/api/snippets",
+    "schemas": [
+      "DeleteSnippetCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/snippets/use-snippet-actions.tsx"
+    ]
+  },
+  {
+    "id": "FE-158",
+    "source": "frontend/src/shared/api/hooks/snippets/snippets.mutation.hooks.ts:59",
+    "hook": "useCreateSnippet",
+    "expression": "CreateSnippetCommand.TSQ_url",
+    "command": "CreateSnippetCommand",
+    "method": "POST",
+    "path": "/api/snippets",
+    "schemas": [
+      "CreateSnippetCommand.ResponseSchema",
+      "CreateSnippetCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/snippets/create-snippet.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-159",
+    "source": "frontend/src/shared/api/hooks/snippets/snippets.mutation.hooks.ts:83",
+    "hook": "useSyncSnippet",
+    "expression": "SyncSnippetCommand.TSQ_url",
+    "command": "SyncSnippetCommand",
+    "method": "POST",
+    "path": "/api/snippets/actions/sync",
+    "schemas": [
+      "SyncSnippetCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/config-profiles/snippets/edit-snippet.modal.tsx",
+      "frontend/src/widgets/dashboard/config-profiles/snippets/use-snippet-actions.tsx"
+    ]
+  },
+  {
+    "id": "FE-160",
+    "source": "frontend/src/shared/api/hooks/snippets/snippets.query.hooks.ts:15",
+    "hook": "useGetSnippets",
+    "expression": "GetSnippetsCommand.TSQ_url",
+    "command": "GetSnippetsCommand",
+    "method": "GET",
+    "path": "/api/snippets",
+    "schemas": [
+      "GetSnippetsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/config-profiles/connectors/config-profile-by-uuid.page.connector.tsx",
+      "frontend/src/pages/dashboard/config-profiles/connectors/config-profiles.page.connector.tsx",
+      "frontend/src/shared/_modals/snippets/snippets-modal/snippets.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-161",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.mutation.hooks.ts:14",
+    "hook": "useUpdateSubpageConfig",
+    "expression": "UpdateSubpageConfigCommand.TSQ_url",
+    "command": "UpdateSubpageConfigCommand",
+    "method": "PATCH",
+    "path": "/api/subscription-page-configs",
+    "schemas": [
+      "UpdateSubpageConfigCommand.RequestBodySchema",
+      "UpdateSubpageConfigCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/subpage-config/ui/components/subpage-config-editor-page.component.tsx",
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-162",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.mutation.hooks.ts:38",
+    "hook": "useCreateSubpageConfig",
+    "expression": "CreateSubpageConfigCommand.TSQ_url",
+    "command": "CreateSubpageConfigCommand",
+    "method": "POST",
+    "path": "/api/subscription-page-configs",
+    "schemas": [
+      "CreateSubpageConfigCommand.RequestBodySchema",
+      "CreateSubpageConfigCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/create-modal/create-subpage-config.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-163",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.mutation.hooks.ts:62",
+    "hook": "useDeleteSubpageConfig",
+    "expression": "DeleteSubpageConfigCommand.TSQ_url",
+    "command": "DeleteSubpageConfigCommand",
+    "method": "DELETE",
+    "path": "/api/subscription-page-configs/:uuid",
+    "schemas": [
+      "DeleteSubpageConfigCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/subpage-configs/subpage-configs-grid/subpage-configs-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-164",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.mutation.hooks.ts:85",
+    "hook": "useReorderSubpageConfigs",
+    "expression": "ReorderSubpageConfigsCommand.TSQ_url",
+    "command": "ReorderSubpageConfigsCommand",
+    "method": "POST",
+    "path": "/api/subscription-page-configs/actions/reorder",
+    "schemas": [
+      "ReorderSubpageConfigsCommand.RequestBodySchema",
+      "ReorderSubpageConfigsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/subpage-configs/subpage-configs-grid/subpage-configs-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-165",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.mutation.hooks.ts:102",
+    "hook": "useCloneSubpageConfig",
+    "expression": "CloneSubpageConfigCommand.TSQ_url",
+    "command": "CloneSubpageConfigCommand",
+    "method": "POST",
+    "path": "/api/subscription-page-configs/actions/clone",
+    "schemas": [
+      "CloneSubpageConfigCommand.RequestBodySchema",
+      "CloneSubpageConfigCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/subpage-configs/subpage-configs-grid/subpage-configs-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-166",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.mutation.hooks.ts:126",
+    "hook": "useSetSubpageConfigsTags",
+    "expression": "SetSubpageConfigTagsCommand.TSQ_url",
+    "command": "SetSubpageConfigTagsCommand",
+    "method": "PATCH",
+    "path": "/api/subscription-page-configs/tags",
+    "schemas": [
+      "SetSubpageConfigTagsCommand.RequestBodySchema",
+      "SetSubpageConfigTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-167",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.query.hooks.ts:25",
+    "hook": "useGetSubscriptionPageConfig",
+    "expression": "GetSubpageConfigCommand.TSQ_url",
+    "command": "GetSubpageConfigCommand",
+    "method": "GET",
+    "path": "/api/subscription-page-configs/:uuid",
+    "schemas": [
+      "GetSubpageConfigCommand.RequestParamSchema",
+      "GetSubpageConfigCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/subpage-config/ui/connectors/subpage-config-editor-page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-168",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.query.hooks.ts:40",
+    "hook": "useGetSubpageConfigs",
+    "expression": "GetSubpageConfigsCommand.TSQ_url",
+    "command": "GetSubpageConfigsCommand",
+    "method": "GET",
+    "path": "/api/subscription-page-configs",
+    "schemas": [
+      "GetSubpageConfigsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/subpage-configs/header-action-buttons/header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/external-squads/connectors/external-squads.page.connector.tsx",
+      "frontend/src/pages/dashboard/subpage-config/ui/connectors/subpage-config-base-page.connector.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/external-squads.drawer.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-subpage-config.tab.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-169",
+    "source": "frontend/src/shared/api/hooks/subpage-configs/subpage-configs.query.hooks.ts:51",
+    "hook": "useGetSubpageConfigsTags",
+    "expression": "GetSubpageConfigsTagsCommand.TSQ_url",
+    "command": "GetSubpageConfigsTagsCommand",
+    "method": "GET",
+    "path": "/api/subscription-page-configs/tags",
+    "schemas": [
+      "GetSubpageConfigsTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-170",
+    "source": "frontend/src/shared/api/hooks/subscription-request-history/subscription-request-history.query.hooks.ts:26",
+    "hook": "useGetSubscriptionRequestHistory",
+    "expression": "GetSubscriptionRequestHistoryCommand.TSQ_url",
+    "command": "GetSubscriptionRequestHistoryCommand",
+    "method": "GET",
+    "path": "/api/subscription-request-history",
+    "schemas": [
+      "GetSubscriptionRequestHistoryCommand.ResponseSchema",
+      "GetSubscriptionRequestHistoryCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/srh-inspector/srh-inspector-table/srh-inspector-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-171",
+    "source": "frontend/src/shared/api/hooks/subscription-request-history/subscription-request-history.query.hooks.ts:43",
+    "hook": "useGetSubscriptionRequestHistoryStats",
+    "expression": "GetSubscriptionRequestHistoryStatsCommand.TSQ_url",
+    "command": "GetSubscriptionRequestHistoryStatsCommand",
+    "method": "GET",
+    "path": "/api/subscription-request-history/stats",
+    "schemas": [
+      "GetSubscriptionRequestHistoryStatsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/srh-inspector/srh-inspector-metrics/srh-inspector-metrics.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-172",
+    "source": "frontend/src/shared/api/hooks/subscription-settings/subscription-settings.mutation.hooks.ts:11",
+    "hook": "useUpdateSubscriptionSettings",
+    "expression": "UpdateSubscriptionSettingsCommand.TSQ_url",
+    "command": "UpdateSubscriptionSettingsCommand",
+    "method": "PATCH",
+    "path": "/api/subscription-settings",
+    "schemas": [
+      "UpdateSubscriptionSettingsBodySchema",
+      "SubscriptionSettingsResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/response-rules/response-rules-editor-actions/response-rules-editor-actions.feature.tsx",
+      "frontend/src/widgets/dashboard/subscription-settings/settings/cards/subscription-additional-options.widget.tsx",
+      "frontend/src/widgets/dashboard/subscription-settings/settings/cards/subscription-hwid-settings.widget.tsx",
+      "frontend/src/widgets/dashboard/subscription-settings/settings/cards/subscription-response-headers-card.widget.tsx",
+      "frontend/src/widgets/dashboard/subscription-settings/settings/cards/subscription-user-remarks-card.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-173",
+    "source": "frontend/src/shared/api/hooks/subscription-settings/subscription-settings.query.hooks.ts:16",
+    "hook": "useGetSubscriptionSettings",
+    "expression": "GetSubscriptionSettingsCommand.TSQ_url",
+    "command": "GetSubscriptionSettingsCommand",
+    "method": "GET",
+    "path": "/api/subscription-settings",
+    "schemas": [
+      "SubscriptionSettingsResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/response-rules/connectors/response-rules.page.connector.tsx",
+      "frontend/src/pages/dashboard/subscription-settings/connectors/subscription-settings.page.connector.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-response-headers.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-174",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.mutation.hooks.ts:13",
+    "hook": "useUpdateSubscriptionTemplate",
+    "expression": "UpdateSubscriptionTemplateCommand.TSQ_url",
+    "command": "UpdateSubscriptionTemplateCommand",
+    "method": "PATCH",
+    "path": "/api/subscription-templates",
+    "schemas": [
+      "UpdateSubscriptionTemplateCommand.RequestBodySchema",
+      "UpdateSubscriptionTemplateCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/dashboard/subscription-templates/template-editor-actions/template-editor-actions.feature.tsx",
+      "frontend/src/shared/_modals/universal/rename-drawer/rename.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-175",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.mutation.hooks.ts:37",
+    "hook": "useCreateSubscriptionTemplate",
+    "expression": "CreateSubscriptionTemplateCommand.TSQ_url",
+    "command": "CreateSubscriptionTemplateCommand",
+    "method": "POST",
+    "path": "/api/subscription-templates",
+    "schemas": [
+      "CreateSubscriptionTemplateCommand.RequestBodySchema",
+      "CreateSubscriptionTemplateCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/create-modal/create-template.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-176",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.mutation.hooks.ts:61",
+    "hook": "useDeleteSubscriptionTemplate",
+    "expression": "DeleteSubscriptionTemplateCommand.TSQ_url",
+    "command": "DeleteSubscriptionTemplateCommand",
+    "method": "DELETE",
+    "path": "/api/subscription-templates/:uuid",
+    "schemas": [
+      "DeleteSubscriptionTemplateCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/templates/templates-grid/templates-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-177",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.mutation.hooks.ts:84",
+    "hook": "useReorderSubscriptionTemplates",
+    "expression": "ReorderSubscriptionTemplateCommand.TSQ_url",
+    "command": "ReorderSubscriptionTemplateCommand",
+    "method": "POST",
+    "path": "/api/subscription-templates/actions/reorder",
+    "schemas": [
+      "ReorderSubscriptionTemplateCommand.RequestBodySchema",
+      "ReorderSubscriptionTemplateCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/templates/templates-grid/templates-grid.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-178",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.mutation.hooks.ts:101",
+    "hook": "useSetSubscriptionTemplatesTags",
+    "expression": "SetSubscriptionTemplateTagsCommand.TSQ_url",
+    "command": "SetSubscriptionTemplateTagsCommand",
+    "method": "PATCH",
+    "path": "/api/subscription-templates/tags",
+    "schemas": [
+      "SetSubscriptionTemplateTagsCommand.RequestBodySchema",
+      "SetSubscriptionTemplateTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-179",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.query.hooks.ts:25",
+    "hook": "useGetSubscriptionTemplate",
+    "expression": "GetSubscriptionTemplateCommand.TSQ_url",
+    "command": "GetSubscriptionTemplateCommand",
+    "method": "GET",
+    "path": "/api/subscription-templates/:uuid",
+    "schemas": [
+      "GetSubscriptionTemplateCommand.RequestParamSchema",
+      "GetSubscriptionTemplateCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/templates/ui/connectors/template-editor-page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-180",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.query.hooks.ts:40",
+    "hook": "useGetSubscriptionTemplates",
+    "expression": "GetSubscriptionTemplatesCommand.TSQ_url",
+    "command": "GetSubscriptionTemplatesCommand",
+    "method": "GET",
+    "path": "/api/subscription-templates",
+    "schemas": [
+      "GetSubscriptionTemplatesCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/templates/header-action-buttons/header-action-buttons.feature.tsx",
+      "frontend/src/pages/dashboard/external-squads/connectors/external-squads.page.connector.tsx",
+      "frontend/src/pages/dashboard/hosts/ui/connectors/hosts.page.connector.tsx",
+      "frontend/src/pages/dashboard/response-rules/connectors/response-rules.page.connector.tsx",
+      "frontend/src/pages/dashboard/templates/ui/connectors/template-base-page.connector.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/external-squads.drawer.tsx",
+      "frontend/src/shared/_modals/external-squads/external-squads-drawer/tabs/external-squads-templates.tab.widget.tsx",
+      "frontend/src/shared/_modals/hosts/create-host-drawer/create-host.modal.tsx",
+      "frontend/src/shared/_modals/hosts/edit-host-modal/edit-host.modal.content.tsx",
+      "frontend/src/shared/_modals/hosts/edit-many-hosts-drawer/edit-many-hosts.drawer.tsx",
+      "frontend/src/widgets/dashboard/hosts/hosts-datatable/hosts-datatable.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-181",
+    "source": "frontend/src/shared/api/hooks/subscription-template/subscription-template.query.hooks.ts:51",
+    "hook": "useGetSubscriptionTemplatesTags",
+    "expression": "GetSubscriptionTemplatesTagsCommand.TSQ_url",
+    "command": "GetSubscriptionTemplatesTagsCommand",
+    "method": "GET",
+    "path": "/api/subscription-templates/tags",
+    "schemas": [
+      "GetSubscriptionTemplatesTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/universal/edit-tags-modal/edit-tags.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-182",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:48",
+    "hook": "useGetSystemStats",
+    "expression": "GetStatsCommand.TSQ_url",
+    "command": "GetStatsCommand",
+    "method": "GET",
+    "path": "/api/system/stats",
+    "schemas": [
+      "GetStatsCommand.ResponseSchema",
+      "GetStatsCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/home/connectors/home.page.connector.tsx",
+      "frontend/src/widgets/dashboard/users/users-metrics/users-metrics.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-183",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:64",
+    "hook": "useGetBandwidthStats",
+    "expression": "GetBandwidthStatsCommand.TSQ_url",
+    "command": "GetBandwidthStatsCommand",
+    "method": "GET",
+    "path": "/api/system/stats/bandwidth",
+    "schemas": [
+      "GetBandwidthStatsCommand.ResponseSchema",
+      "GetBandwidthStatsCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/home/connectors/home.page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-184",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:80",
+    "hook": "useGetNodesStatisticsCommand",
+    "expression": "GetNodesStatisticsCommand.TSQ_url",
+    "command": "GetNodesStatisticsCommand",
+    "method": "GET",
+    "path": "/api/system/stats/nodes",
+    "schemas": [
+      "GetNodesStatisticsCommand.ResponseSchema",
+      "GetNodesStatisticsCommand.RequestQuerySchema"
+    ],
+    "consumers": []
+  },
+  {
+    "id": "FE-185",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:96",
+    "hook": "useGetGowaveHealth",
+    "expression": "GetRemnawaveHealthCommand.TSQ_url",
+    "command": "GetRemnawaveHealthCommand",
+    "method": "GET",
+    "path": "/api/system/health",
+    "schemas": [
+      "GetRemnawaveHealthCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/home/connectors/home.page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-186",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:108",
+    "hook": "useGetNodesMetrics",
+    "expression": "GetNodesMetricsCommand.TSQ_url",
+    "command": "GetNodesMetricsCommand",
+    "method": "GET",
+    "path": "/api/system/nodes/metrics",
+    "schemas": [
+      "GetNodesMetricsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/nodes-metrics/ui/connectors/nodes-metrics.page.connector.tsx",
+      "frontend/src/widgets/dashboard/nodes/nodes-metrics/node-metrics.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-187",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:120",
+    "hook": "useGetGowaveMetadata",
+    "expression": "GetMetadataCommand.TSQ_url",
+    "command": "GetMetadataCommand",
+    "method": "GET",
+    "path": "/api/system/metadata",
+    "schemas": [
+      "GetMetadataCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/ui/header-buttons/VersionControl.tsx"
+    ]
+  },
+  {
+    "id": "FE-188",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:132",
+    "hook": "useGetRecap",
+    "expression": "GetRecapCommand.TSQ_url",
+    "command": "GetRecapCommand",
+    "method": "GET",
+    "path": "/api/system/stats/recap",
+    "schemas": [
+      "GetRecapCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/widgets/dashboard/recap/recap.content.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-189",
+    "source": "frontend/src/shared/api/hooks/system/system.query.hooks.ts:144",
+    "hook": "useGetHttpStats",
+    "expression": "GetHttpStatsCommand.TSQ_url",
+    "command": "GetHttpStatsCommand",
+    "method": "GET",
+    "path": "/api/system/stats/http",
+    "schemas": [
+      "GetHttpStatsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/http-stats/ui/connectors/http-stats.page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-190",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:26",
+    "hook": "useCreateUser",
+    "expression": "CreateUserCommand.TSQ_url",
+    "command": "CreateUserCommand",
+    "method": "POST",
+    "path": "/api/users",
+    "schemas": [
+      "CreateUserCommand.RequestBodySchema",
+      "CreateUserCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/create-user-modal/create-user.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-191",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:51",
+    "hook": "useUpdateUser",
+    "expression": "UpdateUserCommand.TSQ_url",
+    "command": "UpdateUserCommand",
+    "method": "PATCH",
+    "path": "/api/users",
+    "schemas": [
+      "UpdateUserCommand.RequestBodySchema",
+      "UpdateUserCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.content.tsx"
+    ]
+  },
+  {
+    "id": "FE-192",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:75",
+    "hook": "useDeleteUser",
+    "expression": "DeleteUserCommand.TSQ_url",
+    "command": "DeleteUserCommand",
+    "method": "DELETE",
+    "path": "/api/users/:userId",
+    "schemas": [
+      "DeleteUserCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/users/delete-user/delete-user.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-193",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:98",
+    "hook": "useRevokeUserSubscription",
+    "expression": "RevokeUserSubscriptionCommand.TSQ_url",
+    "command": "RevokeUserSubscriptionCommand",
+    "method": "POST",
+    "path": "/api/users/:userId/actions/revoke",
+    "schemas": [
+      "RevokeUserSubscriptionCommand.RequestBodySchema",
+      "RevokeUserSubscriptionCommand.ResponseSchema",
+      "RevokeUserSubscriptionCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/users/revoke-subscription-user/revoke-subscription-user.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-194",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:123",
+    "hook": "useEnableUser",
+    "expression": "EnableUserCommand.TSQ_url",
+    "command": "EnableUserCommand",
+    "method": "POST",
+    "path": "/api/users/:userId/actions/enable",
+    "schemas": [
+      "EnableUserCommand.ResponseSchema",
+      "EnableUserCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/users/toggle-user-status-button/toggle-user-status-button.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-195",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:147",
+    "hook": "useDisableUser",
+    "expression": "DisableUserCommand.TSQ_url",
+    "command": "DisableUserCommand",
+    "method": "POST",
+    "path": "/api/users/:userId/actions/disable",
+    "schemas": [
+      "DisableUserCommand.ResponseSchema",
+      "DisableUserCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/users/toggle-user-status-button/toggle-user-status-button.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-196",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:171",
+    "hook": "useResetUserTraffic",
+    "expression": "ResetUserTrafficCommand.TSQ_url",
+    "command": "ResetUserTrafficCommand",
+    "method": "POST",
+    "path": "/api/users/:userId/actions/reset-traffic",
+    "schemas": [
+      "ResetUserTrafficCommand.ResponseSchema",
+      "ResetUserTrafficCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/users/reset-usage-user/reset-usage-user.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-197",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:195",
+    "hook": "useBulkDeleteUsersByStatus",
+    "expression": "BulkDeleteUsersByStatusCommand.TSQ_url",
+    "command": "BulkDeleteUsersByStatusCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/delete-by-status",
+    "schemas": [
+      "BulkDeleteUsersByStatusCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/features/ui/dashboard/users/delete-all-users-by-status/delete-all-users-by-status.feature.tsx"
+    ]
+  },
+  {
+    "id": "FE-198",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:201",
+    "hook": "useBulkUpdateUsers",
+    "expression": "BulkUpdateUsersCommand.TSQ_url",
+    "command": "BulkUpdateUsersCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/update",
+    "schemas": [
+      "BulkUpdateUsersCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-many-users-update/bulk-many-users-update.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-199",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:224",
+    "hook": "useBulkResetTraffic",
+    "expression": "BulkResetTrafficUsersCommand.TSQ_url",
+    "command": "BulkResetTrafficUsersCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/reset-traffic",
+    "schemas": [
+      "BulkResetTrafficUsersCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-many-users-actions/bulk-many-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-200",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:247",
+    "hook": "useBulkRevokeUsersSubscription",
+    "expression": "BulkRevokeUsersSubscriptionCommand.TSQ_url",
+    "command": "BulkRevokeUsersSubscriptionCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/revoke-subscription",
+    "schemas": [
+      "BulkRevokeUsersSubscriptionCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-many-users-actions/bulk-many-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-201",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:270",
+    "hook": "useBulkDeleteUsers",
+    "expression": "BulkDeleteUsersCommand.TSQ_url",
+    "command": "BulkDeleteUsersCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/delete",
+    "schemas": [
+      "BulkDeleteUsersCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-many-users-actions/bulk-many-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-202",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:293",
+    "hook": "useBulkSetActiveInternalSquads",
+    "expression": "BulkUpdateUsersSquadsCommand.TSQ_url",
+    "command": "BulkUpdateUsersSquadsCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/update-squads",
+    "schemas": [
+      "BulkUpdateUsersSquadsCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-many-users-actions/bulk-many-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-203",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:316",
+    "hook": "useBulkAllUpdateUsers",
+    "expression": "BulkAllUpdateUsersCommand.TSQ_url",
+    "command": "BulkAllUpdateUsersCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/all/update",
+    "schemas": [
+      "BulkAllUpdateUsersCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-all-users-update/bulk-all-users-update.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-204",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:339",
+    "hook": "useBulkAllResetTrafficUsers",
+    "expression": "BulkAllResetTrafficUsersCommand.TSQ_url",
+    "command": "BulkAllResetTrafficUsersCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/all/reset-traffic",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-all-users-actions/bulk-all-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-205",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:361",
+    "hook": "useBulkExtendUsersExpirationDate",
+    "expression": "BulkExtendExpirationDateCommand.TSQ_url",
+    "command": "BulkExtendExpirationDateCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/extend-expiration-date",
+    "schemas": [
+      "BulkExtendExpirationDateCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-many-users-actions/bulk-many-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-206",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:384",
+    "hook": "useBulkAllExtendUsersExpirationDate",
+    "expression": "BulkAllExtendExpirationDateCommand.TSQ_url",
+    "command": "BulkAllExtendExpirationDateCommand",
+    "method": "POST",
+    "path": "/api/users/bulk/all/extend-expiration-date",
+    "schemas": [
+      "BulkAllExtendExpirationDateCommand.RequestBodySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/bulk-all-users-actions/bulk-all-users-actions.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-207",
+    "source": "frontend/src/shared/api/hooks/users/users.mutation.hooks.ts:407",
+    "hook": "useResolveUser",
+    "expression": "ResolveUserCommand.TSQ_url",
+    "command": "ResolveUserCommand",
+    "method": "POST",
+    "path": "/api/users/resolve",
+    "schemas": [
+      "ResolveUserCommand.RequestBodySchema",
+      "ResolveUserCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/nodes/node-usage-stats/node-usage-stats.drawer.tsx",
+      "frontend/src/shared/_modals/nodes/nodes-usage-stats/nodes-usage-stats.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-208",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:47",
+    "hook": "useGetUserById",
+    "expression": "GetUserByIdCommand.TSQ_url",
+    "command": "GetUserByIdCommand",
+    "method": "GET",
+    "path": "/api/users/:userId",
+    "schemas": [
+      "GetUserByIdCommand.ResponseSchema",
+      "GetUserByIdCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/detailed-user-info-drawer/detailed-user-info.drawer.tsx",
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.content.tsx",
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-209",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:60",
+    "hook": "useGetUsers",
+    "expression": "GetUsersCommand.TSQ_url",
+    "command": "GetUsersCommand",
+    "method": "GET",
+    "path": "/api/users",
+    "schemas": [
+      "GetUsersCommand.ResponseSchema",
+      "GetUsersCommand.RequestQuerySchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/api/tsq-helpers/create-get-query.hook.ts",
+      "frontend/src/widgets/dashboard/users/users-table/user-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-210",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:75",
+    "hook": "useGetUserTags",
+    "expression": "GetUsersTagsCommand.TSQ_url",
+    "command": "GetUsersTagsCommand",
+    "method": "GET",
+    "path": "/api/users/tags",
+    "schemas": [
+      "GetUsersTagsCommand.ResponseSchema"
+    ],
+    "consumers": [
+      "frontend/src/pages/dashboard/users/ui/connectors/users.page.connector.tsx",
+      "frontend/src/shared/_modals/users/bulk-all-users-update/bulk-all-users-update.modal.tsx",
+      "frontend/src/shared/_modals/users/bulk-many-users-update/bulk-many-users-update.modal.tsx",
+      "frontend/src/shared/_modals/users/create-user-modal/create-user.modal.tsx",
+      "frontend/src/shared/_modals/users/view-user-modal/view-user.modal.content.tsx",
+      "frontend/src/widgets/dashboard/users/users-table/user-table.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-211",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:86",
+    "hook": "useGetUserAccessibleNodes",
+    "expression": "GetUserAccessibleNodesCommand.TSQ_url",
+    "command": "GetUserAccessibleNodesCommand",
+    "method": "GET",
+    "path": "/api/users/:userId/accessible-nodes",
+    "schemas": [
+      "GetUserAccessibleNodesCommand.ResponseSchema",
+      "GetUserAccessibleNodesCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-accessible-nodes-modal/user-accessible-nodes.modal.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-212",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:100",
+    "hook": "useGetUserSubscriptionRequestHistory",
+    "expression": "GetUserSubscriptionRequestHistoryCommand.TSQ_url",
+    "command": "GetUserSubscriptionRequestHistoryCommand",
+    "method": "GET",
+    "path": "/api/users/:userId/subscription-request-history",
+    "schemas": [
+      "GetUserSubscriptionRequestHistoryCommand.ResponseSchema",
+      "GetUserSubscriptionRequestHistoryCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/user-subscription-requests-modal/user-subscription-requests.content.widget.tsx"
+    ]
+  },
+  {
+    "id": "FE-213",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:114",
+    "hook": "useGetConnectionKeysByUserId",
+    "expression": "GetConnectionKeysByUserIdCommand.TSQ_url",
+    "command": "GetConnectionKeysByUserIdCommand",
+    "method": "GET",
+    "path": "/api/subscriptions/connection-keys/:userId",
+    "schemas": [
+      "GetConnectionKeysByUserIdCommand.ResponseSchema",
+      "GetConnectionKeysByUserIdCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/connection-keys-drawer/connection-keys.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-214",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:128",
+    "hook": "useGetUserMetadata",
+    "expression": "GetUserMetadataCommand.TSQ_url",
+    "command": "GetUserMetadataCommand",
+    "method": "GET",
+    "path": "/api/metadata/user/:userId",
+    "schemas": [
+      "GetUserMetadataCommand.ResponseSchema",
+      "GetUserMetadataCommand.RequestParamsSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/ui/forms/users/forms-components/user-identification-card.tsx"
+    ]
+  },
+  {
+    "id": "FE-215",
+    "source": "frontend/src/shared/api/hooks/users/users.query.hooks.ts:141",
+    "hook": "useGetRawSubscription",
+    "expression": "GetRawSubscriptionByShortUuidCommand.TSQ_url",
+    "command": "GetRawSubscriptionByShortUuidCommand",
+    "method": "GET",
+    "path": "/api/subscriptions/by-short-uuid/:shortUuid/raw",
+    "schemas": [
+      "GetRawSubscriptionByShortUuidCommand.ResponseSchema",
+      "GetRawSubscriptionByShortUuidCommand.RequestParamSchema"
+    ],
+    "consumers": [
+      "frontend/src/shared/_modals/users/connection-keys-drawer/connection-keys.drawer.tsx"
+    ]
+  },
+  {
+    "id": "FE-216",
+    "source": "frontend/src/shared/ui/connection-status-overlay/use-connection-probe.ts:37",
+    "hook": "useConnectionProbe",
+    "expression": "instance.get(probeUrl, { signal, timeout: PROBE_TIMEOUT_MS })\n            } catch (error) {\n                if (!isAxiosError(error) || !error.response) {\n                    throw error\n                }\n            }",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/ui/connection-status-overlay/connection-status-overlay.tsx"
+    ]
+  },
+  {
+    "id": "FE-217",
+    "source": "frontend/src/shared/ui/load-templates/use-download-template.tsx:27",
+    "hook": "useDownloadTemplate",
+    "expression": "fetch(template.url)",
+    "command": "",
+    "method": "MANUAL",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/features/dashboard/config-profiles/config-editor-actions/config-editor-actions.feature.tsx",
+      "frontend/src/features/dashboard/node-plugins/node-plugins-editor-actions/node-plugins-editor-actions.feature.tsx",
+      "frontend/src/features/dashboard/response-rules/response-rules-editor-actions/response-rules-editor-actions.feature.tsx",
+      "frontend/src/features/dashboard/subscription-templates/template-editor-actions/template-editor-actions.feature.tsx",
+      "frontend/src/pages/dashboard/subpage-config/ui/components/subpage-config-editor-page.component.tsx"
+    ]
+  },
+  {
+    "id": "FE-218",
+    "source": "frontend/src/shared/ui/sidebar/build-info-modal.tsx:60",
+    "hook": "BuildInfoModal",
+    "expression": "instance.post('/api/system/updates/apply', { channel: targetChannel })\n            setTimeout(() => {\n                window.location.reload()\n            }, 30000)\n        } catch {\n            setIsUpdating(false)\n        }\n    }",
+    "command": "",
+    "method": "POST",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/ui/header-buttons/VersionControl.tsx"
+    ]
+  },
+  {
+    "id": "FE-219",
+    "source": "frontend/src/shared/ui/sidebar/panel-update-check.ts:24",
+    "hook": "usePanelUpdateCheck",
+    "expression": "instance.get<IPanelUpdateCheck>('/api/system/updates/check', {\n                params: channel ? { channel } : undefined\n            })\n            return res.data\n        },\n        staleTime: 30 * 60 * 1000,\n        refetchOnWindowFocus: false,\n        retry: false\n    })\n}\n",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/shared/ui/header-buttons/VersionControl.tsx",
+      "frontend/src/shared/ui/sidebar/build-info-modal.tsx"
+    ]
+  },
+  {
+    "id": "FE-220",
+    "source": "frontend/src/shared/utils/fetch-with-progress/fetch-with-progress.util.ts:6",
+    "hook": "fetchWithProgress",
+    "expression": "axios.get(url, {\n            onDownloadProgress: (progressEvent) => {\n                if (progressEvent.total) {\n                    // Precompressed responses report the encoded size as the total while\n                    // some browsers count decoded bytes as loaded.\n                    const progress = Math.round((progressEvent.loaded * 100) / ",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/pages/dashboard/config-profiles/connectors/config-profile-by-uuid.page.connector.tsx"
+    ]
+  },
+  {
+    "id": "FE-221",
+    "source": "frontend/src/widgets/dashboard/templates/subscription-template-editor/utils/setup-template-monaco.tsx:288",
+    "hook": "configureMonaco",
+    "expression": "axios.get<IJsonSchemaDocument>(\n                    app.templateEditor.singboxJsonSchemaUrl\n                )\n                const singboxSchema = response.data",
+    "command": "",
+    "method": "GET",
+    "path": "",
+    "schemas": [],
+    "consumers": [
+      "frontend/src/widgets/dashboard/templates/subscription-template-editor/subscription-template-editor.widget.tsx"
+    ]
+  }
+]

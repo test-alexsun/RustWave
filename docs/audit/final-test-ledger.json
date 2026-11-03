@@ -1,0 +1,98 @@
+{
+  "definition": "EXECUTED=PASS+FAIL. BLOCKED is an overlapping gate count, never an extra terminal status. Do not add parent, child, command and trial rows as equivalent test cases.",
+  "rows": [
+    {
+      "id": "GO-sqlite",
+      "expected": 128,
+      "executed": 124,
+      "passed": 124,
+      "failed": 0,
+      "skipped": 4,
+      "not_run": 0,
+      "blocked": 4
+    },
+    {
+      "id": "GO-postgres",
+      "expected": 128,
+      "executed": 125,
+      "passed": 125,
+      "failed": 0,
+      "skipped": 3,
+      "not_run": 0,
+      "blocked": 3
+    },
+    {
+      "id": "BUN-unit",
+      "expected": 24,
+      "executed": 24,
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 0
+    },
+    {
+      "id": "GO-nonroot-supplement",
+      "expected": 1,
+      "executed": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 0
+    },
+    {
+      "id": "BROWSER-LF-attempts",
+      "expected": 2,
+      "executed": 2,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 1
+    },
+    {
+      "id": "BUILDX-history-logs-optional",
+      "expected": 1,
+      "executed": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 1,
+      "blocked": 0
+    },
+    {
+      "id": "COMMAND-checks",
+      "expected": 14,
+      "executed": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 0
+    },
+    {
+      "id": "BASELINE-trials",
+      "expected": 6,
+      "executed": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "not_run": 0,
+      "blocked": 0
+    }
+  ],
+  "browser_attempts": [
+    {
+      "id": "lf-browser",
+      "exit": 1,
+      "seconds": 111.077
+    },
+    {
+      "id": "lf-browser-idle",
+      "exit": 0,
+      "seconds": 79.697
+    }
+  ],
+  "stage": "PARTIAL"
+}

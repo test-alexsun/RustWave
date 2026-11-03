@@ -1,0 +1,9 @@
+{
+  "required_reports": 11,
+  "source_blobs_checked": 1772,
+  "api_operations": 248,
+  "frontend_calls": 221,
+  "expected_go_ids_per_mode": 128,
+  "errors": [],
+  "status": "PASS"
+}

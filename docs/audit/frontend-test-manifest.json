@@ -1,0 +1,98 @@
+[
+  {
+    "name": "vault blobs retain padded standard Base64 and authenticated decryption",
+    "source": "frontend/src/entities/ssh-vault/encoding.test.ts"
+  },
+  {
+    "name": "X25519 generator interoperates with native WebCrypto key import",
+    "source": "frontend/src/entities/ssh-vault/encoding.test.ts"
+  },
+  {
+    "name": "class names preserve conditional, nested, numeric and object values",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "base64 matches RFC vectors, binary data and large UTF-8 templates",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "base64 rejects malformed vault data and mixed alphabets",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "query keys retain parameter values and invalidation prefixes",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "table paths support literal dotted keys, arrays and missing properties",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "table sorting is stable, case insensitive and keeps missing values last",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "version checks follow SemVer prerelease precedence and ignore build metadata",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "byte formatting retains IEC, SI, bit rate and zero behavior",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "favicon resolver normalizes web hosts and rejects invalid addresses",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "colors remain deterministic valid CSS hex values",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "sparkline geometry handles empty, single, constant and invalid values",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "assertion helper narrows truthy values and throws meaningful errors",
+    "source": "frontend/src/shared/lib/dependencies.test.ts"
+  },
+  {
+    "name": "optional React props omit undefined and retain meaningful falsy values",
+    "source": "frontend/src/shared/lib/hardening.test.ts"
+  },
+  {
+    "name": "reordering preserves input and ignores missing array positions",
+    "source": "frontend/src/shared/lib/hardening.test.ts"
+  },
+  {
+    "name": "editor row identity follows moves, immutable edits, insertions and deletions",
+    "source": "frontend/src/shared/lib/hardening.test.ts"
+  },
+  {
+    "name": "required values preserve falsy data and reject missing values",
+    "source": "frontend/src/shared/lib/hardening.test.ts"
+  },
+  {
+    "name": "JSON fields accept objects, arrays and text and reject unexpected scalar values",
+    "source": "frontend/src/shared/lib/hardening.test.ts"
+  },
+  {
+    "name": "form errors validate unknown payloads and preserve nested field paths",
+    "source": "frontend/src/shared/lib/hardening.test.ts"
+  },
+  {
+    "name": "virtual rows cover the viewport with bounded overscan",
+    "source": "frontend/src/shared/lib/virtual-layout.test.ts"
+  },
+  {
+    "name": "virtual row sizes follow keys through filtering and reordering",
+    "source": "frontend/src/shared/lib/virtual-layout.test.ts"
+  },
+  {
+    "name": "virtual layout handles empty lists, hidden viewports, boundaries and shrinking data",
+    "source": "frontend/src/shared/lib/virtual-layout.test.ts"
+  },
+  {
+    "name": "node version metadata supports contract versions and optional GoWave flags",
+    "source": "frontend/src/shared/lib/virtual-layout.test.ts"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "api_operations": 248,
+  "go_tests": 128,
+  "go_symbols": 1122,
+  "go_packages": 34,
+  "frontend_calls": 221,
+  "contract_commands": 218,
+  "fixtures": 8,
+  "models": 40,
+  "capability_groups": 56,
+  "feature_items": 304,
+  "metric_families": 31
+}

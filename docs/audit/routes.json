@@ -1,0 +1,1986 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "handler": "authHandler.Login",
+    "source": "backend-go/internal/server/server.go:317",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-001"
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/oauth2/authorize",
+    "handler": "stubHandler.OAuth2Authorize",
+    "source": "backend-go/internal/server/server.go:322",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-002"
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/oauth2/callback",
+    "handler": "stubHandler.OAuth2Callback",
+    "source": "backend-go/internal/server/server.go:323",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-003"
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/oauth2/tg/callback",
+    "handler": "stubHandler.OAuth2TelegramCallback",
+    "source": "backend-go/internal/server/server.go:324",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-004"
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/passkey/authentication/options",
+    "handler": "stubHandler.GetPasskeyAuthOptions",
+    "source": "backend-go/internal/server/server.go:320",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-005"
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/passkey/authentication/verify",
+    "handler": "stubHandler.VerifyPasskeyAuth",
+    "source": "backend-go/internal/server/server.go:321",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-006"
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/register",
+    "handler": "authHandler.Register",
+    "source": "backend-go/internal/server/server.go:318",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-007"
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/status",
+    "handler": "authHandler.GetStatus",
+    "source": "backend-go/internal/server/server.go:315",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-008"
+  },
+  {
+    "method": "HEAD",
+    "path": "/api/auth/status",
+    "handler": "authHandler.GetStatus",
+    "source": "backend-go/internal/server/server.go:316",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-009"
+  },
+  {
+    "method": "GET",
+    "path": "/api/backend-tools/openapi.json",
+    "handler": "t.openapi",
+    "source": "backend-go/internal/system/tools.go:33",
+    "auth": "OTT -> rw-tools cookie; admin + same-origin mutation",
+    "id": "API-010"
+  },
+  {
+    "method": "GET",
+    "path": "/api/backend-tools/queues",
+    "handler": "t.queues",
+    "source": "backend-go/internal/system/tools.go:28",
+    "auth": "OTT -> rw-tools cookie; admin + same-origin mutation",
+    "id": "API-011"
+  },
+  {
+    "method": "POST",
+    "path": "/api/backend-tools/queues/{id}/cancel",
+    "handler": "t.cancel",
+    "source": "backend-go/internal/system/tools.go:30",
+    "auth": "OTT -> rw-tools cookie; admin + same-origin mutation",
+    "id": "API-012"
+  },
+  {
+    "method": "POST",
+    "path": "/api/backend-tools/queues/{id}/retry",
+    "handler": "t.retry",
+    "source": "backend-go/internal/system/tools.go:29",
+    "auth": "OTT -> rw-tools cookie; admin + same-origin mutation",
+    "id": "API-013"
+  },
+  {
+    "method": "GET",
+    "path": "/api/backend-tools/scalar",
+    "handler": "t.docs",
+    "source": "backend-go/internal/system/tools.go:32",
+    "auth": "OTT -> rw-tools cookie; admin + same-origin mutation",
+    "id": "API-014"
+  },
+  {
+    "method": "GET",
+    "path": "/api/backend-tools/swagger",
+    "handler": "t.docs",
+    "source": "backend-go/internal/system/tools.go:31",
+    "auth": "OTT -> rw-tools cookie; admin + same-origin mutation",
+    "id": "API-015"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bandwidth-stats/internal-squads/{squadUuid}/users/{userId}/usage",
+    "handler": "s.GetBandwidthSquadUserUsage",
+    "source": "backend-go/internal/stubs/stubs.go:213",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-016"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bandwidth-stats/internal-squads/{uuid}/usage",
+    "handler": "s.GetBandwidthSquadUsage",
+    "source": "backend-go/internal/stubs/stubs.go:212",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-017"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bandwidth-stats/nodes",
+    "handler": "s.GetBandwidthStatsNodes",
+    "source": "backend-go/internal/stubs/stubs.go:211",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-018"
+  },
+  {
+    "method": "POST",
+    "path": "/api/bandwidth-stats/nodes/usage",
+    "handler": "s.GetBandwidthNodesUsage",
+    "source": "backend-go/internal/stubs/stubs.go:207",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-019"
+  },
+  {
+    "method": "POST",
+    "path": "/api/bandwidth-stats/nodes/users",
+    "handler": "s.GetBandwidthStatsNodeUsers",
+    "source": "backend-go/internal/stubs/stubs.go:208",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-020"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bandwidth-stats/nodes/{uuid}/users",
+    "handler": "s.GetBandwidthStatsNodeUsers",
+    "source": "backend-go/internal/stubs/stubs.go:209",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-021"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bandwidth-stats/users/{userId}",
+    "handler": "s.GetBandwidthStatsUsers",
+    "source": "backend-go/internal/stubs/stubs.go:210",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-022"
+  },
+  {
+    "method": "GET",
+    "path": "/api/config-profiles",
+    "handler": "cpHandler.GetProfiles",
+    "source": "backend-go/internal/server/server.go:431",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-023"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/config-profiles",
+    "handler": "cpHandler.UpdateConfigProfile",
+    "source": "backend-go/internal/server/server.go:434",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-024"
+  },
+  {
+    "method": "POST",
+    "path": "/api/config-profiles",
+    "handler": "cpHandler.CreateConfigProfile",
+    "source": "backend-go/internal/server/server.go:432",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-025"
+  },
+  {
+    "method": "POST",
+    "path": "/api/config-profiles/actions/reorder",
+    "handler": "cpHandler.ReorderConfigProfiles",
+    "source": "backend-go/internal/server/server.go:437",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-026"
+  },
+  {
+    "method": "GET",
+    "path": "/api/config-profiles/inbounds",
+    "handler": "cpHandler.GetAllInbounds",
+    "source": "backend-go/internal/server/server.go:430",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-027"
+  },
+  {
+    "method": "GET",
+    "path": "/api/config-profiles/tags",
+    "handler": "cpHandler.GetConfigProfilesTags",
+    "source": "backend-go/internal/server/server.go:428",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-028"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/config-profiles/tags",
+    "handler": "cpHandler.SetConfigProfilesTags",
+    "source": "backend-go/internal/server/server.go:429",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-029"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/config-profiles/{uuid}",
+    "handler": "cpHandler.DeleteConfigProfile",
+    "source": "backend-go/internal/server/server.go:436",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-030"
+  },
+  {
+    "method": "GET",
+    "path": "/api/config-profiles/{uuid}",
+    "handler": "cpHandler.GetConfigProfile",
+    "source": "backend-go/internal/server/server.go:433",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-031"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/config-profiles/{uuid}",
+    "handler": "cpHandler.UpdateConfigProfile",
+    "source": "backend-go/internal/server/server.go:435",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-032"
+  },
+  {
+    "method": "GET",
+    "path": "/api/config-profiles/{uuid}/computed-config",
+    "handler": "cpHandler.GetComputedConfig",
+    "source": "backend-go/internal/server/server.go:439",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-033"
+  },
+  {
+    "method": "GET",
+    "path": "/api/config-profiles/{uuid}/inbounds",
+    "handler": "cpHandler.GetProfileInbounds",
+    "source": "backend-go/internal/server/server.go:438",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-034"
+  },
+  {
+    "method": "GET",
+    "path": "/api/connections/by-node/{jobId}",
+    "handler": "s.ConnectionsByNodeResult",
+    "source": "backend-go/internal/stubs/stubs.go:186",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-035"
+  },
+  {
+    "method": "POST",
+    "path": "/api/connections/by-node/{nodeUuid}",
+    "handler": "s.ConnectionsByNode",
+    "source": "backend-go/internal/stubs/stubs.go:185",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-036"
+  },
+  {
+    "method": "GET",
+    "path": "/api/connections/by-user/{jobId}",
+    "handler": "s.ConnectionsByUserResult",
+    "source": "backend-go/internal/stubs/stubs.go:184",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-037"
+  },
+  {
+    "method": "POST",
+    "path": "/api/connections/by-user/{userId}",
+    "handler": "s.ConnectionsByUser",
+    "source": "backend-go/internal/stubs/stubs.go:183",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-038"
+  },
+  {
+    "method": "POST",
+    "path": "/api/connections/drop",
+    "handler": "s.DropConnections",
+    "source": "backend-go/internal/stubs/stubs.go:189",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-039"
+  },
+  {
+    "method": "GET",
+    "path": "/api/connections/geocheck/{jobId}",
+    "handler": "s.GeocheckByNodeResult",
+    "source": "backend-go/internal/stubs/stubs.go:188",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-040"
+  },
+  {
+    "method": "POST",
+    "path": "/api/connections/geocheck/{nodeUuid}",
+    "handler": "s.GeocheckByNode",
+    "source": "backend-go/internal/stubs/stubs.go:187",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-041"
+  },
+  {
+    "method": "GET",
+    "path": "/api/external-squads",
+    "handler": "squadsHandler.GetExternalSquads",
+    "source": "backend-go/internal/server/server.go:455",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-042"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/external-squads",
+    "handler": "squadsHandler.UpdateExternalSquad",
+    "source": "backend-go/internal/server/server.go:458",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-043"
+  },
+  {
+    "method": "POST",
+    "path": "/api/external-squads",
+    "handler": "squadsHandler.CreateExternalSquad",
+    "source": "backend-go/internal/server/server.go:456",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-044"
+  },
+  {
+    "method": "POST",
+    "path": "/api/external-squads/actions/reorder",
+    "handler": "squadsHandler.ReorderExternalSquads",
+    "source": "backend-go/internal/server/server.go:460",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-045"
+  },
+  {
+    "method": "GET",
+    "path": "/api/external-squads/tags",
+    "handler": "squadsHandler.GetExternalSquadsTags",
+    "source": "backend-go/internal/server/server.go:461",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-046"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/external-squads/tags",
+    "handler": "squadsHandler.SetExternalSquadsTags",
+    "source": "backend-go/internal/server/server.go:462",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-047"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/external-squads/{uuid}",
+    "handler": "squadsHandler.DeleteExternalSquad",
+    "source": "backend-go/internal/server/server.go:459",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-048"
+  },
+  {
+    "method": "GET",
+    "path": "/api/external-squads/{uuid}",
+    "handler": "squadsHandler.GetExternalSquad",
+    "source": "backend-go/internal/server/server.go:457",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-049"
+  },
+  {
+    "method": "POST",
+    "path": "/api/external-squads/{uuid}/bulk-actions/add-users",
+    "handler": "squadsHandler.SquadBulkAction",
+    "source": "backend-go/internal/server/server.go:463",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-050"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/external-squads/{uuid}/bulk-actions/remove-users",
+    "handler": "squadsHandler.SquadBulkAction",
+    "source": "backend-go/internal/server/server.go:464",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-051"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hosts",
+    "handler": "cpHandler.GetHosts",
+    "source": "backend-go/internal/server/server.go:415",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-052"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/hosts",
+    "handler": "cpHandler.UpdateHost",
+    "source": "backend-go/internal/server/server.go:418",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-053"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts",
+    "handler": "cpHandler.CreateHost",
+    "source": "backend-go/internal/server/server.go:416",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-054"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts/actions/clone",
+    "handler": "cpHandler.CloneHost",
+    "source": "backend-go/internal/server/server.go:421",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-055"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts/actions/reorder",
+    "handler": "cpHandler.ReorderHosts",
+    "source": "backend-go/internal/server/server.go:422",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-056"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts/bulk/delete",
+    "handler": "cpHandler.BulkDeleteHosts",
+    "source": "backend-go/internal/server/server.go:423",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-057"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts/bulk/disable",
+    "handler": "cpHandler.BulkDisableHosts",
+    "source": "backend-go/internal/server/server.go:424",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-058"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts/bulk/enable",
+    "handler": "cpHandler.BulkEnableHosts",
+    "source": "backend-go/internal/server/server.go:425",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-059"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/hosts/bulk/update",
+    "handler": "cpHandler.BulkUpdateHosts",
+    "source": "backend-go/internal/server/server.go:426",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-060"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hosts/preview",
+    "handler": "cpHandler.Preview",
+    "source": "backend-go/internal/server/server.go:420",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-061"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hosts/tags",
+    "handler": "cpHandler.GetHostsTags",
+    "source": "backend-go/internal/server/server.go:414",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-062"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/hosts/{uuid}",
+    "handler": "cpHandler.DeleteHost",
+    "source": "backend-go/internal/server/server.go:419",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-063"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hosts/{uuid}",
+    "handler": "cpHandler.GetHost",
+    "source": "backend-go/internal/server/server.go:417",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-064"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hwid/devices",
+    "handler": "s.GetHwidDevices",
+    "source": "backend-go/internal/stubs/stubs.go:177",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-065"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hwid/devices",
+    "handler": "s.CreateHwidDevice",
+    "source": "backend-go/internal/stubs/stubs.go:178",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-066"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hwid/devices/delete",
+    "handler": "s.DeleteHwidDevice",
+    "source": "backend-go/internal/stubs/stubs.go:179",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-067"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hwid/devices/delete-all",
+    "handler": "s.DeleteAllHwidDevices",
+    "source": "backend-go/internal/stubs/stubs.go:180",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-068"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hwid/devices/stats",
+    "handler": "s.GetHwidStats",
+    "source": "backend-go/internal/stubs/stubs.go:175",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-069"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hwid/devices/top-users",
+    "handler": "s.GetHwidTopUsers",
+    "source": "backend-go/internal/stubs/stubs.go:176",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-070"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hwid/devices/{userId}",
+    "handler": "s.GetUserHwidDevices",
+    "source": "backend-go/internal/stubs/stubs.go:181",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-071"
+  },
+  {
+    "method": "GET",
+    "path": "/api/infra-billing/history",
+    "handler": "infrabillingHandler.GetHistory",
+    "source": "backend-go/internal/server/server.go:494",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-072"
+  },
+  {
+    "method": "POST",
+    "path": "/api/infra-billing/history",
+    "handler": "infrabillingHandler.CreateHistory",
+    "source": "backend-go/internal/server/server.go:495",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-073"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/infra-billing/history/{uuid}",
+    "handler": "infrabillingHandler.DeleteHistory",
+    "source": "backend-go/internal/server/server.go:496",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-074"
+  },
+  {
+    "method": "GET",
+    "path": "/api/infra-billing/nodes",
+    "handler": "infrabillingHandler.GetNodes",
+    "source": "backend-go/internal/server/server.go:490",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-075"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/infra-billing/nodes",
+    "handler": "infrabillingHandler.UpdateNode",
+    "source": "backend-go/internal/server/server.go:492",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-076"
+  },
+  {
+    "method": "POST",
+    "path": "/api/infra-billing/nodes",
+    "handler": "infrabillingHandler.CreateNode",
+    "source": "backend-go/internal/server/server.go:491",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-077"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/infra-billing/nodes/{uuid}",
+    "handler": "infrabillingHandler.DeleteNode",
+    "source": "backend-go/internal/server/server.go:493",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-078"
+  },
+  {
+    "method": "GET",
+    "path": "/api/infra-billing/providers",
+    "handler": "infrabillingHandler.GetProviders",
+    "source": "backend-go/internal/server/server.go:485",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-079"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/infra-billing/providers",
+    "handler": "infrabillingHandler.UpdateProvider",
+    "source": "backend-go/internal/server/server.go:488",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-080"
+  },
+  {
+    "method": "POST",
+    "path": "/api/infra-billing/providers",
+    "handler": "infrabillingHandler.CreateProvider",
+    "source": "backend-go/internal/server/server.go:486",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-081"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/infra-billing/providers/{uuid}",
+    "handler": "infrabillingHandler.DeleteProvider",
+    "source": "backend-go/internal/server/server.go:489",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-082"
+  },
+  {
+    "method": "GET",
+    "path": "/api/infra-billing/providers/{uuid}",
+    "handler": "infrabillingHandler.GetProvider",
+    "source": "backend-go/internal/server/server.go:487",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-083"
+  },
+  {
+    "method": "GET",
+    "path": "/api/internal-squads",
+    "handler": "squadsHandler.GetInternalSquads",
+    "source": "backend-go/internal/server/server.go:441",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-084"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/internal-squads",
+    "handler": "squadsHandler.UpdateInternalSquad",
+    "source": "backend-go/internal/server/server.go:444",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-085"
+  },
+  {
+    "method": "POST",
+    "path": "/api/internal-squads",
+    "handler": "squadsHandler.CreateInternalSquad",
+    "source": "backend-go/internal/server/server.go:442",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-086"
+  },
+  {
+    "method": "POST",
+    "path": "/api/internal-squads/actions/reorder",
+    "handler": "squadsHandler.ReorderInternalSquads",
+    "source": "backend-go/internal/server/server.go:446",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-087"
+  },
+  {
+    "method": "GET",
+    "path": "/api/internal-squads/tags",
+    "handler": "squadsHandler.GetInternalSquadsTags",
+    "source": "backend-go/internal/server/server.go:447",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-088"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/internal-squads/tags",
+    "handler": "squadsHandler.SetInternalSquadsTags",
+    "source": "backend-go/internal/server/server.go:448",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-089"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/internal-squads/{uuid}",
+    "handler": "squadsHandler.DeleteInternalSquad",
+    "source": "backend-go/internal/server/server.go:445",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-090"
+  },
+  {
+    "method": "GET",
+    "path": "/api/internal-squads/{uuid}",
+    "handler": "squadsHandler.GetInternalSquad",
+    "source": "backend-go/internal/server/server.go:443",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-091"
+  },
+  {
+    "method": "GET",
+    "path": "/api/internal-squads/{uuid}/accessible-nodes",
+    "handler": "squadsHandler.GetInternalSquadAccessibleNodes",
+    "source": "backend-go/internal/server/server.go:449",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-092"
+  },
+  {
+    "method": "POST",
+    "path": "/api/internal-squads/{uuid}/bulk-actions/add-many-users",
+    "handler": "squadsHandler.SquadBulkAction",
+    "source": "backend-go/internal/server/server.go:451",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-093"
+  },
+  {
+    "method": "POST",
+    "path": "/api/internal-squads/{uuid}/bulk-actions/add-users",
+    "handler": "squadsHandler.SquadBulkAction",
+    "source": "backend-go/internal/server/server.go:450",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-094"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/internal-squads/{uuid}/bulk-actions/remove-many-users",
+    "handler": "squadsHandler.SquadBulkAction",
+    "source": "backend-go/internal/server/server.go:453",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-095"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/internal-squads/{uuid}/bulk-actions/remove-users",
+    "handler": "squadsHandler.SquadBulkAction",
+    "source": "backend-go/internal/server/server.go:452",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-096"
+  },
+  {
+    "method": "GET",
+    "path": "/api/keygen",
+    "handler": "s.GetKeygen",
+    "source": "backend-go/internal/stubs/stubs.go:158",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-097"
+  },
+  {
+    "method": "GET",
+    "path": "/api/metadata/node/{uuid}",
+    "handler": "s.GetNodeMetadata",
+    "source": "backend-go/internal/stubs/stubs.go:191",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-098"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/metadata/node/{uuid}",
+    "handler": "s.UpsertNodeMetadata",
+    "source": "backend-go/internal/stubs/stubs.go:192",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-099"
+  },
+  {
+    "method": "GET",
+    "path": "/api/metadata/user/{userId}",
+    "handler": "s.GetUserMetadata",
+    "source": "backend-go/internal/stubs/stubs.go:193",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-100"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/metadata/user/{userId}",
+    "handler": "s.UpsertUserMetadata",
+    "source": "backend-go/internal/stubs/stubs.go:194",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-101"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-integrations",
+    "handler": "s.GetNodeIntegrations",
+    "source": "backend-go/internal/stubs/stubs.go:152",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-102"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/node-integrations",
+    "handler": "s.UpdateNodeIntegration",
+    "source": "backend-go/internal/stubs/stubs.go:155",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-103"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-integrations",
+    "handler": "s.CreateNodeIntegration",
+    "source": "backend-go/internal/stubs/stubs.go:153",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-104"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/node-integrations/{uuid}",
+    "handler": "s.DeleteNodeIntegration",
+    "source": "backend-go/internal/stubs/stubs.go:156",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-105"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-integrations/{uuid}",
+    "handler": "s.GetNodeIntegration",
+    "source": "backend-go/internal/stubs/stubs.go:154",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-106"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins",
+    "handler": "s.GetNodePlugins",
+    "source": "backend-go/internal/stubs/stubs.go:142",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-107"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/node-plugins",
+    "handler": "s.UpdateNodePlugin",
+    "source": "backend-go/internal/stubs/stubs.go:145",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-108"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins",
+    "handler": "s.CreateNodePlugin",
+    "source": "backend-go/internal/stubs/stubs.go:143",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-109"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins/actions/clone",
+    "handler": "s.CloneNodePlugin",
+    "source": "backend-go/internal/stubs/stubs.go:147",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-110"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins/actions/reorder",
+    "handler": "s.ReorderNodePlugins",
+    "source": "backend-go/internal/stubs/stubs.go:148",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-111"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins/actions/sync",
+    "handler": "s.SyncNodePlugin",
+    "source": "backend-go/internal/stubs/stubs.go:149",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-112"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins/executor",
+    "handler": "s.ExecuteNodePlugin",
+    "source": "backend-go/internal/stubs/stubs.go:150",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-113"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/node-plugins/shared-lists",
+    "handler": "s.DeleteSharedList",
+    "source": "backend-go/internal/stubs/stubs.go:137",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-114"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins/shared-lists",
+    "handler": "s.GetSharedLists",
+    "source": "backend-go/internal/stubs/stubs.go:134",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-115"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/node-plugins/shared-lists",
+    "handler": "s.UpdateSharedList",
+    "source": "backend-go/internal/stubs/stubs.go:136",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-116"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins/shared-lists",
+    "handler": "s.CreateSharedList",
+    "source": "backend-go/internal/stubs/stubs.go:135",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-117"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-plugins/shared-lists/actions/sync",
+    "handler": "s.SyncSharedLists",
+    "source": "backend-go/internal/stubs/stubs.go:138",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-118"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins/shared-lists/by-name",
+    "handler": "s.GetSharedListByName",
+    "source": "backend-go/internal/stubs/stubs.go:133",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-119"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins/tags",
+    "handler": "s.GetNodePluginsTags",
+    "source": "backend-go/internal/stubs/stubs.go:140",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-120"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/node-plugins/tags",
+    "handler": "s.SetNodePluginsTags",
+    "source": "backend-go/internal/stubs/stubs.go:141",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-121"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins/torrent-blocker",
+    "handler": "s.GetTorrentBlockerReports",
+    "source": "backend-go/internal/stubs/stubs.go:130",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-122"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins/torrent-blocker/stats",
+    "handler": "s.GetTorrentBlockerStats",
+    "source": "backend-go/internal/stubs/stubs.go:129",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-123"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/node-plugins/torrent-blocker/truncate",
+    "handler": "s.TruncateTorrentBlockerReports",
+    "source": "backend-go/internal/stubs/stubs.go:131",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-124"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/node-plugins/{uuid}",
+    "handler": "s.DeleteNodePlugin",
+    "source": "backend-go/internal/stubs/stubs.go:146",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-125"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-plugins/{uuid}",
+    "handler": "s.GetNodePluginByUuid",
+    "source": "backend-go/internal/stubs/stubs.go:144",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-126"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-ssh/vault/evaluate",
+    "handler": "s.EvaluateVault",
+    "source": "backend-go/internal/stubs/stubs.go:173",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-127"
+  },
+  {
+    "method": "GET",
+    "path": "/api/node-ssh/ws",
+    "handler": "sshHandler.Socket",
+    "source": "backend-go/internal/server/server.go:311",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-128"
+  },
+  {
+    "method": "POST",
+    "path": "/api/node-ssh/{uuid}/ticket",
+    "handler": "s.CreateSshTicket",
+    "source": "backend-go/internal/stubs/stubs.go:172",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-129"
+  },
+  {
+    "method": "GET",
+    "path": "/api/nodes",
+    "handler": "nodeHandler.GetNodes",
+    "source": "backend-go/internal/server/server.go:393",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-130"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/nodes",
+    "handler": "nodeHandler.PatchNode",
+    "source": "backend-go/internal/server/server.go:397",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-131"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes",
+    "handler": "nodeHandler.CreateNode",
+    "source": "backend-go/internal/server/server.go:396",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-132"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/actions/reorder",
+    "handler": "nodeHandler.ReorderNodes",
+    "source": "backend-go/internal/server/server.go:409",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-133"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/actions/restart-all",
+    "handler": "nodeHandler.RestartAllNodes",
+    "source": "backend-go/internal/server/server.go:408",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-134"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/bulk-actions",
+    "handler": "nodeHandler.BulkActions",
+    "source": "backend-go/internal/server/server.go:410",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-135"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/bulk-actions/profile-modification",
+    "handler": "nodeHandler.BulkActions",
+    "source": "backend-go/internal/server/server.go:411",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-136"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/bulk-actions/update",
+    "handler": "nodeHandler.BulkActions",
+    "source": "backend-go/internal/server/server.go:412",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-137"
+  },
+  {
+    "method": "GET",
+    "path": "/api/nodes/tags",
+    "handler": "nodeHandler.GetTags",
+    "source": "backend-go/internal/server/server.go:394",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-138"
+  },
+  {
+    "method": "GET",
+    "path": "/api/nodes/traffic-summary",
+    "handler": "nodeHandler.GetTrafficSummary",
+    "source": "backend-go/internal/server/server.go:395",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-139"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/nodes/{uuid}",
+    "handler": "nodeHandler.DeleteNode",
+    "source": "backend-go/internal/server/server.go:403",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-140"
+  },
+  {
+    "method": "GET",
+    "path": "/api/nodes/{uuid}",
+    "handler": "nodeHandler.GetNode",
+    "source": "backend-go/internal/server/server.go:398",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-141"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/nodes/{uuid}",
+    "handler": "nodeHandler.UpdateNode",
+    "source": "backend-go/internal/server/server.go:402",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-142"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/{uuid}/actions/disable",
+    "handler": "nodeHandler.DisableNode",
+    "source": "backend-go/internal/server/server.go:405",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-143"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/{uuid}/actions/enable",
+    "handler": "nodeHandler.EnableNode",
+    "source": "backend-go/internal/server/server.go:404",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-144"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/{uuid}/actions/reset-traffic",
+    "handler": "nodeHandler.ResetTraffic",
+    "source": "backend-go/internal/server/server.go:406",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-145"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/{uuid}/actions/restart",
+    "handler": "nodeHandler.RestartNode",
+    "source": "backend-go/internal/server/server.go:407",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-146"
+  },
+  {
+    "method": "GET",
+    "path": "/api/nodes/{uuid}/logs",
+    "handler": "nodeHandler.GetNodeLogs",
+    "source": "backend-go/internal/server/server.go:399",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-147"
+  },
+  {
+    "method": "GET",
+    "path": "/api/nodes/{uuid}/updates",
+    "handler": "nodeHandler.GetNodeUpdates",
+    "source": "backend-go/internal/server/server.go:400",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-148"
+  },
+  {
+    "method": "POST",
+    "path": "/api/nodes/{uuid}/updates/apply",
+    "handler": "nodeHandler.ApplyNodeUpdate",
+    "source": "backend-go/internal/server/server.go:401",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-149"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/passkeys",
+    "handler": "s.DeletePasskey",
+    "source": "backend-go/internal/stubs/stubs.go:168",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-150"
+  },
+  {
+    "method": "GET",
+    "path": "/api/passkeys",
+    "handler": "s.GetPasskeys",
+    "source": "backend-go/internal/stubs/stubs.go:166",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-151"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/passkeys",
+    "handler": "s.UpdatePasskey",
+    "source": "backend-go/internal/stubs/stubs.go:167",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-152"
+  },
+  {
+    "method": "GET",
+    "path": "/api/passkeys/registration/options",
+    "handler": "s.GetPasskeyRegOptions",
+    "source": "backend-go/internal/stubs/stubs.go:169",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-153"
+  },
+  {
+    "method": "POST",
+    "path": "/api/passkeys/registration/verify",
+    "handler": "s.VerifyPasskeyReg",
+    "source": "backend-go/internal/stubs/stubs.go:170",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-154"
+  },
+  {
+    "method": "GET",
+    "path": "/api/remnawave-settings",
+    "handler": "sysHandler.GetSettings",
+    "source": "backend-go/internal/server/server.go:350",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-155"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/remnawave-settings",
+    "handler": "sysHandler.UpdateSettings",
+    "source": "backend-go/internal/server/server.go:351",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-156"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/snippets",
+    "handler": "s.DeleteSnippet",
+    "source": "backend-go/internal/stubs/stubs.go:163",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-157"
+  },
+  {
+    "method": "GET",
+    "path": "/api/snippets",
+    "handler": "s.GetSnippets",
+    "source": "backend-go/internal/stubs/stubs.go:160",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-158"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/snippets",
+    "handler": "s.UpdateSnippet",
+    "source": "backend-go/internal/stubs/stubs.go:162",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-159"
+  },
+  {
+    "method": "POST",
+    "path": "/api/snippets",
+    "handler": "s.CreateSnippet",
+    "source": "backend-go/internal/stubs/stubs.go:161",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-160"
+  },
+  {
+    "method": "POST",
+    "path": "/api/snippets/actions/sync",
+    "handler": "s.SyncSnippets",
+    "source": "backend-go/internal/stubs/stubs.go:164",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-161"
+  },
+  {
+    "method": "GET",
+    "path": "/api/sub/{shortUuid}",
+    "handler": "subHandler.GetSubscription",
+    "source": "backend-go/internal/server/server.go:326",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-162"
+  },
+  {
+    "method": "GET",
+    "path": "/api/sub/{shortUuid}/info",
+    "handler": "subHandler.GetSubscriptionInfo",
+    "source": "backend-go/internal/server/server.go:327",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-163"
+  },
+  {
+    "method": "GET",
+    "path": "/api/sub/{shortUuid}/{clientType}",
+    "handler": "subHandler.GetSubscription",
+    "source": "backend-go/internal/server/server.go:328",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-164"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-page-configs",
+    "handler": "subtemplatesHandler.GetAllConfigs",
+    "source": "backend-go/internal/server/server.go:475",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-165"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/subscription-page-configs",
+    "handler": "subtemplatesHandler.UpdateConfig",
+    "source": "backend-go/internal/server/server.go:478",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-166"
+  },
+  {
+    "method": "POST",
+    "path": "/api/subscription-page-configs",
+    "handler": "subtemplatesHandler.CreateConfig",
+    "source": "backend-go/internal/server/server.go:476",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-167"
+  },
+  {
+    "method": "POST",
+    "path": "/api/subscription-page-configs/actions/clone",
+    "handler": "subtemplatesHandler.CloneConfig",
+    "source": "backend-go/internal/server/server.go:480",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-168"
+  },
+  {
+    "method": "POST",
+    "path": "/api/subscription-page-configs/actions/reorder",
+    "handler": "subtemplatesHandler.ReorderConfigs",
+    "source": "backend-go/internal/server/server.go:481",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-169"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-page-configs/tags",
+    "handler": "subtemplatesHandler.GetConfigTags",
+    "source": "backend-go/internal/server/server.go:482",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-170"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/subscription-page-configs/tags",
+    "handler": "subtemplatesHandler.SetConfigTags",
+    "source": "backend-go/internal/server/server.go:483",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-171"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/subscription-page-configs/{uuid}",
+    "handler": "subtemplatesHandler.DeleteConfig",
+    "source": "backend-go/internal/server/server.go:479",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-172"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-page-configs/{uuid}",
+    "handler": "subtemplatesHandler.GetConfigByUuid",
+    "source": "backend-go/internal/server/server.go:477",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-173"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-request-history",
+    "handler": "s.GetSubHistory",
+    "source": "backend-go/internal/stubs/stubs.go:205",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-174"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-request-history/stats",
+    "handler": "s.GetSubHistoryStats",
+    "source": "backend-go/internal/stubs/stubs.go:204",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-175"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-settings",
+    "handler": "sysHandler.GetSubscriptionSettings",
+    "source": "backend-go/internal/server/server.go:342",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-176"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/subscription-settings",
+    "handler": "sysHandler.UpdateSubscriptionSettings",
+    "source": "backend-go/internal/server/server.go:343",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-177"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-templates",
+    "handler": "subtemplatesHandler.GetAllTemplates",
+    "source": "backend-go/internal/server/server.go:466",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-178"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/subscription-templates",
+    "handler": "subtemplatesHandler.UpdateTemplate",
+    "source": "backend-go/internal/server/server.go:469",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-179"
+  },
+  {
+    "method": "POST",
+    "path": "/api/subscription-templates",
+    "handler": "subtemplatesHandler.CreateTemplate",
+    "source": "backend-go/internal/server/server.go:467",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-180"
+  },
+  {
+    "method": "POST",
+    "path": "/api/subscription-templates/actions/reorder",
+    "handler": "subtemplatesHandler.ReorderTemplates",
+    "source": "backend-go/internal/server/server.go:471",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-181"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-templates/tags",
+    "handler": "subtemplatesHandler.GetTemplateTags",
+    "source": "backend-go/internal/server/server.go:472",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-182"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/subscription-templates/tags",
+    "handler": "subtemplatesHandler.SetTemplateTags",
+    "source": "backend-go/internal/server/server.go:473",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-183"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/subscription-templates/{uuid}",
+    "handler": "subtemplatesHandler.DeleteTemplate",
+    "source": "backend-go/internal/server/server.go:470",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-184"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscription-templates/{uuid}",
+    "handler": "subtemplatesHandler.GetTemplateByUuid",
+    "source": "backend-go/internal/server/server.go:468",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-185"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions",
+    "handler": "s.GetAllSubscriptions",
+    "source": "backend-go/internal/stubs/stubs.go:196",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-186"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions/by-id/{userId}",
+    "handler": "s.GetSubscriptionById",
+    "source": "backend-go/internal/stubs/stubs.go:197",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-187"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions/by-short-uuid/{shortUuid}",
+    "handler": "s.GetSubscriptionByShortUuid",
+    "source": "backend-go/internal/stubs/stubs.go:198",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-188"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions/by-short-uuid/{shortUuid}/raw",
+    "handler": "s.GetRawSubscriptionByShortUuid",
+    "source": "backend-go/internal/stubs/stubs.go:199",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-189"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions/by-username/{username}",
+    "handler": "s.GetSubscriptionByUsername",
+    "source": "backend-go/internal/stubs/stubs.go:200",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-190"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions/connection-keys/{userId}",
+    "handler": "s.GetConnectionKeysByUserId",
+    "source": "backend-go/internal/stubs/stubs.go:201",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-191"
+  },
+  {
+    "method": "GET",
+    "path": "/api/subscriptions/subpage-config/{shortUuid}",
+    "handler": "s.GetSubpageConfigByShortUuid",
+    "source": "backend-go/internal/stubs/stubs.go:202",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-192"
+  },
+  {
+    "method": "POST",
+    "path": "/api/system/actions/restore",
+    "handler": "sysHandler.RestoreBackup",
+    "source": "backend-go/internal/server/server.go:352",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-193"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/configuration",
+    "handler": "s.GetSystemConfiguration",
+    "source": "backend-go/internal/stubs/stubs.go:215",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-194"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/health",
+    "handler": "sysHandler.GetHealth",
+    "source": "backend-go/internal/server/server.go:313",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-195"
+  },
+  {
+    "method": "HEAD",
+    "path": "/api/system/health",
+    "handler": "sysHandler.GetHealth",
+    "source": "backend-go/internal/server/server.go:314",
+    "auth": "public (handler checks); SSH uses ticket + protocol",
+    "id": "API-196"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/metadata",
+    "handler": "sysHandler.GetMetadata",
+    "source": "backend-go/internal/server/server.go:333",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-197"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/nodes/metrics",
+    "handler": "sysHandler.GetNodesMetrics",
+    "source": "backend-go/internal/server/server.go:347",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-198"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/stats",
+    "handler": "sysHandler.GetStats",
+    "source": "backend-go/internal/server/server.go:344",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-199"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/stats/bandwidth",
+    "handler": "sysHandler.GetBandwidthStats",
+    "source": "backend-go/internal/server/server.go:345",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-200"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/stats/digest",
+    "handler": "s.GetStatsDigest",
+    "source": "backend-go/internal/stubs/stubs.go:216",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-201"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/stats/http",
+    "handler": "sysHandler.GetHttpStats",
+    "source": "backend-go/internal/server/server.go:349",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-202"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/stats/nodes",
+    "handler": "sysHandler.GetNodesStatistics",
+    "source": "backend-go/internal/server/server.go:346",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-203"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/stats/recap",
+    "handler": "sysHandler.GetRecap",
+    "source": "backend-go/internal/server/server.go:348",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-204"
+  },
+  {
+    "method": "POST",
+    "path": "/api/system/testers/srr-matcher",
+    "handler": "s.DebugSrrMatcher",
+    "source": "backend-go/internal/stubs/stubs.go:217",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-205"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/tools/x25519/generate",
+    "handler": "s.GenerateX25519",
+    "source": "backend-go/internal/stubs/stubs.go:218",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-206"
+  },
+  {
+    "method": "POST",
+    "path": "/api/system/updates/apply",
+    "handler": "sysHandler.ApplyUpdate",
+    "source": "backend-go/internal/server/server.go:335",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-207"
+  },
+  {
+    "method": "GET",
+    "path": "/api/system/updates/check",
+    "handler": "sysHandler.CheckUpdate",
+    "source": "backend-go/internal/server/server.go:334",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-208"
+  },
+  {
+    "method": "GET",
+    "path": "/api/tokens",
+    "handler": "tokensHandler.GetApiTokens",
+    "source": "backend-go/internal/server/server.go:336",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-209"
+  },
+  {
+    "method": "POST",
+    "path": "/api/tokens",
+    "handler": "tokensHandler.CreateApiToken",
+    "source": "backend-go/internal/server/server.go:337",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-210"
+  },
+  {
+    "method": "POST",
+    "path": "/api/tokens/ott",
+    "handler": "tokensHandler.GetOtt",
+    "source": "backend-go/internal/server/server.go:340",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-211"
+  },
+  {
+    "method": "GET",
+    "path": "/api/tokens/scopes",
+    "handler": "tokensHandler.GetScopes",
+    "source": "backend-go/internal/server/server.go:339",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-212"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/tokens/{uuid}",
+    "handler": "tokensHandler.DeleteApiToken",
+    "source": "backend-go/internal/server/server.go:338",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-213"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users",
+    "handler": "userHandler.GetUsers",
+    "source": "backend-go/internal/server/server.go:354",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-214"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/users",
+    "handler": "userHandler.PatchUser",
+    "source": "backend-go/internal/server/server.go:358",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-215"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users",
+    "handler": "userHandler.CreateUser",
+    "source": "backend-go/internal/server/server.go:357",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-216"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/actions/resolve",
+    "handler": "userHandler.ResolveUser",
+    "source": "backend-go/internal/server/server.go:360",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-217"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk-actions",
+    "handler": "userHandler.BulkUserAction",
+    "source": "backend-go/internal/server/server.go:373",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-218"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk-actions/delete",
+    "handler": "userHandler.BulkUserAction",
+    "source": "backend-go/internal/server/server.go:375",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-219"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk-actions/profile-modification",
+    "handler": "userHandler.BulkUserAction",
+    "source": "backend-go/internal/server/server.go:377",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-220"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk-actions/reset-traffic",
+    "handler": "userHandler.BulkUserAction",
+    "source": "backend-go/internal/server/server.go:374",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-221"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk-actions/status-modification",
+    "handler": "userHandler.BulkUserAction",
+    "source": "backend-go/internal/server/server.go:376",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-222"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk-actions/template-modification",
+    "handler": "userHandler.BulkUserAction",
+    "source": "backend-go/internal/server/server.go:378",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-223"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/all/extend-expiration-date",
+    "handler": "userHandler.BulkAllExtendExpirationDate",
+    "source": "backend-go/internal/server/server.go:362",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-224"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/all/reset-traffic",
+    "handler": "userHandler.BulkAllResetTraffic",
+    "source": "backend-go/internal/server/server.go:363",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-225"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/all/update",
+    "handler": "userHandler.BulkAllUpdate",
+    "source": "backend-go/internal/server/server.go:364",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-226"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/delete",
+    "handler": "userHandler.BulkDelete",
+    "source": "backend-go/internal/server/server.go:365",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-227"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/delete-by-status",
+    "handler": "userHandler.BulkDeleteByStatus",
+    "source": "backend-go/internal/server/server.go:366",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-228"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/extend-expiration-date",
+    "handler": "userHandler.BulkExtendExpirationDate",
+    "source": "backend-go/internal/server/server.go:367",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-229"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/reset-traffic",
+    "handler": "userHandler.BulkResetTraffic",
+    "source": "backend-go/internal/server/server.go:368",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-230"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/revoke-subscription",
+    "handler": "userHandler.BulkRevokeSubscription",
+    "source": "backend-go/internal/server/server.go:369",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-231"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/update",
+    "handler": "userHandler.BulkUpdate",
+    "source": "backend-go/internal/server/server.go:370",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-232"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/bulk/update-squads",
+    "handler": "userHandler.BulkUpdateSquads",
+    "source": "backend-go/internal/server/server.go:371",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-233"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/by-short-uuid/{shortUuid}",
+    "handler": "userHandler.GetUserByShortUuid",
+    "source": "backend-go/internal/server/server.go:383",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-234"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/by-username/{username}",
+    "handler": "userHandler.GetUserByUsername",
+    "source": "backend-go/internal/server/server.go:384",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-235"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/resolve",
+    "handler": "userHandler.ResolveUser",
+    "source": "backend-go/internal/server/server.go:359",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-236"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/stream",
+    "handler": "userHandler.GetUsersStream",
+    "source": "backend-go/internal/server/server.go:355",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-237"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/tags",
+    "handler": "userHandler.GetTags",
+    "source": "backend-go/internal/server/server.go:356",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-238"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/users/{userId}",
+    "handler": "userHandler.DeleteUser",
+    "source": "backend-go/internal/server/server.go:382",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-239"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/{userId}",
+    "handler": "userHandler.GetUser",
+    "source": "backend-go/internal/server/server.go:380",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-240"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/users/{userId}",
+    "handler": "userHandler.UpdateUser",
+    "source": "backend-go/internal/server/server.go:381",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-241"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/{userId}/accessible-nodes",
+    "handler": "userHandler.GetUserAccessibleNodes",
+    "source": "backend-go/internal/server/server.go:385",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-242"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/{userId}/actions/disable",
+    "handler": "userHandler.DisableUser",
+    "source": "backend-go/internal/server/server.go:389",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-243"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/{userId}/actions/enable",
+    "handler": "userHandler.EnableUser",
+    "source": "backend-go/internal/server/server.go:388",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-244"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/{userId}/actions/extend",
+    "handler": "userHandler.ExtendUser",
+    "source": "backend-go/internal/server/server.go:390",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-245"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/{userId}/actions/reset-traffic",
+    "handler": "userHandler.ResetTraffic",
+    "source": "backend-go/internal/server/server.go:387",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-246"
+  },
+  {
+    "method": "POST",
+    "path": "/api/users/{userId}/actions/revoke",
+    "handler": "userHandler.RevokeUser",
+    "source": "backend-go/internal/server/server.go:391",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-247"
+  },
+  {
+    "method": "GET",
+    "path": "/api/users/{userId}/subscription-request-history",
+    "handler": "userHandler.GetUserSubscriptionRequestHistory",
+    "source": "backend-go/internal/server/server.go:386",
+    "auth": "Bearer JWT/API token + scopes/AdminOnly",
+    "id": "API-248"
+  }
+]
