@@ -1,0 +1,51 @@
+name: Stage 01 native execution gaps
+on:
+  push:
+    branches: [rustwave-dev]
+    paths: [.github/workflows/stage01-execution-gaps.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.27.3'
+          cache: false
+      - name: Isolated pinned source and VM preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e /.dockerenv
+          test "$(id -u)" != 0
+          mkdir -p "$RUNNER_TEMP/stage01-source" "$RUNNER_TEMP/stage01-evidence"
+          git -c core.autocrlf=false archive d709bad01dc0ceacb20012a3afdf528eddfd061f | tar -x -C "$RUNNER_TEMP/stage01-source"
+          { uname -a; id; go version; cat /proc/1/cgroup; } > "$RUNNER_TEMP/stage01-evidence/environment.txt"
+      - name: Unmodified tests in native Linux VM
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/stage01-source/backend-go"
+          export TZ=UTC LC_ALL=C.UTF-8 GOMAXPROCS=2
+          for mode in sqlite postgres; do
+            go test -json -count=1 ./internal/system -run '^(TestRootOnlyWritableRejectsServiceAccountFiles|TestApplyUpdateRequestsRootHelper)$' > "$RUNNER_TEMP/stage01-evidence/native-$mode.jsonl"
+          done
+          python3 - <<'PY'
+          import json, os, pathlib
+          for mode in ('sqlite','postgres'):
+              events=[json.loads(s) for s in (pathlib.Path(os.environ['RUNNER_TEMP'])/'stage01-evidence'/f'native-{mode}.jsonl').read_text().splitlines()]
+              actual={e['Test']:e['Action'] for e in events if e.get('Test') and e['Action'] in ('pass','fail','skip')}
+              assert actual == {'TestRootOnlyWritableRejectsServiceAccountFiles':'pass','TestApplyUpdateRequestsRootHelper':'pass'}, actual
+          PY
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: stage01-native-evidence
+          path: ${{ runner.temp }}/stage01-evidence
+          if-no-files-found: error
