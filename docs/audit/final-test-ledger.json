@@ -484,5 +484,19 @@
       "runner_reference_error_exit1": 20,
       "assertions_executed_in_preparation": 0
     }
+  },
+  "browser_v1_adoption": {
+    "status": "ACCEPTED",
+    "authority": "Explicit project-owner approval 2026-11-03",
+    "manifest": "../../tools/audit-stage01/browser-v1.manifest.json",
+    "original_browser": "HISTORICAL_FLAKY",
+    "patched_browser": "NEW_MANDATORY_TEST",
+    "formal_review": "PASS",
+    "ci": "NOT_RUN",
+    "browser_gate": "BLOCKED",
+    "stage": "PARTIAL",
+    "blockers": [
+      "Mandatory CI not yet executed; branch status enforcement not yet configured"
+    ]
   }
 }

@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+  "tested_tsx_sha256": "0abb393e052f4cd0720aa42fb18586f9fae2d216afe2960fb119f839c8759fe3",
+  "tested_runner_sha256": "8afefe1d65962ebc9878cb952c9819e5221f909cd3d957dab723e430785255d5",
+  "reapplied_integrity": {
+    "status": "PASS",
+    "source_files": 1772,
+    "only_changed_file": "frontend/tests/browser-smoke.tsx",
+    "patched_tsx_sha256": "0abb393e052f4cd0720aa42fb18586f9fae2d216afe2960fb119f839c8759fe3",
+    "runner_sha256": "8afefe1d65962ebc9878cb952c9819e5221f909cd3d957dab723e430785255d5"
+  },
+  "assertions": {
+    "status": "PASS",
+    "count": 59,
+    "identical_arguments_and_order": true,
+    "arguments": [
+      [
+        "inboundProtocol.textContent?.includes('vless')",
+        "'JSON viewer renders inbound values'"
+      ],
+      [
+        "!jsonViewer.querySelector('input, textarea, [contenteditable=\"true\"]')",
+        "'Inbound JSON remains read-only after interaction'"
+      ],
+      [
+        "!jsonViewer.querySelector('[aria-label=\"Edit\"], [aria-label=\"Delete\"], [aria-label=\"Add\"]')",
+        "'Inbound JSON viewer hides mutation controls'"
+      ],
+      [
+        "container.querySelectorAll('[data-index]').length < 10",
+        "'virtual list bounds rendered rows'"
+      ],
+      [
+        "container.querySelector('[data-index=\"0\"]')",
+        "'virtual list renders first row'"
+      ],
+      [
+        "!container.querySelector('[data-index=\"0\"]')",
+        "'virtual list drops rows outside viewport'"
+      ],
+      [
+        "Number(viewport.dataset['totalSize']) > beforeResize",
+        "'virtual list observes variable row heights'"
+      ],
+      [
+        "container.querySelectorAll('[data-index]').length === 2",
+        "'virtual list handles shrinking data'"
+      ],
+      [
+        "!container.querySelector('[data-window-index=\"0\"]')",
+        "'window virtualization tracks scroll and margin'"
+      ],
+      [
+        "container.querySelectorAll('[data-window-index]').length < 30",
+        "'window virtualization bounds rows'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'First'",
+        "'remarks initialize from props'"
+      ],
+      [
+        "lastRemarks.length === 2 && lastRemarks[0] === 'First' && lastRemarks[1] === ''",
+        "'adding a remark reports immediately'"
+      ],
+      [
+        "container.querySelector('input') === secondRemarkInput &&\n            document.activeElement === secondRemarkInput",
+        "'removing a remark preserves surviving input identity'"
+      ],
+      [
+        "!initialRemarkInput.isConnected",
+        "'removed remark input detaches'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'Second'",
+        "'remarks reset on new data'"
+      ],
+      [
+        "remarkReports === reportsAfterReset",
+        "'remarks do not echo parent data back'"
+      ],
+      [
+        "lastRemarks[0] === 'Second edited'",
+        "'typing a remark reports immediately'"
+      ],
+      [
+        "container.querySelector('input')?.value === ''",
+        "'omitted remarks have a stable empty default'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'ONE'",
+        "'tag input initializes from props'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'TWO'",
+        "'tag input follows changed values'"
+      ],
+      [
+        "Number(container.textContent) > firstTime",
+        "'session clock advances without render-time reads'"
+      ],
+      [
+        "isSvg('<svg xmlns=\"http://www.w3.org/2000/svg\"><path /></svg>')",
+        "'valid SVG'"
+      ],
+      [
+        "isSvg('<!-- icon --><svg />')",
+        "'SVG with comments'"
+      ],
+      [
+        "!isSvg('<svg><path></svg>')",
+        "'reject malformed SVG'"
+      ],
+      [
+        "!isSvg('<html><svg /></html>')",
+        "'reject non-SVG root'"
+      ],
+      [
+        "container.querySelector('svg path')",
+        "'SVG without xmlns retains SVG namespace'"
+      ],
+      [
+        "!container.querySelector('script, foreignObject, [onload]')",
+        "'SVG strips active content'"
+      ],
+      [
+        "container.firstElementChild?.children.length === 0",
+        "'non-SVG roots are rejected'"
+      ],
+      [
+        "container.textContent === 'true:false'",
+        "'auth initializes without token'"
+      ],
+      [
+        "container.textContent === 'true:true'",
+        "'auth reacts to token changes'"
+      ],
+      [
+        "container.textContent === 'true:false'",
+        "'logout updates context and removes token'"
+      ],
+      [
+        "container.textContent === 'true:false'",
+        "'repeated logout remains safe'"
+      ],
+      [
+        "unhandledRejections === 0",
+        "'UI operations observe rejected promises'"
+      ],
+      [
+        "document.body.textContent?.includes('Expected async failure')",
+        "'UI operations surface asynchronous errors'"
+      ],
+      [
+        "container.textContent === '\ud83c\uddfa\ud83c\uddf8'",
+        "'country flag Unicode'"
+      ],
+      [
+        "container.querySelector('[aria-label=\"US\"]')",
+        "'country flag accessibility'"
+      ],
+      [
+        "container.querySelector('[role=\"progressbar\"]')",
+        "'progress starts'"
+      ],
+      [
+        "!container.querySelector('[role=\"progressbar\"]')",
+        "'progress completes'"
+      ],
+      [
+        "requireValue(items.item(0), 'Masonry item 0 is missing').getBoundingClientRect().height >=\n            116",
+        "'masonry measures card height'"
+      ],
+      [
+        "requireValue(items.item(1), 'Masonry item 1 is missing').getBoundingClientRect().left >\n            requireValue(items.item(0), 'Masonry item 0 is missing').getBoundingClientRect().left",
+        "'masonry columns'"
+      ],
+      [
+        "requireValue(items.item(2), 'Masonry item 2 is missing').getBoundingClientRect().top >=\n            requireValue(items.item(0), 'Masonry item 0 is missing').getBoundingClientRect().bottom",
+        "'masonry avoids overlaps'"
+      ],
+      [
+        "addedMasonryItem.getBoundingClientRect().height >= 246",
+        "'masonry measures added children'"
+      ],
+      [
+        "container.textContent === 'Updatetwothree'",
+        "'animated list updates'"
+      ],
+      [
+        "!document.querySelector('[aria-hidden=\"true\"][inert]')",
+        "'exit animation cleans up'"
+      ],
+      [
+        "container.querySelector('.highcharts-root')",
+        "'chart creates SVG'"
+      ],
+      [
+        "container.querySelector('.highcharts-title')?.textContent === 'Second'",
+        "'chart updates'"
+      ],
+      [
+        "Highcharts.charts.filter(Boolean).length === 1",
+        "'chart reuses instance'"
+      ],
+      [
+        "Highcharts.charts.filter(Boolean).length === 0",
+        "'chart cleans up'"
+      ],
+      [
+        "container.querySelectorAll('path').length === 2",
+        "'sparkline renders line and area'"
+      ],
+      [
+        "container.textContent?.includes('Expected test failure')",
+        "'error boundary catches'"
+      ],
+      [
+        "!container.textContent",
+        "'error boundary retries children'"
+      ],
+      [
+        "typeof data === 'object' && data?.['hello'] === 'world'",
+        "'locale JSON'"
+      ],
+      [
+        "request.includes('/locales/en/gowave.json?v=browser-test')",
+        "'locale URL and cache busting'"
+      ],
+      [
+        "error && retry === false",
+        "'missing locale fails without retry'"
+      ],
+      [
+        "error && retry === true",
+        "'server failures allow retry'"
+      ],
+      [
+        "error && retry === true",
+        "'network failures allow retry'"
+      ],
+      [
+        "error && retry === false",
+        "'malformed translations fail without retry'"
+      ],
+      [
+        "error && retry === false",
+        "'scalar locale resource fails without retry'"
+      ],
+      [
+        "languageDetector.detect()?.[0] === 'ru'",
+        "'language cache and regional normalization'"
+      ]
+    ]
+  },
+  "negative_gate_tests": {
+    "status": "PASS",
+    "valid_control": "PASS",
+    "rejected_negative_cases": [
+      "wrong_identity",
+      "wrong_patch",
+      "missing_trial",
+      "extra_trial",
+      "missing_assertion",
+      "extra_assertion",
+      "failed_assertion",
+      "wrong_order",
+      "skipped_trial",
+      "flaky_trial",
+      "not_run_trial",
+      "unknown_trial",
+      "deadline_extension",
+      "timeout",
+      "page_incomplete",
+      "no_timer",
+      "fake_clock",
+      "page_exception",
+      "network_failure",
+      "missing_resources",
+      "nonzero_exit"
+    ],
+    "count": 21
+  },
+  "historical_candidate_runs_revalidated": [
+    "patched-normal-1",
+    "patched-normal-2",
+    "patched-normal-3",
+    "patched-normal-4",
+    "patched-normal-5",
+    "patched-cpu-only-1",
+    "patched-cpu-only-2",
+    "patched-cpu-only-3",
+    "patched-cpu-only-4",
+    "patched-cpu-only-5",
+    "patched-ram-only-1",
+    "patched-ram-only-2",
+    "patched-ram-only-3",
+    "patched-ram-only-4",
+    "patched-ram-only-5",
+    "patched-contention-1",
+    "patched-contention-2",
+    "patched-contention-3",
+    "patched-contention-4",
+    "patched-contention-5"
+  ],
+  "no_production_change": true,
+  "review": "DOM viewer readiness precedes assertions; native callback delegates to useTime state update; committed advancing DOM is required before unchanged clock assertion. Fixed-sleep temporal semantics revision explicitly approved by owner."
+}

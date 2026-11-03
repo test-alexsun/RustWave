@@ -1,6 +1,6 @@
 # STAGE 01 — Audit GoWave
 
-**Current continuation:** Candidate RUSTWAVE-BROWSER-PATCH-V1 passed20/20 (5 per required profile), preserving59 assertions and real-timer evidence. Original history remains unchanged. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Latest details: “Versioned test-only patch V1”. Earlier sections below are preserved historical checkpoints; their former blockers are superseded only by explicitly recorded supplementary evidence. Go/native gaps are covered by the supplementary runs; current browser-baseline adoption remains pending.
+**Final gate review, 2026-11-03:** Browser V1 принят владельцем и прошёл формальную проверку. CI NOT_RUN; browser gate BLOCKED; STAGE_01 PARTIAL до реального CI и окончательной проверки. Исторические секции ниже сохранены и не описывают текущий статус.
 
 - Status: **PARTIAL**. Inventory and measured baseline completed; strict no-skips/no-flaky gate is not satisfied.
 - Started UTC: 2026-11-02. Final local report UTC: 2026-11-03T02:23:41.317763+00:00.
@@ -161,3 +161,7 @@ Modal100ms and clock60ms waits are upstream smoke readiness races. A separate DO
 | patched-contention-5 | PASS | 0 | 8.756 | 59 |
 
 Candidate `RUSTWAVE-BROWSER-PATCH-V1`; patch SHA256 `0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88`. Counts {"PASS": 20, "FAIL": 0, "SKIPPED": 0, "NOT_RUN": 0, "BLOCKED": 0, "FLAKY": 0}. All59 assertions and real native timer evidence preserved; original1772 blobs unchanged. Temporal wait semantics changed explicitly. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Historical FAIL/FLAKY remain, original20s timeout root cause unresolved. [Proposal, equivalence limits and preparation errors](../audit/BROWSER_PATCH_V1.md). No Stage02 work.
+
+## Final gate review and baseline adoption
+
+[Решение о принятии Browser V1](../audit/BROWSER_V1_ADOPTION.md). Новый обязательный baseline зарегистрирован отдельно от original HISTORICAL_FLAKY. Все 59 assertions и 20 успешных запусков перепроверены; 21 отрицательный gate-сценарий PASS. Текущий blocker: обязательный CI ещё не исполнен. Go↔Rust parity NOT_TESTED; STAGE_02 не начат.

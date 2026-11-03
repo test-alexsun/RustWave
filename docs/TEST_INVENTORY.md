@@ -1,6 +1,6 @@
 # Test inventory and execution accounting
 
-**Current continuation:** Candidate RUSTWAVE-BROWSER-PATCH-V1 passed20/20 (5 per required profile), preserving59 assertions and real-timer evidence. Original history remains unchanged. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Latest details: “Versioned test-only patch V1”. Earlier sections below are preserved historical checkpoints; their former blockers are superseded only by explicitly recorded supplementary evidence. Go/native gaps are covered by the supplementary runs; current browser-baseline adoption remains pending.
+**Final gate review, 2026-11-03:** Browser V1 принят владельцем и прошёл формальную проверку. CI NOT_RUN; browser gate BLOCKED; STAGE_01 PARTIAL до реального CI и окончательной проверки. Исторические секции ниже сохранены и не описывают текущий статус.
 
 Pinned source `d709bad01dc0ceacb20012a3afdf528eddfd061f`. Expected top-level Go test IDs: **128 per DB mode**, independently extracted before execution in [manifest](audit/go-test-manifest.json). Test package includes data-free unit tests too: DB mode indicates environment, not proof each test accesses that DB. `go test -json -count=1 -p=2 -race ./...` for SQLite; PostgreSQL without race as upstream CI, with GOWAVE_TEST_POSTGRES. Locale C.UTF-8, TZ UTC, Go 1.27.3 Linux amd64, resource-limited local Docker. Source and fixtures unmodified.
 
@@ -346,3 +346,7 @@ Modal100ms and clock60ms waits are upstream smoke readiness races. A separate DO
 | patched-contention-5 | PASS | 0 | 8.756 | 59 |
 
 Candidate `RUSTWAVE-BROWSER-PATCH-V1`; patch SHA256 `0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88`. Counts {"PASS": 20, "FAIL": 0, "SKIPPED": 0, "NOT_RUN": 0, "BLOCKED": 0, "FLAKY": 0}. All59 assertions and real native timer evidence preserved; original1772 blobs unchanged. Temporal wait semantics changed explicitly. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Historical FAIL/FLAKY remain, original20s timeout root cause unresolved. [Proposal, equivalence limits and preparation errors](audit/BROWSER_PATCH_V1.md). No Stage02 work.
+
+## Final gate review and baseline adoption
+
+[Решение о принятии Browser V1](audit/BROWSER_V1_ADOPTION.md). Новый обязательный baseline зарегистрирован отдельно от original HISTORICAL_FLAKY. Все 59 assertions и 20 успешных запусков перепроверены; 21 отрицательный gate-сценарий PASS. Текущий blocker: обязательный CI ещё не исполнен. Go↔Rust parity NOT_TESTED; STAGE_02 не начат.

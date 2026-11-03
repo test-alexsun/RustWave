@@ -1,0 +1,308 @@
+{
+  "id": "RUSTWAVE-BROWSER-PATCH-V1",
+  "status": "NEW_MANDATORY_TEST",
+  "owner_approval_date": "2026-11-03",
+  "upstream_sha": "d709bad01dc0ceacb20012a3afdf528eddfd061f",
+  "original_id": "GOWAVE-BROWSER-ORIGINAL-d709bad01dc0ceacb20012a3afdf528eddfd061f",
+  "original_status": "HISTORICAL_FLAKY",
+  "original_evidence": "docs/audit/BROWSER_DIAGNOSTICS.md",
+  "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+  "tested_context_patch_sha256": "068da59f0f392fd42815e2c1ec43066c03ebe7101dc081098978a8f6eed94fb6",
+  "tested_tsx_sha256": "0abb393e052f4cd0720aa42fb18586f9fae2d216afe2960fb119f839c8759fe3",
+  "runner_id": "RUSTWAVE-BROWSER-CDP-RUNNER-V1",
+  "tested_runner_sha256": "8afefe1d65962ebc9878cb952c9819e5221f909cd3d957dab723e430785255d5",
+  "artifact_lf_sha256": {
+    "tools/audit-stage01/browser-smoke-v1.patch": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+    "tools/audit-stage01/browser-smoke-v1.identity.json": "1cb722c72b7ad849e9d79bb5d6b41846aba765fe49904681b461ecf73f1d0137",
+    "tools/audit-stage01/patched_browser_runner.mjs": "513ceeb9cc15ff497ce4b4bab71eeddd2000d971050aeaa88c2b951230561122",
+    "tools/audit-stage01/approved_assertions.cjs": "46c6ac45bc8d59bf36c868d43f92e5975cdf5cf1d051f8a167296b2ebdcb0f5f",
+    "tools/audit-stage01/Dockerfile.browser-v1": "9952a0f0669ccba5d0aa0d17ea40ab806991dbef37d2971620ed60517b2471a8",
+    "tools/audit-stage01/approved_browser_gate.py": "f614008d613e8ca239e821cf18f16e69ae0f6b5b86572564e9c49f65fb6b822b",
+    "tools/audit-stage01/run_approved_browser_ci.py": "ad18e03a07a6dd7ab205bc911b6f44a5de24be60778d52bc704fc335235858cb"
+  },
+  "assertions": [
+    {
+      "id": "BROWSER-A01",
+      "message": "JSON viewer renders inbound values"
+    },
+    {
+      "id": "BROWSER-A02",
+      "message": "Inbound JSON remains read-only after interaction"
+    },
+    {
+      "id": "BROWSER-A03",
+      "message": "Inbound JSON viewer hides mutation controls"
+    },
+    {
+      "id": "BROWSER-A04",
+      "message": "virtual list bounds rendered rows"
+    },
+    {
+      "id": "BROWSER-A05",
+      "message": "virtual list renders first row"
+    },
+    {
+      "id": "BROWSER-A06",
+      "message": "virtual list drops rows outside viewport"
+    },
+    {
+      "id": "BROWSER-A07",
+      "message": "virtual list observes variable row heights"
+    },
+    {
+      "id": "BROWSER-A08",
+      "message": "virtual list handles shrinking data"
+    },
+    {
+      "id": "BROWSER-A09",
+      "message": "window virtualization tracks scroll and margin"
+    },
+    {
+      "id": "BROWSER-A10",
+      "message": "window virtualization bounds rows"
+    },
+    {
+      "id": "BROWSER-A11",
+      "message": "remarks initialize from props"
+    },
+    {
+      "id": "BROWSER-A12",
+      "message": "adding a remark reports immediately"
+    },
+    {
+      "id": "BROWSER-A13",
+      "message": "removing a remark preserves surviving input identity"
+    },
+    {
+      "id": "BROWSER-A14",
+      "message": "removed remark input detaches"
+    },
+    {
+      "id": "BROWSER-A15",
+      "message": "remarks reset on new data"
+    },
+    {
+      "id": "BROWSER-A16",
+      "message": "remarks do not echo parent data back"
+    },
+    {
+      "id": "BROWSER-A17",
+      "message": "typing a remark reports immediately"
+    },
+    {
+      "id": "BROWSER-A18",
+      "message": "omitted remarks have a stable empty default"
+    },
+    {
+      "id": "BROWSER-A19",
+      "message": "tag input initializes from props"
+    },
+    {
+      "id": "BROWSER-A20",
+      "message": "tag input follows changed values"
+    },
+    {
+      "id": "BROWSER-A21",
+      "message": "session clock advances without render-time reads"
+    },
+    {
+      "id": "BROWSER-A22",
+      "message": "valid SVG"
+    },
+    {
+      "id": "BROWSER-A23",
+      "message": "SVG with comments"
+    },
+    {
+      "id": "BROWSER-A24",
+      "message": "reject malformed SVG"
+    },
+    {
+      "id": "BROWSER-A25",
+      "message": "reject non-SVG root"
+    },
+    {
+      "id": "BROWSER-A26",
+      "message": "SVG without xmlns retains SVG namespace"
+    },
+    {
+      "id": "BROWSER-A27",
+      "message": "SVG strips active content"
+    },
+    {
+      "id": "BROWSER-A28",
+      "message": "non-SVG roots are rejected"
+    },
+    {
+      "id": "BROWSER-A29",
+      "message": "auth initializes without token"
+    },
+    {
+      "id": "BROWSER-A30",
+      "message": "auth reacts to token changes"
+    },
+    {
+      "id": "BROWSER-A31",
+      "message": "logout updates context and removes token"
+    },
+    {
+      "id": "BROWSER-A32",
+      "message": "repeated logout remains safe"
+    },
+    {
+      "id": "BROWSER-A33",
+      "message": "UI operations observe rejected promises"
+    },
+    {
+      "id": "BROWSER-A34",
+      "message": "UI operations surface asynchronous errors"
+    },
+    {
+      "id": "BROWSER-A35",
+      "message": "country flag Unicode"
+    },
+    {
+      "id": "BROWSER-A36",
+      "message": "country flag accessibility"
+    },
+    {
+      "id": "BROWSER-A37",
+      "message": "progress starts"
+    },
+    {
+      "id": "BROWSER-A38",
+      "message": "progress completes"
+    },
+    {
+      "id": "BROWSER-A39",
+      "message": "masonry measures card height"
+    },
+    {
+      "id": "BROWSER-A40",
+      "message": "masonry columns"
+    },
+    {
+      "id": "BROWSER-A41",
+      "message": "masonry avoids overlaps"
+    },
+    {
+      "id": "BROWSER-A42",
+      "message": "masonry measures added children"
+    },
+    {
+      "id": "BROWSER-A43",
+      "message": "animated list updates"
+    },
+    {
+      "id": "BROWSER-A44",
+      "message": "exit animation cleans up"
+    },
+    {
+      "id": "BROWSER-A45",
+      "message": "chart creates SVG"
+    },
+    {
+      "id": "BROWSER-A46",
+      "message": "chart updates"
+    },
+    {
+      "id": "BROWSER-A47",
+      "message": "chart reuses instance"
+    },
+    {
+      "id": "BROWSER-A48",
+      "message": "chart cleans up"
+    },
+    {
+      "id": "BROWSER-A49",
+      "message": "sparkline renders line and area"
+    },
+    {
+      "id": "BROWSER-A50",
+      "message": "error boundary catches"
+    },
+    {
+      "id": "BROWSER-A51",
+      "message": "error boundary retries children"
+    },
+    {
+      "id": "BROWSER-A52",
+      "message": "locale JSON"
+    },
+    {
+      "id": "BROWSER-A53",
+      "message": "locale URL and cache busting"
+    },
+    {
+      "id": "BROWSER-A54",
+      "message": "missing locale fails without retry"
+    },
+    {
+      "id": "BROWSER-A55",
+      "message": "server failures allow retry"
+    },
+    {
+      "id": "BROWSER-A56",
+      "message": "network failures allow retry"
+    },
+    {
+      "id": "BROWSER-A57",
+      "message": "malformed translations fail without retry"
+    },
+    {
+      "id": "BROWSER-A58",
+      "message": "scalar locale resource fails without retry"
+    },
+    {
+      "id": "BROWSER-A59",
+      "message": "language cache and regional normalization"
+    }
+  ],
+  "bun": "1.4.2",
+  "chromium": "156.0.8078.73",
+  "timezone": "UTC",
+  "locale": "C.UTF-8",
+  "deadline_ms": 20000,
+  "readiness_deadline_ms": 19000,
+  "line_endings": "Pinned source LF; patched test and runner reconstructed as exact tested CRLF bytes. No production-file normalization.",
+  "semantics": [
+    "100ms modal sleep replaced by bounded visible committed viewer readiness",
+    "60ms clock sleep replaced by bounded actual native interval registration/callback and visible React DOM advance",
+    "All 59 assert expressions, order and expected values retained; no application latency SLA implied"
+  ],
+  "acceptance": [
+    "Every expected CI profile executed once, no retry masking",
+    "Exact source, patch, runner and TSX hashes",
+    "59/59 ordered true assertion outcomes per run",
+    "Native timer trace plus committed DOM advance",
+    "Exit 0 and dataset.result=passed within 20000ms",
+    "No Runtime.exceptionThrown, Network.loadingFailed or OOM",
+    "Fail-closed negative checks pass"
+  ],
+  "ci_profiles": [
+    {
+      "id": "ci-browser-normal",
+      "profile": "normal",
+      "cpus": 2,
+      "memory_mib": 2000
+    },
+    {
+      "id": "ci-browser-cpu-only",
+      "profile": "cpu-only",
+      "cpus": 1,
+      "memory_mib": 2000
+    },
+    {
+      "id": "ci-browser-ram-only",
+      "profile": "ram-only",
+      "cpus": 2,
+      "memory_mib": 1400
+    },
+    {
+      "id": "ci-browser-contention",
+      "profile": "contention",
+      "cpus": 1,
+      "memory_mib": 1400
+    }
+  ]
+}

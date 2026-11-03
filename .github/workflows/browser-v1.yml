@@ -1,0 +1,33 @@
+name: RustWave approved browser V1
+on:
+  push:
+    branches: [rustwave-dev]
+  pull_request:
+    branches: [rustwave-dev]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-v1:
+    name: Browser V1 mandatory gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build version-pinned isolated browser environment
+        run: docker build --progress=plain -f tools/audit-stage01/Dockerfile.browser-v1 -t rustwave-browser-v1:ci tools/audit-stage01
+      - name: Integrity, negative gate tests, assertions and real browser matrix
+        run: python3 tools/audit-stage01/run_approved_browser_ci.py --directory "${{ runner.temp }}/browser-v1"
+      - name: Retain diagnostics on success and failure
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: browser-v1-evidence
+          path: |
+            ${{ runner.temp }}/browser-v1/*.json
+            ${{ runner.temp }}/browser-v1/*.stdout
+            ${{ runner.temp }}/browser-v1/*.stderr
+            ${{ runner.temp }}/browser-v1/results/*.json
+          if-no-files-found: error
