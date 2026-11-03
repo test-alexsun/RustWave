@@ -102,3 +102,33 @@ Scope of resolution: two known readiness hazards are removed in this separate ha
 **STAGE_01 PARTIAL; browser gate BLOCKED; historical FLAKY=FAIL.** New external results cannot close the original mandatory gate. Closing it without an exception requires an authorized upstream test-harness correction and original-gate revalidation; that changes the pinned test reference and is outside this audit-only change. The exact historical timeout cause remains unresolved. Stop at Stage01; no Stage02 work.
 
 [CDP events, progress and counters](browser-readiness.json).
+
+
+
+
+## Versioned test-only patch V1
+
+| Run ID | Status | CLI exit | Smoke seconds | Assertion outcomes |
+| --- | --- | --- | --- | --- |
+| patched-normal-1 | PASS | 0 | 5.358 | 59 |
+| patched-normal-2 | PASS | 0 | 4.843 | 59 |
+| patched-normal-3 | PASS | 0 | 4.648 | 59 |
+| patched-normal-4 | PASS | 0 | 4.489 | 59 |
+| patched-normal-5 | PASS | 0 | 4.779 | 59 |
+| patched-cpu-only-1 | PASS | 0 | 6.785 | 59 |
+| patched-cpu-only-2 | PASS | 0 | 6.296 | 59 |
+| patched-cpu-only-3 | PASS | 0 | 7.118 | 59 |
+| patched-cpu-only-4 | PASS | 0 | 6.626 | 59 |
+| patched-cpu-only-5 | PASS | 0 | 8.647 | 59 |
+| patched-ram-only-1 | PASS | 0 | 4.513 | 59 |
+| patched-ram-only-2 | PASS | 0 | 4.346 | 59 |
+| patched-ram-only-3 | PASS | 0 | 4.293 | 59 |
+| patched-ram-only-4 | PASS | 0 | 4.568 | 59 |
+| patched-ram-only-5 | PASS | 0 | 4.596 | 59 |
+| patched-contention-1 | PASS | 0 | 9.451 | 59 |
+| patched-contention-2 | PASS | 0 | 7.454 | 59 |
+| patched-contention-3 | PASS | 0 | 9.128 | 59 |
+| patched-contention-4 | PASS | 0 | 8.453 | 59 |
+| patched-contention-5 | PASS | 0 | 8.756 | 59 |
+
+Candidate `RUSTWAVE-BROWSER-PATCH-V1`; patch SHA256 `0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88`. Counts {"PASS": 20, "FAIL": 0, "SKIPPED": 0, "NOT_RUN": 0, "BLOCKED": 0, "FLAKY": 0}. All59 assertions and real native timer evidence preserved; original1772 blobs unchanged. Temporal wait semantics changed explicitly. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Historical FAIL/FLAKY remain, original20s timeout root cause unresolved. [Proposal, equivalence limits and preparation errors](BROWSER_PATCH_V1.md). No Stage02 work.

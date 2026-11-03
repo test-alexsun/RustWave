@@ -1,6 +1,6 @@
 # Ход разработки
 
-**Current continuation:** Original smoke 3/3 PASS in the latest bounded control run; separate readiness/controlled-clock test 12/12 PASS. Historical browser FLAKY remains FAIL for gate; exact original timeout cause unresolved. STAGE_01 PARTIAL. Latest details: “Readiness and controlled-clock investigation”.
+**Current continuation:** Candidate RUSTWAVE-BROWSER-PATCH-V1 passed20/20 (5 per required profile), preserving59 assertions and real-timer evidence. Original history remains unchanged. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Latest details: “Versioned test-only patch V1”. Earlier sections below are preserved historical checkpoints; their former blockers are superseded only by explicitly recorded supplementary evidence. Go/native gaps are covered by the supplementary runs; current browser-baseline adoption remains pending.
 
 | Этап | Статус | Результат |
 |---|---|---|
@@ -62,3 +62,33 @@ Original smoke runs execute unmodified `bun run test:browser` and pinned tests/r
 External matrix: normal2CPU/2000MiB, CPU-only1CPU/2000MiB, RAM-only2CPU/1400MiB, contention1CPU/1400MiB plus one CPU-loop process. Three fresh profiles each, same pinned source/dependencies/fixtures. Per-profile bundle builds once; reported trial duration excludes build. The original runner builds every invocation, so command durations are not directly comparable. Source remains read-only and 1772 blobs are reverified. No old evidence is overwritten.
 
 Modal100ms and clock60ms waits are upstream smoke readiness races. A separate DOM/controlled-clock harness preserves assertions but changes wait semantics; it is not replacement evidence for the original smoke. Historical20s timeout root cause remains unresolved. STAGE_01 PARTIAL, browser gate BLOCKED, Stage02 NOT READY. Full analysis and limits: [browser diagnostics](audit/BROWSER_DIAGNOSTICS.md). Reproduce only into a new evidence directory with tools/audit-stage01/readiness_run.py; do not rerun baseline/Go/native/inventory. Starting delivery commit d694945c8bfde9d44b720c0ee0c807ea1db91ead.
+
+
+
+
+## Versioned test-only patch V1
+
+| Run ID | Status | CLI exit | Smoke seconds | Assertion outcomes |
+| --- | --- | --- | --- | --- |
+| patched-normal-1 | PASS | 0 | 5.358 | 59 |
+| patched-normal-2 | PASS | 0 | 4.843 | 59 |
+| patched-normal-3 | PASS | 0 | 4.648 | 59 |
+| patched-normal-4 | PASS | 0 | 4.489 | 59 |
+| patched-normal-5 | PASS | 0 | 4.779 | 59 |
+| patched-cpu-only-1 | PASS | 0 | 6.785 | 59 |
+| patched-cpu-only-2 | PASS | 0 | 6.296 | 59 |
+| patched-cpu-only-3 | PASS | 0 | 7.118 | 59 |
+| patched-cpu-only-4 | PASS | 0 | 6.626 | 59 |
+| patched-cpu-only-5 | PASS | 0 | 8.647 | 59 |
+| patched-ram-only-1 | PASS | 0 | 4.513 | 59 |
+| patched-ram-only-2 | PASS | 0 | 4.346 | 59 |
+| patched-ram-only-3 | PASS | 0 | 4.293 | 59 |
+| patched-ram-only-4 | PASS | 0 | 4.568 | 59 |
+| patched-ram-only-5 | PASS | 0 | 4.596 | 59 |
+| patched-contention-1 | PASS | 0 | 9.451 | 59 |
+| patched-contention-2 | PASS | 0 | 7.454 | 59 |
+| patched-contention-3 | PASS | 0 | 9.128 | 59 |
+| patched-contention-4 | PASS | 0 | 8.453 | 59 |
+| patched-contention-5 | PASS | 0 | 8.756 | 59 |
+
+Candidate `RUSTWAVE-BROWSER-PATCH-V1`; patch SHA256 `0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88`. Counts {"PASS": 20, "FAIL": 0, "SKIPPED": 0, "NOT_RUN": 0, "BLOCKED": 0, "FLAKY": 0}. All59 assertions and real native timer evidence preserved; original1772 blobs unchanged. Temporal wait semantics changed explicitly. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Historical FAIL/FLAKY remain, original20s timeout root cause unresolved. [Proposal, equivalence limits and preparation errors](audit/BROWSER_PATCH_V1.md). No Stage02 work.

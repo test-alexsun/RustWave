@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "assertion_calls": 59,
+  "identical_arguments_and_order": true,
+  "normalization": "CRLF to LF in source text only; four multiline expression whitespace breaks, no changed literal values"
+}

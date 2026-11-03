@@ -1,0 +1,75 @@
+--- a/frontend/tests/browser-smoke.tsx
++++ b/frontend/tests/browser-smoke.tsx
+@@ -29,0 +30,35 @@
++
++type AuditWindow = Window & {
++    __auditProgress?: { message: string; pass: boolean; at: number }[]
++    __auditReadiness?: { label: string; at: number; value?: number }[]
++}
++const auditWindow = window as AuditWindow
++const auditMark = (label: string, value?: number) => {
++    ;(auditWindow.__auditReadiness ||= []).push({ label, at: performance.now(), value })
++}
++async function waitForAuditState(predicate: () => boolean, label: string): Promise<void> {
++    if (predicate()) { auditMark(label); return }
++    await new Promise<void>((resolve, reject) => {
++        let finished = false
++        let frame = 0
++        const finish = (error?: Error) => {
++            if (finished) return
++            finished = true
++            observer.disconnect()
++            cancelAnimationFrame(frame)
++            clearTimeout(timer)
++            if (error) reject(error)
++            else { auditMark(label); resolve() }
++        }
++        const check = () => {
++            if (finished) return
++            if (predicate()) finish()
++            else frame = requestAnimationFrame(check)
++        }
++        const observer = new MutationObserver(() => { if (predicate()) finish() })
++        const timer = setTimeout(() => finish(new Error('Readiness deadline: ' + label)), 19000)
++        observer.observe(document.documentElement, { subtree: true, childList: true, attributes: true, characterData: true })
++        frame = requestAnimationFrame(check)
++    })
++}
++
+@@ -30,0 +66 @@
++    ;(auditWindow.__auditProgress ||= []).push({ message, pass: Boolean(condition), at: performance.now() })
+@@ -181 +217,6 @@
+-    await wait()
++    await waitForAuditState(() => {
++        const dialog = document.querySelector('[role="dialog"]')
++        return dialog instanceof HTMLElement && dialog.getBoundingClientRect().width > 0 &&
++            getComputedStyle(dialog).visibility !== 'hidden' &&
++            Boolean(dialog.querySelector('.jer-editor-container .jer-value-string'))
++    }, 'modal-viewer-committed')
+@@ -350,3 +391,23 @@
+-    flushSync(() => root.render(<ClockFixture />))
+-    const firstTime = Number(container.textContent)
+-    await wait(60)
++    const nativeInterval = window.setInterval
++    let clockRegistered = false
++    let clockDelivered = false
++    window.setInterval = ((handler: TimerHandler, delay?: number, ...args: unknown[]) => {
++        if (delay !== 20 || typeof handler !== 'function') return nativeInterval(handler, delay, ...args)
++        clockRegistered = true
++        auditMark('real-clock-registered', delay)
++        return nativeInterval(() => {
++            clockDelivered = true
++            auditMark('real-clock-callback', Date.now())
++            handler(...args)
++        }, delay)
++    }) as typeof window.setInterval
++    let firstTime = 0
++    try {
++        flushSync(() => root.render(<ClockFixture />))
++        firstTime = Number(container.textContent)
++        auditMark('real-clock-initial-dom', firstTime)
++        await waitForAuditState(() => clockRegistered && clockDelivered &&
++            Number(container.textContent) > firstTime, 'real-clock-dom-advanced')
++    } finally {
++        window.setInterval = nativeInterval
++    }

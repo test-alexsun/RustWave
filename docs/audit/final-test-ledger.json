@@ -212,5 +212,277 @@
     "browser_gate": "BLOCKED",
     "stage": "PARTIAL",
     "evidence": "browser-readiness.json"
+  },
+  "patched_v1": {
+    "identity": {
+      "original_id": "GOWAVE-BROWSER-ORIGINAL-d709bad01dc0ceacb20012a3afdf528eddfd061f",
+      "patched_id": "RUSTWAVE-BROWSER-PATCH-V1",
+      "upstream_sha": "d709bad01dc0ceacb20012a3afdf528eddfd061f",
+      "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+      "changed_files": [
+        "frontend/tests/browser-smoke.tsx"
+      ],
+      "runner_unchanged": true,
+      "clock": "real native setInterval and Date.now; bounded actual DOM advancement",
+      "assertions": [
+        {
+          "id": "BROWSER-A01",
+          "message": "JSON viewer renders inbound values"
+        },
+        {
+          "id": "BROWSER-A02",
+          "message": "Inbound JSON remains read-only after interaction"
+        },
+        {
+          "id": "BROWSER-A03",
+          "message": "Inbound JSON viewer hides mutation controls"
+        },
+        {
+          "id": "BROWSER-A04",
+          "message": "virtual list bounds rendered rows"
+        },
+        {
+          "id": "BROWSER-A05",
+          "message": "virtual list renders first row"
+        },
+        {
+          "id": "BROWSER-A06",
+          "message": "virtual list drops rows outside viewport"
+        },
+        {
+          "id": "BROWSER-A07",
+          "message": "virtual list observes variable row heights"
+        },
+        {
+          "id": "BROWSER-A08",
+          "message": "virtual list handles shrinking data"
+        },
+        {
+          "id": "BROWSER-A09",
+          "message": "window virtualization tracks scroll and margin"
+        },
+        {
+          "id": "BROWSER-A10",
+          "message": "window virtualization bounds rows"
+        },
+        {
+          "id": "BROWSER-A11",
+          "message": "remarks initialize from props"
+        },
+        {
+          "id": "BROWSER-A12",
+          "message": "adding a remark reports immediately"
+        },
+        {
+          "id": "BROWSER-A13",
+          "message": "removing a remark preserves surviving input identity"
+        },
+        {
+          "id": "BROWSER-A14",
+          "message": "removed remark input detaches"
+        },
+        {
+          "id": "BROWSER-A15",
+          "message": "remarks reset on new data"
+        },
+        {
+          "id": "BROWSER-A16",
+          "message": "remarks do not echo parent data back"
+        },
+        {
+          "id": "BROWSER-A17",
+          "message": "typing a remark reports immediately"
+        },
+        {
+          "id": "BROWSER-A18",
+          "message": "omitted remarks have a stable empty default"
+        },
+        {
+          "id": "BROWSER-A19",
+          "message": "tag input initializes from props"
+        },
+        {
+          "id": "BROWSER-A20",
+          "message": "tag input follows changed values"
+        },
+        {
+          "id": "BROWSER-A21",
+          "message": "session clock advances without render-time reads"
+        },
+        {
+          "id": "BROWSER-A22",
+          "message": "valid SVG"
+        },
+        {
+          "id": "BROWSER-A23",
+          "message": "SVG with comments"
+        },
+        {
+          "id": "BROWSER-A24",
+          "message": "reject malformed SVG"
+        },
+        {
+          "id": "BROWSER-A25",
+          "message": "reject non-SVG root"
+        },
+        {
+          "id": "BROWSER-A26",
+          "message": "SVG without xmlns retains SVG namespace"
+        },
+        {
+          "id": "BROWSER-A27",
+          "message": "SVG strips active content"
+        },
+        {
+          "id": "BROWSER-A28",
+          "message": "non-SVG roots are rejected"
+        },
+        {
+          "id": "BROWSER-A29",
+          "message": "auth initializes without token"
+        },
+        {
+          "id": "BROWSER-A30",
+          "message": "auth reacts to token changes"
+        },
+        {
+          "id": "BROWSER-A31",
+          "message": "logout updates context and removes token"
+        },
+        {
+          "id": "BROWSER-A32",
+          "message": "repeated logout remains safe"
+        },
+        {
+          "id": "BROWSER-A33",
+          "message": "UI operations observe rejected promises"
+        },
+        {
+          "id": "BROWSER-A34",
+          "message": "UI operations surface asynchronous errors"
+        },
+        {
+          "id": "BROWSER-A35",
+          "message": "country flag Unicode"
+        },
+        {
+          "id": "BROWSER-A36",
+          "message": "country flag accessibility"
+        },
+        {
+          "id": "BROWSER-A37",
+          "message": "progress starts"
+        },
+        {
+          "id": "BROWSER-A38",
+          "message": "progress completes"
+        },
+        {
+          "id": "BROWSER-A39",
+          "message": "masonry measures card height"
+        },
+        {
+          "id": "BROWSER-A40",
+          "message": "masonry columns"
+        },
+        {
+          "id": "BROWSER-A41",
+          "message": "masonry avoids overlaps"
+        },
+        {
+          "id": "BROWSER-A42",
+          "message": "masonry measures added children"
+        },
+        {
+          "id": "BROWSER-A43",
+          "message": "animated list updates"
+        },
+        {
+          "id": "BROWSER-A44",
+          "message": "exit animation cleans up"
+        },
+        {
+          "id": "BROWSER-A45",
+          "message": "chart creates SVG"
+        },
+        {
+          "id": "BROWSER-A46",
+          "message": "chart updates"
+        },
+        {
+          "id": "BROWSER-A47",
+          "message": "chart reuses instance"
+        },
+        {
+          "id": "BROWSER-A48",
+          "message": "chart cleans up"
+        },
+        {
+          "id": "BROWSER-A49",
+          "message": "sparkline renders line and area"
+        },
+        {
+          "id": "BROWSER-A50",
+          "message": "error boundary catches"
+        },
+        {
+          "id": "BROWSER-A51",
+          "message": "error boundary retries children"
+        },
+        {
+          "id": "BROWSER-A52",
+          "message": "locale JSON"
+        },
+        {
+          "id": "BROWSER-A53",
+          "message": "locale URL and cache busting"
+        },
+        {
+          "id": "BROWSER-A54",
+          "message": "missing locale fails without retry"
+        },
+        {
+          "id": "BROWSER-A55",
+          "message": "server failures allow retry"
+        },
+        {
+          "id": "BROWSER-A56",
+          "message": "network failures allow retry"
+        },
+        {
+          "id": "BROWSER-A57",
+          "message": "malformed translations fail without retry"
+        },
+        {
+          "id": "BROWSER-A58",
+          "message": "scalar locale resource fails without retry"
+        },
+        {
+          "id": "BROWSER-A59",
+          "message": "language cache and regional normalization"
+        }
+      ],
+      "tested_patch_sha256": "068da59f0f392fd42815e2c1ec43066c03ebe7101dc081098978a8f6eed94fb6",
+      "packaging": "Zero-context diff removes whitespace-only context lines; applying both patch representations produces byte-identical tested TSX."
+    },
+    "expected": 20,
+    "executed": 20,
+    "counts": {
+      "PASS": 20,
+      "FAIL": 0,
+      "SKIPPED": 0,
+      "NOT_RUN": 0,
+      "BLOCKED": 0,
+      "FLAKY": 0
+    },
+    "candidate_evidence": "browser-patch-v1-results.json",
+    "adoption": "PENDING_EXPLICIT_APPROVAL",
+    "browser_gate": "BLOCKED",
+    "stage": "PARTIAL",
+    "preparation": {
+      "mount_fail_exit125": 20,
+      "runner_reference_error_exit1": 20,
+      "assertions_executed_in_preparation": 0
+    }
   }
 }

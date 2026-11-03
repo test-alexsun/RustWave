@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "tested_context_patch_sha256": "068da59f0f392fd42815e2c1ec43066c03ebe7101dc081098978a8f6eed94fb6",
+  "published_zero_context_patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+  "applied_test_file_sha256": "0abb393e052f4cd0720aa42fb18586f9fae2d216afe2960fb119f839c8759fe3",
+  "byte_identical_applied_test_files": true
+}
