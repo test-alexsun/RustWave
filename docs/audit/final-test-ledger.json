@@ -102,7 +102,7 @@
       "seconds": 79.697
     }
   ],
-  "stage": "PARTIAL",
+  "stage": "PASS",
   "supplementary": {
     "native_run": "https://github.com/test-alexsun/RustWave/actions/runs/41566960948",
     "coverage": "supplementary-coverage.json",
@@ -492,11 +492,62 @@
     "original_browser": "HISTORICAL_FLAKY",
     "patched_browser": "NEW_MANDATORY_TEST",
     "formal_review": "PASS",
-    "ci": "NOT_RUN",
-    "browser_gate": "BLOCKED",
-    "stage": "PARTIAL",
-    "blockers": [
-      "Mandatory CI not yet executed; branch status enforcement not yet configured"
-    ]
+    "ci": "PASS",
+    "browser_gate": "PASS",
+    "stage": "PASS",
+    "blockers": [],
+    "ci_run": "https://github.com/test-alexsun/RustWave/actions/runs/41659747869",
+    "original_timeout": "Historical FAIL unresolved; not reclassified"
+  },
+  "historical_stage_at_initial_audit": "PARTIAL",
+  "current_gate": {
+    "stage": "PASS",
+    "completion": "COMPLETE",
+    "original_browser": "HISTORICAL_FLAKY",
+    "mandatory_browser_id": "RUSTWAVE-BROWSER-PATCH-V1",
+    "browser_gate": "PASS",
+    "evidence": "stage01-final-review.json",
+    "ci_evidence": "browser-v1-ci-results.json",
+    "ci_run": "https://github.com/test-alexsun/RustWave/actions/runs/41659747869",
+    "counts": {
+      "go_sqlite_effective": {
+        "expected": 128,
+        "executed": 128,
+        "pass": 128,
+        "fail": 0,
+        "skipped": 0,
+        "not_run": 0
+      },
+      "go_postgres_effective": {
+        "expected": 128,
+        "executed": 128,
+        "pass": 128,
+        "fail": 0,
+        "skipped": 0,
+        "not_run": 0
+      },
+      "browser_v1_ci": {
+        "expected": 4,
+        "executed": 4,
+        "pass": 4,
+        "fail": 0,
+        "skipped": 0,
+        "not_run": 0,
+        "flaky": 0
+      },
+      "browser_v1_local_qualification": {
+        "expected": 20,
+        "executed": 20,
+        "pass": 20,
+        "fail": 0,
+        "skipped": 0,
+        "not_run": 0,
+        "flaky": 0
+      }
+    },
+    "blockers": [],
+    "rust_parity": "NOT_TESTED",
+    "stage02": "NOT_STARTED",
+    "historical_sections": "rows, browser_attempts, supplementary, supplementary_rows, readiness, patched_v1 preserve prior checkpoint outcomes and gate decisions; current_gate is authoritative for this review"
   }
 }

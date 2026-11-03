@@ -1,0 +1,3647 @@
+{
+  "run": {
+    "conclusion": "success",
+    "createdAt": "2026-11-03T15:02:44Z",
+    "databaseId": 41659747869,
+    "headSha": "b4c95a0c2db9c69700becbf0acc9883141bc0a96",
+    "status": "completed",
+    "updatedAt": "2026-11-03T15:04:15Z",
+    "url": "https://github.com/test-alexsun/RustWave/actions/runs/41659747869"
+  },
+  "artifact_integrity": {
+    "artifact_id": 13242645011,
+    "sha256": "93a056eb8eafbd70946b0bfde6b4858ef546c2294383d789adfb8719046032d3",
+    "status": "PASS",
+    "bytes": 42595
+  },
+  "gate_result": {
+    "id": "RUSTWAVE-BROWSER-PATCH-V1",
+    "status": "PASS",
+    "expected_runs": 4,
+    "executed_runs": 4,
+    "results": [
+      {
+        "id": "ci-browser-normal",
+        "status": "PASS",
+        "expected": 59,
+        "executed": 59,
+        "passed": 59,
+        "failed": 0,
+        "skipped": 0,
+        "not_run": 0,
+        "flaky": 0
+      },
+      {
+        "id": "ci-browser-cpu-only",
+        "status": "PASS",
+        "expected": 59,
+        "executed": 59,
+        "passed": 59,
+        "failed": 0,
+        "skipped": 0,
+        "not_run": 0,
+        "flaky": 0
+      },
+      {
+        "id": "ci-browser-ram-only",
+        "status": "PASS",
+        "expected": 59,
+        "executed": 59,
+        "passed": 59,
+        "failed": 0,
+        "skipped": 0,
+        "not_run": 0,
+        "flaky": 0
+      },
+      {
+        "id": "ci-browser-contention",
+        "status": "PASS",
+        "expected": 59,
+        "executed": 59,
+        "passed": 59,
+        "failed": 0,
+        "skipped": 0,
+        "not_run": 0,
+        "flaky": 0
+      }
+    ]
+  },
+  "integrity": {
+    "status": "PASS",
+    "source_files": 1772,
+    "only_changed_file": "frontend/tests/browser-smoke.tsx",
+    "patched_tsx_sha256": "0abb393e052f4cd0720aa42fb18586f9fae2d216afe2960fb119f839c8759fe3",
+    "runner_sha256": "8afefe1d65962ebc9878cb952c9819e5221f909cd3d957dab723e430785255d5"
+  },
+  "negative_tests": {
+    "status": "PASS",
+    "valid_control": "PASS",
+    "rejected_negative_cases": [
+      "wrong_identity",
+      "wrong_patch",
+      "missing_trial",
+      "extra_trial",
+      "missing_assertion",
+      "extra_assertion",
+      "failed_assertion",
+      "wrong_order",
+      "skipped_trial",
+      "flaky_trial",
+      "not_run_trial",
+      "unknown_trial",
+      "deadline_extension",
+      "timeout",
+      "page_incomplete",
+      "no_timer",
+      "fake_clock",
+      "page_exception",
+      "network_failure",
+      "missing_resources",
+      "nonzero_exit"
+    ],
+    "count": 21
+  },
+  "assertion_equivalence": {
+    "status": "PASS",
+    "count": 59,
+    "identical_arguments_and_order": true,
+    "arguments": [
+      [
+        "inboundProtocol.textContent?.includes('vless')",
+        "'JSON viewer renders inbound values'"
+      ],
+      [
+        "!jsonViewer.querySelector('input, textarea, [contenteditable=\"true\"]')",
+        "'Inbound JSON remains read-only after interaction'"
+      ],
+      [
+        "!jsonViewer.querySelector('[aria-label=\"Edit\"], [aria-label=\"Delete\"], [aria-label=\"Add\"]')",
+        "'Inbound JSON viewer hides mutation controls'"
+      ],
+      [
+        "container.querySelectorAll('[data-index]').length < 10",
+        "'virtual list bounds rendered rows'"
+      ],
+      [
+        "container.querySelector('[data-index=\"0\"]')",
+        "'virtual list renders first row'"
+      ],
+      [
+        "!container.querySelector('[data-index=\"0\"]')",
+        "'virtual list drops rows outside viewport'"
+      ],
+      [
+        "Number(viewport.dataset['totalSize']) > beforeResize",
+        "'virtual list observes variable row heights'"
+      ],
+      [
+        "container.querySelectorAll('[data-index]').length === 2",
+        "'virtual list handles shrinking data'"
+      ],
+      [
+        "!container.querySelector('[data-window-index=\"0\"]')",
+        "'window virtualization tracks scroll and margin'"
+      ],
+      [
+        "container.querySelectorAll('[data-window-index]').length < 30",
+        "'window virtualization bounds rows'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'First'",
+        "'remarks initialize from props'"
+      ],
+      [
+        "lastRemarks.length === 2 && lastRemarks[0] === 'First' && lastRemarks[1] === ''",
+        "'adding a remark reports immediately'"
+      ],
+      [
+        "container.querySelector('input') === secondRemarkInput &&\n            document.activeElement === secondRemarkInput",
+        "'removing a remark preserves surviving input identity'"
+      ],
+      [
+        "!initialRemarkInput.isConnected",
+        "'removed remark input detaches'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'Second'",
+        "'remarks reset on new data'"
+      ],
+      [
+        "remarkReports === reportsAfterReset",
+        "'remarks do not echo parent data back'"
+      ],
+      [
+        "lastRemarks[0] === 'Second edited'",
+        "'typing a remark reports immediately'"
+      ],
+      [
+        "container.querySelector('input')?.value === ''",
+        "'omitted remarks have a stable empty default'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'ONE'",
+        "'tag input initializes from props'"
+      ],
+      [
+        "container.querySelector('input')?.value === 'TWO'",
+        "'tag input follows changed values'"
+      ],
+      [
+        "Number(container.textContent) > firstTime",
+        "'session clock advances without render-time reads'"
+      ],
+      [
+        "isSvg('<svg xmlns=\"http://www.w3.org/2000/svg\"><path /></svg>')",
+        "'valid SVG'"
+      ],
+      [
+        "isSvg('<!-- icon --><svg />')",
+        "'SVG with comments'"
+      ],
+      [
+        "!isSvg('<svg><path></svg>')",
+        "'reject malformed SVG'"
+      ],
+      [
+        "!isSvg('<html><svg /></html>')",
+        "'reject non-SVG root'"
+      ],
+      [
+        "container.querySelector('svg path')",
+        "'SVG without xmlns retains SVG namespace'"
+      ],
+      [
+        "!container.querySelector('script, foreignObject, [onload]')",
+        "'SVG strips active content'"
+      ],
+      [
+        "container.firstElementChild?.children.length === 0",
+        "'non-SVG roots are rejected'"
+      ],
+      [
+        "container.textContent === 'true:false'",
+        "'auth initializes without token'"
+      ],
+      [
+        "container.textContent === 'true:true'",
+        "'auth reacts to token changes'"
+      ],
+      [
+        "container.textContent === 'true:false'",
+        "'logout updates context and removes token'"
+      ],
+      [
+        "container.textContent === 'true:false'",
+        "'repeated logout remains safe'"
+      ],
+      [
+        "unhandledRejections === 0",
+        "'UI operations observe rejected promises'"
+      ],
+      [
+        "document.body.textContent?.includes('Expected async failure')",
+        "'UI operations surface asynchronous errors'"
+      ],
+      [
+        "container.textContent === '\ud83c\uddfa\ud83c\uddf8'",
+        "'country flag Unicode'"
+      ],
+      [
+        "container.querySelector('[aria-label=\"US\"]')",
+        "'country flag accessibility'"
+      ],
+      [
+        "container.querySelector('[role=\"progressbar\"]')",
+        "'progress starts'"
+      ],
+      [
+        "!container.querySelector('[role=\"progressbar\"]')",
+        "'progress completes'"
+      ],
+      [
+        "requireValue(items.item(0), 'Masonry item 0 is missing').getBoundingClientRect().height >=\n            116",
+        "'masonry measures card height'"
+      ],
+      [
+        "requireValue(items.item(1), 'Masonry item 1 is missing').getBoundingClientRect().left >\n            requireValue(items.item(0), 'Masonry item 0 is missing').getBoundingClientRect().left",
+        "'masonry columns'"
+      ],
+      [
+        "requireValue(items.item(2), 'Masonry item 2 is missing').getBoundingClientRect().top >=\n            requireValue(items.item(0), 'Masonry item 0 is missing').getBoundingClientRect().bottom",
+        "'masonry avoids overlaps'"
+      ],
+      [
+        "addedMasonryItem.getBoundingClientRect().height >= 246",
+        "'masonry measures added children'"
+      ],
+      [
+        "container.textContent === 'Updatetwothree'",
+        "'animated list updates'"
+      ],
+      [
+        "!document.querySelector('[aria-hidden=\"true\"][inert]')",
+        "'exit animation cleans up'"
+      ],
+      [
+        "container.querySelector('.highcharts-root')",
+        "'chart creates SVG'"
+      ],
+      [
+        "container.querySelector('.highcharts-title')?.textContent === 'Second'",
+        "'chart updates'"
+      ],
+      [
+        "Highcharts.charts.filter(Boolean).length === 1",
+        "'chart reuses instance'"
+      ],
+      [
+        "Highcharts.charts.filter(Boolean).length === 0",
+        "'chart cleans up'"
+      ],
+      [
+        "container.querySelectorAll('path').length === 2",
+        "'sparkline renders line and area'"
+      ],
+      [
+        "container.textContent?.includes('Expected test failure')",
+        "'error boundary catches'"
+      ],
+      [
+        "!container.textContent",
+        "'error boundary retries children'"
+      ],
+      [
+        "typeof data === 'object' && data?.['hello'] === 'world'",
+        "'locale JSON'"
+      ],
+      [
+        "request.includes('/locales/en/gowave.json?v=browser-test')",
+        "'locale URL and cache busting'"
+      ],
+      [
+        "error && retry === false",
+        "'missing locale fails without retry'"
+      ],
+      [
+        "error && retry === true",
+        "'server failures allow retry'"
+      ],
+      [
+        "error && retry === true",
+        "'network failures allow retry'"
+      ],
+      [
+        "error && retry === false",
+        "'malformed translations fail without retry'"
+      ],
+      [
+        "error && retry === false",
+        "'scalar locale resource fails without retry'"
+      ],
+      [
+        "languageDetector.detect()?.[0] === 'ru'",
+        "'language cache and regional normalization'"
+      ]
+    ]
+  },
+  "versions": "1.4.2\nChromium 156.0.8078.73 built on Debian GNU/Linux 12 (bookworm)\n",
+  "commands": [
+    {
+      "id": "versions",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "rustwave-browser-v1:ci",
+        "sh",
+        "-c",
+        "bun --version && chromium --version"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.3146867649999905
+    },
+    {
+      "id": "image",
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "rustwave-browser-v1:ci"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 0.03201482500000452
+    },
+    {
+      "id": "dependencies",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--cpus",
+        "2",
+        "--memory",
+        "2000m",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/source:/src:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/deps:/src/frontend/node_modules",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/audit:/audit:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/results:/evidence",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/original-smoke.tsx:/original-smoke.tsx:ro",
+        "-e",
+        "TZ=UTC",
+        "-e",
+        "LC_ALL=C.UTF-8",
+        "-w",
+        "/src/frontend",
+        "rustwave-browser-v1:ci",
+        "bun",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 10.59221641900001
+    },
+    {
+      "id": "assertions",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/source:/src:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/deps:/src/frontend/node_modules",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/audit:/audit:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/results:/evidence",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/original-smoke.tsx:/original-smoke.tsx:ro",
+        "-e",
+        "TZ=UTC",
+        "-e",
+        "LC_ALL=C.UTF-8",
+        "-w",
+        "/src/frontend",
+        "rustwave-browser-v1:ci",
+        "bun",
+        "/audit/approved_assertions.cjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 1.417980822000004
+    },
+    {
+      "id": "ci-browser-normal",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "2",
+        "--memory",
+        "2000m",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/source:/src:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/deps:/src/frontend/node_modules",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/audit:/audit:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/results:/evidence",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/original-smoke.tsx:/original-smoke.tsx:ro",
+        "-e",
+        "TZ=UTC",
+        "-e",
+        "LC_ALL=C.UTF-8",
+        "-w",
+        "/src/frontend",
+        "-e",
+        "AUDIT_PROFILE=normal",
+        "-e",
+        "AUDIT_RUN_ID=ci-browser-normal",
+        "rustwave-browser-v1:ci",
+        "bun",
+        "/audit/patched_browser_runner.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 6.085665659
+    },
+    {
+      "id": "ci-browser-cpu-only",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "1",
+        "--memory",
+        "2000m",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/source:/src:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/deps:/src/frontend/node_modules",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/audit:/audit:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/results:/evidence",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/original-smoke.tsx:/original-smoke.tsx:ro",
+        "-e",
+        "TZ=UTC",
+        "-e",
+        "LC_ALL=C.UTF-8",
+        "-w",
+        "/src/frontend",
+        "-e",
+        "AUDIT_PROFILE=cpu-only",
+        "-e",
+        "AUDIT_RUN_ID=ci-browser-cpu-only",
+        "rustwave-browser-v1:ci",
+        "bun",
+        "/audit/patched_browser_runner.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 5.431795203999997
+    },
+    {
+      "id": "ci-browser-ram-only",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "2",
+        "--memory",
+        "1400m",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/source:/src:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/deps:/src/frontend/node_modules",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/audit:/audit:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/results:/evidence",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/original-smoke.tsx:/original-smoke.tsx:ro",
+        "-e",
+        "TZ=UTC",
+        "-e",
+        "LC_ALL=C.UTF-8",
+        "-w",
+        "/src/frontend",
+        "-e",
+        "AUDIT_PROFILE=ram-only",
+        "-e",
+        "AUDIT_RUN_ID=ci-browser-ram-only",
+        "rustwave-browser-v1:ci",
+        "bun",
+        "/audit/patched_browser_runner.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 4.289286118000007
+    },
+    {
+      "id": "ci-browser-contention",
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "1",
+        "--memory",
+        "1400m",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/source:/src:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/deps:/src/frontend/node_modules",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/audit:/audit:ro",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/results:/evidence",
+        "-v",
+        "/home/runner/work/_temp/browser-v1/original-smoke.tsx:/original-smoke.tsx:ro",
+        "-e",
+        "TZ=UTC",
+        "-e",
+        "LC_ALL=C.UTF-8",
+        "-w",
+        "/src/frontend",
+        "-e",
+        "AUDIT_PROFILE=contention",
+        "-e",
+        "AUDIT_RUN_ID=ci-browser-contention",
+        "rustwave-browser-v1:ci",
+        "bun",
+        "/audit/patched_browser_runner.mjs"
+      ],
+      "exit_code": 0,
+      "duration_seconds": 6.389322699999994
+    }
+  ],
+  "trials": [
+    {
+      "identity": "RUSTWAVE-BROWSER-PATCH-V1",
+      "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+      "profile": "contention",
+      "utc": "2026-11-03T15:04:06.174Z",
+      "deadline_ms": 20000,
+      "trials": [
+        {
+          "trial": 1,
+          "events": [
+            {
+              "at_ms": 3015.316736,
+              "method": "Page.domContentEventFired",
+              "params": {
+                "timestamp": 98.932878
+              }
+            },
+            {
+              "at_ms": 3201.769551,
+              "method": "Page.loadEventFired",
+              "params": {
+                "timestamp": 99.117404
+              }
+            },
+            {
+              "at_ms": 4455.672595,
+              "method": "Runtime.consoleAPICalled",
+              "params": {
+                "type": "error",
+                "args": [
+                  {
+                    "type": "string",
+                    "value": "Asynchronous operation failed"
+                  },
+                  {
+                    "type": "object",
+                    "subtype": "error",
+                    "className": "Error",
+                    "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                    "objectId": "6760642443735817084.2.1",
+                    "preview": {
+                      "type": "object",
+                      "subtype": "error",
+                      "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                      "overflow": false,
+                      "properties": [
+                        {
+                          "name": "stack",
+                          "type": "string",
+                          "value": "Error: Expected async failure\n    at Qp (file:///e\u2026dence/bundle/assets/browser-CJM3Sup6.js:26:14879)"
+                        },
+                        {
+                          "name": "message",
+                          "type": "string",
+                          "value": "Expected async failure"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "executionContextId": 2,
+                "timestamp": 1793718250629.78,
+                "stackTrace": {
+                  "callFrames": [
+                    {
+                      "functionName": "ct",
+                      "scriptId": "3",
+                      "url": "file:///evidence/bundle/assets/browser-CJM3Sup6.js",
+                      "lineNumber": 0,
+                      "columnNumber": 1726
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "samples": [
+            {
+              "at_ms": 293.504414,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1805996\nuser_usec 1332341\nsystem_usec 473655\nnice_usec 54000\ncore_sched.force_idle_usec 0\nnr_periods 18\nnr_throttled 17\nthrottled_usec 3590818\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "202833920\n",
+                "memory.peak": "202997760\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 398.254375,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1923773\nuser_usec 1431967\nsystem_usec 491806\nnice_usec 63000\ncore_sched.force_idle_usec 0\nnr_periods 19\nnr_throttled 18\nthrottled_usec 3815779\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "209960960\n",
+                "memory.peak": "210083840\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 502.41586899999993,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 2039192\nuser_usec 1537055\nsystem_usec 502137\nnice_usec 73000\ncore_sched.force_idle_usec 0\nnr_periods 20\nnr_throttled 19\nthrottled_usec 4039047\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "217485312\n",
+                "memory.peak": "217563136\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 685.7200760000001,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 2175201\nuser_usec 1648719\nsystem_usec 526481\nnice_usec 93000\ncore_sched.force_idle_usec 0\nnr_periods 22\nnr_throttled 21\nthrottled_usec 4630396\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "214380544\n",
+                "memory.peak": "222920704\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1905.3135579999998,
+              "readyState": "interactive",
+              "assertions": 1,
+              "resources": {
+                "cpu.stat": "usage_usec 3442294\nuser_usec 2751062\nsystem_usec 691231\nnice_usec 328000\ncore_sched.force_idle_usec 0\nnr_periods 34\nnr_throttled 33\nthrottled_usec 7663376\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "239423488\n",
+                "memory.peak": "239423488\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2081.107193,
+              "readyState": "complete",
+              "assertions": 3,
+              "resources": {
+                "cpu.stat": "usage_usec 3556756\nuser_usec 2854530\nsystem_usec 702226\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 36\nnr_throttled 35\nthrottled_usec 8086950\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "245706752\n",
+                "memory.peak": "245706752\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2182.077507,
+              "readyState": "complete",
+              "assertions": 5,
+              "resources": {
+                "cpu.stat": "usage_usec 3648723\nuser_usec 2941013\nsystem_usec 707709\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 37\nnr_throttled 36\nthrottled_usec 8114387\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246075392\n",
+                "memory.peak": "246231040\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2283.133544,
+              "readyState": "complete",
+              "assertions": 6,
+              "resources": {
+                "cpu.stat": "usage_usec 3749274\nuser_usec 3038530\nsystem_usec 710744\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 38\nnr_throttled 37\nthrottled_usec 8127822\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246005760\n",
+                "memory.peak": "246231040\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2384.37709,
+              "readyState": "complete",
+              "assertions": 7,
+              "resources": {
+                "cpu.stat": "usage_usec 3850929\nuser_usec 3139485\nsystem_usec 711444\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 39\nnr_throttled 38\nthrottled_usec 8135261\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246525952\n",
+                "memory.peak": "246530048\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2485.444869,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 3952755\nuser_usec 3238042\nsystem_usec 714712\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 40\nnr_throttled 39\nthrottled_usec 8141699\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246513664\n",
+                "memory.peak": "246530048\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2586.90989,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 4055107\nuser_usec 3339033\nsystem_usec 716074\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 41\nnr_throttled 40\nthrottled_usec 8149136\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247013376\n",
+                "memory.peak": "247021568\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2688.0987090000003,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 4161037\nuser_usec 3438545\nsystem_usec 722492\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 42\nnr_throttled 41\nthrottled_usec 8233976\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247726080\n",
+                "memory.peak": "247963648\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2789.238506,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 4257481\nuser_usec 3532825\nsystem_usec 724656\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 43\nnr_throttled 42\nthrottled_usec 8247414\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247963648\n",
+                "memory.peak": "247963648\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2890.356673,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 4359003\nuser_usec 3633000\nsystem_usec 726003\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 44\nnr_throttled 43\nthrottled_usec 8253846\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248434688\n",
+                "memory.peak": "248487936\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2991.5066570000004,
+              "readyState": "complete",
+              "assertions": 17,
+              "resources": {
+                "cpu.stat": "usage_usec 4470548\nuser_usec 3741211\nsystem_usec 729337\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 45\nnr_throttled 44\nthrottled_usec 8263285\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248868864\n",
+                "memory.peak": "248901632\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3108.6116930000003,
+              "readyState": "complete",
+              "assertions": 20,
+              "resources": {
+                "cpu.stat": "usage_usec 4597542\nuser_usec 3867631\nsystem_usec 729910\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 46\nnr_throttled 45\nthrottled_usec 8280724\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "249348096\n",
+                "memory.peak": "249348096\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3210.0048469999997,
+              "readyState": "complete",
+              "assertions": 28,
+              "resources": {
+                "cpu.stat": "usage_usec 4676861\nuser_usec 3946693\nsystem_usec 730168\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 47\nnr_throttled 46\nthrottled_usec 8317148\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "249872384\n",
+                "memory.peak": "249872384\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3311.0756690000003,
+              "readyState": "complete",
+              "assertions": 32,
+              "resources": {
+                "cpu.stat": "usage_usec 4783580\nuser_usec 4048795\nsystem_usec 734785\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 48\nnr_throttled 47\nthrottled_usec 8375880\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250867712\n",
+                "memory.peak": "250871808\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3412.2463140000004,
+              "readyState": "complete",
+              "assertions": 36,
+              "resources": {
+                "cpu.stat": "usage_usec 4881039\nuser_usec 4145991\nsystem_usec 735048\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 49\nnr_throttled 48\nthrottled_usec 8391315\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250978304\n",
+                "memory.peak": "250978304\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3513.298948,
+              "readyState": "complete",
+              "assertions": 37,
+              "resources": {
+                "cpu.stat": "usage_usec 4979963\nuser_usec 4244887\nsystem_usec 735075\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 50\nnr_throttled 49\nthrottled_usec 8396741\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250978304\n",
+                "memory.peak": "250978304\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3614.953279,
+              "readyState": "complete",
+              "assertions": 38,
+              "resources": {
+                "cpu.stat": "usage_usec 5082563\nuser_usec 4346509\nsystem_usec 736054\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 51\nnr_throttled 50\nthrottled_usec 8402171\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250916864\n",
+                "memory.peak": "250978304\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3716.3134189999996,
+              "readyState": "complete",
+              "assertions": 41,
+              "resources": {
+                "cpu.stat": "usage_usec 5185253\nuser_usec 4449063\nsystem_usec 736190\nnice_usec 353000\ncore_sched.force_idle_usec 0\nnr_periods 52\nnr_throttled 51\nthrottled_usec 8408597\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250863616\n",
+                "memory.peak": "250978304\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3817.643512,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 5284861\nuser_usec 4545978\nsystem_usec 738883\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 53\nnr_throttled 52\nthrottled_usec 8417026\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250859520\n",
+                "memory.peak": "250978304\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3918.8088970000003,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 5389612\nuser_usec 4649039\nsystem_usec 740572\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 54\nnr_throttled 53\nthrottled_usec 8427332\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251105280\n",
+                "memory.peak": "251121664\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4020.0729269999997,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 5486524\nuser_usec 4745803\nsystem_usec 740720\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 55\nnr_throttled 54\nthrottled_usec 8433759\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251101184\n",
+                "memory.peak": "251121664\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4180.150390000001,
+              "readyState": "complete",
+              "assertions": 44,
+              "resources": {
+                "cpu.stat": "usage_usec 5650892\nuser_usec 4904228\nsystem_usec 746664\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 57\nnr_throttled 56\nthrottled_usec 8633986\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "253321216\n",
+                "memory.peak": "253329408\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4281.5144820000005,
+              "readyState": "complete",
+              "assertions": 45,
+              "resources": {
+                "cpu.stat": "usage_usec 5751561\nuser_usec 4998666\nsystem_usec 752895\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 58\nnr_throttled 57\nthrottled_usec 8659415\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255643648\n",
+                "memory.peak": "255655936\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4382.722417000001,
+              "readyState": "complete",
+              "assertions": 47,
+              "resources": {
+                "cpu.stat": "usage_usec 5850503\nuser_usec 5096341\nsystem_usec 754162\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 59\nnr_throttled 58\nthrottled_usec 8676255\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255889408\n",
+                "memory.peak": "255897600\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4483.847376,
+              "readyState": "complete",
+              "assertions": 49,
+              "resources": {
+                "cpu.stat": "usage_usec 5951276\nuser_usec 5195257\nsystem_usec 756018\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 60\nnr_throttled 59\nthrottled_usec 8691092\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256139264\n",
+                "memory.peak": "256151552\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4585.183591000001,
+              "readyState": "complete",
+              "assertions": 50,
+              "resources": {
+                "cpu.stat": "usage_usec 6053138\nuser_usec 5295996\nsystem_usec 757141\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 61\nnr_throttled 60\nthrottled_usec 8704453\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256135168\n",
+                "memory.peak": "256151552\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4686.405572,
+              "readyState": "complete",
+              "result": "passed",
+              "assertions": 59,
+              "resources": {
+                "cpu.stat": "usage_usec 6153555\nuser_usec 5394227\nsystem_usec 759328\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 62\nnr_throttled 61\nthrottled_usec 8714887\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256356352\n",
+                "memory.peak": "256376832\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            }
+          ],
+          "started": "2026-11-03T15:04:06.174Z",
+          "before": {
+            "cpu.stat": "usage_usec 1525109\nuser_usec 1108902\nsystem_usec 416207\nnice_usec 31000\ncore_sched.force_idle_usec 0\nnr_periods 15\nnr_throttled 14\nthrottled_usec 2780614\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "185540608\n",
+            "memory.peak": "185540608\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "last": {
+            "url": "file:///evidence/bundle/tests/browser.html",
+            "readyState": "complete",
+            "result": "passed",
+            "progress": [
+              {
+                "message": "JSON viewer renders inbound values",
+                "pass": true,
+                "at": 1890.8999999999942
+              },
+              {
+                "message": "Inbound JSON remains read-only after interaction",
+                "pass": true,
+                "at": 1991.3999999999942
+              },
+              {
+                "message": "Inbound JSON viewer hides mutation controls",
+                "pass": true,
+                "at": 1991.3999999999942
+              },
+              {
+                "message": "virtual list bounds rendered rows",
+                "pass": true,
+                "at": 2098.5999999999913
+              },
+              {
+                "message": "virtual list renders first row",
+                "pass": true,
+                "at": 2098.5999999999913
+              },
+              {
+                "message": "virtual list drops rows outside viewport",
+                "pass": true,
+                "at": 2198.899999999994
+              },
+              {
+                "message": "virtual list observes variable row heights",
+                "pass": true,
+                "at": 2299.199999999997
+              },
+              {
+                "message": "virtual list handles shrinking data",
+                "pass": true,
+                "at": 2401
+              },
+              {
+                "message": "window virtualization tracks scroll and margin",
+                "pass": true,
+                "at": 2603.5999999999913
+              },
+              {
+                "message": "window virtualization bounds rows",
+                "pass": true,
+                "at": 2603.699999999997
+              },
+              {
+                "message": "remarks initialize from props",
+                "pass": true,
+                "at": 2616.199999999997
+              },
+              {
+                "message": "adding a remark reports immediately",
+                "pass": true,
+                "at": 2619.899999999994
+              },
+              {
+                "message": "removing a remark preserves surviving input identity",
+                "pass": true,
+                "at": 2623.199999999997
+              },
+              {
+                "message": "removed remark input detaches",
+                "pass": true,
+                "at": 2623.199999999997
+              },
+              {
+                "message": "remarks reset on new data",
+                "pass": true,
+                "at": 2627.5
+              },
+              {
+                "message": "remarks do not echo parent data back",
+                "pass": true,
+                "at": 2977.699999999997
+              },
+              {
+                "message": "typing a remark reports immediately",
+                "pass": true,
+                "at": 2981.2999999999884
+              },
+              {
+                "message": "omitted remarks have a stable empty default",
+                "pass": true,
+                "at": 3084
+              },
+              {
+                "message": "tag input initializes from props",
+                "pass": true,
+                "at": 3093.7999999999884
+              },
+              {
+                "message": "tag input follows changed values",
+                "pass": true,
+                "at": 3095.699999999997
+              },
+              {
+                "message": "session clock advances without render-time reads",
+                "pass": true,
+                "at": 3116.7999999999884
+              },
+              {
+                "message": "valid SVG",
+                "pass": true,
+                "at": 3117.0999999999913
+              },
+              {
+                "message": "SVG with comments",
+                "pass": true,
+                "at": 3117.199999999997
+              },
+              {
+                "message": "reject malformed SVG",
+                "pass": true,
+                "at": 3117.199999999997
+              },
+              {
+                "message": "reject non-SVG root",
+                "pass": true,
+                "at": 3117.2999999999884
+              },
+              {
+                "message": "SVG without xmlns retains SVG namespace",
+                "pass": true,
+                "at": 3121.699999999997
+              },
+              {
+                "message": "SVG strips active content",
+                "pass": true,
+                "at": 3121.699999999997
+              },
+              {
+                "message": "non-SVG roots are rejected",
+                "pass": true,
+                "at": 3122.699999999997
+              },
+              {
+                "message": "auth initializes without token",
+                "pass": true,
+                "at": 3223.699999999997
+              },
+              {
+                "message": "auth reacts to token changes",
+                "pass": true,
+                "at": 3224.199999999997
+              },
+              {
+                "message": "logout updates context and removes token",
+                "pass": true,
+                "at": 3224.5999999999913
+              },
+              {
+                "message": "repeated logout remains safe",
+                "pass": true,
+                "at": 3224.7999999999884
+              },
+              {
+                "message": "UI operations observe rejected promises",
+                "pass": true,
+                "at": 3329.5999999999913
+              },
+              {
+                "message": "UI operations surface asynchronous errors",
+                "pass": true,
+                "at": 3329.5999999999913
+              },
+              {
+                "message": "country flag Unicode",
+                "pass": true,
+                "at": 3331.399999999994
+              },
+              {
+                "message": "country flag accessibility",
+                "pass": true,
+                "at": 3331.5
+              },
+              {
+                "message": "progress starts",
+                "pass": true,
+                "at": 3431.7999999999884
+              },
+              {
+                "message": "progress completes",
+                "pass": true,
+                "at": 3532.0999999999913
+              },
+              {
+                "message": "masonry measures card height",
+                "pass": true,
+                "at": 3634
+              },
+              {
+                "message": "masonry columns",
+                "pass": true,
+                "at": 3634.0999999999913
+              },
+              {
+                "message": "masonry avoids overlaps",
+                "pass": true,
+                "at": 3634.0999999999913
+              },
+              {
+                "message": "masonry measures added children",
+                "pass": true,
+                "at": 3734.699999999997
+              },
+              {
+                "message": "animated list updates",
+                "pass": true,
+                "at": 4036.7999999999884
+              },
+              {
+                "message": "exit animation cleans up",
+                "pass": true,
+                "at": 4036.7999999999884
+              },
+              {
+                "message": "chart creates SVG",
+                "pass": true,
+                "at": 4216.299999999988
+              },
+              {
+                "message": "chart updates",
+                "pass": true,
+                "at": 4322.5
+              },
+              {
+                "message": "chart reuses instance",
+                "pass": true,
+                "at": 4322.5
+              },
+              {
+                "message": "chart cleans up",
+                "pass": true,
+                "at": 4425.799999999988
+              },
+              {
+                "message": "sparkline renders line and area",
+                "pass": true,
+                "at": 4425.799999999988
+              },
+              {
+                "message": "error boundary catches",
+                "pass": true,
+                "at": 4530.199999999997
+              },
+              {
+                "message": "error boundary retries children",
+                "pass": true,
+                "at": 4630.5
+              },
+              {
+                "message": "locale JSON",
+                "pass": true,
+                "at": 4631
+              },
+              {
+                "message": "locale URL and cache busting",
+                "pass": true,
+                "at": 4631
+              },
+              {
+                "message": "missing locale fails without retry",
+                "pass": true,
+                "at": 4631.199999999997
+              },
+              {
+                "message": "server failures allow retry",
+                "pass": true,
+                "at": 4631.199999999997
+              },
+              {
+                "message": "network failures allow retry",
+                "pass": true,
+                "at": 4631.5
+              },
+              {
+                "message": "malformed translations fail without retry",
+                "pass": true,
+                "at": 4631.699999999997
+              },
+              {
+                "message": "scalar locale resource fails without retry",
+                "pass": true,
+                "at": 4631.799999999988
+              },
+              {
+                "message": "language cache and regional normalization",
+                "pass": true,
+                "at": 4632
+              }
+            ],
+            "readiness": [
+              {
+                "label": "modal-viewer-committed",
+                "at": 1890.7999999999884
+              },
+              {
+                "label": "real-clock-registered",
+                "at": 3096.2999999999884,
+                "value": 20
+              },
+              {
+                "label": "real-clock-initial-dom",
+                "at": 3096.2999999999884,
+                "value": 1793718250496
+              },
+              {
+                "label": "real-clock-callback",
+                "at": 3116.5,
+                "value": 1793718250516
+              },
+              {
+                "label": "real-clock-dom-advanced",
+                "at": 3116.7999999999884
+              }
+            ],
+            "text": "Browser smoke tests passed"
+          },
+          "status": "PASS",
+          "after": {
+            "cpu.stat": "usage_usec 6153555\nuser_usec 5394227\nsystem_usec 759328\nnice_usec 354000\ncore_sched.force_idle_usec 0\nnr_periods 62\nnr_throttled 61\nthrottled_usec 8714887\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "256356352\n",
+            "memory.peak": "256376832\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "smoke_ms": 4686.737143,
+          "chromium_stderr": "[18:47:1103/150406.388921:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[18:47:1103/150406.388990:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:47:1103/150406.389026:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[18:47:1103/150406.389061:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[18:47:1103/150406.389092:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[18:47:1103/150406.389235:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:47:1103/150406.389255:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:47:1103/150406.394702:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:47:1103/150406.582297:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n\nDevTools listening on ws://127.0.0.1:45391/devtools/browser/e5bcf591-2005-4c3e-a9ca-a24d8663ce5e\n[18:18:1103/150406.974937:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:18:1103/150406.975024:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:18:1103/150406.975267:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:47:1103/150406.975968:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:47:1103/150406.976038:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:18:1103/150406.986618:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:47:1103/150406.989250:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:47:1103/150407.081600:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[18:47:1103/150407.081749:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[18:18:1103/150407.082519:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:18:1103/150407.083439:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:47:1103/150407.083570:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:18:1103/150407.086120:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:18:1103/150407.177944:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type: \n[18:18:1103/150407.185856:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:47:1103/150407.186122:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:18:1103/150407.280360:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[18:47:1103/150407.281712:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[18:18:1103/150407.373454:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n",
+          "duration_ms": 5929.936433,
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "identity": "RUSTWAVE-BROWSER-PATCH-V1",
+      "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+      "profile": "cpu-only",
+      "utc": "2026-11-03T15:03:56.439Z",
+      "deadline_ms": 20000,
+      "trials": [
+        {
+          "trial": 1,
+          "events": [
+            {
+              "at_ms": 2187.863182,
+              "method": "Page.domContentEventFired",
+              "params": {
+                "timestamp": 88.370481
+              }
+            },
+            {
+              "at_ms": 2288.48748,
+              "method": "Page.loadEventFired",
+              "params": {
+                "timestamp": 88.471924
+              }
+            },
+            {
+              "at_ms": 3617.908829,
+              "method": "Runtime.consoleAPICalled",
+              "params": {
+                "type": "error",
+                "args": [
+                  {
+                    "type": "string",
+                    "value": "Asynchronous operation failed"
+                  },
+                  {
+                    "type": "object",
+                    "subtype": "error",
+                    "className": "Error",
+                    "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                    "objectId": "5683474431552997032.2.1",
+                    "preview": {
+                      "type": "object",
+                      "subtype": "error",
+                      "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                      "overflow": false,
+                      "properties": [
+                        {
+                          "name": "stack",
+                          "type": "string",
+                          "value": "Error: Expected async failure\n    at Qp (file:///e\u2026dence/bundle/assets/browser-CJM3Sup6.js:26:14879)"
+                        },
+                        {
+                          "name": "message",
+                          "type": "string",
+                          "value": "Expected async failure"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "executionContextId": 2,
+                "timestamp": 1793718240056.956,
+                "stackTrace": {
+                  "callFrames": [
+                    {
+                      "functionName": "ct",
+                      "scriptId": "4",
+                      "url": "file:///evidence/bundle/assets/browser-CJM3Sup6.js",
+                      "lineNumber": 0,
+                      "columnNumber": 1726
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "samples": [
+            {
+              "at_ms": 195.6570509999999,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1319143\nuser_usec 878755\nsystem_usec 440388\nnice_usec 52000\ncore_sched.force_idle_usec 0\nnr_periods 13\nnr_throttled 12\nthrottled_usec 1958878\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "196628480\n",
+                "memory.peak": "196628480\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 305.9291559999999,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1459302\nuser_usec 987680\nsystem_usec 471622\nnice_usec 66000\ncore_sched.force_idle_usec 0\nnr_periods 14\nnr_throttled 13\nthrottled_usec 2181865\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "209690624\n",
+                "memory.peak": "209690624\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 411.8086779999999,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1582405\nuser_usec 1090168\nsystem_usec 492236\nnice_usec 87000\ncore_sched.force_idle_usec 0\nnr_periods 15\nnr_throttled 14\nthrottled_usec 2474655\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "218157056\n",
+                "memory.peak": "218157056\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 590.4299569999998,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1696744\nuser_usec 1170723\nsystem_usec 526020\nnice_usec 101000\ncore_sched.force_idle_usec 0\nnr_periods 17\nnr_throttled 16\nthrottled_usec 2765701\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "204701696\n",
+                "memory.peak": "220983296\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1413.2992379999998,
+              "readyState": "interactive",
+              "assertions": 1,
+              "resources": {
+                "cpu.stat": "usage_usec 2558967\nuser_usec 1889917\nsystem_usec 669050\nnice_usec 339000\ncore_sched.force_idle_usec 0\nnr_periods 25\nnr_throttled 24\nthrottled_usec 4486199\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "239489024\n",
+                "memory.peak": "239489024\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1519.4672560000001,
+              "readyState": "complete",
+              "assertions": 3,
+              "resources": {
+                "cpu.stat": "usage_usec 2626228\nuser_usec 1940597\nsystem_usec 685630\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 26\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246272000\n",
+                "memory.peak": "246337536\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1620.37422,
+              "readyState": "complete",
+              "assertions": 5,
+              "resources": {
+                "cpu.stat": "usage_usec 2650532\nuser_usec 1962121\nsystem_usec 688410\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 27\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "245903360\n",
+                "memory.peak": "247508992\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1721.3583689999998,
+              "readyState": "complete",
+              "assertions": 6,
+              "resources": {
+                "cpu.stat": "usage_usec 2666368\nuser_usec 1974788\nsystem_usec 691579\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 28\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "245960704\n",
+                "memory.peak": "247508992\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1822.4686140000001,
+              "readyState": "complete",
+              "assertions": 7,
+              "resources": {
+                "cpu.stat": "usage_usec 2673437\nuser_usec 1981857\nsystem_usec 691580\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 29\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "245956608\n",
+                "memory.peak": "247508992\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1923.5167129999998,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 2682078\nuser_usec 1988594\nsystem_usec 693484\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 30\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "245948416\n",
+                "memory.peak": "247508992\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2024.845858,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 2691003\nuser_usec 1996779\nsystem_usec 694224\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 31\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246464512\n",
+                "memory.peak": "247508992\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2145.8230940000003,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2734345\nuser_usec 2034837\nsystem_usec 699507\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 32\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247566336\n",
+                "memory.peak": "247623680\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2246.948998,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2744268\nuser_usec 2044550\nsystem_usec 699717\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 33\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247787520\n",
+                "memory.peak": "247824384\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2348.038504,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2751112\nuser_usec 2050443\nsystem_usec 700669\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 34\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248266752\n",
+                "memory.peak": "248311808\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2449.153238,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2758689\nuser_usec 2055871\nsystem_usec 702818\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 35\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247980032\n",
+                "memory.peak": "248311808\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2550.351597,
+              "readyState": "complete",
+              "assertions": 17,
+              "resources": {
+                "cpu.stat": "usage_usec 2777490\nuser_usec 2073751\nsystem_usec 703739\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 36\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248229888\n",
+                "memory.peak": "248340480\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2651.654214,
+              "readyState": "complete",
+              "assertions": 28,
+              "resources": {
+                "cpu.stat": "usage_usec 2815693\nuser_usec 2109240\nsystem_usec 706453\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 37\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248979456\n",
+                "memory.peak": "248979456\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2753.795003,
+              "readyState": "complete",
+              "assertions": 32,
+              "resources": {
+                "cpu.stat": "usage_usec 2840920\nuser_usec 2132209\nsystem_usec 708711\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 38\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250015744\n",
+                "memory.peak": "250023936\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2854.8708639999995,
+              "readyState": "complete",
+              "assertions": 36,
+              "resources": {
+                "cpu.stat": "usage_usec 2856004\nuser_usec 2145550\nsystem_usec 710453\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 39\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250560512\n",
+                "memory.peak": "250560512\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2955.9966779999995,
+              "readyState": "complete",
+              "assertions": 37,
+              "resources": {
+                "cpu.stat": "usage_usec 2862620\nuser_usec 2151272\nsystem_usec 711348\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 40\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250560512\n",
+                "memory.peak": "250560512\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3057.6089330000004,
+              "readyState": "complete",
+              "assertions": 38,
+              "resources": {
+                "cpu.stat": "usage_usec 2870511\nuser_usec 2158714\nsystem_usec 711797\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 41\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250552320\n",
+                "memory.peak": "250560512\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3158.7036200000002,
+              "readyState": "complete",
+              "assertions": 41,
+              "resources": {
+                "cpu.stat": "usage_usec 2876922\nuser_usec 2165043\nsystem_usec 711878\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 42\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250515456\n",
+                "memory.peak": "250560512\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3259.8254370000004,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 2884130\nuser_usec 2171210\nsystem_usec 712919\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 43\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250458112\n",
+                "memory.peak": "250560512\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3360.957582,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 2891746\nuser_usec 2177684\nsystem_usec 714061\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 44\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250695680\n",
+                "memory.peak": "250699776\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3462.424126,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 2896336\nuser_usec 2181128\nsystem_usec 715207\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 45\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250646528\n",
+                "memory.peak": "250699776\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3612.4508530000003,
+              "readyState": "complete",
+              "assertions": 44,
+              "resources": {
+                "cpu.stat": "usage_usec 2968080\nuser_usec 2248883\nsystem_usec 719196\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 47\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "253038592\n",
+                "memory.peak": "253124608\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3715.7566910000005,
+              "readyState": "complete",
+              "assertions": 45,
+              "resources": {
+                "cpu.stat": "usage_usec 2989114\nuser_usec 2267989\nsystem_usec 721125\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 48\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "253792256\n",
+                "memory.peak": "253796352\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3819.2051090000004,
+              "readyState": "complete",
+              "assertions": 47,
+              "resources": {
+                "cpu.stat": "usage_usec 3019141\nuser_usec 2293082\nsystem_usec 726058\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 49\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255156224\n",
+                "memory.peak": "255160320\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3923.9147890000004,
+              "readyState": "complete",
+              "assertions": 49,
+              "resources": {
+                "cpu.stat": "usage_usec 3032940\nuser_usec 2304709\nsystem_usec 728231\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 50\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255148032\n",
+                "memory.peak": "255160320\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4025.528478,
+              "readyState": "complete",
+              "assertions": 50,
+              "resources": {
+                "cpu.stat": "usage_usec 3041757\nuser_usec 2313363\nsystem_usec 728394\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 51\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255406080\n",
+                "memory.peak": "255410176\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 4126.620199,
+              "readyState": "complete",
+              "result": "passed",
+              "assertions": 59,
+              "resources": {
+                "cpu.stat": "usage_usec 3050100\nuser_usec 2319378\nsystem_usec 730721\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 52\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255348736\n",
+                "memory.peak": "255410176\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            }
+          ],
+          "started": "2026-11-03T15:03:56.439Z",
+          "before": {
+            "cpu.stat": "usage_usec 1137750\nuser_usec 733934\nsystem_usec 403815\nnice_usec 37000\ncore_sched.force_idle_usec 0\nnr_periods 11\nnr_throttled 10\nthrottled_usec 1516006\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "183869440\n",
+            "memory.peak": "183906304\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "last": {
+            "url": "file:///evidence/bundle/tests/browser.html",
+            "readyState": "complete",
+            "result": "passed",
+            "progress": [
+              {
+                "message": "JSON viewer renders inbound values",
+                "pass": true,
+                "at": 1403.5
+              },
+              {
+                "message": "Inbound JSON remains read-only after interaction",
+                "pass": true,
+                "at": 1504.199999999997
+              },
+              {
+                "message": "Inbound JSON viewer hides mutation controls",
+                "pass": true,
+                "at": 1504.199999999997
+              },
+              {
+                "message": "virtual list bounds rendered rows",
+                "pass": true,
+                "at": 1610.5999999999913
+              },
+              {
+                "message": "virtual list renders first row",
+                "pass": true,
+                "at": 1610.5999999999913
+              },
+              {
+                "message": "virtual list drops rows outside viewport",
+                "pass": true,
+                "at": 1711.0999999999913
+              },
+              {
+                "message": "virtual list observes variable row heights",
+                "pass": true,
+                "at": 1811.3999999999942
+              },
+              {
+                "message": "virtual list handles shrinking data",
+                "pass": true,
+                "at": 1913
+              },
+              {
+                "message": "window virtualization tracks scroll and margin",
+                "pass": true,
+                "at": 2115.899999999994
+              },
+              {
+                "message": "window virtualization bounds rows",
+                "pass": true,
+                "at": 2115.899999999994
+              },
+              {
+                "message": "remarks initialize from props",
+                "pass": true,
+                "at": 2127.399999999994
+              },
+              {
+                "message": "adding a remark reports immediately",
+                "pass": true,
+                "at": 2130.5
+              },
+              {
+                "message": "removing a remark preserves surviving input identity",
+                "pass": true,
+                "at": 2133.899999999994
+              },
+              {
+                "message": "removed remark input detaches",
+                "pass": true,
+                "at": 2133.899999999994
+              },
+              {
+                "message": "remarks reset on new data",
+                "pass": true,
+                "at": 2138.0999999999913
+              },
+              {
+                "message": "remarks do not echo parent data back",
+                "pass": true,
+                "at": 2488.199999999997
+              },
+              {
+                "message": "typing a remark reports immediately",
+                "pass": true,
+                "at": 2491.699999999997
+              },
+              {
+                "message": "omitted remarks have a stable empty default",
+                "pass": true,
+                "at": 2594.699999999997
+              },
+              {
+                "message": "tag input initializes from props",
+                "pass": true,
+                "at": 2604.800000000003
+              },
+              {
+                "message": "tag input follows changed values",
+                "pass": true,
+                "at": 2607.0999999999913
+              },
+              {
+                "message": "session clock advances without render-time reads",
+                "pass": true,
+                "at": 2628.399999999994
+              },
+              {
+                "message": "valid SVG",
+                "pass": true,
+                "at": 2628.5999999999913
+              },
+              {
+                "message": "SVG with comments",
+                "pass": true,
+                "at": 2628.699999999997
+              },
+              {
+                "message": "reject malformed SVG",
+                "pass": true,
+                "at": 2628.800000000003
+              },
+              {
+                "message": "reject non-SVG root",
+                "pass": true,
+                "at": 2628.899999999994
+              },
+              {
+                "message": "SVG without xmlns retains SVG namespace",
+                "pass": true,
+                "at": 2633.0999999999913
+              },
+              {
+                "message": "SVG strips active content",
+                "pass": true,
+                "at": 2633.0999999999913
+              },
+              {
+                "message": "non-SVG roots are rejected",
+                "pass": true,
+                "at": 2634
+              },
+              {
+                "message": "auth initializes without token",
+                "pass": true,
+                "at": 2735.0999999999913
+              },
+              {
+                "message": "auth reacts to token changes",
+                "pass": true,
+                "at": 2735.800000000003
+              },
+              {
+                "message": "logout updates context and removes token",
+                "pass": true,
+                "at": 2736.300000000003
+              },
+              {
+                "message": "repeated logout remains safe",
+                "pass": true,
+                "at": 2736.399999999994
+              },
+              {
+                "message": "UI operations observe rejected promises",
+                "pass": true,
+                "at": 2840.5999999999913
+              },
+              {
+                "message": "UI operations surface asynchronous errors",
+                "pass": true,
+                "at": 2840.5999999999913
+              },
+              {
+                "message": "country flag Unicode",
+                "pass": true,
+                "at": 2842.5999999999913
+              },
+              {
+                "message": "country flag accessibility",
+                "pass": true,
+                "at": 2842.5999999999913
+              },
+              {
+                "message": "progress starts",
+                "pass": true,
+                "at": 2943
+              },
+              {
+                "message": "progress completes",
+                "pass": true,
+                "at": 3043.199999999997
+              },
+              {
+                "message": "masonry measures card height",
+                "pass": true,
+                "at": 3145.399999999994
+              },
+              {
+                "message": "masonry columns",
+                "pass": true,
+                "at": 3145.399999999994
+              },
+              {
+                "message": "masonry avoids overlaps",
+                "pass": true,
+                "at": 3145.399999999994
+              },
+              {
+                "message": "masonry measures added children",
+                "pass": true,
+                "at": 3246
+              },
+              {
+                "message": "animated list updates",
+                "pass": true,
+                "at": 3548.0999999999913
+              },
+              {
+                "message": "exit animation cleans up",
+                "pass": true,
+                "at": 3548.0999999999913
+              },
+              {
+                "message": "chart creates SVG",
+                "pass": true,
+                "at": 3705.199999999997
+              },
+              {
+                "message": "chart updates",
+                "pass": true,
+                "at": 3811.0999999999913
+              },
+              {
+                "message": "chart reuses instance",
+                "pass": true,
+                "at": 3811.0999999999913
+              },
+              {
+                "message": "chart cleans up",
+                "pass": true,
+                "at": 3914.5
+              },
+              {
+                "message": "sparkline renders line and area",
+                "pass": true,
+                "at": 3914.5999999999913
+              },
+              {
+                "message": "error boundary catches",
+                "pass": true,
+                "at": 4019.399999999994
+              },
+              {
+                "message": "error boundary retries children",
+                "pass": true,
+                "at": 4119.699999999997
+              },
+              {
+                "message": "locale JSON",
+                "pass": true,
+                "at": 4120.199999999997
+              },
+              {
+                "message": "locale URL and cache busting",
+                "pass": true,
+                "at": 4120.199999999997
+              },
+              {
+                "message": "missing locale fails without retry",
+                "pass": true,
+                "at": 4120.399999999994
+              },
+              {
+                "message": "server failures allow retry",
+                "pass": true,
+                "at": 4120.399999999994
+              },
+              {
+                "message": "network failures allow retry",
+                "pass": true,
+                "at": 4120.5
+              },
+              {
+                "message": "malformed translations fail without retry",
+                "pass": true,
+                "at": 4120.699999999997
+              },
+              {
+                "message": "scalar locale resource fails without retry",
+                "pass": true,
+                "at": 4120.800000000003
+              },
+              {
+                "message": "language cache and regional normalization",
+                "pass": true,
+                "at": 4120.899999999994
+              }
+            ],
+            "readiness": [
+              {
+                "label": "modal-viewer-committed",
+                "at": 1403.3999999999942
+              },
+              {
+                "label": "real-clock-registered",
+                "at": 2607.800000000003,
+                "value": 20
+              },
+              {
+                "label": "real-clock-initial-dom",
+                "at": 2607.800000000003,
+                "value": 1793718239923
+              },
+              {
+                "label": "real-clock-callback",
+                "at": 2627.899999999994,
+                "value": 1793718239944
+              },
+              {
+                "label": "real-clock-dom-advanced",
+                "at": 2628.300000000003
+              }
+            ],
+            "text": "Browser smoke tests passed"
+          },
+          "status": "PASS",
+          "after": {
+            "cpu.stat": "usage_usec 3050100\nuser_usec 2319378\nsystem_usec 730721\nnice_usec 344000\ncore_sched.force_idle_usec 0\nnr_periods 52\nnr_throttled 25\nthrottled_usec 4568005\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "255606784\n",
+            "memory.peak": "255610880\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "smoke_ms": 4126.944376,
+          "chromium_stderr": "[17:48:1103/150356.536709:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:48:1103/150356.536771:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:48:1103/150356.536813:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:48:1103/150356.536845:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:48:1103/150356.536874:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:48:1103/150356.536886:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:48:1103/150356.536896:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:48:1103/150356.539705:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:48:1103/150356.632620:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n\nDevTools listening on ws://127.0.0.1:45735/devtools/browser/1cd39110-abf1-4016-9d20-529ef47d049c\n[17:17:1103/150356.935750:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:17:1103/150356.935819:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:17:1103/150356.935876:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:48:1103/150357.001726:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:48:1103/150357.001764:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150357.008023:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:48:1103/150357.010444:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:48:1103/150357.105795:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:48:1103/150357.105849:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:17:1103/150357.105880:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:17:1103/150357.106209:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:48:1103/150357.106327:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150357.107528:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:17:1103/150357.126084:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type: \n[17:17:1103/150357.127130:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:48:1103/150357.128029:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150357.210134:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:48:1103/150357.210529:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150357.225492:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n",
+          "duration_ms": 5023.680763,
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "identity": "RUSTWAVE-BROWSER-PATCH-V1",
+      "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+      "profile": "normal",
+      "utc": "2026-11-03T15:03:50.404Z",
+      "deadline_ms": 20000,
+      "trials": [
+        {
+          "trial": 1,
+          "events": [
+            {
+              "at_ms": 1251.902912,
+              "method": "Page.domContentEventFired",
+              "params": {
+                "timestamp": 82.978888
+              }
+            },
+            {
+              "at_ms": 1308.9042359999999,
+              "method": "Page.loadEventFired",
+              "params": {
+                "timestamp": 83.034748
+              }
+            },
+            {
+              "at_ms": 2634.8807290000004,
+              "method": "Runtime.consoleAPICalled",
+              "params": {
+                "type": "error",
+                "args": [
+                  {
+                    "type": "string",
+                    "value": "Asynchronous operation failed"
+                  },
+                  {
+                    "type": "object",
+                    "subtype": "error",
+                    "className": "Error",
+                    "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                    "objectId": "6645521622909316909.2.1",
+                    "preview": {
+                      "type": "object",
+                      "subtype": "error",
+                      "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                      "overflow": false,
+                      "properties": [
+                        {
+                          "name": "stack",
+                          "type": "string",
+                          "value": "Error: Expected async failure\n    at Qp (file:///e\u2026dence/bundle/assets/browser-CJM3Sup6.js:26:14879)"
+                        },
+                        {
+                          "name": "message",
+                          "type": "string",
+                          "value": "Expected async failure"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "executionContextId": 2,
+                "timestamp": 1793718234618.96,
+                "stackTrace": {
+                  "callFrames": [
+                    {
+                      "functionName": "ct",
+                      "scriptId": "4",
+                      "url": "file:///evidence/bundle/assets/browser-CJM3Sup6.js",
+                      "lineNumber": 0,
+                      "columnNumber": 1726
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "samples": [
+            {
+              "at_ms": 120.90786200000002,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 4302696\nuser_usec 3354763\nsystem_usec 947933\nnice_usec 81000\ncore_sched.force_idle_usec 0\nnr_periods 25\nnr_throttled 13\nthrottled_usec 1170525\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "781660160\n",
+                "memory.peak": "781766656\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 266.7011819999998,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 4585255\nuser_usec 3580542\nsystem_usec 1004713\nnice_usec 111000\ncore_sched.force_idle_usec 0\nnr_periods 27\nnr_throttled 15\nthrottled_usec 1418746\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "789626880\n",
+                "memory.peak": "795103232\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 780.9980179999998,
+              "readyState": "interactive",
+              "assertions": 1,
+              "resources": {
+                "cpu.stat": "usage_usec 5626485\nuser_usec 4419952\nsystem_usec 1206532\nnice_usec 403000\ncore_sched.force_idle_usec 0\nnr_periods 32\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "820219904\n",
+                "memory.peak": "820248576\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 885.163626,
+              "readyState": "complete",
+              "assertions": 3,
+              "resources": {
+                "cpu.stat": "usage_usec 5684758\nuser_usec 4468312\nsystem_usec 1216446\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 33\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "825516032\n",
+                "memory.peak": "826445824\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 986.1407220000001,
+              "readyState": "complete",
+              "assertions": 5,
+              "resources": {
+                "cpu.stat": "usage_usec 5699428\nuser_usec 4479769\nsystem_usec 1219659\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 34\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "825376768\n",
+                "memory.peak": "826445824\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1087.202617,
+              "readyState": "complete",
+              "assertions": 6,
+              "resources": {
+                "cpu.stat": "usage_usec 5715434\nuser_usec 4495774\nsystem_usec 1219659\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 35\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "825561088\n",
+                "memory.peak": "826445824\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1188.216903,
+              "readyState": "complete",
+              "assertions": 7,
+              "resources": {
+                "cpu.stat": "usage_usec 5722580\nuser_usec 4500680\nsystem_usec 1221899\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 36\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "825556992\n",
+                "memory.peak": "826445824\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1289.269781,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 5730539\nuser_usec 4508224\nsystem_usec 1222314\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 37\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "825810944\n",
+                "memory.peak": "826445824\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1390.277505,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 5739054\nuser_usec 4514842\nsystem_usec 1224211\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 38\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "825970688\n",
+                "memory.peak": "826445824\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1512.339286,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 5782571\nuser_usec 4555479\nsystem_usec 1227092\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 39\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "827138048\n",
+                "memory.peak": "827142144\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1613.6360209999998,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 5792555\nuser_usec 4564834\nsystem_usec 1227720\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 40\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "827367424\n",
+                "memory.peak": "827392000\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1715.5002089999998,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 5799429\nuser_usec 4571102\nsystem_usec 1228326\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 41\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "827527168\n",
+                "memory.peak": "827531264\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1816.545592,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 5808375\nuser_usec 4578850\nsystem_usec 1229524\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 42\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "827740160\n",
+                "memory.peak": "827740160\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1917.6961729999998,
+              "readyState": "complete",
+              "assertions": 17,
+              "resources": {
+                "cpu.stat": "usage_usec 5825787\nuser_usec 4596263\nsystem_usec 1229524\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 43\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "827830272\n",
+                "memory.peak": "828002304\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2018.9413410000002,
+              "readyState": "complete",
+              "assertions": 28,
+              "resources": {
+                "cpu.stat": "usage_usec 5861908\nuser_usec 4628879\nsystem_usec 1233029\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 44\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "828518400\n",
+                "memory.peak": "828518400\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2119.965375,
+              "readyState": "complete",
+              "assertions": 32,
+              "resources": {
+                "cpu.stat": "usage_usec 5887306\nuser_usec 4651364\nsystem_usec 1235942\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 45\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829710336\n",
+                "memory.peak": "829710336\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2221.129251,
+              "readyState": "complete",
+              "assertions": 36,
+              "resources": {
+                "cpu.stat": "usage_usec 5904643\nuser_usec 4664577\nsystem_usec 1240065\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 46\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829923328\n",
+                "memory.peak": "829923328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2322.32195,
+              "readyState": "complete",
+              "assertions": 37,
+              "resources": {
+                "cpu.stat": "usage_usec 5910450\nuser_usec 4668421\nsystem_usec 1242029\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 47\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829861888\n",
+                "memory.peak": "829923328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2423.490975,
+              "readyState": "complete",
+              "assertions": 38,
+              "resources": {
+                "cpu.stat": "usage_usec 5917453\nuser_usec 4674003\nsystem_usec 1243449\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 48\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829820928\n",
+                "memory.peak": "829923328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2524.7339589999997,
+              "readyState": "complete",
+              "assertions": 41,
+              "resources": {
+                "cpu.stat": "usage_usec 5923462\nuser_usec 4678589\nsystem_usec 1244873\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 49\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829808640\n",
+                "memory.peak": "829923328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2625.9603219999995,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 5930241\nuser_usec 4684789\nsystem_usec 1245451\nnice_usec 404000\ncore_sched.force_idle_usec 0\nnr_periods 50\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829984768\n",
+                "memory.peak": "829984768\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2728.0495539999997,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 5939913\nuser_usec 4693911\nsystem_usec 1246001\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 51\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "829927424\n",
+                "memory.peak": "829984768\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2829.157976,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 5960474\nuser_usec 4706114\nsystem_usec 1254359\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 52\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "830132224\n",
+                "memory.peak": "830230528\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2978.997847,
+              "readyState": "complete",
+              "assertions": 44,
+              "resources": {
+                "cpu.stat": "usage_usec 6033759\nuser_usec 4773199\nsystem_usec 1260559\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 54\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "833171456\n",
+                "memory.peak": "833171456\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3084.138421,
+              "readyState": "complete",
+              "assertions": 45,
+              "resources": {
+                "cpu.stat": "usage_usec 6057160\nuser_usec 4793697\nsystem_usec 1263463\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 55\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "834076672\n",
+                "memory.peak": "834076672\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3186.294265,
+              "readyState": "complete",
+              "assertions": 47,
+              "resources": {
+                "cpu.stat": "usage_usec 6070062\nuser_usec 4802819\nsystem_usec 1267242\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 56\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "834760704\n",
+                "memory.peak": "834760704\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3290.76079,
+              "readyState": "complete",
+              "assertions": 49,
+              "resources": {
+                "cpu.stat": "usage_usec 6081478\nuser_usec 4812738\nsystem_usec 1268739\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 57\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "834949120\n",
+                "memory.peak": "835018752\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3392.0691759999995,
+              "readyState": "complete",
+              "assertions": 50,
+              "resources": {
+                "cpu.stat": "usage_usec 6089807\nuser_usec 4818785\nsystem_usec 1271021\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 58\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "834895872\n",
+                "memory.peak": "835018752\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3493.3447819999997,
+              "readyState": "complete",
+              "result": "passed",
+              "assertions": 59,
+              "resources": {
+                "cpu.stat": "usage_usec 6098815\nuser_usec 4826001\nsystem_usec 1272813\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 59\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "835366912\n",
+                "memory.peak": "835366912\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            }
+          ],
+          "started": "2026-11-03T15:03:51.984Z",
+          "before": {
+            "cpu.stat": "usage_usec 4043777\nuser_usec 3159045\nsystem_usec 884732\nnice_usec 36000\ncore_sched.force_idle_usec 0\nnr_periods 24\nnr_throttled 12\nthrottled_usec 1143069\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "759726080\n",
+            "memory.peak": "759726080\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "last": {
+            "url": "file:///evidence/bundle/tests/browser.html",
+            "readyState": "complete",
+            "result": "passed",
+            "progress": [
+              {
+                "message": "JSON viewer renders inbound values",
+                "pass": true,
+                "at": 767.1000000000058
+              },
+              {
+                "message": "Inbound JSON remains read-only after interaction",
+                "pass": true,
+                "at": 867.6999999999971
+              },
+              {
+                "message": "Inbound JSON viewer hides mutation controls",
+                "pass": true,
+                "at": 867.6999999999971
+              },
+              {
+                "message": "virtual list bounds rendered rows",
+                "pass": true,
+                "at": 974.6000000000058
+              },
+              {
+                "message": "virtual list renders first row",
+                "pass": true,
+                "at": 974.6000000000058
+              },
+              {
+                "message": "virtual list drops rows outside viewport",
+                "pass": true,
+                "at": 1075.1000000000058
+              },
+              {
+                "message": "virtual list observes variable row heights",
+                "pass": true,
+                "at": 1175.5
+              },
+              {
+                "message": "virtual list handles shrinking data",
+                "pass": true,
+                "at": 1277.1000000000058
+              },
+              {
+                "message": "window virtualization tracks scroll and margin",
+                "pass": true,
+                "at": 1480
+              },
+              {
+                "message": "window virtualization bounds rows",
+                "pass": true,
+                "at": 1480
+              },
+              {
+                "message": "remarks initialize from props",
+                "pass": true,
+                "at": 1492.4000000000087
+              },
+              {
+                "message": "adding a remark reports immediately",
+                "pass": true,
+                "at": 1495.9000000000087
+              },
+              {
+                "message": "removing a remark preserves surviving input identity",
+                "pass": true,
+                "at": 1499
+              },
+              {
+                "message": "removed remark input detaches",
+                "pass": true,
+                "at": 1499
+              },
+              {
+                "message": "remarks reset on new data",
+                "pass": true,
+                "at": 1502.6000000000058
+              },
+              {
+                "message": "remarks do not echo parent data back",
+                "pass": true,
+                "at": 1852.800000000003
+              },
+              {
+                "message": "typing a remark reports immediately",
+                "pass": true,
+                "at": 1856.1000000000058
+              },
+              {
+                "message": "omitted remarks have a stable empty default",
+                "pass": true,
+                "at": 1958.699999999997
+              },
+              {
+                "message": "tag input initializes from props",
+                "pass": true,
+                "at": 1968.4000000000087
+              },
+              {
+                "message": "tag input follows changed values",
+                "pass": true,
+                "at": 1970.300000000003
+              },
+              {
+                "message": "session clock advances without render-time reads",
+                "pass": true,
+                "at": 1991.5
+              },
+              {
+                "message": "valid SVG",
+                "pass": true,
+                "at": 1991.699999999997
+              },
+              {
+                "message": "SVG with comments",
+                "pass": true,
+                "at": 1991.800000000003
+              },
+              {
+                "message": "reject malformed SVG",
+                "pass": true,
+                "at": 1991.9000000000087
+              },
+              {
+                "message": "reject non-SVG root",
+                "pass": true,
+                "at": 1992
+              },
+              {
+                "message": "SVG without xmlns retains SVG namespace",
+                "pass": true,
+                "at": 1996.300000000003
+              },
+              {
+                "message": "SVG strips active content",
+                "pass": true,
+                "at": 1996.300000000003
+              },
+              {
+                "message": "non-SVG roots are rejected",
+                "pass": true,
+                "at": 1997.199999999997
+              },
+              {
+                "message": "auth initializes without token",
+                "pass": true,
+                "at": 2098.199999999997
+              },
+              {
+                "message": "auth reacts to token changes",
+                "pass": true,
+                "at": 2098.699999999997
+              },
+              {
+                "message": "logout updates context and removes token",
+                "pass": true,
+                "at": 2099.100000000006
+              },
+              {
+                "message": "repeated logout remains safe",
+                "pass": true,
+                "at": 2099.199999999997
+              },
+              {
+                "message": "UI operations observe rejected promises",
+                "pass": true,
+                "at": 2203.699999999997
+              },
+              {
+                "message": "UI operations surface asynchronous errors",
+                "pass": true,
+                "at": 2203.699999999997
+              },
+              {
+                "message": "country flag Unicode",
+                "pass": true,
+                "at": 2205.9000000000087
+              },
+              {
+                "message": "country flag accessibility",
+                "pass": true,
+                "at": 2205.9000000000087
+              },
+              {
+                "message": "progress starts",
+                "pass": true,
+                "at": 2306.199999999997
+              },
+              {
+                "message": "progress completes",
+                "pass": true,
+                "at": 2406.600000000006
+              },
+              {
+                "message": "masonry measures card height",
+                "pass": true,
+                "at": 2508.800000000003
+              },
+              {
+                "message": "masonry columns",
+                "pass": true,
+                "at": 2508.800000000003
+              },
+              {
+                "message": "masonry avoids overlaps",
+                "pass": true,
+                "at": 2508.800000000003
+              },
+              {
+                "message": "masonry measures added children",
+                "pass": true,
+                "at": 2609.4000000000087
+              },
+              {
+                "message": "animated list updates",
+                "pass": true,
+                "at": 2911.600000000006
+              },
+              {
+                "message": "exit animation cleans up",
+                "pass": true,
+                "at": 2911.600000000006
+              },
+              {
+                "message": "chart creates SVG",
+                "pass": true,
+                "at": 3069.600000000006
+              },
+              {
+                "message": "chart updates",
+                "pass": true,
+                "at": 3176.300000000003
+              },
+              {
+                "message": "chart reuses instance",
+                "pass": true,
+                "at": 3176.300000000003
+              },
+              {
+                "message": "chart cleans up",
+                "pass": true,
+                "at": 3279.699999999997
+              },
+              {
+                "message": "sparkline renders line and area",
+                "pass": true,
+                "at": 3279.699999999997
+              },
+              {
+                "message": "error boundary catches",
+                "pass": true,
+                "at": 3384.199999999997
+              },
+              {
+                "message": "error boundary retries children",
+                "pass": true,
+                "at": 3484.699999999997
+              },
+              {
+                "message": "locale JSON",
+                "pass": true,
+                "at": 3485.300000000003
+              },
+              {
+                "message": "locale URL and cache busting",
+                "pass": true,
+                "at": 3485.300000000003
+              },
+              {
+                "message": "missing locale fails without retry",
+                "pass": true,
+                "at": 3485.5
+              },
+              {
+                "message": "server failures allow retry",
+                "pass": true,
+                "at": 3485.600000000006
+              },
+              {
+                "message": "network failures allow retry",
+                "pass": true,
+                "at": 3485.800000000003
+              },
+              {
+                "message": "malformed translations fail without retry",
+                "pass": true,
+                "at": 3485.800000000003
+              },
+              {
+                "message": "scalar locale resource fails without retry",
+                "pass": true,
+                "at": 3486
+              },
+              {
+                "message": "language cache and regional normalization",
+                "pass": true,
+                "at": 3486.199999999997
+              }
+            ],
+            "readiness": [
+              {
+                "label": "modal-viewer-committed",
+                "at": 766.9000000000087
+              },
+              {
+                "label": "real-clock-registered",
+                "at": 1970.9000000000087,
+                "value": 20
+              },
+              {
+                "label": "real-clock-initial-dom",
+                "at": 1971,
+                "value": 1793718234485
+              },
+              {
+                "label": "real-clock-callback",
+                "at": 1991.1000000000058,
+                "value": 1793718234506
+              },
+              {
+                "label": "real-clock-dom-advanced",
+                "at": 1991.5
+              }
+            ],
+            "text": "Browser smoke tests passed"
+          },
+          "status": "PASS",
+          "after": {
+            "cpu.stat": "usage_usec 6098853\nuser_usec 4826031\nsystem_usec 1272821\nnice_usec 405000\ncore_sched.force_idle_usec 0\nnr_periods 59\nnr_throttled 20\nthrottled_usec 1841647\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "835366912\n",
+            "memory.peak": "835366912\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "smoke_ms": 3493.666936,
+          "chromium_stderr": "[24:55:1103/150352.076310:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[24:55:1103/150352.076391:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:55:1103/150352.093283:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[24:55:1103/150352.093328:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[24:55:1103/150352.093363:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[24:55:1103/150352.093377:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:55:1103/150352.093388:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:55:1103/150352.098183:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:55:1103/150352.150776:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n\nDevTools listening on ws://127.0.0.1:43729/devtools/browser/ad33871a-7834-470a-b9be-a0515df52166\n[24:24:1103/150352.325392:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:24:1103/150352.325923:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:55:1103/150352.326017:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:55:1103/150352.326042:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:24:1103/150352.326265:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:24:1103/150352.342750:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:55:1103/150352.342839:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:55:1103/150352.380830:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[24:55:1103/150352.380888:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[24:24:1103/150352.381109:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:24:1103/150352.381355:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:55:1103/150352.381435:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:24:1103/150352.383381:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:24:1103/150352.406029:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type: \n[24:24:1103/150352.406916:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:55:1103/150352.407120:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:24:1103/150352.430122:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[24:55:1103/150352.430290:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[24:24:1103/150352.467660:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n",
+          "duration_ms": 4042.648746,
+          "exit_code": 0
+        }
+      ],
+      "build_ms": 1579.948754
+    },
+    {
+      "identity": "RUSTWAVE-BROWSER-PATCH-V1",
+      "patch_sha256": "0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88",
+      "profile": "ram-only",
+      "utc": "2026-11-03T15:04:01.866Z",
+      "deadline_ms": 20000,
+      "trials": [
+        {
+          "trial": 1,
+          "events": [
+            {
+              "at_ms": 1141.9762699999999,
+              "method": "Page.domContentEventFired",
+              "params": {
+                "timestamp": 92.751227
+              }
+            },
+            {
+              "at_ms": 1179.739545,
+              "method": "Page.loadEventFired",
+              "params": {
+                "timestamp": 92.788143
+              }
+            },
+            {
+              "at_ms": 2506.445303,
+              "method": "Runtime.consoleAPICalled",
+              "params": {
+                "type": "error",
+                "args": [
+                  {
+                    "type": "string",
+                    "value": "Asynchronous operation failed"
+                  },
+                  {
+                    "type": "object",
+                    "subtype": "error",
+                    "className": "Error",
+                    "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                    "objectId": "-5549439203944770502.2.1",
+                    "preview": {
+                      "type": "object",
+                      "subtype": "error",
+                      "description": "Error: Expected async failure\n    at Qp (file:///evidence/bundle/assets/browser-CJM3Sup6.js:26:14879)",
+                      "overflow": false,
+                      "properties": [
+                        {
+                          "name": "stack",
+                          "type": "string",
+                          "value": "Error: Expected async failure\n    at Qp (file:///e\u2026dence/bundle/assets/browser-CJM3Sup6.js:26:14879)"
+                        },
+                        {
+                          "name": "message",
+                          "type": "string",
+                          "value": "Expected async failure"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "executionContextId": 2,
+                "timestamp": 1793718244372.159,
+                "stackTrace": {
+                  "callFrames": [
+                    {
+                      "functionName": "ct",
+                      "scriptId": "4",
+                      "url": "file:///evidence/bundle/assets/browser-CJM3Sup6.js",
+                      "lineNumber": 0,
+                      "columnNumber": 1726
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "samples": [
+            {
+              "at_ms": 99.80445999999995,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1340785\nuser_usec 916587\nsystem_usec 424197\nnice_usec 78000\ncore_sched.force_idle_usec 0\nnr_periods 8\nnr_throttled 4\nthrottled_usec 220533\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "198602752\n",
+                "memory.peak": "198602752\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 212.88980700000002,
+              "readyState": "interactive",
+              "assertions": 0,
+              "resources": {
+                "cpu.stat": "usage_usec 1619827\nuser_usec 1136087\nsystem_usec 483740\nnice_usec 110000\ncore_sched.force_idle_usec 0\nnr_periods 9\nnr_throttled 5\nthrottled_usec 353616\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "217161728\n",
+                "memory.peak": "218914816\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 735.64191,
+              "readyState": "interactive",
+              "assertions": 1,
+              "resources": {
+                "cpu.stat": "usage_usec 2617613\nuser_usec 1981520\nsystem_usec 636093\nnice_usec 365000\ncore_sched.force_idle_usec 0\nnr_periods 14\nnr_throttled 10\nthrottled_usec 898551\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "238800896\n",
+                "memory.peak": "238800896\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 838.6384579999999,
+              "readyState": "complete",
+              "assertions": 3,
+              "resources": {
+                "cpu.stat": "usage_usec 2702846\nuser_usec 2053520\nsystem_usec 649326\nnice_usec 386000\ncore_sched.force_idle_usec 0\nnr_periods 15\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246706176\n",
+                "memory.peak": "246788096\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 939.582674,
+              "readyState": "complete",
+              "assertions": 5,
+              "resources": {
+                "cpu.stat": "usage_usec 2722055\nuser_usec 2070932\nsystem_usec 651123\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 16\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246587392\n",
+                "memory.peak": "247341056\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1040.5040979999999,
+              "readyState": "complete",
+              "assertions": 6,
+              "resources": {
+                "cpu.stat": "usage_usec 2738635\nuser_usec 2084137\nsystem_usec 654497\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 17\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246501376\n",
+                "memory.peak": "247341056\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1141.499099,
+              "readyState": "complete",
+              "assertions": 7,
+              "resources": {
+                "cpu.stat": "usage_usec 2745938\nuser_usec 2087879\nsystem_usec 658059\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 18\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246497280\n",
+                "memory.peak": "247341056\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1242.649404,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 2753466\nuser_usec 2093278\nsystem_usec 660187\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 19\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "246751232\n",
+                "memory.peak": "247341056\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1343.985156,
+              "readyState": "complete",
+              "assertions": 8,
+              "resources": {
+                "cpu.stat": "usage_usec 2761094\nuser_usec 2100285\nsystem_usec 660809\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 20\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "247013376\n",
+                "memory.peak": "247341056\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1466.1699839999999,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2804505\nuser_usec 2136381\nsystem_usec 668123\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 21\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248197120\n",
+                "memory.peak": "248299520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1567.205863,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2814157\nuser_usec 2142149\nsystem_usec 672007\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 23\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248164352\n",
+                "memory.peak": "248299520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1668.2185969999998,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2820016\nuser_usec 2146323\nsystem_usec 673692\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 24\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248664064\n",
+                "memory.peak": "248664064\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1769.376543,
+              "readyState": "complete",
+              "assertions": 15,
+              "resources": {
+                "cpu.stat": "usage_usec 2828402\nuser_usec 2152902\nsystem_usec 675499\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 25\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "248655872\n",
+                "memory.peak": "248664064\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1870.6108430000002,
+              "readyState": "complete",
+              "assertions": 17,
+              "resources": {
+                "cpu.stat": "usage_usec 2849042\nuser_usec 2169686\nsystem_usec 679355\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 26\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "249479168\n",
+                "memory.peak": "249581568\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 1971.828562,
+              "readyState": "complete",
+              "assertions": 28,
+              "resources": {
+                "cpu.stat": "usage_usec 2884572\nuser_usec 2201971\nsystem_usec 682600\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 27\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250265600\n",
+                "memory.peak": "250265600\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2073.982655,
+              "readyState": "complete",
+              "assertions": 32,
+              "resources": {
+                "cpu.stat": "usage_usec 2911593\nuser_usec 2226811\nsystem_usec 684782\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 28\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "250871808\n",
+                "memory.peak": "250896384\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2175.144789,
+              "readyState": "complete",
+              "assertions": 36,
+              "resources": {
+                "cpu.stat": "usage_usec 2928342\nuser_usec 2242726\nsystem_usec 685616\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 29\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251371520\n",
+                "memory.peak": "251371520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2276.2436449999996,
+              "readyState": "complete",
+              "assertions": 37,
+              "resources": {
+                "cpu.stat": "usage_usec 2936505\nuser_usec 2250405\nsystem_usec 686099\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 30\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251367424\n",
+                "memory.peak": "251371520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2377.3636509999997,
+              "readyState": "complete",
+              "assertions": 38,
+              "resources": {
+                "cpu.stat": "usage_usec 2943805\nuser_usec 2255630\nsystem_usec 688175\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 31\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251367424\n",
+                "memory.peak": "251371520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2478.993792,
+              "readyState": "complete",
+              "assertions": 41,
+              "resources": {
+                "cpu.stat": "usage_usec 2950237\nuser_usec 2259712\nsystem_usec 690524\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 32\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251359232\n",
+                "memory.peak": "251371520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2580.073472,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 2956676\nuser_usec 2265835\nsystem_usec 690840\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 33\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251334656\n",
+                "memory.peak": "251371520\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2681.0762379999996,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 2964198\nuser_usec 2271771\nsystem_usec 692426\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 34\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251789312\n",
+                "memory.peak": "251793408\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2782.250425,
+              "readyState": "complete",
+              "assertions": 42,
+              "resources": {
+                "cpu.stat": "usage_usec 2968291\nuser_usec 2275384\nsystem_usec 692907\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 35\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "251777024\n",
+                "memory.peak": "251793408\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 2933.1609369999996,
+              "readyState": "complete",
+              "assertions": 44,
+              "resources": {
+                "cpu.stat": "usage_usec 3056143\nuser_usec 2351193\nsystem_usec 704950\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 36\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "254443520\n",
+                "memory.peak": "254447616\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3037.368496,
+              "readyState": "complete",
+              "assertions": 45,
+              "resources": {
+                "cpu.stat": "usage_usec 3080014\nuser_usec 2371672\nsystem_usec 708342\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 37\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "255197184\n",
+                "memory.peak": "255201280\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3140.672644,
+              "readyState": "complete",
+              "assertions": 47,
+              "resources": {
+                "cpu.stat": "usage_usec 3093925\nuser_usec 2384178\nsystem_usec 709747\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 38\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256225280\n",
+                "memory.peak": "256229376\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3245.150159,
+              "readyState": "complete",
+              "assertions": 49,
+              "resources": {
+                "cpu.stat": "usage_usec 3105248\nuser_usec 2395010\nsystem_usec 710237\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 39\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256475136\n",
+                "memory.peak": "256483328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3346.322303,
+              "readyState": "complete",
+              "assertions": 50,
+              "resources": {
+                "cpu.stat": "usage_usec 3113687\nuser_usec 2402133\nsystem_usec 711554\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 40\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256471040\n",
+                "memory.peak": "256483328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            },
+            {
+              "at_ms": 3447.994323,
+              "readyState": "complete",
+              "result": "passed",
+              "assertions": 59,
+              "resources": {
+                "cpu.stat": "usage_usec 3122648\nuser_usec 2409104\nsystem_usec 713544\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 41\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+                "memory.current": "256466944\n",
+                "memory.peak": "256483328\n",
+                "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+              }
+            }
+          ],
+          "started": "2026-11-03T15:04:01.866Z",
+          "before": {
+            "cpu.stat": "usage_usec 1133908\nuser_usec 739155\nsystem_usec 394753\nnice_usec 45000\ncore_sched.force_idle_usec 0\nnr_periods 7\nnr_throttled 3\nthrottled_usec 145958\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "180609024\n",
+            "memory.peak": "180707328\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "last": {
+            "url": "file:///evidence/bundle/tests/browser.html",
+            "readyState": "complete",
+            "result": "passed",
+            "progress": [
+              {
+                "message": "JSON viewer renders inbound values",
+                "pass": true,
+                "at": 724.2999999999884
+              },
+              {
+                "message": "Inbound JSON remains read-only after interaction",
+                "pass": true,
+                "at": 824.8999999999942
+              },
+              {
+                "message": "Inbound JSON viewer hides mutation controls",
+                "pass": true,
+                "at": 824.8999999999942
+              },
+              {
+                "message": "virtual list bounds rendered rows",
+                "pass": true,
+                "at": 931.3999999999942
+              },
+              {
+                "message": "virtual list renders first row",
+                "pass": true,
+                "at": 931.3999999999942
+              },
+              {
+                "message": "virtual list drops rows outside viewport",
+                "pass": true,
+                "at": 1031.8999999999942
+              },
+              {
+                "message": "virtual list observes variable row heights",
+                "pass": true,
+                "at": 1132.199999999997
+              },
+              {
+                "message": "virtual list handles shrinking data",
+                "pass": true,
+                "at": 1234.0999999999913
+              },
+              {
+                "message": "window virtualization tracks scroll and margin",
+                "pass": true,
+                "at": 1436.8999999999942
+              },
+              {
+                "message": "window virtualization bounds rows",
+                "pass": true,
+                "at": 1436.8999999999942
+              },
+              {
+                "message": "remarks initialize from props",
+                "pass": true,
+                "at": 1448.2999999999884
+              },
+              {
+                "message": "adding a remark reports immediately",
+                "pass": true,
+                "at": 1451.5
+              },
+              {
+                "message": "removing a remark preserves surviving input identity",
+                "pass": true,
+                "at": 1454.3999999999942
+              },
+              {
+                "message": "removed remark input detaches",
+                "pass": true,
+                "at": 1454.3999999999942
+              },
+              {
+                "message": "remarks reset on new data",
+                "pass": true,
+                "at": 1457.7999999999884
+              },
+              {
+                "message": "remarks do not echo parent data back",
+                "pass": true,
+                "at": 1807.8999999999942
+              },
+              {
+                "message": "typing a remark reports immediately",
+                "pass": true,
+                "at": 1811.3999999999942
+              },
+              {
+                "message": "omitted remarks have a stable empty default",
+                "pass": true,
+                "at": 1914.5
+              },
+              {
+                "message": "tag input initializes from props",
+                "pass": true,
+                "at": 1924.199999999997
+              },
+              {
+                "message": "tag input follows changed values",
+                "pass": true,
+                "at": 1926
+              },
+              {
+                "message": "session clock advances without render-time reads",
+                "pass": true,
+                "at": 1947
+              },
+              {
+                "message": "valid SVG",
+                "pass": true,
+                "at": 1947.199999999997
+              },
+              {
+                "message": "SVG with comments",
+                "pass": true,
+                "at": 1947.2999999999884
+              },
+              {
+                "message": "reject malformed SVG",
+                "pass": true,
+                "at": 1947.3999999999942
+              },
+              {
+                "message": "reject non-SVG root",
+                "pass": true,
+                "at": 1947.5
+              },
+              {
+                "message": "SVG without xmlns retains SVG namespace",
+                "pass": true,
+                "at": 1951.699999999997
+              },
+              {
+                "message": "SVG strips active content",
+                "pass": true,
+                "at": 1951.7999999999884
+              },
+              {
+                "message": "non-SVG roots are rejected",
+                "pass": true,
+                "at": 1952.5
+              },
+              {
+                "message": "auth initializes without token",
+                "pass": true,
+                "at": 2053.399999999994
+              },
+              {
+                "message": "auth reacts to token changes",
+                "pass": true,
+                "at": 2053.899999999994
+              },
+              {
+                "message": "logout updates context and removes token",
+                "pass": true,
+                "at": 2054.2999999999884
+              },
+              {
+                "message": "repeated logout remains safe",
+                "pass": true,
+                "at": 2054.5999999999913
+              },
+              {
+                "message": "UI operations observe rejected promises",
+                "pass": true,
+                "at": 2159.5
+              },
+              {
+                "message": "UI operations surface asynchronous errors",
+                "pass": true,
+                "at": 2159.5
+              },
+              {
+                "message": "country flag Unicode",
+                "pass": true,
+                "at": 2161.5
+              },
+              {
+                "message": "country flag accessibility",
+                "pass": true,
+                "at": 2161.5
+              },
+              {
+                "message": "progress starts",
+                "pass": true,
+                "at": 2261.7999999999884
+              },
+              {
+                "message": "progress completes",
+                "pass": true,
+                "at": 2362
+              },
+              {
+                "message": "masonry measures card height",
+                "pass": true,
+                "at": 2464
+              },
+              {
+                "message": "masonry columns",
+                "pass": true,
+                "at": 2464
+              },
+              {
+                "message": "masonry avoids overlaps",
+                "pass": true,
+                "at": 2464
+              },
+              {
+                "message": "masonry measures added children",
+                "pass": true,
+                "at": 2564.5999999999913
+              },
+              {
+                "message": "animated list updates",
+                "pass": true,
+                "at": 2866.5
+              },
+              {
+                "message": "exit animation cleans up",
+                "pass": true,
+                "at": 2866.5
+              },
+              {
+                "message": "chart creates SVG",
+                "pass": true,
+                "at": 3025.5
+              },
+              {
+                "message": "chart updates",
+                "pass": true,
+                "at": 3132.199999999997
+              },
+              {
+                "message": "chart reuses instance",
+                "pass": true,
+                "at": 3132.199999999997
+              },
+              {
+                "message": "chart cleans up",
+                "pass": true,
+                "at": 3235.5999999999913
+              },
+              {
+                "message": "sparkline renders line and area",
+                "pass": true,
+                "at": 3235.5999999999913
+              },
+              {
+                "message": "error boundary catches",
+                "pass": true,
+                "at": 3340
+              },
+              {
+                "message": "error boundary retries children",
+                "pass": true,
+                "at": 3440.399999999994
+              },
+              {
+                "message": "locale JSON",
+                "pass": true,
+                "at": 3440.899999999994
+              },
+              {
+                "message": "locale URL and cache busting",
+                "pass": true,
+                "at": 3440.899999999994
+              },
+              {
+                "message": "missing locale fails without retry",
+                "pass": true,
+                "at": 3441.0999999999913
+              },
+              {
+                "message": "server failures allow retry",
+                "pass": true,
+                "at": 3441.0999999999913
+              },
+              {
+                "message": "network failures allow retry",
+                "pass": true,
+                "at": 3441.2999999999884
+              },
+              {
+                "message": "malformed translations fail without retry",
+                "pass": true,
+                "at": 3441.399999999994
+              },
+              {
+                "message": "scalar locale resource fails without retry",
+                "pass": true,
+                "at": 3441.5
+              },
+              {
+                "message": "language cache and regional normalization",
+                "pass": true,
+                "at": 3441.7999999999884
+              }
+            ],
+            "readiness": [
+              {
+                "label": "modal-viewer-committed",
+                "at": 724.1999999999971
+              },
+              {
+                "label": "real-clock-registered",
+                "at": 1926.5999999999913,
+                "value": 20
+              },
+              {
+                "label": "real-clock-initial-dom",
+                "at": 1926.5999999999913,
+                "value": 1793718244238
+              },
+              {
+                "label": "real-clock-callback",
+                "at": 1946.699999999997,
+                "value": 1793718244259
+              },
+              {
+                "label": "real-clock-dom-advanced",
+                "at": 1947
+              }
+            ],
+            "text": "Browser smoke tests passed"
+          },
+          "status": "PASS",
+          "after": {
+            "cpu.stat": "usage_usec 3122648\nuser_usec 2409104\nsystem_usec 713544\nnice_usec 387000\ncore_sched.force_idle_usec 0\nnr_periods 41\nnr_throttled 11\nthrottled_usec 940265\nnr_bursts 0\nburst_usec 0\n",
+            "memory.current": "256466944\n",
+            "memory.peak": "256483328\n",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+          },
+          "smoke_ms": 3448.3116870000003,
+          "chromium_stderr": "[17:46:1103/150401.943917:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:46:1103/150401.956084:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:46:1103/150401.956189:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:46:1103/150401.956235:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:46:1103/150401.956270:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:46:1103/150401.956284:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:46:1103/150401.956295:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:46:1103/150401.962407:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:46:1103/150402.005746:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n\nDevTools listening on ws://127.0.0.1:43209/devtools/browser/b060dc83-6332-4f71-ab6a-f5b69f55df67\n[17:17:1103/150402.153622:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.154187:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150402.154787:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.155082:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150402.156870:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:17:1103/150402.162725:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.178175:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:46:1103/150402.196214:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:17:1103/150402.196216:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.196347:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n[17:17:1103/150402.196866:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.197861:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150402.199747:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:17:1103/150402.223805:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: unknown error type: \n[17:17:1103/150402.226051:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.226152:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150402.241964:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[17:46:1103/150402.242082:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[17:17:1103/150402.286959:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n",
+          "duration_ms": 3915.605036,
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "run_id": 41658971199,
+      "url": "https://github.com/test-alexsun/RustWave/actions/runs/41658971199",
+      "commit": "5ec1e6a0ef282cd178b436eb2ef0742a34224d38",
+      "ci": "FAIL",
+      "phase": "Environment build; apt exit100, pinned version absent from current index",
+      "browser_expected": 4,
+      "browser_executed": 0,
+      "browser_not_run": 4,
+      "artifact_upload": "FAIL: no evidence files yet",
+      "fix": "Exact archived packages with SHA256, retained independent build log"
+    }
+  ]
+}

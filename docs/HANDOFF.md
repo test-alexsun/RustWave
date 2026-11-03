@@ -1,8 +1,8 @@
 # Передача — STAGE_01_AUDIT
 
-**Final gate review, 2026-11-03:** Browser V1 принят владельцем и прошёл формальную проверку. CI NOT_RUN; browser gate BLOCKED; STAGE_01 PARTIAL до реального CI и окончательной проверки. Исторические секции ниже сохранены и не описывают текущий статус.
+**Current status — 2026-11-03: STAGE_01 COMPLETE / PASS; Browser V1 gate PASS.** Owner-approved baseline принят; обязательный CI 4/4 и все 59 assertions PASS. Go↔Rust parity NOT_TESTED. Итог в разделе Final gate review; остальные секции сохраняют историю предыдущих проверок.
 
-Продолжать **этап 01, PARTIAL**; не запускать этап 02 автоматически. Ветка rustwave-dev. Upstream d709bad01dc0ceacb20012a3afdf528eddfd061f. Базовый подтверждённый commit bc5694f61fd407417f1d9a0d3bc57d2d0a8d9123; итоговые отчёты принадлежат commit, содержащему этот файл. Узнать точный SHA: git log -1 --format=%H и git ls-remote origin refs/heads/rustwave-dev. Никаких merge/force push не требуется.
+Этап 01 **COMPLETE / PASS**; следующий разрешённый этап — 02 только после отдельной команды владельца. Не запускать его автоматически. Ветка rustwave-dev. Upstream d709bad01dc0ceacb20012a3afdf528eddfd061f. Базовый подтверждённый commit bc5694f61fd407417f1d9a0d3bc57d2d0a8d9123; итоговые отчёты принадлежат commit, содержащему этот файл. Узнать точный SHA: git log -1 --format=%H и git ls-remote origin refs/heads/rustwave-dev. Никаких merge/force push не требуется.
 
 Прочитать [stage report](stages/STAGE_01_AUDIT.md), [test inventory](TEST_INVENTORY.md), [architecture](ARCHITECTURE_BASELINE.md), [functional matrix](FUNCTIONAL_PARITY_MATRIX.md), [baseline](benchmarks/GO_BASELINE.md), [archive integrity](audit/ARCHIVE_INTEGRITY.md), [commands](audit/COMMANDS.md), [fixture hashes](audit/FIXTURES.md) и три parity matrices.
 
@@ -12,7 +12,7 @@
 
 Данные сохранены локально в ignored docs/benchmarks/raw: исходный неверный CRLF archive/source, отдельный правильный upstream-lf.tar/source-lf, commands.json, extra/commands.json, baseline.json, версии image digests. Original source не менять. Git core.autocrlf=true создаёт неверный archive без command-local -c core.autocrlf=false. Две ошибки baseline harness (пустые Docker published port bindings в internal network) исправлены probe sidecar внутри сети; не открывать production ports. VPS не использовался.
 
-Быстрая проверка/обновление документов (не повторяет долгие тесты): python tools/audit-stage01/results.py; python tools/audit-stage01/baseline_report.py; python tools/audit-stage01/finalize.py; python tools/audit-stage01/check.py; git diff --check. Source inventory уже построен; при его изменении inventory.py затем features.py перед results.py. Скрипты run.py / browser_retry.py / benchmark.py отказываются затирать имеющиеся свидетельства. Для новой execution-сессии использовать отдельный каталог доказательств; не запускать resume.py поверх успешных логов. Exact argv для выборочного воспроизведения находятся в COMMANDS.md; это список argv, не shell-escaped строка. Browser retry recipe — browser_retry.py, без изменений React/timeout.
+Историческая последовательность генераторов (НЕ запускать поверх принятого final gate: она восстановит старые статусы): python tools/audit-stage01/results.py; python tools/audit-stage01/baseline_report.py; python tools/audit-stage01/finalize.py; python tools/audit-stage01/check.py; git diff --check. Source inventory уже построен; при его изменении inventory.py затем features.py перед results.py. Скрипты run.py / browser_retry.py / benchmark.py отказываются затирать имеющиеся свидетельства. Для новой execution-сессии использовать отдельный каталог доказательств; не запускать resume.py поверх успешных логов. Exact argv для выборочного воспроизведения находятся в COMMANDS.md; это список argv, не shell-escaped строка. Browser retry recipe — browser_retry.py, без изменений React/timeout.
 
 Git после публикации должен быть clean и local SHA=origin/rustwave-dev. Upstream push DISABLED. В inherited workflows нет push trigger на rustwave-dev: отсутствие CI run — NOT_RUN. Не публиковать raw logs, DB rows, credentials, caches или binaries. Сохранить AGPL и attribution. Stage 02 — только по отдельной команде пользователя после решения оставшихся gate gaps.
 
@@ -107,4 +107,21 @@ Candidate `RUSTWAVE-BROWSER-PATCH-V1`; patch SHA256 `0cae2b9c7a6800a6b1c9be9645d
 
 ## Final gate review and baseline adoption
 
-[Решение о принятии Browser V1](audit/BROWSER_V1_ADOPTION.md). Новый обязательный baseline зарегистрирован отдельно от original HISTORICAL_FLAKY. Все 59 assertions и 20 успешных запусков перепроверены; 21 отрицательный gate-сценарий PASS. Текущий blocker: обязательный CI ещё не исполнен. Go↔Rust parity NOT_TESTED; STAGE_02 не начат.
+**STAGE_01 COMPLETE / PASS. Browser V1 gate PASS.** Владелец утвердил `RUSTWAVE-BROWSER-PATCH-V1`; формальная проверка patch, точных TSX/runner bytes и всех 59 expressions PASS. Original browser остаётся HISTORICAL_FLAKY; его результаты не переписаны. Первоначальный 20s timeout остаётся необъяснённым историческим FAIL.
+
+| Текущие обязательные доказательства | EXPECTED | EXECUTED | PASS | FAIL | SKIPPED | NOT_RUN |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Go SQLite, с supplementary evidence | 128 | 128 | 128 | 0 | 0 | 0 |
+| Go PostgreSQL, с supplementary evidence | 128 | 128 | 128 | 0 | 0 | 0 |
+| Frontend unit | 24 | 24 | 24 | 0 | 0 | 0 |
+| Command checks | 14 | 14 | 14 | 0 | 0 | 0 |
+| Baseline trials | 6 | 6 | 6 | 0 | 0 | 0 |
+| Browser V1, локальная квалификация | 20 | 20 | 20 | 0 | 0 | 0 |
+| Browser V1, обязательный CI | 4 | 4 | 4 | 0 | 0 | 0 |
+| Отрицательные проверки CI gate | 21 | 21 | 21 | 0 | 0 | 0 |
+
+Знаменатели разнородны и не суммируются. Supplementary PASS закрывает исполнение ID, не меняя исходные full-suite SKIPPED. Browser CI = 236 assertion executions; локальная квалификация = 1180. Новая mandatory версия: FLAKY=0; текущие blockers=0. Исторический первый CI: FAIL подготовки окружения, 4 browser NOT_RUN; исправлен источник получения той же версии Chromium, история сохранена.
+
+CI: [41659747869](https://github.com/test-alexsun/RustWave/actions/runs/41659747869), commit `b4c95a0c2db9c69700becbf0acc9883141bc0a96`. Final delivery содержит те же проверенные baseline/runner/workflow; новый push имеет самостоятельный обязательный check. [Решение о принятии](audit/BROWSER_V1_ADOPTION.md), [результаты CI](audit/browser-v1-ci-results.json), [финальная проверка](audit/stage01-final-review.json).
+
+Инвентарь 304/304, 248 HTTP/WS, 221 callsite и 1772 upstream blobs подтверждены по сохранённым данным. Дорогие Go/native/baseline проверки не повторялись. Go↔Rust parity NOT_TESTED, Stable NOT READY. **STAGE_02 готов к отдельному запуску по команде владельца; автоматически не начат.**

@@ -1,6 +1,6 @@
 # Решение о принятии Browser V1 — 2026-11-03
 
-Владелец проекта явно утвердил `RUSTWAVE-BROWSER-PATCH-V1` как новую обязательную TEST-ONLY версию browser smoke для RustWave. Формальная проверка: **PASS**. Регистрация baseline: **ACCEPTED**. Исполнение обязательного CI пока **NOT_RUN**, browser gate **BLOCKED**, STAGE_01 **PARTIAL** до получения результатов.
+Владелец проекта явно утвердил `RUSTWAVE-BROWSER-PATCH-V1` как новую обязательную TEST-ONLY версию browser smoke для RustWave. Формальная проверка: **PASS**. Регистрация baseline: **ACCEPTED**. Обязательный CI **PASS**, browser V1 gate **PASS**, STAGE_01 **COMPLETE / PASS** по проверенным критериям этапа. Go↔Rust parity **NOT_TESTED**.
 
 - Upstream: `d709bad01dc0ceacb20012a3afdf528eddfd061f`.
 - Patch SHA256: `0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88`.
@@ -35,3 +35,11 @@ Workflow [browser-v1.yml](../../.github/workflows/browser-v1.yml) запуска
 ## CI provisioning history
 
 Первый run [41658971199](https://github.com/test-alexsun/RustWave/actions/runs/41658971199), commit `5ec1e6a0ef282cd178b436eb2ef0742a34224d38`: FAIL на сборке окружения (apt exit 100: закреплённая версия отсутствует в текущем индексе). Browser: 4 NOT_RUN, 0 assertions. Upload также FAIL, поскольку evidence directory ещё не создан; полный build log доступен в job. Исправление provisioning: официальные архивные .deb той же версии, SHA256 закреплены, SHA1 сверены с Debian Snapshot. Build log теперь сохраняется независимо от browser evidence. Тест, patch, runner и timeout не менялись.
+
+## Подтверждённый итог
+
+CI [41659747869](https://github.com/test-alexsun/RustWave/actions/runs/41659747869), commit `b4c95a0c2db9c69700becbf0acc9883141bc0a96`: **PASS**. 4/4 режима, 236/236 assertions, 21/21 отрицательных сценариев; FAIL/SKIPPED/NOT_RUN/FLAKY новой серии = 0. Архив artifact `13242645011` сверён с GitHub SHA256 `93a056eb8eafbd70946b0bfde6b4858ef546c2294383d789adfb8719046032d3`. [Полные результаты CI](browser-v1-ci-results.json). Все исполнения используют точные утверждённые TSX/runner bytes; original 1772 blobs проверены до и после подготовки.
+
+[Финальная проверка этапа](stage01-final-review.json): инвентарь 304/304, 248 HTTP/WS, 221 callsite; 128/128 Go IDs для каждой БД с отдельными supplementary доказательствами; все 266 наблюдавшихся child IDs покрыты; 24 frontend unit tests, 14 command checks, 6 baseline trials и 20 квалификационных browser runs подтверждены сохранёнными записями без повторного исполнения. Native CI остаётся отдельным подтверждённым run 41566960948. Матрицы static/metrics/full UI и Go↔Rust differential содержат будущие NOT_TESTED; завершение инвентаризации не означает их PASS.
+
+Остаточных blockers текущего STAGE_01 нет. Исторические FAIL/SKIPPED/FLAKY/NOT_RUN остаются фактами; первоначальный timeout не получил ретроспективного объяснения. Owner-approved version change отделяет original history от обязательного V1. Требования GATE_POLICY не изменены. Последующее изменение manifest/patch/runner требует новой проверки; любой новый flaky или пропущенный обязательный V1 сценарий закрывает gate. Финальный push также запускает обязательный workflow; status context закрепляется в GitHub protection после публикации. Переход к STAGE_02 допустим только отдельной командой владельца; этап 02 не начинался.

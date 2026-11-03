@@ -132,3 +132,7 @@ Scope of resolution: two known readiness hazards are removed in this separate ha
 | patched-contention-5 | PASS | 0 | 8.756 | 59 |
 
 Candidate `RUSTWAVE-BROWSER-PATCH-V1`; patch SHA256 `0cae2b9c7a6800a6b1c9be9645d438a8beecbce62003f978b4ccbf333c4abf88`. Counts {"PASS": 20, "FAIL": 0, "SKIPPED": 0, "NOT_RUN": 0, "BLOCKED": 0, "FLAKY": 0}. All59 assertions and real native timer evidence preserved; original1772 blobs unchanged. Temporal wait semantics changed explicitly. STAGE_01 PARTIAL; browser gate BLOCKED pending explicit new-baseline acceptance. Historical FAIL/FLAKY remain, original20s timeout root cause unresolved. [Proposal, equivalence limits and preparation errors](BROWSER_PATCH_V1.md). No Stage02 work.
+
+## Approved baseline final review — 2026-11-03
+
+Browser V1 formally accepted by owner. Mandatory CI 4/4 PASS with 59 unchanged assertions per run and 21 negative checks. Original smoke remains HISTORICAL_FLAKY; original 20s timeout remains unexplained. [Adoption decision and CI evidence](BROWSER_V1_ADOPTION.md). Historical conclusions above remain dated checkpoints, not the current mandatory V1 status. No production source or gate-policy changes.

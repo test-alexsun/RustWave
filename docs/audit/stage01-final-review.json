@@ -1,0 +1,83 @@
+{
+  "source_blobs": 1772,
+  "inventory_items": 304,
+  "http_ws_operations": 248,
+  "frontend_callsites": 221,
+  "go": {
+    "sqlite": {
+      "expected": 128,
+      "effective_pass": 128,
+      "observed_child_pass": 133,
+      "historical_counts": {
+        "PASS": 124,
+        "SKIPPED": 4
+      }
+    },
+    "postgres": {
+      "expected": 128,
+      "effective_pass": 128,
+      "observed_child_pass": 133,
+      "historical_counts": {
+        "PASS": 125,
+        "SKIPPED": 3
+      }
+    }
+  },
+  "command_checks": {
+    "expected": 14,
+    "passed": 14,
+    "ids": [
+      "lf-go-fmt-gate",
+      "lf-go-fmt-diff",
+      "lf-go-vet",
+      "lf-go-build",
+      "lf-frontend-check",
+      "lf-frontend-typecheck",
+      "lf-frontend-build",
+      "lf-installer",
+      "lf-response-headers",
+      "lf-contract-export",
+      "lf-contract-probes",
+      "lf-branding",
+      "lf-image-build",
+      "lf-image-inspect"
+    ]
+  },
+  "frontend_unit": {
+    "expected": 24,
+    "passed": 24
+  },
+  "baseline_trials": {
+    "expected": 6,
+    "passed": 6
+  },
+  "browser_qualification": {
+    "expected": 20,
+    "passed": 20,
+    "assertions_per_run": 59
+  },
+  "browser_ci": {
+    "status": "PASS",
+    "expected": 4,
+    "executed": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "not_run": 0,
+    "flaky": 0,
+    "run": {
+      "conclusion": "success",
+      "createdAt": "2026-11-03T15:02:44Z",
+      "databaseId": 41659747869,
+      "headSha": "b4c95a0c2db9c69700becbf0acc9883141bc0a96",
+      "status": "completed",
+      "updatedAt": "2026-11-03T15:04:15Z",
+      "url": "https://github.com/test-alexsun/RustWave/actions/runs/41659747869"
+    }
+  },
+  "historical_original": "HISTORICAL_FLAKY",
+  "rust_parity": "NOT_TESTED",
+  "local_evidence_review": "PASS",
+  "stage": "PASS",
+  "blockers": []
+}
